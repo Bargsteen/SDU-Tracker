@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14113" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14113"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+            <connections>
+                <outlet property="delegate" destination="Voe-Tx-rLC" id="GzC-gU-4Uq"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="ActivityTrackerSDU" customModuleProvider="target"/>
+        <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+        <customObject id="Cx0-KW-VH8" customClass="StatusMenuController" customModule="ActivityTrackerSDU" customModuleProvider="target">
+            <connections>
+                <outlet property="action" destination="Hhz-Bg-kEp" id="xGF-ga-9VX"/>
+                <outlet property="statusMenu" destination="e12-ic-Z5e" id="cgH-mw-wId"/>
+            </connections>
+        </customObject>
+        <menu id="e12-ic-Z5e">
+            <items>
+                <menuItem title="Running" id="Hhz-Bg-kEp">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="actionClicked:" target="Cx0-KW-VH8" id="0CG-Wb-w0o"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Quit" id="ykD-QO-mhc">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="quitClicked:" target="Cx0-KW-VH8" id="GMe-my-aPM"/>
+                    </connections>
+                </menuItem>
+            </items>
+            <connections>
+                <outlet property="delegate" destination="Cx0-KW-VH8" id="Nhj-0i-9Sv"/>
+            </connections>
+            <point key="canvasLocation" x="138.5" y="-87.5"/>
+        </menu>
+        <userDefaultsController representsSharedInstance="YES" id="oId-jM-GQ6"/>
+    </objects>
+</document>
