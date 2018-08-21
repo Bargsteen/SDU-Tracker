@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A70A39B4212C60F30065B7CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70A39B3212C60F30065B7CC /* AppDelegate.swift */; };
+		A70A39B6212C60F40065B7CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A70A39B5212C60F40065B7CC /* Assets.xcassets */; };
+		A70A39B9212C60F40065B7CC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A70A39B7212C60F40065B7CC /* MainMenu.xib */; };
+		A70A39D0212C63760065B7CC /* ActivityTrackerLauncher.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = A70A39B1212C60F30065B7CC /* ActivityTrackerLauncher.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A73AA82021273FD900D0B7FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73AA81F21273FD900D0B7FF /* AppDelegate.swift */; };
 		A73AA82221273FDA00D0B7FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A73AA82121273FDA00D0B7FF /* Assets.xcassets */; };
 		A73AA82521273FDA00D0B7FF /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A73AA82321273FDA00D0B7FF /* MainMenu.xib */; };
@@ -14,7 +18,6 @@
 		A73AA83921273FF500D0B7FF /* SwiftShell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "SwiftShell::SwiftShell::Product" /* SwiftShell.framework */; };
 		A73AA83A21273FF500D0B7FF /* SwiftShell.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = "SwiftShell::SwiftShell::Product" /* SwiftShell.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A73AA83F212740C100D0B7FF /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73AA83E212740C100D0B7FF /* StatusMenuController.swift */; };
-		A7DEA7EF2128554D0047C119 /* thymeRunner.sh in Resources */ = {isa = PBXBuildFile; fileRef = A7DEA7EE2128554C0047C119 /* thymeRunner.sh */; };
 		OBJ_35 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* main.swift */; };
 		OBJ_37 /* SwiftShell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "SwiftShell::SwiftShell::Product" /* SwiftShell.framework */; };
 		OBJ_45 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
@@ -32,6 +35,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		A70A39C1212C60F40065B7CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A70A39B0212C60F30065B7CC;
+			remoteInfo = ActivityTrackerLauncher;
+		};
 		A73AA81821273EF600D0B7FF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
@@ -56,6 +66,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		A70A39CD212C629C0065B7CC /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				A70A39D0212C63760065B7CC /* ActivityTrackerLauncher.app in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A73AA83D21273FF500D0B7FF /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -70,6 +90,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A70A39B1212C60F30065B7CC /* ActivityTrackerLauncher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ActivityTrackerLauncher.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A70A39B3212C60F30065B7CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A70A39B5212C60F40065B7CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A70A39B8212C60F40065B7CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		A70A39BA212C60F40065B7CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A70A39BB212C60F40065B7CC /* ActivityTrackerLauncher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ActivityTrackerLauncher.entitlements; sourceTree = "<group>"; };
+		A70A39C0212C60F40065B7CC /* ActivityTrackerLauncherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ActivityTrackerLauncherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A70A39CE212C63610065B7CC /* ActivityTrackerSDU */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ActivityTrackerSDU; sourceTree = "<group>"; };
 		A73AA81D21273FD900D0B7FF /* ActivityTrackerSDU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ActivityTrackerSDU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A73AA81F21273FD900D0B7FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A73AA82121273FDA00D0B7FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -80,7 +108,6 @@
 		A73AA83021273FDA00D0B7FF /* ActivityTrackerSDUTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTrackerSDUTests.swift; sourceTree = "<group>"; };
 		A73AA83221273FDA00D0B7FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A73AA83E212740C100D0B7FF /* StatusMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
-		A7DEA7EE2128554C0047C119 /* thymeRunner.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = thymeRunner.sh; path = ../../../Downloads/Thyme/thymeRunner.sh; sourceTree = "<group>"; };
 		"ActivityTracker::ActivityTracker::Product" /* ActivityTracker */ = {isa = PBXFileReference; lastKnownFileType = text; path = ActivityTracker; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_14 /* Bash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bash.swift; sourceTree = "<group>"; };
 		OBJ_15 /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
@@ -99,6 +126,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A70A39AE212C60F30065B7CC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A70A39BD212C60F40065B7CC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A73AA81A21273FD900D0B7FF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -132,6 +173,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A70A39B2212C60F30065B7CC /* ActivityTrackerLauncher */ = {
+			isa = PBXGroup;
+			children = (
+				A70A39B3212C60F30065B7CC /* AppDelegate.swift */,
+				A70A39B5212C60F40065B7CC /* Assets.xcassets */,
+				A70A39B7212C60F40065B7CC /* MainMenu.xib */,
+				A70A39BA212C60F40065B7CC /* Info.plist */,
+				A70A39BB212C60F40065B7CC /* ActivityTrackerLauncher.entitlements */,
+			);
+			path = ActivityTrackerLauncher;
+			sourceTree = "<group>";
+		};
 		A73AA81E21273FD900D0B7FF /* ActivityTrackerSDU */ = {
 			isa = PBXGroup;
 			children = (
@@ -219,6 +272,8 @@
 				"ActivityTracker::ActivityTracker::Product" /* ActivityTracker */,
 				A73AA81D21273FD900D0B7FF /* ActivityTrackerSDU.app */,
 				A73AA82C21273FDA00D0B7FF /* ActivityTrackerSDUTests.xctest */,
+				A70A39B1212C60F30065B7CC /* ActivityTrackerLauncher.app */,
+				A70A39C0212C60F40065B7CC /* ActivityTrackerLauncherTests.xctest */,
 			);
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
@@ -226,14 +281,15 @@
 		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
+				A70A39CE212C63610065B7CC /* ActivityTrackerSDU */,
 				OBJ_6 /* Package.swift */,
 				OBJ_7 /* Sources */,
 				OBJ_10 /* Tests */,
 				OBJ_11 /* Dependencies */,
 				A73AA81E21273FD900D0B7FF /* ActivityTrackerSDU */,
 				A73AA82F21273FDA00D0B7FF /* ActivityTrackerSDUTests */,
+				A70A39B2212C60F30065B7CC /* ActivityTrackerLauncher */,
 				OBJ_27 /* Products */,
-				A7DEA7EE2128554C0047C119 /* thymeRunner.sh */,
 			);
 			sourceTree = "<group>";
 		};
@@ -257,6 +313,41 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		A70A39B0212C60F30065B7CC /* ActivityTrackerLauncher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A70A39CB212C60F40065B7CC /* Build configuration list for PBXNativeTarget "ActivityTrackerLauncher" */;
+			buildPhases = (
+				A70A39AD212C60F30065B7CC /* Sources */,
+				A70A39AE212C60F30065B7CC /* Frameworks */,
+				A70A39AF212C60F30065B7CC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ActivityTrackerLauncher;
+			productName = ActivityTrackerLauncher;
+			productReference = A70A39B1212C60F30065B7CC /* ActivityTrackerLauncher.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A70A39BF212C60F40065B7CC /* ActivityTrackerLauncherTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A70A39CC212C60F40065B7CC /* Build configuration list for PBXNativeTarget "ActivityTrackerLauncherTests" */;
+			buildPhases = (
+				A70A39BC212C60F40065B7CC /* Sources */,
+				A70A39BD212C60F40065B7CC /* Frameworks */,
+				A70A39BE212C60F40065B7CC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A70A39C2212C60F40065B7CC /* PBXTargetDependency */,
+			);
+			name = ActivityTrackerLauncherTests;
+			productName = ActivityTrackerLauncherTests;
+			productReference = A70A39C0212C60F40065B7CC /* ActivityTrackerLauncherTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		A73AA81C21273FD900D0B7FF /* ActivityTrackerSDU */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A73AA83321273FDA00D0B7FF /* Build configuration list for PBXNativeTarget "ActivityTrackerSDU" */;
@@ -265,6 +356,7 @@
 				A73AA81A21273FD900D0B7FF /* Frameworks */,
 				A73AA81B21273FD900D0B7FF /* Resources */,
 				A73AA83D21273FF500D0B7FF /* Embed Frameworks */,
+				A70A39CD212C629C0065B7CC /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -364,13 +456,24 @@
 				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 9999;
 				TargetAttributes = {
+					A70A39B0212C60F30065B7CC = {
+						CreatedOnToolsVersion = 9.4.1;
+						DevelopmentTeam = 9632T7RA94;
+						ProvisioningStyle = Automatic;
+					};
+					A70A39BF212C60F40065B7CC = {
+						CreatedOnToolsVersion = 9.4.1;
+						DevelopmentTeam = 9632T7RA94;
+						ProvisioningStyle = Automatic;
+						TestTargetID = A70A39B0212C60F30065B7CC;
+					};
 					A73AA81C21273FD900D0B7FF = {
 						CreatedOnToolsVersion = 9.4.1;
 						DevelopmentTeam = 9632T7RA94;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
@@ -404,18 +507,35 @@
 				"SwiftShell::SwiftPMPackageDescription" /* SwiftShellPackageDescription */,
 				A73AA81C21273FD900D0B7FF /* ActivityTrackerSDU */,
 				A73AA82B21273FDA00D0B7FF /* ActivityTrackerSDUTests */,
+				A70A39B0212C60F30065B7CC /* ActivityTrackerLauncher */,
+				A70A39BF212C60F40065B7CC /* ActivityTrackerLauncherTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A70A39AF212C60F30065B7CC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A70A39B6212C60F40065B7CC /* Assets.xcassets in Resources */,
+				A70A39B9212C60F40065B7CC /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A70A39BE212C60F40065B7CC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A73AA81B21273FD900D0B7FF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				A73AA82221273FDA00D0B7FF /* Assets.xcassets in Resources */,
 				A73AA82521273FDA00D0B7FF /* MainMenu.xib in Resources */,
-				A7DEA7EF2128554D0047C119 /* thymeRunner.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +549,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A70A39AD212C60F30065B7CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A70A39B4212C60F30065B7CC /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A70A39BC212C60F40065B7CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A73AA81921273FD900D0B7FF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -490,6 +625,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		A70A39C2212C60F40065B7CC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A70A39B0212C60F30065B7CC /* ActivityTrackerLauncher */;
+			targetProxy = A70A39C1212C60F40065B7CC /* PBXContainerItemProxy */;
+		};
 		A73AA82E21273FDA00D0B7FF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A73AA81C21273FD900D0B7FF /* ActivityTrackerSDU */;
@@ -508,6 +648,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		A70A39B7212C60F40065B7CC /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A70A39B8212C60F40065B7CC /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
 		A73AA82321273FDA00D0B7FF /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -519,6 +667,252 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		A70A39C7212C60F40065B7CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = ActivityTrackerLauncher/ActivityTrackerLauncher.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 9632T7RA94;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = ActivityTrackerLauncher/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = dk.sdu.health.ActivityTrackerLauncher;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		A70A39C8212C60F40065B7CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = ActivityTrackerLauncher/ActivityTrackerLauncher.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 9632T7RA94;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = ActivityTrackerLauncher/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = dk.sdu.health.ActivityTrackerLauncher;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		A70A39C9212C60F40065B7CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 9632T7RA94;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = ActivityTrackerLauncherTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = dk.sdu.health.ActivityTrackerLauncherTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ActivityTrackerLauncher.app/Contents/MacOS/ActivityTrackerLauncher";
+			};
+			name = Debug;
+		};
+		A70A39CA212C60F40065B7CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 9632T7RA94;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = ActivityTrackerLauncherTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = dk.sdu.health.ActivityTrackerLauncherTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ActivityTrackerLauncher.app/Contents/MacOS/ActivityTrackerLauncher";
+			};
+			name = Release;
+		};
 		A73AA83421273FDA00D0B7FF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -552,7 +946,9 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = ActivityTrackerSDU/ActivityTrackerSDU.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 9632T7RA94;
@@ -615,7 +1011,9 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = ActivityTrackerSDU/ActivityTrackerSDU.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
@@ -934,6 +1332,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A70A39CB212C60F40065B7CC /* Build configuration list for PBXNativeTarget "ActivityTrackerLauncher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A70A39C7212C60F40065B7CC /* Debug */,
+				A70A39C8212C60F40065B7CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A70A39CC212C60F40065B7CC /* Build configuration list for PBXNativeTarget "ActivityTrackerLauncherTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A70A39C9212C60F40065B7CC /* Debug */,
+				A70A39CA212C60F40065B7CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A73AA83321273FDA00D0B7FF /* Build configuration list for PBXNativeTarget "ActivityTrackerSDU" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
