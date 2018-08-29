@@ -21,13 +21,19 @@
         </customObject>
         <menu id="e12-ic-Z5e">
             <items>
-                <menuItem title="Running" id="Hhz-Bg-kEp">
+                <menuItem title="Kører" id="Hhz-Bg-kEp">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="actionClicked:" target="Cx0-KW-VH8" id="0CG-Wb-w0o"/>
                     </connections>
                 </menuItem>
-                <menuItem title="Quit" id="ykD-QO-mhc">
+                <menuItem title="Vælg Bruger" id="PPh-zM-IXL">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="chooseUserClicked:" target="Cx0-KW-VH8" id="hgU-f3-5hZ"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Afslut" id="ykD-QO-mhc">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="quitClicked:" target="Cx0-KW-VH8" id="GMe-my-aPM"/>
@@ -37,7 +43,7 @@
             <connections>
                 <outlet property="delegate" destination="Cx0-KW-VH8" id="Nhj-0i-9Sv"/>
             </connections>
-            <point key="canvasLocation" x="138.5" y="-87.5"/>
+            <point key="canvasLocation" x="138.5" y="-77.5"/>
         </menu>
         <userDefaultsController representsSharedInstance="YES" id="oId-jM-GQ6"/>
     </objects>
