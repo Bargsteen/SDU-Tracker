@@ -18,6 +18,12 @@
 		A73AA83921273FF500D0B7FF /* SwiftShell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "SwiftShell::SwiftShell::Product" /* SwiftShell.framework */; };
 		A73AA83A21273FF500D0B7FF /* SwiftShell.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = "SwiftShell::SwiftShell::Product" /* SwiftShell.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A73AA83F212740C100D0B7FF /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73AA83E212740C100D0B7FF /* StatusMenuController.swift */; };
+		A756633E213936C1008F5640 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756633D213936C1008F5640 /* Constants.swift */; };
+		A756634121394367008F5640 /* CredentialsWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756633F21394367008F5640 /* CredentialsWindow.swift */; };
+		A756634221394367008F5640 /* CredentialsWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A756634021394367008F5640 /* CredentialsWindow.xib */; };
+		A7866E7D2136C24400626DF8 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7866E7C2136C24400626DF8 /* Reachability.swift */; };
+		A7866E7F2137F79700626DF8 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7866E7E2137F79700626DF8 /* Requests.swift */; };
+		A7866E812138240800626DF8 /* Security.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7866E802138240800626DF8 /* Security.swift */; };
 		A7A6B89F21353DE8000B4E38 /* ChooseUserWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A6B89D21353DE8000B4E38 /* ChooseUserWindow.swift */; };
 		A7A6B8A021353DE8000B4E38 /* ChooseUserWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7A6B89E21353DE8000B4E38 /* ChooseUserWindow.xib */; };
 		OBJ_35 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* main.swift */; };
@@ -100,6 +106,7 @@
 		A70A39BB212C60F40065B7CC /* ActivityTrackerLauncher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ActivityTrackerLauncher.entitlements; sourceTree = "<group>"; };
 		A70A39C0212C60F40065B7CC /* ActivityTrackerLauncherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ActivityTrackerLauncherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A70A39CE212C63610065B7CC /* ActivityTrackerSDU */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ActivityTrackerSDU; sourceTree = "<group>"; };
+		A734B4C5213BF99700AD4A99 /* thyme */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = thyme; path = ../../../go/bin/thyme; sourceTree = "<group>"; };
 		A73AA81D21273FD900D0B7FF /* ActivityTrackerSDU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ActivityTrackerSDU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A73AA81F21273FD900D0B7FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A73AA82121273FDA00D0B7FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -110,6 +117,13 @@
 		A73AA83021273FDA00D0B7FF /* ActivityTrackerSDUTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTrackerSDUTests.swift; sourceTree = "<group>"; };
 		A73AA83221273FDA00D0B7FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A73AA83E212740C100D0B7FF /* StatusMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
+		A756633D213936C1008F5640 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A756633F21394367008F5640 /* CredentialsWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsWindow.swift; sourceTree = "<group>"; };
+		A756634021394367008F5640 /* CredentialsWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CredentialsWindow.xib; sourceTree = "<group>"; };
+		A7866E7A2136B90800626DF8 /* Sources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sources; sourceTree = "<group>"; };
+		A7866E7C2136C24400626DF8 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		A7866E7E2137F79700626DF8 /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
+		A7866E802138240800626DF8 /* Security.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Security.swift; sourceTree = "<group>"; };
 		A7A6B89D21353DE8000B4E38 /* ChooseUserWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseUserWindow.swift; sourceTree = "<group>"; };
 		A7A6B89E21353DE8000B4E38 /* ChooseUserWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseUserWindow.xib; sourceTree = "<group>"; };
 		"ActivityTracker::ActivityTracker::Product" /* ActivityTracker */ = {isa = PBXFileReference; lastKnownFileType = text; path = ActivityTracker; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -200,6 +214,12 @@
 				A73AA83E212740C100D0B7FF /* StatusMenuController.swift */,
 				A7A6B89D21353DE8000B4E38 /* ChooseUserWindow.swift */,
 				A7A6B89E21353DE8000B4E38 /* ChooseUserWindow.xib */,
+				A7866E7C2136C24400626DF8 /* Reachability.swift */,
+				A7866E7E2137F79700626DF8 /* Requests.swift */,
+				A7866E802138240800626DF8 /* Security.swift */,
+				A756633D213936C1008F5640 /* Constants.swift */,
+				A756633F21394367008F5640 /* CredentialsWindow.swift */,
+				A756634021394367008F5640 /* CredentialsWindow.xib */,
 			);
 			path = ActivityTrackerSDU;
 			sourceTree = "<group>";
@@ -211,6 +231,15 @@
 				A73AA83221273FDA00D0B7FF /* Info.plist */,
 			);
 			path = ActivityTrackerSDUTests;
+			sourceTree = "<group>";
+		};
+		A7866E792136B90800626DF8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A734B4C5213BF99700AD4A99 /* thyme */,
+				A7866E7A2136B90800626DF8 /* Sources */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		OBJ_10 /* Tests */ = {
@@ -296,6 +325,7 @@
 				A73AA82F21273FDA00D0B7FF /* ActivityTrackerSDUTests */,
 				A70A39B2212C60F30065B7CC /* ActivityTrackerLauncher */,
 				OBJ_27 /* Products */,
+				A7866E792136B90800626DF8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -358,6 +388,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A73AA83321273FDA00D0B7FF /* Build configuration list for PBXNativeTarget "ActivityTrackerSDU" */;
 			buildPhases = (
+				A7866E782136B7A200626DF8 /* ShellScript */,
 				A73AA81921273FD900D0B7FF /* Sources */,
 				A73AA81A21273FD900D0B7FF /* Frameworks */,
 				A73AA81B21273FD900D0B7FF /* Resources */,
@@ -540,6 +571,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A756634221394367008F5640 /* CredentialsWindow.xib in Resources */,
 				A73AA82221273FDA00D0B7FF /* Assets.xcassets in Resources */,
 				A73AA82521273FDA00D0B7FF /* MainMenu.xib in Resources */,
 				A7A6B8A021353DE8000B4E38 /* ChooseUserWindow.xib in Resources */,
@@ -554,6 +586,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A7866E782136B7A200626DF8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "swift build --package-path \"$SRCROOT\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A70A39AD212C60F30065B7CC /* Sources */ = {
@@ -575,9 +623,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A756634121394367008F5640 /* CredentialsWindow.swift in Sources */,
 				A73AA83F212740C100D0B7FF /* StatusMenuController.swift in Sources */,
 				A73AA82021273FD900D0B7FF /* AppDelegate.swift in Sources */,
+				A7866E7F2137F79700626DF8 /* Requests.swift in Sources */,
+				A7866E7D2136C24400626DF8 /* Reachability.swift in Sources */,
+				A756633E213936C1008F5640 /* Constants.swift in Sources */,
 				A7A6B89F21353DE8000B4E38 /* ChooseUserWindow.swift in Sources */,
+				A7866E812138240800626DF8 /* Security.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -981,6 +1034,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = dk.sdu.health.ActivityTrackerSDU;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/.build/debug/";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -1040,6 +1094,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = dk.sdu.health.ActivityTrackerSDU;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = "";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;

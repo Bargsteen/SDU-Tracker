@@ -33,6 +33,18 @@
                         <action selector="chooseUserClicked:" target="Cx0-KW-VH8" id="hgU-f3-5hZ"/>
                     </connections>
                 </menuItem>
+                <menuItem title="Request" id="kmw-bM-XhJ">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="sendRequestClicked:" target="Cx0-KW-VH8" id="nzy-x2-Gkx"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Slet Credentials" id="RdD-U9-R6f">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="deleteCredentialsClicked:" target="Cx0-KW-VH8" id="YoJ-dB-L1t"/>
+                    </connections>
+                </menuItem>
                 <menuItem title="Afslut" id="ykD-QO-mhc">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
@@ -43,7 +55,7 @@
             <connections>
                 <outlet property="delegate" destination="Cx0-KW-VH8" id="Nhj-0i-9Sv"/>
             </connections>
-            <point key="canvasLocation" x="138.5" y="-77.5"/>
+            <point key="canvasLocation" x="138.5" y="-57.5"/>
         </menu>
         <userDefaultsController representsSharedInstance="YES" id="oId-jM-GQ6"/>
     </objects>

@@ -63,7 +63,7 @@ class ChooseUserWindow: NSWindowController, NSWindowDelegate {
     func windowWillClose(_ notification: Notification) {
         let defaults = UserDefaults.standard
         let currentUser = defaults.string(forKey: "currentUser") ?? ""
-        let newCurrentUser : String = userListMenu.selectedItem?.title ?? "unavngivet bruger"
+        let newCurrentUser : String = userListMenu.selectedItem?.title ?? .unnamedUser
         
         if(currentUser != newCurrentUser) {
             defaults.setValue(newCurrentUser, forKey: "currentUser")
