@@ -10,6 +10,7 @@ import Foundation
 
 extension String {
     static let server = "screens.sdu.dk"
-    static let path = "/v1/device_usages"
+    static let devicePath = "/v1/device_usages"
+    static let appPath = "/v1/app_usages"
     static let unnamedUser = "unavngivet-bruger"
 }

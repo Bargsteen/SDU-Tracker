@@ -56,7 +56,9 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
         
         // Reachability
         reachability.whenReachable = { reachability in
-            print("I have internet!")
+            getVisibleWindows().forEach { window in
+                print("\(window.ApplicationName) - \(window.WindowName)")
+            }
         }
         reachability.whenUnreachable = { _ in
             print("I have no internet..")
@@ -87,9 +89,10 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
     @IBAction func sendRequestClicked(_ sender: NSMenuItem) {
         guard let credentials = loadCredentialsFromKeychain() else { ensureCredentialsAreSet(); return }
         let currentUser = getCurrentUser()
-        let myActivity = Activity(participantIdentifier: currentUser, eventType: EventType.started, timeStamp: Date(), userCount: 1, deviceModelName: "Mac")
+        //let myActivity = DeviceUsage(participantIdentifier: currentUser, eventType: EventType.started, timeStamp: Date(), userCount: 1, deviceModelName: "Mac")
+        let appUsage = AppUsage(participantIdentifier: "***REMOVED***test", timeStamp: Date(), userCount: 1, deviceModelName: "MacBook Pro Retina", package: "XCode", duration: 1000)
         if(reachability.connection != .none) {
-            sendActivity(activity: myActivity, credentials: credentials) { (error) in
+            sendUsage(usage: appUsage, usageType: .app, credentials: credentials) { (error) in
                 if let error = error {
                     fatalError(error.localizedDescription)
                 }
@@ -100,7 +103,7 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
     }
     
     @IBAction func windowClicked(_ sender: NSMenuItem) {
-        getVisibleWindows()
+        print(getVisibleWindows())
     }
     
     
