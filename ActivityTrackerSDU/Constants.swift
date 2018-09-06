@@ -14,3 +14,7 @@ extension String {
     static let appPath = "/v1/app_usages"
     static let unnamedUser = "unavngivet-bruger"
 }
+
+extension Int {
+    static let minWindowArea = 1000
+}

@@ -21,6 +21,8 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
     var chooseUserWindow: ChooseUserWindow!
     var credentialsWindow: CredentialsWindow!
     
+    var timeKeeper : TimeKeeper!
+    
     @IBOutlet weak var action: NSMenuItem!
     
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
@@ -35,6 +37,9 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
         chooseUserWindow = ChooseUserWindow()
         chooseUserWindow.delegate = self
         credentialsWindow = CredentialsWindow()
+        
+        // TimeKeeper
+        timeKeeper = TimeKeeper()
         
         // Get current user
         var currentUser = getCurrentUser()
@@ -51,13 +56,16 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
         
         ensureCredentialsAreSet()
         
-        runThymeAnew(currentUser)
+        //runThymeAnew(currentUser)
         
         
         // Reachability
         reachability.whenReachable = { reachability in
-            getVisibleWindows().forEach { window in
-                print("\(window.ApplicationName) - \(window.WindowName)")
+            DispatchQueue.global(qos: .background).async {
+                while(true) {
+                    self.timeKeeper.noteOpenWindows(windows: getVisibleWindows())
+                    sleep(1)
+                }
             }
         }
         reachability.whenUnreachable = { _ in
@@ -90,7 +98,7 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
         guard let credentials = loadCredentialsFromKeychain() else { ensureCredentialsAreSet(); return }
         let currentUser = getCurrentUser()
         //let myActivity = DeviceUsage(participantIdentifier: currentUser, eventType: EventType.started, timeStamp: Date(), userCount: 1, deviceModelName: "Mac")
-        let appUsage = AppUsage(participantIdentifier: "***REMOVED***test", timeStamp: Date(), userCount: 1, deviceModelName: "MacBook Pro Retina", package: "XCode", duration: 1000)
+        let appUsage = AppUsage(participantIdentifier: currentUser, timeStamp: Date(), userCount: 1, deviceModelName: "MacBook Pro Retina", package: "XCode", duration: 1000)
         if(reachability.connection != .none) {
             sendUsage(usage: appUsage, usageType: .app, credentials: credentials) { (error) in
                 if let error = error {

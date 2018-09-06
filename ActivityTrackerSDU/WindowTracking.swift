@@ -30,33 +30,38 @@ func getVisibleWindows() -> [WindowInfo]{
 }
 
 func parseWindowInfo(_ infoDict: [String: AnyObject]) -> WindowInfo? {
+    guard let id = infoDict["kCGWindowOwnerPID"] as? Int else { return nil }
     guard let appName = infoDict["kCGWindowOwnerName"] as? String else { return nil }
     guard let windowName = infoDict["kCGWindowName"] as? String else { return nil }
+    
     guard let windowLayer = infoDict["kCGWindowLayer"] as? Int else { return nil }
+    
     guard let windowIsOnScreenInt = infoDict["kCGWindowIsOnscreen"] as? Int else { return nil }
     let windowIsOnScreen = windowIsOnScreenInt == 1 ? true : false
+    
     guard let windowBounds = infoDict["kCGWindowBounds"] as? [String: Any] else { return nil }
     guard let height = windowBounds["Height"] as! Int? else { return nil }
     guard let width = windowBounds["Width"] as! Int? else { return nil }
     guard let x = windowBounds["X"] as! Int? else { return nil }
     guard let y = windowBounds["Y"] as! Int? else { return nil }
     
-    return WindowInfo(ApplicationName: appName, WindowName: windowName, WindowLayer: windowLayer,
-                      WindowIsOnScreen: windowIsOnScreen, Height: height, Width: width, X: x, Y: y)
+    return WindowInfo(id: id, applicationName: appName, windowName: windowName, windowLayer: windowLayer,
+                      windowIsOnScreen: windowIsOnScreen, height: height, width: width, x: x, y: y)
 }
 
 func windowIsVisible(_ windowInfo: WindowInfo) -> Bool {
-    let area = abs(windowInfo.Width) * abs(windowInfo.Height)
-    return area >= 1000 && windowInfo.WindowLayer == 0 && windowInfo.WindowIsOnScreen == true
+    let area = abs(windowInfo.width) * abs(windowInfo.height)
+    return area >= .minWindowArea && windowInfo.windowLayer == 0 && windowInfo.windowIsOnScreen == true
 }
 
-struct WindowInfo {
-    let ApplicationName : String
-    let WindowName : String
-    let WindowLayer : Int
-    let WindowIsOnScreen : Bool
-    let Height : Int
-    let Width : Int
-    let X : Int
-    let Y : Int
+struct WindowInfo: Hashable {
+    let id : Int
+    let applicationName : String
+    let windowName : String
+    let windowLayer : Int
+    let windowIsOnScreen : Bool
+    let height : Int
+    let width : Int
+    let x : Int
+    let y : Int
 }
