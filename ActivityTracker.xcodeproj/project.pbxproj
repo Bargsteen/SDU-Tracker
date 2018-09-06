@@ -21,11 +21,13 @@
 		A756633E213936C1008F5640 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756633D213936C1008F5640 /* Constants.swift */; };
 		A756634121394367008F5640 /* CredentialsWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756633F21394367008F5640 /* CredentialsWindow.swift */; };
 		A756634221394367008F5640 /* CredentialsWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A756634021394367008F5640 /* CredentialsWindow.xib */; };
+		A757F23921411F72009CCDC0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A757F23821411F72009CCDC0 /* Extensions.swift */; };
 		A7866E7D2136C24400626DF8 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7866E7C2136C24400626DF8 /* Reachability.swift */; };
 		A7866E7F2137F79700626DF8 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7866E7E2137F79700626DF8 /* Requests.swift */; };
 		A7866E812138240800626DF8 /* Security.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7866E802138240800626DF8 /* Security.swift */; };
 		A7A6B89F21353DE8000B4E38 /* ChooseUserWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A6B89D21353DE8000B4E38 /* ChooseUserWindow.swift */; };
 		A7A6B8A021353DE8000B4E38 /* ChooseUserWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7A6B89E21353DE8000B4E38 /* ChooseUserWindow.xib */; };
+		A7E62733213DA55400F0395D /* WindowTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E62732213DA55400F0395D /* WindowTracking.swift */; };
 		OBJ_35 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* main.swift */; };
 		OBJ_37 /* SwiftShell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "SwiftShell::SwiftShell::Product" /* SwiftShell.framework */; };
 		OBJ_45 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
@@ -120,12 +122,14 @@
 		A756633D213936C1008F5640 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A756633F21394367008F5640 /* CredentialsWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsWindow.swift; sourceTree = "<group>"; };
 		A756634021394367008F5640 /* CredentialsWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CredentialsWindow.xib; sourceTree = "<group>"; };
+		A757F23821411F72009CCDC0 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A7866E7A2136B90800626DF8 /* Sources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sources; sourceTree = "<group>"; };
 		A7866E7C2136C24400626DF8 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		A7866E7E2137F79700626DF8 /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
 		A7866E802138240800626DF8 /* Security.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Security.swift; sourceTree = "<group>"; };
 		A7A6B89D21353DE8000B4E38 /* ChooseUserWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseUserWindow.swift; sourceTree = "<group>"; };
 		A7A6B89E21353DE8000B4E38 /* ChooseUserWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseUserWindow.xib; sourceTree = "<group>"; };
+		A7E62732213DA55400F0395D /* WindowTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowTracking.swift; sourceTree = "<group>"; };
 		"ActivityTracker::ActivityTracker::Product" /* ActivityTracker */ = {isa = PBXFileReference; lastKnownFileType = text; path = ActivityTracker; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_14 /* Bash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bash.swift; sourceTree = "<group>"; };
 		OBJ_15 /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
@@ -220,6 +224,8 @@
 				A756633D213936C1008F5640 /* Constants.swift */,
 				A756633F21394367008F5640 /* CredentialsWindow.swift */,
 				A756634021394367008F5640 /* CredentialsWindow.xib */,
+				A7E62732213DA55400F0395D /* WindowTracking.swift */,
+				A757F23821411F72009CCDC0 /* Extensions.swift */,
 			);
 			path = ActivityTrackerSDU;
 			sourceTree = "<group>";
@@ -628,6 +634,8 @@
 				A73AA82021273FD900D0B7FF /* AppDelegate.swift in Sources */,
 				A7866E7F2137F79700626DF8 /* Requests.swift in Sources */,
 				A7866E7D2136C24400626DF8 /* Reachability.swift in Sources */,
+				A757F23921411F72009CCDC0 /* Extensions.swift in Sources */,
+				A7E62733213DA55400F0395D /* WindowTracking.swift in Sources */,
 				A756633E213936C1008F5640 /* Constants.swift in Sources */,
 				A7A6B89F21353DE8000B4E38 /* ChooseUserWindow.swift in Sources */,
 				A7866E812138240800626DF8 /* Security.swift in Sources */,

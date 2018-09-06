@@ -99,6 +99,11 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
         }
     }
     
+    @IBAction func windowClicked(_ sender: NSMenuItem) {
+        getVisibleWindows()
+    }
+    
+    
     @IBAction func deleteCredentialsClicked(_ sender: NSMenuItem) {
         do {
             try deleteCredentialsFromKeychain()
