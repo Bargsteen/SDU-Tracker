@@ -18,6 +18,7 @@
 		A73AA83921273FF500D0B7FF /* SwiftShell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "SwiftShell::SwiftShell::Product" /* SwiftShell.framework */; };
 		A73AA83A21273FF500D0B7FF /* SwiftShell.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = "SwiftShell::SwiftShell::Product" /* SwiftShell.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A73AA83F212740C100D0B7FF /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73AA83E212740C100D0B7FF /* StatusMenuController.swift */; };
+		A73EE26C21450E2D00A831B4 /* CwlSysctl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73EE26B21450E2D00A831B4 /* CwlSysctl.swift */; };
 		A756633E213936C1008F5640 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756633D213936C1008F5640 /* Constants.swift */; };
 		A756634121394367008F5640 /* CredentialsWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756633F21394367008F5640 /* CredentialsWindow.swift */; };
 		A756634221394367008F5640 /* CredentialsWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A756634021394367008F5640 /* CredentialsWindow.xib */; };
@@ -120,6 +121,7 @@
 		A73AA83021273FDA00D0B7FF /* ActivityTrackerSDUTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTrackerSDUTests.swift; sourceTree = "<group>"; };
 		A73AA83221273FDA00D0B7FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A73AA83E212740C100D0B7FF /* StatusMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
+		A73EE26B21450E2D00A831B4 /* CwlSysctl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CwlSysctl.swift; sourceTree = "<group>"; };
 		A756633D213936C1008F5640 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A756633F21394367008F5640 /* CredentialsWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsWindow.swift; sourceTree = "<group>"; };
 		A756634021394367008F5640 /* CredentialsWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CredentialsWindow.xib; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 				A7E62732213DA55400F0395D /* WindowTracking.swift */,
 				A757F23821411F72009CCDC0 /* Extensions.swift */,
 				A78F236721416CE900DC2489 /* TimeKeeper.swift */,
+				A73EE26B21450E2D00A831B4 /* CwlSysctl.swift */,
 			);
 			path = ActivityTrackerSDU;
 			sourceTree = "<group>";
@@ -642,6 +645,7 @@
 				A78F236821416CE900DC2489 /* TimeKeeper.swift in Sources */,
 				A756633E213936C1008F5640 /* Constants.swift in Sources */,
 				A7A6B89F21353DE8000B4E38 /* ChooseUserWindow.swift in Sources */,
+				A73EE26C21450E2D00A831B4 /* CwlSysctl.swift in Sources */,
 				A7866E812138240800626DF8 /* Security.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

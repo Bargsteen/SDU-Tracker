@@ -6,33 +6,39 @@
 //
 
 import Foundation
+import Cocoa
 
 class TimeKeeper {
-    private var timeTable : [WindowInfo: Date]
+    private var currentActiveWindow: ActiveWindowTime?
     
-    init() {
-        timeTable = [:]
-    }
-    
-    func noteOpenWindows(windows: [WindowInfo]) {
-        
-        var windowsStillAlive : [WindowInfo : Bool] = Dictionary(uniqueKeysWithValues: timeTable.map { ($0.key, false) })
-        
-        for window in windows {
-            // Check which tracked windows are still alive. And add new ones to the list.
-            if windowsStillAlive.keys.contains(window) {
-                windowsStillAlive[window] = true
-            } else { // New window
-                timeTable[window] = Date()
+    func maybeGetLastActiveWindow() -> ActiveWindowTime? {
+        let workspace = NSWorkspace.shared
+        let activeApps = workspace.runningApplications
+        for app in activeApps {
+            if app.isActive {
+                let now = Date()
+                if let currentActiveWindow = currentActiveWindow {
+                    if app.bundleIdentifier != currentActiveWindow.bundleIdentifier { // New window is active
+                        // Save old windowInfo in timeTable with endtime
+                        let lastActiveWindow = ActiveWindowTime(bundleIdentifier: currentActiveWindow.bundleIdentifier, startTime: currentActiveWindow.startTime, endTime: now)
+                        
+                        // Set new current with starttime
+                        self.currentActiveWindow = ActiveWindowTime(bundleIdentifier: app.bundleIdentifier ?? .unknownApp, startTime: now, endTime: nil)
+                        
+                        return lastActiveWindow
+                    }
+                } else {
+                    // Set new current with starttime
+                    self.currentActiveWindow = ActiveWindowTime(bundleIdentifier: app.bundleIdentifier!, startTime: now, endTime: nil)
+                }
             }
         }
-        
-        // Collect all recently closed windows
-        let recentlyClosedWindows = windowsStillAlive.filter({ id, alive in !alive })
-        
-        recentlyClosedWindows.forEach { closedWindow in
-            timeTable.removeValue(forKey: closedWindow.key)
-            print("Recently Closed: \(closedWindow.key)")
-        }
+        return nil
     }
+}
+
+struct ActiveWindowTime: Encodable {
+    let bundleIdentifier: String
+    let startTime: Date
+    let endTime: Date?
 }

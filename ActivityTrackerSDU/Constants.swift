@@ -13,6 +13,7 @@ extension String {
     static let devicePath = "/v1/device_usages"
     static let appPath = "/v1/app_usages"
     static let unnamedUser = "unavngivet-bruger"
+    static let unknownApp = "ukendt-applikation"
 }
 
 extension Int {

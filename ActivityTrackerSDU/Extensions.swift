@@ -14,3 +14,9 @@ extension Array {
         }
     }
 }
+
+extension TimeInterval {
+    func toMilliseconds() -> UInt {
+        return UInt(self * 1000)
+    }
+}

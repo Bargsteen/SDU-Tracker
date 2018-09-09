@@ -18,6 +18,8 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
     var thymeCommand : AsyncCommand!
     var isRunning = true
     
+    let computerModel = Sysctl.model
+    
     var chooseUserWindow: ChooseUserWindow!
     var credentialsWindow: CredentialsWindow!
     
@@ -55,15 +57,22 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
         currentUser = getCurrentUser()
         
         ensureCredentialsAreSet()
-        
-        //runThymeAnew(currentUser)
-        
+        guard let credentials = loadCredentialsFromKeychain() else { ensureCredentialsAreSet(); return }
         
         // Reachability
         reachability.whenReachable = { reachability in
             DispatchQueue.global(qos: .background).async {
                 while(true) {
-                    self.timeKeeper.noteOpenWindows(windows: getVisibleWindows())
+                    let activeWindow = self.timeKeeper.maybeGetLastActiveWindow()
+                    if let activeWindow = activeWindow {
+                        let duration = activeWindow.endTime?.timeIntervalSince(activeWindow.startTime) ?? 0
+                        let appUsage = AppUsage(participantIdentifier: currentUser, timeStamp: Date(), userCount: 1, deviceModelName: self.computerModel, package: activeWindow.bundleIdentifier, duration: duration.toMilliseconds())
+                        sendUsage(usage: appUsage, usageType: .app, credentials: credentials) { (error) in
+                            if let error = error {
+                                print(error)
+                            }
+                        }
+                    }
                     sleep(1)
                 }
             }
