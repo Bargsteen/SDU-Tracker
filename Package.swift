@@ -8,7 +8,7 @@ let package = Package(
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
-        .package(url: "https://github.com/kareman/SwiftShell", from: "4.0.0"),
+        //.package(url: "https://github.com/kareman/SwiftShell", from: "4.0.0"),
         //.package(url: "https://github.com/therapychat/Reach.git", from: "1.2.0")
         //.package(url: "https://github.com/ashleymills/Reachability.swift", from: "4.2.0")
     ],
@@ -17,6 +17,6 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages which this package depends on.
         .target(
             name: "ActivityTracker",
-            dependencies: ["SwiftShell"]),
+            dependencies: []),
     ]
 )

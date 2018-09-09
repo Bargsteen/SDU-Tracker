@@ -14,8 +14,7 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
     @IBOutlet weak var statusMenu: NSMenu!
     
     let reachability = Reachability()!
-
-    var thymeCommand : AsyncCommand!
+    
     var isRunning = true
     
     let computerModel = Sysctl.model
@@ -90,7 +89,6 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
     
     func userHasChanged(_ nameOfUser : String) {
         print("Current user changed to: \(nameOfUser)")
-        runThymeAnew(nameOfUser)
     }
     
     func showChangeUserAlert(_ currentUser : String) -> Bool {
@@ -132,11 +130,6 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
         }
     }
     
-    func runThymeAnew(_ user : String) {
-        print("Running Thyme with user: \(user)")
-        thymeCommand = runAsync(bash: "now=$(date +\"%Y_%m_%d_%X\"); while true; do /Users/kasper/go/bin/thyme track -o \"SDU_ActivityTracker_${now}_\(user).json\" ; wait 10s ; done")
-    }
-    
     @IBAction func chooseUserClicked(_ sender: NSMenuItem) {
         chooseUserWindow.showWindow(nil)
     }
@@ -149,11 +142,9 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
         print(run(bash:"pwd").stdout)
         if(isRunning){
             action.title = "På Pause"
-            thymeCommand.suspend()
             isRunning = false
         } else {
             action.title = "Kører"
-            thymeCommand.resume()
             isRunning = true
         }
     }
