@@ -6,7 +6,6 @@
 //
 
 import Cocoa
-import SwiftShell
 import Foundation
 
 class StatusMenuController: NSObject, ChooseUserWindowDelegate {
@@ -41,6 +40,9 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
         
         // TimeKeeper
         timeKeeper = TimeKeeper()
+    
+        // Observe changes such as screen awake / asleep
+        setUpNotificationObservers()
         
         // Get current user
         var currentUser = getCurrentUser()
@@ -68,7 +70,8 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
                         let appUsage = AppUsage(participantIdentifier: currentUser, timeStamp: Date(), userCount: 1, deviceModelName: self.computerModel, package: activeWindow.bundleIdentifier, duration: duration.toMilliseconds())
                         sendUsage(usage: appUsage, usageType: .app, credentials: credentials) { (error) in
                             if let error = error {
-                                print(error)
+                                //print(error)
+                                // Log error
                             }
                         }
                     }
@@ -118,7 +121,7 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
     }
     
     @IBAction func windowClicked(_ sender: NSMenuItem) {
-        print(getVisibleWindows())
+        
     }
     
     
@@ -139,7 +142,6 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
     }
     
     @IBAction func actionClicked(_ sender: NSMenuItem) {
-        print(run(bash:"pwd").stdout)
         if(isRunning){
             action.title = "På Pause"
             isRunning = false
@@ -158,5 +160,17 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
         if credentials == nil {
             credentialsWindow.showWindow(nil)
         }
+    }
+    
+    func setUpNotificationObservers() {
+        addObserver(NSWorkspace.screensDidSleepNotification, "screens did SLEEP")
+        addObserver(NSWorkspace.screensDidWakeNotification, "screens did WAKE")
+        addObserver(NSWorkspace.didWakeNotification, "did WAKE")
+        addObserver(NSWorkspace.sessionDidBecomeActiveNotification, "user SESSION STARTED")
+        addObserver(NSWorkspace.sessionDidResignActiveNotification, "user SESSION ENDED")
+    }
+    
+    func addObserver(_ n: Notification.Name?, _ msg: String) {
+        NSWorkspace.shared.notificationCenter.addObserver(forName: n, object: nil, queue: nil, using: {(n:Notification) in print(msg)})
     }
 }

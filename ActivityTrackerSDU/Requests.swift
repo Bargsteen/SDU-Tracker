@@ -34,7 +34,7 @@ func sendUsage<T:Encodable>(usage: T, usageType: UsageType, credentials: Credent
     do {
         let jsonData = try encoder.encode(usage)
         request.httpBody = jsonData
-        print("jsonData: ", String(data:request.httpBody!, encoding: .utf8) ?? "no body data")
+        //print("jsonData: ", String(data:request.httpBody!, encoding: .utf8) ?? "no body data")
     } catch {
         completion?(error)
     }
@@ -50,9 +50,9 @@ func sendUsage<T:Encodable>(usage: T, usageType: UsageType, credentials: Credent
         }
         
         if let data = responseData, let utf8Representation = String(data: data, encoding: .utf8) {
-            print("response: ", utf8Representation)
+            //print("response: ", utf8Representation)
         } else {
-            print("no readable data received in response")
+            //print("no readable data received in response")
         }
     }
     task.resume()

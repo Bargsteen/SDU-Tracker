@@ -60,7 +60,6 @@ func deleteCredentialsFromKeychain() throws {
     
     let status = SecItemDelete(query as CFDictionary)
     guard status == errSecSuccess else { throw KeychainError.unhandledError(status: status)}
-    print("Credentials sucessfully deleted")
 }
 
 
