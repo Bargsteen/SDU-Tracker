@@ -19,10 +19,10 @@ class TimeKeeper {
                 let now = Date()
                 if let currentActiveWindow = currentActiveWindow {
                     if app.bundleIdentifier != currentActiveWindow.bundleIdentifier { // New window is active
-                        // Save old windowInfo in timeTable with endtime
+                        // Add the endtime for last current app
                         let lastActiveWindow = ActiveWindowTime(bundleIdentifier: currentActiveWindow.bundleIdentifier, startTime: currentActiveWindow.startTime, endTime: now)
                         
-                        // Set new current with starttime
+                        // Set new currentApp with starttime
                         self.currentActiveWindow = ActiveWindowTime(bundleIdentifier: app.bundleIdentifier ?? .unknownApp, startTime: now, endTime: nil)
                         
                         return lastActiveWindow
@@ -37,7 +37,7 @@ class TimeKeeper {
     }
 }
 
-struct ActiveWindowTime: Encodable {
+struct ActiveWindowTime: Codable {
     let bundleIdentifier: String
     let startTime: Date
     let endTime: Date?

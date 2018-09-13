@@ -17,6 +17,8 @@
 		A73AA83121273FDA00D0B7FF /* ActivityTrackerSDUTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73AA83021273FDA00D0B7FF /* ActivityTrackerSDUTests.swift */; };
 		A73AA83F212740C100D0B7FF /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73AA83E212740C100D0B7FF /* StatusMenuController.swift */; };
 		A73EE26C21450E2D00A831B4 /* CwlSysctl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73EE26B21450E2D00A831B4 /* CwlSysctl.swift */; };
+		A73EE2702145112A00A831B4 /* DataPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73EE26F2145112A00A831B4 /* DataPersistence.swift */; };
+		A73EE2722145177A00A831B4 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73EE2712145177A00A831B4 /* Storage.swift */; };
 		A756633E213936C1008F5640 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756633D213936C1008F5640 /* Constants.swift */; };
 		A756634121394367008F5640 /* CredentialsWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756633F21394367008F5640 /* CredentialsWindow.swift */; };
 		A756634221394367008F5640 /* CredentialsWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A756634021394367008F5640 /* CredentialsWindow.xib */; };
@@ -102,6 +104,8 @@
 		A73AA83221273FDA00D0B7FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A73AA83E212740C100D0B7FF /* StatusMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
 		A73EE26B21450E2D00A831B4 /* CwlSysctl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CwlSysctl.swift; sourceTree = "<group>"; };
+		A73EE26F2145112A00A831B4 /* DataPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistence.swift; sourceTree = "<group>"; };
+		A73EE2712145177A00A831B4 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		A756633D213936C1008F5640 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A756633F21394367008F5640 /* CredentialsWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsWindow.swift; sourceTree = "<group>"; };
 		A756634021394367008F5640 /* CredentialsWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CredentialsWindow.xib; sourceTree = "<group>"; };
@@ -210,6 +214,9 @@
 				A7E62732213DA55400F0395D /* WindowTracking.swift */,
 				A757F23821411F72009CCDC0 /* Extensions.swift */,
 				A78F236721416CE900DC2489 /* TimeKeeper.swift */,
+				A73EE26B21450E2D00A831B4 /* CwlSysctl.swift */,
+				A73EE26F2145112A00A831B4 /* DataPersistence.swift */,
+				A73EE2712145177A00A831B4 /* Storage.swift */,
 			);
 			path = ActivityTrackerSDU;
 			sourceTree = "<group>";
@@ -621,10 +628,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A756634121394367008F5640 /* CredentialsWindow.swift in Sources */,
+				A73EE2722145177A00A831B4 /* Storage.swift in Sources */,
 				A73AA83F212740C100D0B7FF /* StatusMenuController.swift in Sources */,
 				A73AA82021273FD900D0B7FF /* AppDelegate.swift in Sources */,
 				A7866E7F2137F79700626DF8 /* Requests.swift in Sources */,
 				A7866E7D2136C24400626DF8 /* Reachability.swift in Sources */,
+				A73EE2702145112A00A831B4 /* DataPersistence.swift in Sources */,
 				A757F23921411F72009CCDC0 /* Extensions.swift in Sources */,
 				A7E62733213DA55400F0395D /* WindowTracking.swift in Sources */,
 				A78F236821416CE900DC2489 /* TimeKeeper.swift in Sources */,

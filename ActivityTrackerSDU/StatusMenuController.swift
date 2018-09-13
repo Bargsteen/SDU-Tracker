@@ -24,6 +24,7 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
     var credentialsWindow: CredentialsWindow!
     
     var timeKeeper : TimeKeeper!
+    var dataPersistence : DataPersistence!
     
     @IBOutlet weak var action: NSMenuItem!
     
@@ -40,8 +41,9 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
         chooseUserWindow.delegate = self
         credentialsWindow = CredentialsWindow()
         
-        // TimeKeeper
+        // Initialization
         timeKeeper = TimeKeeper()
+<<<<<<< HEAD
     
         // Observe changes such as screen awake / asleep
         setUpNotificationObservers()
@@ -75,12 +77,36 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
         reachability.whenUnreachable = { _ in
             print("I have no internet..")
         }
+=======
+        dataPersistence = DataPersistence()
         
-        do {
-            try reachability.startNotifier()
-        } catch {
-            print("Unable to start reachability notifier")
+        // Get current user
+        currentUser = getCurrentUser()
+        
+        // Handle if it is the correct user
+        let changeOfUserIsNeeded = !showChangeUserAlert(currentUser)
+        
+        if(changeOfUserIsNeeded){
+            chooseUserWindow.showWindow(nil)
         }
+        
+        // In case it is updated via the chooseUser popup window
+        currentUser = getCurrentUser()
+        
+        setupReachability()
+>>>>>>> Add offline-mode for appUsages
+        
+        ensureCredentialsAreSet()
+        credentials = loadCredentialsFromKeychain()
+    }
+    
+    func maybeGetLastAppUsage() -> AppUsage? {
+        let activeWindow = self.timeKeeper.maybeGetLastActiveWindow()
+        if let activeWindow = activeWindow {
+            let duration = activeWindow.endTime?.timeIntervalSince(activeWindow.startTime) ?? 0
+            return AppUsage(participantIdentifier: self.currentUser, timeStamp: Date(), userCount: 1, deviceModelName: self.computerModel, package: activeWindow.bundleIdentifier, duration: duration.toMilliseconds())
+        }
+<<<<<<< HEAD
         
         // Send app data if useAppData == true
         maybeSendDeviceUsageStarted()
@@ -88,6 +114,12 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
     
     func userHasChanged(_ nameOfUser : String) {
         print("Current user changed to: \(nameOfUser)")
+=======
+        return nil
+    }
+    
+    func userHasChanged(_ nameOfUser : String) {
+>>>>>>> Add offline-mode for appUsages
     }
     
     func showChangeUserAlert(_ currentUser : String) -> Bool {
@@ -103,7 +135,7 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
     @IBAction func sendRequestClicked(_ sender: NSMenuItem) {
         guard let credentials = loadCredentialsFromKeychain() else { ensureCredentialsAreSet(); return }
         let currentUser = getCurrentUser()
-        //let myActivity = DeviceUsage(participantIdentifier: currentUser, eventType: EventType.started, timeStamp: Date(), userCount: 1, deviceModelName: "Mac")
+
         let appUsage = AppUsage(participantIdentifier: currentUser, timeStamp: Date(), userCount: 1, deviceModelName: "MacBook Pro Retina", package: "XCode", duration: 1000)
         if(reachability.connection != .none) {
             sendUsage(usage: appUsage, usageType: .app, credentials: credentials) { (error) in
@@ -116,6 +148,18 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
         }
     }
     
+<<<<<<< HEAD
+=======
+    @IBAction func windowClicked(_ sender: NSMenuItem) {
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true) as NSArray
+        let documentsDir = paths.firstObject as! String
+        print("Path to the Documents directory\n\(documentsDir)")
+        
+        //print(self.dataPersistence.maybeRetrieveSavedAppUsages())
+    }
+    
+    
+>>>>>>> Add offline-mode for appUsages
     @IBAction func deleteCredentialsClicked(_ sender: NSMenuItem) {
         do {
             try deleteCredentialsFromKeychain()
@@ -132,6 +176,7 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
         NSApplication.shared.terminate(self)
     }
     
+<<<<<<< HEAD
     @IBAction func toggleAppDeviceTrackingClicked(_ sender: NSMenuItem) {
         if(useAppData){
             action.title = .trackingDeviceData
@@ -140,6 +185,15 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
             action.title = .trackingAppData
             useAppData = true
             maybeSendDeviceUsageStarted()
+=======
+    @IBAction func actionClicked(_ sender: NSMenuItem) {
+        if(isRunning){
+            action.title = "På Pause"
+            isRunning = false
+        } else {
+            action.title = "Kører"
+            isRunning = true
+>>>>>>> Add offline-mode for appUsages
         }
     }
     
@@ -154,6 +208,7 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
         }
     }
     
+<<<<<<< HEAD
     func setUpNotificationObservers() {
         
         let notificationCenter = NSWorkspace.shared.notificationCenter
@@ -226,5 +281,61 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
         notification.informativeText = informativeText
         notification.soundName = NSUserNotificationDefaultSoundName
         NSUserNotificationCenter.default.deliver(notification)
+=======
+    func setupReachability() {
+        // Reachability
+        reachability.whenReachable = { reachability in
+            DispatchQueue.global(qos: .background).async {
+                while(true) {
+                    if(self.reachability.connection == Reachability.Connection.none) {
+                        break
+                    }
+                    print("I have internet!")
+                    
+                    self.maybeSendOldestSavedAppUsage()
+                    
+                    if let lastAppUsage = self.maybeGetLastAppUsage() {
+                        sendUsage(usage: lastAppUsage, usageType: .app, credentials: self.credentials) { _ in
+                            /*if let error = error {
+                                print(error)cat
+                            }*/
+                        }
+                    }
+                    sleep(1)
+                }
+            }
+        }
+        
+        reachability.whenUnreachable = { _ in
+            DispatchQueue.global(qos: .background).async {
+                while(true) {
+                    if(self.reachability.connection != Reachability.Connection.none) {
+                        break
+                    }
+                    print("I DO NOT HAVE internet.")
+                    if let lastAppUsage = self.maybeGetLastAppUsage() {
+                        self.dataPersistence.saveAppUsage(lastAppUsage)
+                    }
+                    sleep(1)
+                }
+            }
+        }
+        
+        do {
+            try reachability.startNotifier()
+        } catch {
+            print("Unable to start reachability notifier")
+        }
+    }
+    
+    func maybeSendOldestSavedAppUsage(){
+        let oldestAppUsages = self.dataPersistence.retrieveSavedAppUsages()
+        if !oldestAppUsages.isEmpty {
+            print("Sending old app usages")
+            sendUsages(usages: oldestAppUsages, usageType: .app, credentials: self.credentials) { (error) in
+                print(error.debugDescription)
+            }
+        }
+>>>>>>> Add offline-mode for appUsages
     }
 }

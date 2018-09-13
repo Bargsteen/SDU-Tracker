@@ -7,6 +7,12 @@
 
 import Foundation
 
+func sendUsages<T:Encodable>(usages: [T], usageType: UsageType, credentials: Credentials, completion:((Error?) -> Void)?) {
+    usages.forEach { usage in
+        sendUsage(usage: usage, usageType: usageType, credentials: credentials, completion: completion)
+    }
+}
+
 // We need a completion block which returns an error, if anything fails
 func sendUsage<T:Encodable>(usage: T, usageType: UsageType, credentials: Credentials, completion:((Error?) -> Void)?) {
     
