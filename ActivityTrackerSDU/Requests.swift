@@ -49,11 +49,11 @@ func sendUsage<T:Encodable>(usage: T, usageType: UsageType, credentials: Credent
             return
         }
         
-        if let data = responseData, let utf8Representation = String(data: data, encoding: .utf8) {
-            //print("response: ", utf8Representation)
-        } else {
-            //print("no readable data received in response")
-        }
+//        if let data = responseData, let utf8Representation = String(data: data, encoding: .utf8) {
+//            //print("response: ", utf8Representation)
+//        } else {
+//            //print("no readable data received in response")
+//        }
     }
     task.resume()
 }
@@ -116,7 +116,7 @@ struct DeviceUsage: Codable {
 }
 
 enum EventType: Int {
-    case started = 1, ended
+    case started = 0, ended = 1
 }
 
 enum Result<Value> {

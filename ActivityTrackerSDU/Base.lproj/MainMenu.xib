@@ -21,10 +21,10 @@
         </customObject>
         <menu id="e12-ic-Z5e">
             <items>
-                <menuItem title="Kører" id="Hhz-Bg-kEp">
+                <menuItem title="Tracker kun tid" id="Hhz-Bg-kEp">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="actionClicked:" target="Cx0-KW-VH8" id="0CG-Wb-w0o"/>
+                        <action selector="toggleAppDeviceTrackingClicked:" target="Cx0-KW-VH8" id="1am-oF-M40"/>
                     </connections>
                 </menuItem>
                 <menuItem title="Vælg Bruger" id="PPh-zM-IXL">
@@ -33,22 +33,10 @@
                         <action selector="chooseUserClicked:" target="Cx0-KW-VH8" id="hgU-f3-5hZ"/>
                     </connections>
                 </menuItem>
-                <menuItem title="Request" id="kmw-bM-XhJ">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="sendRequestClicked:" target="Cx0-KW-VH8" id="nzy-x2-Gkx"/>
-                    </connections>
-                </menuItem>
-                <menuItem title="Slet Credentials" id="RdD-U9-R6f">
+                <menuItem title="Slet Logindetaljer" id="RdD-U9-R6f">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="deleteCredentialsClicked:" target="Cx0-KW-VH8" id="YoJ-dB-L1t"/>
-                    </connections>
-                </menuItem>
-                <menuItem title="Windows" id="hCo-RM-Lji">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="windowClicked:" target="Cx0-KW-VH8" id="r0W-S0-MDa"/>
                     </connections>
                 </menuItem>
                 <menuItem title="Afslut" id="ykD-QO-mhc">

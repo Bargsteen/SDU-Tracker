@@ -14,9 +14,11 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
     
     let reachability = Reachability()!
     
-    var isRunning = true
+    var useAppData = false
     
-    let computerModel = Sysctl.model
+    let deviceModelName = Sysctl.model
+    var currentUser : String = .unnamedUser
+    var credentials : Credentials!
     
     var chooseUserWindow: ChooseUserWindow!
     var credentialsWindow: CredentialsWindow!
@@ -44,38 +46,29 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
         // Observe changes such as screen awake / asleep
         setUpNotificationObservers()
         
-        // Get current user
-        var currentUser = getCurrentUser()
-        
-        // Handle if it is the correct user
-        let changeOfUserIsNeeded = !showChangeUserAlert(currentUser)
-        
-        if(changeOfUserIsNeeded){
-            chooseUserWindow.showWindow(nil)
-        }
-        
-        // In case it is updated
-        currentUser = getCurrentUser()
+        setAndMaybeAskForCorrectUser()
         
         ensureCredentialsAreSet()
-        guard let credentials = loadCredentialsFromKeychain() else { ensureCredentialsAreSet(); return }
+        self.credentials = loadCredentialsFromKeychain()
         
         // Reachability
         reachability.whenReachable = { reachability in
             DispatchQueue.global(qos: .background).async {
                 while(true) {
-                    let activeWindow = self.timeKeeper.maybeGetLastActiveWindow()
-                    if let activeWindow = activeWindow {
-                        let duration = activeWindow.endTime?.timeIntervalSince(activeWindow.startTime) ?? 0
-                        let appUsage = AppUsage(participantIdentifier: currentUser, timeStamp: Date(), userCount: 1, deviceModelName: self.computerModel, package: activeWindow.bundleIdentifier, duration: duration.toMilliseconds())
-                        sendUsage(usage: appUsage, usageType: .app, credentials: credentials) { (error) in
-                            if let error = error {
-                                //print(error)
-                                // Log error
+                    if(self.useAppData){
+                        let activeWindow = self.timeKeeper.maybeGetLastActiveWindow()
+                        if let activeWindow = activeWindow {
+                            let duration = activeWindow.endTime?.timeIntervalSince(activeWindow.startTime) ?? 0
+                            let appUsage = AppUsage(participantIdentifier: self.currentUser, timeStamp: Date(), userCount: 1, deviceModelName: self.deviceModelName, package: activeWindow.bundleIdentifier, duration: duration.toMilliseconds())
+                            sendUsage(usage: appUsage, usageType: .app, credentials: self.credentials) { (error) in
+    //                            if let error = error {
+    //                                //print(error)
+    //                                // Log error
+    //                            }
                             }
                         }
+                        sleep(1)
                     }
-                    sleep(1)
                 }
             }
         }
@@ -88,6 +81,9 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
         } catch {
             print("Unable to start reachability notifier")
         }
+        
+        // Send app data if useAppData == true
+        maybeSendDeviceUsageStarted()
     }
     
     func userHasChanged(_ nameOfUser : String) {
@@ -120,11 +116,6 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
         }
     }
     
-    @IBAction func windowClicked(_ sender: NSMenuItem) {
-        
-    }
-    
-    
     @IBAction func deleteCredentialsClicked(_ sender: NSMenuItem) {
         do {
             try deleteCredentialsFromKeychain()
@@ -141,13 +132,14 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
         NSApplication.shared.terminate(self)
     }
     
-    @IBAction func actionClicked(_ sender: NSMenuItem) {
-        if(isRunning){
-            action.title = "På Pause"
-            isRunning = false
+    @IBAction func toggleAppDeviceTrackingClicked(_ sender: NSMenuItem) {
+        if(useAppData){
+            action.title = .trackingDeviceData
+            useAppData = false
         } else {
-            action.title = "Kører"
-            isRunning = true
+            action.title = .trackingAppData
+            useAppData = true
+            maybeSendDeviceUsageStarted()
         }
     }
     
@@ -163,14 +155,76 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
     }
     
     func setUpNotificationObservers() {
-        addObserver(NSWorkspace.screensDidSleepNotification, "screens did SLEEP")
-        addObserver(NSWorkspace.screensDidWakeNotification, "screens did WAKE")
-        addObserver(NSWorkspace.didWakeNotification, "did WAKE")
-        addObserver(NSWorkspace.sessionDidBecomeActiveNotification, "user SESSION STARTED")
-        addObserver(NSWorkspace.sessionDidResignActiveNotification, "user SESSION ENDED")
+        
+        let notificationCenter = NSWorkspace.shared.notificationCenter
+        
+        // Handle waking aka Session start
+        notificationCenter.addObserver(forName: NSWorkspace.screensDidWakeNotification, object: nil, queue: nil, using: {(n:Notification) in
+            if(!self.useAppData) {
+                let deviceUsage = self.makeDeviceUsage(eventType: EventType.started)
+                self.showNotification(title: "Waking", informativeText: "Woke up at \(Date())")
+                sendUsage(usage: deviceUsage, usageType: .device, credentials: self.credentials) { _ in
+                    // TODO: Save in persistent storage
+                    self.showNotification(title: "Fail: Waking", informativeText: "Could not send wake data")
+                }
+            }
+        })
+        
+        // Handle sleeping aka Session end
+        notificationCenter.addObserver(forName: NSWorkspace.screensDidSleepNotification, object: nil, queue: nil, using: {(n:Notification) in
+            if (!self.useAppData) {
+                let deviceUsage = self.makeDeviceUsage(eventType: EventType.ended)
+                self.showNotification(title: "Sleep", informativeText: "Went to sleep at \(Date())")
+                sendUsage(usage: deviceUsage, usageType: .device, credentials: self.credentials) { _ in
+                    // TODO: Save in persistent storage
+                    self.showNotification(title: "Fail: Sleeping", informativeText: "Could not send sleep data")
+                }
+            }
+        })
     }
     
-    func addObserver(_ n: Notification.Name?, _ msg: String) {
-        NSWorkspace.shared.notificationCenter.addObserver(forName: n, object: nil, queue: nil, using: {(n:Notification) in print(msg)})
+    func makeDeviceUsage(eventType: EventType) -> DeviceUsage {
+        return DeviceUsage(participantIdentifier: self.currentUser, eventType: eventType, timeStamp: Date(), userCount: getUserCount(), deviceModelName: self.deviceModelName)
+    }
+    
+    func getUserCount() -> Int {
+        let userList = UserDefaults.standard.stringArray(forKey: "users")
+        
+        return userList?.count ?? 0
+    }
+    
+    func maybeSendDeviceUsageStarted(){
+        if(!self.useAppData) {
+            let deviceUsage = self.makeDeviceUsage(eventType: EventType.started)
+            //self.showNotification(title: "Waking", informativeText: "Woke up at \(Date())")
+            sendUsage(usage: deviceUsage, usageType: .device, credentials: self.credentials) { _ in
+                // TODO: Save in persistent storage
+                self.showNotification(title: "Fail: Waking", informativeText: "Could not send wake data")
+            }
+        }
+    }
+    
+    func setAndMaybeAskForCorrectUser(){
+        // Get current user
+        currentUser = getCurrentUser()
+        
+        // Handle if it is the correct user
+        let changeOfUserIsNeeded = !showChangeUserAlert(currentUser)
+        
+        if(changeOfUserIsNeeded){
+            chooseUserWindow.showWindow(nil)
+        }
+        
+        
+        // In case it is updated
+        currentUser = getCurrentUser()
+    }
+    
+    func showNotification(title: String, informativeText: String) {
+        let notification = NSUserNotification()
+        notification.title = title
+        notification.informativeText = informativeText
+        notification.soundName = NSUserNotificationDefaultSoundName
+        NSUserNotificationCenter.default.deliver(notification)
     }
 }

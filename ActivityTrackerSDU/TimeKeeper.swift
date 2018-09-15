@@ -11,8 +11,6 @@ import Cocoa
 class TimeKeeper {
     private var currentActiveWindow: ActiveWindowTime?
     
-    private var session: SessionTime?
-    
     func maybeGetLastActiveWindow() -> ActiveWindowTime? {
         let workspace = NSWorkspace.shared
         let activeApps = workspace.runningApplications
@@ -37,21 +35,10 @@ class TimeKeeper {
         }
         return nil
     }
-    
-    func maybeGetLastSession() -> SessionTime? {
-        
-    }
-    
-    
 }
 
 struct ActiveWindowTime: Encodable {
     let bundleIdentifier: String
-    let startTime: Date
-    let endTime: Date?
-}
-
-struct SessionTime: Encodable {
     let startTime: Date
     let endTime: Date?
 }

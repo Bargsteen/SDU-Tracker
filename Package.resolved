@@ -1,24 +1,7 @@
 {
   "object": {
     "pins": [
-      {
-        "package": "Reachability",
-        "repositoryURL": "https://github.com/ashleymills/Reachability.swift",
-        "state": {
-          "branch": null,
-          "revision": "6ca36a9d8c52475a00100b9a172c270604158051",
-          "version": "4.2.0"
-        }
-      },
-      {
-        "package": "SwiftShell",
-        "repositoryURL": "https://github.com/kareman/SwiftShell",
-        "state": {
-          "branch": null,
-          "revision": "02c8ae6a5d829d28aaa9683129fc71f899beca3a",
-          "version": "4.1.1"
-        }
-      }
+
     ]
   },
   "version": 1

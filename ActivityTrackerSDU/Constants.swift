@@ -14,6 +14,9 @@ extension String {
     static let appPath = "/v1/app_usages"
     static let unnamedUser = "unavngivet-bruger"
     static let unknownApp = "ukendt-applikation"
+    
+    static let trackingAppData = "Tracker app forbrug"
+    static let trackingDeviceData = "Tracker kun tid"
 }
 
 extension Int {
