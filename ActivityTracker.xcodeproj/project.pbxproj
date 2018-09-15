@@ -11,12 +11,13 @@
 		A70A39B6212C60F40065B7CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A70A39B5212C60F40065B7CC /* Assets.xcassets */; };
 		A70A39B9212C60F40065B7CC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A70A39B7212C60F40065B7CC /* MainMenu.xib */; };
 		A70A39D0212C63760065B7CC /* ActivityTrackerLauncher.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = A70A39B1212C60F30065B7CC /* ActivityTrackerLauncher.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A7230DC4214CDAC700C04551 /* CwlSysctl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7230DC3214CDAC700C04551 /* CwlSysctl.swift */; };
+		A7230DC6214CDEFF00C04551 /* DataPersistenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7230DC5214CDEFF00C04551 /* DataPersistenceTests.swift */; };
 		A73AA82021273FD900D0B7FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73AA81F21273FD900D0B7FF /* AppDelegate.swift */; };
 		A73AA82221273FDA00D0B7FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A73AA82121273FDA00D0B7FF /* Assets.xcassets */; };
 		A73AA82521273FDA00D0B7FF /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A73AA82321273FDA00D0B7FF /* MainMenu.xib */; };
 		A73AA83121273FDA00D0B7FF /* ActivityTrackerSDUTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73AA83021273FDA00D0B7FF /* ActivityTrackerSDUTests.swift */; };
 		A73AA83F212740C100D0B7FF /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73AA83E212740C100D0B7FF /* StatusMenuController.swift */; };
-		A73EE26C21450E2D00A831B4 /* CwlSysctl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73EE26B21450E2D00A831B4 /* CwlSysctl.swift */; };
 		A73EE2702145112A00A831B4 /* DataPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73EE26F2145112A00A831B4 /* DataPersistence.swift */; };
 		A73EE2722145177A00A831B4 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73EE2712145177A00A831B4 /* Storage.swift */; };
 		A756633E213936C1008F5640 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756633D213936C1008F5640 /* Constants.swift */; };
@@ -92,6 +93,8 @@
 		A70A39BB212C60F40065B7CC /* ActivityTrackerLauncher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ActivityTrackerLauncher.entitlements; sourceTree = "<group>"; };
 		A70A39C0212C60F40065B7CC /* ActivityTrackerLauncherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ActivityTrackerLauncherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A70A39CE212C63610065B7CC /* ActivityTrackerSDU */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ActivityTrackerSDU; sourceTree = "<group>"; };
+		A7230DC3214CDAC700C04551 /* CwlSysctl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CwlSysctl.swift; sourceTree = "<group>"; };
+		A7230DC5214CDEFF00C04551 /* DataPersistenceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DataPersistenceTests.swift; path = Tests/DataPersistenceTests.swift; sourceTree = "<group>"; };
 		A734B4C5213BF99700AD4A99 /* thyme */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = thyme; path = ../../../go/bin/thyme; sourceTree = "<group>"; };
 		A73AA81D21273FD900D0B7FF /* ActivityTrackerSDU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ActivityTrackerSDU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A73AA81F21273FD900D0B7FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -103,7 +106,6 @@
 		A73AA83021273FDA00D0B7FF /* ActivityTrackerSDUTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTrackerSDUTests.swift; sourceTree = "<group>"; };
 		A73AA83221273FDA00D0B7FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A73AA83E212740C100D0B7FF /* StatusMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
-		A73EE26B21450E2D00A831B4 /* CwlSysctl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CwlSysctl.swift; sourceTree = "<group>"; };
 		A73EE26F2145112A00A831B4 /* DataPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistence.swift; sourceTree = "<group>"; };
 		A73EE2712145177A00A831B4 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		A756633D213936C1008F5640 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -214,9 +216,7 @@
 				A7E62732213DA55400F0395D /* WindowTracking.swift */,
 				A757F23821411F72009CCDC0 /* Extensions.swift */,
 				A78F236721416CE900DC2489 /* TimeKeeper.swift */,
-				A73EE26B21450E2D00A831B4 /* CwlSysctl.swift */,
 				A73EE26F2145112A00A831B4 /* DataPersistence.swift */,
-				A73EE2712145177A00A831B4 /* Storage.swift */,
 			);
 			path = ActivityTrackerSDU;
 			sourceTree = "<group>";
@@ -242,8 +242,9 @@
 		A7DEA8F521453E9A003B4128 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				A73EE2712145177A00A831B4 /* Storage.swift */,
 				A7866E7C2136C24400626DF8 /* Reachability.swift */,
-				A73EE26B21450E2D00A831B4 /* CwlSysctl.swift */,
+				A7230DC3214CDAC700C04551 /* CwlSysctl.swift */,
 			);
 			path = Libraries;
 			sourceTree = "<group>";
@@ -251,6 +252,7 @@
 		OBJ_10 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				A7230DC5214CDEFF00C04551 /* DataPersistenceTests.swift */,
 			);
 			name = Tests;
 			sourceTree = SOURCE_ROOT;
@@ -639,7 +641,7 @@
 				A78F236821416CE900DC2489 /* TimeKeeper.swift in Sources */,
 				A756633E213936C1008F5640 /* Constants.swift in Sources */,
 				A7A6B89F21353DE8000B4E38 /* ChooseUserWindow.swift in Sources */,
-				A73EE26C21450E2D00A831B4 /* CwlSysctl.swift in Sources */,
+				A7230DC4214CDAC700C04551 /* CwlSysctl.swift in Sources */,
 				A7866E812138240800626DF8 /* Security.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -649,6 +651,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A73AA83121273FDA00D0B7FF /* ActivityTrackerSDUTests.swift in Sources */,
+				A7230DC6214CDEFF00C04551 /* DataPersistenceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

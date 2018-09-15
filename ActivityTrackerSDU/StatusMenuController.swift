@@ -43,83 +43,37 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
         
         // Initialization
         timeKeeper = TimeKeeper()
-<<<<<<< HEAD
+
     
         // Observe changes such as screen awake / asleep
-        setUpNotificationObservers()
+        setUpDeviceUsageTracking()
         
         setAndMaybeAskForCorrectUser()
         
         ensureCredentialsAreSet()
         self.credentials = loadCredentialsFromKeychain()
         
-        // Reachability
-        reachability.whenReachable = { reachability in
-            DispatchQueue.global(qos: .background).async {
-                while(true) {
-                    if(self.useAppData){
-                        let activeWindow = self.timeKeeper.maybeGetLastActiveWindow()
-                        if let activeWindow = activeWindow {
-                            let duration = activeWindow.endTime?.timeIntervalSince(activeWindow.startTime) ?? 0
-                            let appUsage = AppUsage(participantIdentifier: self.currentUser, timeStamp: Date(), userCount: 1, deviceModelName: self.deviceModelName, package: activeWindow.bundleIdentifier, duration: duration.toMilliseconds())
-                            sendUsage(usage: appUsage, usageType: .app, credentials: self.credentials) { (error) in
-    //                            if let error = error {
-    //                                //print(error)
-    //                                // Log error
-    //                            }
-                            }
-                        }
-                        sleep(1)
-                    }
-                }
-            }
-        }
-        reachability.whenUnreachable = { _ in
-            print("I have no internet..")
-        }
-=======
-        dataPersistence = DataPersistence()
+        dataPersistence = DataPersistence(directoryToUse: Storage.Directory.documents)
         
-        // Get current user
-        currentUser = getCurrentUser()
-        
-        // Handle if it is the correct user
-        let changeOfUserIsNeeded = !showChangeUserAlert(currentUser)
-        
-        if(changeOfUserIsNeeded){
-            chooseUserWindow.showWindow(nil)
-        }
-        
-        // In case it is updated via the chooseUser popup window
-        currentUser = getCurrentUser()
         
         setupReachability()
->>>>>>> Add offline-mode for appUsages
         
-        ensureCredentialsAreSet()
-        credentials = loadCredentialsFromKeychain()
+        if !self.useAppData {
+            self.sendDeviceUsage(eventType: .started)
+        }
     }
     
     func maybeGetLastAppUsage() -> AppUsage? {
         let activeWindow = self.timeKeeper.maybeGetLastActiveWindow()
         if let activeWindow = activeWindow {
             let duration = activeWindow.endTime?.timeIntervalSince(activeWindow.startTime) ?? 0
-            return AppUsage(participantIdentifier: self.currentUser, timeStamp: Date(), userCount: 1, deviceModelName: self.computerModel, package: activeWindow.bundleIdentifier, duration: duration.toMilliseconds())
+            return AppUsage(participantIdentifier: self.currentUser, timeStamp: Date(), userCount: 1, deviceModelName: self.deviceModelName, package: activeWindow.bundleIdentifier, duration: duration.toMilliseconds())
         }
-<<<<<<< HEAD
-        
-        // Send app data if useAppData == true
-        maybeSendDeviceUsageStarted()
-    }
-    
-    func userHasChanged(_ nameOfUser : String) {
-        print("Current user changed to: \(nameOfUser)")
-=======
         return nil
     }
     
     func userHasChanged(_ nameOfUser : String) {
->>>>>>> Add offline-mode for appUsages
+        print("Current user changed to: \(nameOfUser)")
     }
     
     func showChangeUserAlert(_ currentUser : String) -> Bool {
@@ -148,18 +102,6 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
         }
     }
     
-<<<<<<< HEAD
-=======
-    @IBAction func windowClicked(_ sender: NSMenuItem) {
-        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true) as NSArray
-        let documentsDir = paths.firstObject as! String
-        print("Path to the Documents directory\n\(documentsDir)")
-        
-        //print(self.dataPersistence.maybeRetrieveSavedAppUsages())
-    }
-    
-    
->>>>>>> Add offline-mode for appUsages
     @IBAction func deleteCredentialsClicked(_ sender: NSMenuItem) {
         do {
             try deleteCredentialsFromKeychain()
@@ -176,24 +118,15 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
         NSApplication.shared.terminate(self)
     }
     
-<<<<<<< HEAD
     @IBAction func toggleAppDeviceTrackingClicked(_ sender: NSMenuItem) {
         if(useAppData){
             action.title = .trackingDeviceData
             useAppData = false
+            self.sendDeviceUsage(eventType: .started)
         } else {
             action.title = .trackingAppData
             useAppData = true
-            maybeSendDeviceUsageStarted()
-=======
-    @IBAction func actionClicked(_ sender: NSMenuItem) {
-        if(isRunning){
-            action.title = "På Pause"
-            isRunning = false
-        } else {
-            action.title = "Kører"
-            isRunning = true
->>>>>>> Add offline-mode for appUsages
+            self.sendDeviceUsage(eventType: .ended)
         }
     }
     
@@ -208,32 +141,21 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
         }
     }
     
-<<<<<<< HEAD
-    func setUpNotificationObservers() {
+    func setUpDeviceUsageTracking() {
         
         let notificationCenter = NSWorkspace.shared.notificationCenter
         
         // Handle waking aka Session start
         notificationCenter.addObserver(forName: NSWorkspace.screensDidWakeNotification, object: nil, queue: nil, using: {(n:Notification) in
             if(!self.useAppData) {
-                let deviceUsage = self.makeDeviceUsage(eventType: EventType.started)
-                self.showNotification(title: "Waking", informativeText: "Woke up at \(Date())")
-                sendUsage(usage: deviceUsage, usageType: .device, credentials: self.credentials) { _ in
-                    // TODO: Save in persistent storage
-                    self.showNotification(title: "Fail: Waking", informativeText: "Could not send wake data")
-                }
+                self.sendDeviceUsage(eventType: EventType.started)
             }
         })
         
         // Handle sleeping aka Session end
         notificationCenter.addObserver(forName: NSWorkspace.screensDidSleepNotification, object: nil, queue: nil, using: {(n:Notification) in
             if (!self.useAppData) {
-                let deviceUsage = self.makeDeviceUsage(eventType: EventType.ended)
-                self.showNotification(title: "Sleep", informativeText: "Went to sleep at \(Date())")
-                sendUsage(usage: deviceUsage, usageType: .device, credentials: self.credentials) { _ in
-                    // TODO: Save in persistent storage
-                    self.showNotification(title: "Fail: Sleeping", informativeText: "Could not send sleep data")
-                }
+                self.sendDeviceUsage(eventType: EventType.ended)
             }
         })
     }
@@ -245,17 +167,13 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
     func getUserCount() -> Int {
         let userList = UserDefaults.standard.stringArray(forKey: "users")
         
-        return userList?.count ?? 0
+        return userList?.count ?? 1
     }
     
-    func maybeSendDeviceUsageStarted(){
-        if(!self.useAppData) {
-            let deviceUsage = self.makeDeviceUsage(eventType: EventType.started)
-            //self.showNotification(title: "Waking", informativeText: "Woke up at \(Date())")
-            sendUsage(usage: deviceUsage, usageType: .device, credentials: self.credentials) { _ in
-                // TODO: Save in persistent storage
-                self.showNotification(title: "Fail: Waking", informativeText: "Could not send wake data")
-            }
+    func sendDeviceUsage(eventType: EventType){
+        let deviceUsage = self.makeDeviceUsage(eventType: eventType)
+        sendUsage(usage: deviceUsage, usageType: .device, credentials: self.credentials) { _ in
+            self.dataPersistence.saveDeviceUsage(deviceUsage)
         }
     }
     
@@ -281,7 +199,8 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
         notification.informativeText = informativeText
         notification.soundName = NSUserNotificationDefaultSoundName
         NSUserNotificationCenter.default.deliver(notification)
-=======
+    }
+
     func setupReachability() {
         // Reachability
         reachability.whenReachable = { reachability in
@@ -290,15 +209,15 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
                     if(self.reachability.connection == Reachability.Connection.none) {
                         break
                     }
-                    print("I have internet!")
                     
                     self.maybeSendOldestSavedAppUsage()
+                    self.maybeSendOldDeviceUsages()
                     
-                    if let lastAppUsage = self.maybeGetLastAppUsage() {
-                        sendUsage(usage: lastAppUsage, usageType: .app, credentials: self.credentials) { _ in
-                            /*if let error = error {
-                                print(error)cat
-                            }*/
+                    if self.useAppData {
+                        if let lastAppUsage = self.maybeGetLastAppUsage() {
+                            sendUsage(usage: lastAppUsage, usageType: .app, credentials: self.credentials) { _ in
+                                // log error
+                            }
                         }
                     }
                     sleep(1)
@@ -312,9 +231,11 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
                     if(self.reachability.connection != Reachability.Connection.none) {
                         break
                     }
-                    print("I DO NOT HAVE internet.")
-                    if let lastAppUsage = self.maybeGetLastAppUsage() {
-                        self.dataPersistence.saveAppUsage(lastAppUsage)
+                    
+                    if self.useAppData {
+                        if let lastAppUsage = self.maybeGetLastAppUsage() {
+                            self.dataPersistence.saveAppUsage(lastAppUsage)
+                        }
                     }
                     sleep(1)
                 }
@@ -336,6 +257,16 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
                 print(error.debugDescription)
             }
         }
->>>>>>> Add offline-mode for appUsages
+    }
+    
+    func maybeSendOldDeviceUsages(){
+        let oldDeviceUsages = self.dataPersistence.retrieveSavedDeviceUsages()
+        if !oldDeviceUsages.isEmpty {
+            print("Sending old device usages")
+            sendUsages(usages: oldDeviceUsages, usageType: .device, credentials: self.credentials) { (error) in
+                print(error.debugDescription)
+            }
+        }
     }
 }
+
