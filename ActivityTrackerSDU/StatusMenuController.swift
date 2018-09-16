@@ -185,7 +185,7 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
         notification.soundName = NSUserNotificationDefaultSoundName
         NSUserNotificationCenter.default.deliver(notification)
     }
-
+    
     func setupReachability() {
         // Reachability
         reachability.whenReachable = { reachability in
@@ -202,9 +202,7 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
                     
                     if self.useAppData {
                         if let lastAppUsage = self.maybeGetLastAppUsage() {
-                            sendUsage(usage: lastAppUsage, usageType: .app, credentials: self.credentials) { _ in
-                                // log error
-                            }
+                            sendUsage(usage: lastAppUsage, usageType: .app, credentials: self.credentials, onSuccess: nil, onError: nil) // TODO: Log error
                         }
                     }
                     sleep(1)
