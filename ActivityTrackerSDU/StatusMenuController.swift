@@ -55,7 +55,6 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
         
         dataPersistence = DataPersistence(directoryToUse: Storage.Directory.documents)
         
-        
         setupReachability()
         
         if !self.useAppData {
@@ -67,7 +66,7 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
         let activeWindow = self.timeKeeper.maybeGetLastActiveWindow()
         if let activeWindow = activeWindow {
             let duration = activeWindow.endTime?.timeIntervalSince(activeWindow.startTime) ?? 0
-            return AppUsage(participantIdentifier: self.currentUser, timeStamp: Date(), userCount: 1, deviceModelName: self.deviceModelName, package: activeWindow.bundleIdentifier, duration: duration.toMilliseconds())
+            return AppUsage(participantIdentifier: self.currentUser, timeStamp: Date(), userCount: self.getUserCount(), deviceModelName: self.deviceModelName, package: activeWindow.bundleIdentifier, duration: duration.toMilliseconds())
         }
         return nil
     }
@@ -84,22 +83,6 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
         alert.addButton(withTitle: "Ja, det er mig")
         alert.addButton(withTitle: "Nej, skift bruger")
         return alert.runModal() == .alertFirstButtonReturn
-    }
-
-    @IBAction func sendRequestClicked(_ sender: NSMenuItem) {
-        guard let credentials = loadCredentialsFromKeychain() else { ensureCredentialsAreSet(); return }
-        let currentUser = getCurrentUser()
-
-        let appUsage = AppUsage(participantIdentifier: currentUser, timeStamp: Date(), userCount: 1, deviceModelName: "MacBook Pro Retina", package: "XCode", duration: 1000)
-        if(reachability.connection != .none) {
-            sendUsage(usage: appUsage, usageType: .app, credentials: credentials) { (error) in
-                if let error = error {
-                    fatalError(error.localizedDescription)
-                }
-            }
-        } else {
-            print("Can't send request, because I don't have internet.")
-        }
     }
     
     @IBAction func deleteCredentialsClicked(_ sender: NSMenuItem) {
@@ -166,7 +149,6 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
     
     func getUserCount() -> Int {
         let userList = UserDefaults.standard.stringArray(forKey: "users")
-        
         return userList?.count ?? 1
     }
     
