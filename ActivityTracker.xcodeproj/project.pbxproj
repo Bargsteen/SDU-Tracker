@@ -12,7 +12,6 @@
 		A70A39B9212C60F40065B7CC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A70A39B7212C60F40065B7CC /* MainMenu.xib */; };
 		A70A39D0212C63760065B7CC /* ActivityTrackerLauncher.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = A70A39B1212C60F30065B7CC /* ActivityTrackerLauncher.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A7230DC4214CDAC700C04551 /* CwlSysctl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7230DC3214CDAC700C04551 /* CwlSysctl.swift */; };
-		A7230DC6214CDEFF00C04551 /* DataPersistenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7230DC5214CDEFF00C04551 /* DataPersistenceTests.swift */; };
 		A73AA82021273FD900D0B7FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73AA81F21273FD900D0B7FF /* AppDelegate.swift */; };
 		A73AA82221273FDA00D0B7FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A73AA82121273FDA00D0B7FF /* Assets.xcassets */; };
 		A73AA82521273FDA00D0B7FF /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A73AA82321273FDA00D0B7FF /* MainMenu.xib */; };
@@ -20,10 +19,19 @@
 		A73AA83F212740C100D0B7FF /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73AA83E212740C100D0B7FF /* StatusMenuController.swift */; };
 		A73EE2702145112A00A831B4 /* DataPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73EE26F2145112A00A831B4 /* DataPersistence.swift */; };
 		A73EE2722145177A00A831B4 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73EE2712145177A00A831B4 /* Storage.swift */; };
+		A745FE51214FD0C000F242DD /* RealmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A745FE50214FD0C000F242DD /* RealmTests.swift */; };
 		A756633E213936C1008F5640 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756633D213936C1008F5640 /* Constants.swift */; };
 		A756634121394367008F5640 /* CredentialsWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756633F21394367008F5640 /* CredentialsWindow.swift */; };
 		A756634221394367008F5640 /* CredentialsWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A756634021394367008F5640 /* CredentialsWindow.xib */; };
 		A757F23921411F72009CCDC0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A757F23821411F72009CCDC0 /* Extensions.swift */; };
+		A75F95F2214E4A08003727F5 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A75F95F0214E4A08003727F5 /* RealmSwift.framework */; };
+		A75F95F3214E4A08003727F5 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A75F95F0214E4A08003727F5 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A75F95F4214E4A08003727F5 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A75F95F1214E4A08003727F5 /* Realm.framework */; };
+		A75F95F5214E4A08003727F5 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A75F95F1214E4A08003727F5 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A75F95F9214E4A52003727F5 /* RealmPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75F95F8214E4A52003727F5 /* RealmPersistence.swift */; };
+		A75F95FB214E4CEB003727F5 /* RealmModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75F95FA214E4CEB003727F5 /* RealmModels.swift */; };
+		A75F95FE214E4E8E003727F5 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75F95FD214E4E8E003727F5 /* Models.swift */; };
+		A75F9601214E6708003727F5 /* Converters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75F9600214E6708003727F5 /* Converters.swift */; };
 		A7866E7D2136C24400626DF8 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7866E7C2136C24400626DF8 /* Reachability.swift */; };
 		A7866E7F2137F79700626DF8 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7866E7E2137F79700626DF8 /* Requests.swift */; };
 		A7866E812138240800626DF8 /* Security.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7866E802138240800626DF8 /* Security.swift */; };
@@ -82,6 +90,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A75F95F6214E4A08003727F5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A75F95F5214E4A08003727F5 /* Realm.framework in Embed Frameworks */,
+				A75F95F3214E4A08003727F5 /* RealmSwift.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -94,7 +114,6 @@
 		A70A39C0212C60F40065B7CC /* ActivityTrackerLauncherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ActivityTrackerLauncherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A70A39CE212C63610065B7CC /* ActivityTrackerSDU */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ActivityTrackerSDU; sourceTree = "<group>"; };
 		A7230DC3214CDAC700C04551 /* CwlSysctl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CwlSysctl.swift; sourceTree = "<group>"; };
-		A7230DC5214CDEFF00C04551 /* DataPersistenceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DataPersistenceTests.swift; path = Tests/DataPersistenceTests.swift; sourceTree = "<group>"; };
 		A734B4C5213BF99700AD4A99 /* thyme */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = thyme; path = ../../../go/bin/thyme; sourceTree = "<group>"; };
 		A73AA81D21273FD900D0B7FF /* ActivityTrackerSDU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ActivityTrackerSDU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A73AA81F21273FD900D0B7FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -108,10 +127,17 @@
 		A73AA83E212740C100D0B7FF /* StatusMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
 		A73EE26F2145112A00A831B4 /* DataPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistence.swift; sourceTree = "<group>"; };
 		A73EE2712145177A00A831B4 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		A745FE50214FD0C000F242DD /* RealmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmTests.swift; sourceTree = "<group>"; };
 		A756633D213936C1008F5640 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A756633F21394367008F5640 /* CredentialsWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsWindow.swift; sourceTree = "<group>"; };
 		A756634021394367008F5640 /* CredentialsWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CredentialsWindow.xib; sourceTree = "<group>"; };
 		A757F23821411F72009CCDC0 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		A75F95F0214E4A08003727F5 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
+		A75F95F1214E4A08003727F5 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		A75F95F8214E4A52003727F5 /* RealmPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmPersistence.swift; sourceTree = "<group>"; };
+		A75F95FA214E4CEB003727F5 /* RealmModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModels.swift; sourceTree = "<group>"; };
+		A75F95FD214E4E8E003727F5 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		A75F9600214E6708003727F5 /* Converters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Converters.swift; sourceTree = "<group>"; };
 		A7866E7A2136B90800626DF8 /* Sources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sources; sourceTree = "<group>"; };
 		A7866E7C2136C24400626DF8 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		A7866E7E2137F79700626DF8 /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
@@ -156,6 +182,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A75F95F4214E4A08003727F5 /* Realm.framework in Frameworks */,
+				A75F95F2214E4A08003727F5 /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,6 +227,9 @@
 		A73AA81E21273FD900D0B7FF /* ActivityTrackerSDU */ = {
 			isa = PBXGroup;
 			children = (
+				A75F95FF214E66FB003727F5 /* Helpers */,
+				A75F95FC214E4E78003727F5 /* Models */,
+				A75F95F7214E4A12003727F5 /* Persistence */,
 				A7DEA8F521453E9A003B4128 /* Libraries */,
 				A73AA81F21273FD900D0B7FF /* AppDelegate.swift */,
 				A73AA82121273FDA00D0B7FF /* Assets.xcassets */,
@@ -216,7 +247,6 @@
 				A7E62732213DA55400F0395D /* WindowTracking.swift */,
 				A757F23821411F72009CCDC0 /* Extensions.swift */,
 				A78F236721416CE900DC2489 /* TimeKeeper.swift */,
-				A73EE26F2145112A00A831B4 /* DataPersistence.swift */,
 			);
 			path = ActivityTrackerSDU;
 			sourceTree = "<group>";
@@ -224,10 +254,37 @@
 		A73AA82F21273FDA00D0B7FF /* ActivityTrackerSDUTests */ = {
 			isa = PBXGroup;
 			children = (
+				A745FE50214FD0C000F242DD /* RealmTests.swift */,
 				A73AA83021273FDA00D0B7FF /* ActivityTrackerSDUTests.swift */,
 				A73AA83221273FDA00D0B7FF /* Info.plist */,
 			);
 			path = ActivityTrackerSDUTests;
+			sourceTree = "<group>";
+		};
+		A75F95F7214E4A12003727F5 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				A73EE26F2145112A00A831B4 /* DataPersistence.swift */,
+				A75F95F8214E4A52003727F5 /* RealmPersistence.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		A75F95FC214E4E78003727F5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A75F95FD214E4E8E003727F5 /* Models.swift */,
+				A75F95FA214E4CEB003727F5 /* RealmModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A75F95FF214E66FB003727F5 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A75F9600214E6708003727F5 /* Converters.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		A7866E792136B90800626DF8 /* Frameworks */ = {
@@ -252,7 +309,6 @@
 		OBJ_10 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				A7230DC5214CDEFF00C04551 /* DataPersistenceTests.swift */,
 			);
 			name = Tests;
 			sourceTree = SOURCE_ROOT;
@@ -324,6 +380,8 @@
 		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
+				A75F95F1214E4A08003727F5 /* Realm.framework */,
+				A75F95F0214E4A08003727F5 /* RealmSwift.framework */,
 				A70A39CE212C63610065B7CC /* ActivityTrackerSDU */,
 				OBJ_6 /* Package.swift */,
 				OBJ_7 /* Sources */,
@@ -401,6 +459,7 @@
 				A73AA81A21273FD900D0B7FF /* Frameworks */,
 				A73AA81B21273FD900D0B7FF /* Resources */,
 				A70A39CD212C629C0065B7CC /* CopyFiles */,
+				A75F95F6214E4A08003727F5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -629,6 +688,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A75F95F9214E4A52003727F5 /* RealmPersistence.swift in Sources */,
+				A75F95FE214E4E8E003727F5 /* Models.swift in Sources */,
+				A75F9601214E6708003727F5 /* Converters.swift in Sources */,
 				A756634121394367008F5640 /* CredentialsWindow.swift in Sources */,
 				A73EE2722145177A00A831B4 /* Storage.swift in Sources */,
 				A73AA83F212740C100D0B7FF /* StatusMenuController.swift in Sources */,
@@ -641,6 +703,7 @@
 				A78F236821416CE900DC2489 /* TimeKeeper.swift in Sources */,
 				A756633E213936C1008F5640 /* Constants.swift in Sources */,
 				A7A6B89F21353DE8000B4E38 /* ChooseUserWindow.swift in Sources */,
+				A75F95FB214E4CEB003727F5 /* RealmModels.swift in Sources */,
 				A7230DC4214CDAC700C04551 /* CwlSysctl.swift in Sources */,
 				A7866E812138240800626DF8 /* Security.swift in Sources */,
 			);
@@ -650,8 +713,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A745FE51214FD0C000F242DD /* RealmTests.swift in Sources */,
 				A73AA83121273FDA00D0B7FF /* ActivityTrackerSDUTests.swift in Sources */,
-				A7230DC6214CDEFF00C04551 /* DataPersistenceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1023,6 +1086,10 @@
 				DEVELOPMENT_TEAM = 9632T7RA94;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1090,6 +1157,10 @@
 				DEVELOPMENT_TEAM = 9632T7RA94;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1148,6 +1219,7 @@
 				DEVELOPMENT_TEAM = 9632T7RA94;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = /Users/kasper/Projects/swift/ActivityTracker;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1213,6 +1285,7 @@
 				DEVELOPMENT_TEAM = 9632T7RA94;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = /Users/kasper/Projects/swift/ActivityTracker;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
