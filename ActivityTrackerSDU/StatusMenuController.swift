@@ -6,6 +6,8 @@
 //
 
 import Cocoa
+import RealmSwift
+import Realm
 import Foundation
 
 class StatusMenuController: NSObject, ChooseUserWindowDelegate {
@@ -14,7 +16,7 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
     
     let reachability = Reachability()!
     
-    var useAppData = false
+    var useAppData = true
     
     let deviceModelName = Sysctl.model
     var currentUser : String = .unnamedUser
@@ -24,7 +26,6 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
     var credentialsWindow: CredentialsWindow!
     
     var timeKeeper : TimeKeeper!
-    var dataPersistence : DataPersistence!
     
     @IBOutlet weak var action: NSMenuItem!
     
@@ -35,7 +36,7 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
         icon.isTemplate = true // best for dark mode
         statusItem.image = icon
         statusItem.menu = statusMenu
-        
+    
         // Window initialization
         chooseUserWindow = ChooseUserWindow()
         chooseUserWindow.delegate = self
@@ -43,7 +44,6 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
         
         // Initialization
         timeKeeper = TimeKeeper()
-
     
         // Observe changes such as screen awake / asleep
         setUpDeviceUsageTracking()
@@ -52,8 +52,6 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
         
         ensureCredentialsAreSet()
         self.credentials = loadCredentialsFromKeychain()
-        
-        dataPersistence = DataPersistence(directoryToUse: Storage.Directory.documents)
         
         setupReachability()
         
@@ -155,7 +153,7 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
     func sendDeviceUsage(eventType: EventType){
         let deviceUsage = self.makeDeviceUsage(eventType: eventType)
         sendUsage(usage: deviceUsage, usageType: .device, credentials: self.credentials) { _ in
-            self.dataPersistence.saveDeviceUsage(deviceUsage)
+            Persistence.save(deviceUsage)
         }
     }
     
@@ -187,13 +185,15 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
         // Reachability
         reachability.whenReachable = { reachability in
             DispatchQueue.global(qos: .background).async {
+                
+                
                 while(true) {
                     if(self.reachability.connection == Reachability.Connection.none) {
                         break
                     }
                     
-                    self.maybeSendOldestSavedAppUsage()
-                    self.maybeSendOldDeviceUsages()
+                    //self.maybeSendOldestSavedAppUsage()
+                    //self.maybeSendOldDeviceUsages()
                     
                     if self.useAppData {
                         if let lastAppUsage = self.maybeGetLastAppUsage() {
@@ -216,7 +216,7 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
                     
                     if self.useAppData {
                         if let lastAppUsage = self.maybeGetLastAppUsage() {
-                            self.dataPersistence.saveAppUsage(lastAppUsage)
+                            Persistence.save(lastAppUsage)
                         }
                     }
                     sleep(1)
@@ -232,20 +232,18 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
     }
     
     func maybeSendOldestSavedAppUsage(){
-        let oldestAppUsages = self.dataPersistence.retrieveSavedAppUsages()
-        if !oldestAppUsages.isEmpty {
+        if let oldestAppUsage = Persistence.maybeRetrieveOldestAppUsage() {
             print("Sending old app usages")
-            sendUsages(usages: oldestAppUsages, usageType: .app, credentials: self.credentials) { (error) in
+            sendUsage(usage: oldestAppUsage, usageType: .app, credentials: self.credentials) { (error) in
                 print(error.debugDescription)
             }
         }
     }
     
     func maybeSendOldDeviceUsages(){
-        let oldDeviceUsages = self.dataPersistence.retrieveSavedDeviceUsages()
-        if !oldDeviceUsages.isEmpty {
+        if let oldestDeviceUsage = Persistence.maybeRetrieveOldestDeviceUsage() {
             print("Sending old device usages")
-            sendUsages(usages: oldDeviceUsages, usageType: .device, credentials: self.credentials) { (error) in
+            sendUsage(usage: oldestDeviceUsage, usageType: .device, credentials: self.credentials) { (error) in
                 print(error.debugDescription)
             }
         }
