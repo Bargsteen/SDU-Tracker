@@ -78,7 +78,9 @@ public class DataPersistence {
     
     func retrieveSavedDeviceUsages() -> [DeviceUsage] {
         if(Storage.fileExists(self.deviceFileName, in: self.directory)){
-            return Storage.retrieve(self.deviceFileName, from: self.directory, as: [DeviceUsage].self)
+            let storedDeviceUsages = Storage.retrieve(self.deviceFileName, from: self.directory, as: [DeviceUsage].self)
+            Storage.remove(self.deviceFileName, from: self.directory)
+            return storedDeviceUsages
         }
         return []
     }

@@ -130,6 +130,9 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
         
         // Handle waking aka Session start
         notificationCenter.addObserver(forName: NSWorkspace.screensDidWakeNotification, object: nil, queue: nil, using: {(n:Notification) in
+            
+            self.setAndMaybeAskForCorrectUser()
+            
             if(!self.useAppData) {
                 self.sendDeviceUsage(eventType: EventType.started)
             }
@@ -163,16 +166,18 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
         // Get current user
         currentUser = getCurrentUser()
         
-        // Handle if it is the correct user
-        let changeOfUserIsNeeded = !showChangeUserAlert(currentUser)
-        
-        if(changeOfUserIsNeeded){
-            chooseUserWindow.showWindow(nil)
-        }
-        
-        
-        // In case it is updated
-        currentUser = getCurrentUser()
+        if(getUserCount() > 1) {
+            // Handle if it is the correct user
+            let changeOfUserIsNeeded = !showChangeUserAlert(currentUser)
+            
+            if(changeOfUserIsNeeded){
+                chooseUserWindow.showWindow(nil)
+            }
+            
+            
+            // In case it is updated
+            currentUser = getCurrentUser()
+        }        
     }
     
     func showNotification(title: String, informativeText: String) {
