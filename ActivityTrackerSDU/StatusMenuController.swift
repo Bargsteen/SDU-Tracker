@@ -155,7 +155,7 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
     
     func sendDeviceUsage(eventType: EventType){
         let deviceUsage = self.makeDeviceUsage(eventType: eventType)
-        sendUsage(usage: deviceUsage, usageType: .device, credentials: self.credentials) { _ in
+        sendUsage(usage: deviceUsage, usageType: .device, credentials: self.credentials, onSuccess: nil) { _ in
             Persistence.save(deviceUsage)
         }
     }
@@ -237,18 +237,20 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
     func maybeSendOldestSavedAppUsage(){
         if let oldestAppUsage = Persistence.maybeRetrieveOldestAppUsage() {
             print("Sending old app usages")
-            sendUsage(usage: oldestAppUsage, usageType: .app, credentials: self.credentials) { (error) in
-                print(error.debugDescription)
-            }
+            sendUsage(usage: oldestAppUsage, usageType: .app, credentials: self.credentials,
+                      onSuccess: { Persistence.deleteAppUsage(oldestAppUsage.getIdentifier())},
+                      onError: { (error) in print(error.debugDescription) } // TODO: Perhaps do nothing?
+            )
         }
     }
     
     func maybeSendOldDeviceUsages(){
         if let oldestDeviceUsage = Persistence.maybeRetrieveOldestDeviceUsage() {
             print("Sending old device usages")
-            sendUsage(usage: oldestDeviceUsage, usageType: .device, credentials: self.credentials) { (error) in
-                print(error.debugDescription)
-            }
+            sendUsage(usage: oldestDeviceUsage, usageType: .device, credentials: self.credentials,
+                      onSuccess: { Persistence.deleteDeviceUsage(oldestDeviceUsage.getIdentifier())},
+                      onError: { (error) in print(error.debugDescription)} // TODO: Perhaps do nothing?
+            )
         }
     }
 }
