@@ -26,9 +26,10 @@ func saveCredentialsToKeychain(credentials: Credentials) throws {
                                 kSecAttrServer as String: String.server,
                                 kSecValueData as String: password]
     
-    
     let status = SecItemAdd(query as CFDictionary, nil)
     guard status == errSecSuccess else { throw KeychainError.unhandledError(status: status)}
+    
+    
 }
 
 func loadCredentialsFromKeychain() -> Credentials? {
@@ -60,6 +61,18 @@ func deleteCredentialsFromKeychain() throws {
     
     let status = SecItemDelete(query as CFDictionary)
     guard status == errSecSuccess else { throw KeychainError.unhandledError(status: status)}
+}
+
+private func saveCredentialsToCredentialsStoragePermanently(_ credentials: Credentials) {
+    let userCredential = URLCredential(user: credentials.username,
+                                       password: credentials.password,
+                                       persistence: .permanent)
+    let protectionSpace = URLProtectionSpace.init(host: .server,
+                                                  port: 80,
+                                                  protocol: "https",
+                                                  realm: nil,
+                                                  authenticationMethod: nil)
+    URLCredentialStorage.shared.setDefaultCredential(userCredential, for: protectionSpace)
 }
 
 

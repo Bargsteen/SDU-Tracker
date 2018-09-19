@@ -24,6 +24,7 @@
 		A756634121394367008F5640 /* CredentialsWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756633F21394367008F5640 /* CredentialsWindow.swift */; };
 		A756634221394367008F5640 /* CredentialsWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A756634021394367008F5640 /* CredentialsWindow.xib */; };
 		A757F23921411F72009CCDC0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A757F23821411F72009CCDC0 /* Extensions.swift */; };
+		A759B6A221517CD40062B2C3 /* GenericHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A759B6A121517CD40062B2C3 /* GenericHelpers.swift */; };
 		A75F95F2214E4A08003727F5 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A75F95F0214E4A08003727F5 /* RealmSwift.framework */; };
 		A75F95F3214E4A08003727F5 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A75F95F0214E4A08003727F5 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A75F95F4214E4A08003727F5 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A75F95F1214E4A08003727F5 /* Realm.framework */; };
@@ -42,17 +43,6 @@
 		OBJ_35 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* main.swift */; };
 		OBJ_37 /* SwiftShell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "SwiftShell::SwiftShell::Product" /* SwiftShell.framework */; };
 		OBJ_45 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
-		OBJ_50 /* Bash.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* Bash.swift */; };
-		OBJ_51 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* Command.swift */; };
-		OBJ_52 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* Context.swift */; };
-		OBJ_53 /* FileHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* FileHandle.swift */; };
-		OBJ_54 /* Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* Files.swift */; };
-		OBJ_55 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_20 /* Array.swift */; };
-		OBJ_56 /* Process.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_21 /* Process.swift */; };
-		OBJ_57 /* Lazy-split.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_23 /* Lazy-split.swift */; };
-		OBJ_58 /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_24 /* Stream.swift */; };
-		OBJ_59 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_25 /* String.swift */; };
-		OBJ_66 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_26 /* Package.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,7 +104,6 @@
 		A70A39C0212C60F40065B7CC /* ActivityTrackerLauncherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ActivityTrackerLauncherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A70A39CE212C63610065B7CC /* ActivityTrackerSDU */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ActivityTrackerSDU; sourceTree = "<group>"; };
 		A7230DC3214CDAC700C04551 /* CwlSysctl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CwlSysctl.swift; sourceTree = "<group>"; };
-		A734B4C5213BF99700AD4A99 /* thyme */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = thyme; path = ../../../go/bin/thyme; sourceTree = "<group>"; };
 		A73AA81D21273FD900D0B7FF /* ActivityTrackerSDU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ActivityTrackerSDU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A73AA81F21273FD900D0B7FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A73AA82121273FDA00D0B7FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -132,6 +121,7 @@
 		A756633F21394367008F5640 /* CredentialsWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsWindow.swift; sourceTree = "<group>"; };
 		A756634021394367008F5640 /* CredentialsWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CredentialsWindow.xib; sourceTree = "<group>"; };
 		A757F23821411F72009CCDC0 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		A759B6A121517CD40062B2C3 /* GenericHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericHelpers.swift; sourceTree = "<group>"; };
 		A75F95F0214E4A08003727F5 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		A75F95F1214E4A08003727F5 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		A75F95F8214E4A52003727F5 /* RealmPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmPersistence.swift; sourceTree = "<group>"; };
@@ -147,17 +137,6 @@
 		A7A6B89E21353DE8000B4E38 /* ChooseUserWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseUserWindow.xib; sourceTree = "<group>"; };
 		A7E62732213DA55400F0395D /* WindowTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowTracking.swift; sourceTree = "<group>"; };
 		"ActivityTracker::ActivityTracker::Product" /* ActivityTracker */ = {isa = PBXFileReference; lastKnownFileType = text; path = ActivityTracker; sourceTree = BUILT_PRODUCTS_DIR; };
-		OBJ_14 /* Bash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bash.swift; sourceTree = "<group>"; };
-		OBJ_15 /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
-		OBJ_16 /* Context.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
-		OBJ_17 /* FileHandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileHandle.swift; sourceTree = "<group>"; };
-		OBJ_18 /* Files.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Files.swift; sourceTree = "<group>"; };
-		OBJ_20 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
-		OBJ_21 /* Process.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Process.swift; sourceTree = "<group>"; };
-		OBJ_23 /* Lazy-split.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Lazy-split.swift"; sourceTree = "<group>"; };
-		OBJ_24 /* Stream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stream.swift; sourceTree = "<group>"; };
-		OBJ_25 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
-		OBJ_26 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Package.swift; path = "/Users/kasper/Projects/swift/ActivityTracker/.build/checkouts/SwiftShell--3495906201786892477/Package.swift"; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		OBJ_9 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		"SwiftShell::SwiftShell::Product" /* SwiftShell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftShell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -283,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				A75F9600214E6708003727F5 /* Converters.swift */,
+				A759B6A121517CD40062B2C3 /* GenericHelpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -290,7 +270,6 @@
 		A7866E792136B90800626DF8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A734B4C5213BF99700AD4A99 /* thyme */,
 				A7866E7A2136B90800626DF8 /* Sources */,
 			);
 			name = Frameworks;
@@ -312,57 +291,6 @@
 			);
 			name = Tests;
 			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_11 /* Dependencies */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_12 /* SwiftShell 4.1.1 */,
-			);
-			name = Dependencies;
-			sourceTree = "<group>";
-		};
-		OBJ_12 /* SwiftShell 4.1.1 */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_13 /* SwiftShell */,
-				OBJ_26 /* Package.swift */,
-			);
-			name = "SwiftShell 4.1.1";
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_13 /* SwiftShell */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_14 /* Bash.swift */,
-				OBJ_15 /* Command.swift */,
-				OBJ_16 /* Context.swift */,
-				OBJ_17 /* FileHandle.swift */,
-				OBJ_18 /* Files.swift */,
-				OBJ_19 /* General */,
-				OBJ_21 /* Process.swift */,
-				OBJ_22 /* Stream */,
-				OBJ_25 /* String.swift */,
-			);
-			name = SwiftShell;
-			path = ".build/checkouts/SwiftShell--3495906201786892477/Sources/SwiftShell";
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_19 /* General */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_20 /* Array.swift */,
-			);
-			path = General;
-			sourceTree = "<group>";
-		};
-		OBJ_22 /* Stream */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_23 /* Lazy-split.swift */,
-				OBJ_24 /* Stream.swift */,
-			);
-			path = Stream;
-			sourceTree = "<group>";
 		};
 		OBJ_27 /* Products */ = {
 			isa = PBXGroup;
@@ -386,7 +314,6 @@
 				OBJ_6 /* Package.swift */,
 				OBJ_7 /* Sources */,
 				OBJ_10 /* Tests */,
-				OBJ_11 /* Dependencies */,
 				A73AA81E21273FD900D0B7FF /* ActivityTrackerSDU */,
 				A73AA82F21273FDA00D0B7FF /* ActivityTrackerSDUTests */,
 				A70A39B2212C60F30065B7CC /* ActivityTrackerLauncher */,
@@ -688,6 +615,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A759B6A221517CD40062B2C3 /* GenericHelpers.swift in Sources */,
 				A75F95F9214E4A52003727F5 /* RealmPersistence.swift in Sources */,
 				A75F95FE214E4E8E003727F5 /* Models.swift in Sources */,
 				A75F9601214E6708003727F5 /* Converters.swift in Sources */,
@@ -738,16 +666,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_50 /* Bash.swift in Sources */,
-				OBJ_51 /* Command.swift in Sources */,
-				OBJ_52 /* Context.swift in Sources */,
-				OBJ_53 /* FileHandle.swift in Sources */,
-				OBJ_54 /* Files.swift in Sources */,
-				OBJ_55 /* Array.swift in Sources */,
-				OBJ_56 /* Process.swift in Sources */,
-				OBJ_57 /* Lazy-split.swift in Sources */,
-				OBJ_58 /* Stream.swift in Sources */,
-				OBJ_59 /* String.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -755,7 +673,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_66 /* Package.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

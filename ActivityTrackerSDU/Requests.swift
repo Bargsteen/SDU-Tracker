@@ -22,8 +22,9 @@ func sendUsage<T:Encodable>(usage: T, usageType: UsageType, credentials: Credent
     urlComponents.host = .server
     urlComponents.path = usageType == .app ? .appPath : .devicePath
     
-    urlComponents.user = credentials.username
-    urlComponents.password = credentials.password
+    let loginString = NSString(format: "%@:%@", credentials.username, credentials.password)
+    let loginData: NSData = loginString.data(using: String.Encoding.utf8.rawValue)! as NSData
+    let base64LoginString = loginData.base64EncodedString(options: [])
     
     guard let url = urlComponents.url else { fatalError("Could not create URL from components")}
     
@@ -32,6 +33,7 @@ func sendUsage<T:Encodable>(usage: T, usageType: UsageType, credentials: Credent
     request.httpMethod = "POST"
     var headers = request.allHTTPHeaderFields ?? [:]
     headers["Content-Type"] = "application/json"
+    headers["Authorization"] = "Basic \(base64LoginString)"
     request.allHTTPHeaderFields = headers
     
     

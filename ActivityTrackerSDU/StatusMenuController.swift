@@ -42,21 +42,20 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
         chooseUserWindow.delegate = self
         credentialsWindow = CredentialsWindow()
         
+        action.title = useAppData ? .trackingAppData : .trackingDeviceData
+        
         // Initialization
         timeKeeper = TimeKeeper()
     
-        // Observe changes such as screen awake / asleep
-        setUpDeviceUsageTracking()
-        
         setAndMaybeAskForCorrectUser()
         
         ensureCredentialsAreSet()
-        self.credentials = loadCredentialsFromKeychain()
-        
-        setupReachability()
-        
-        if !self.useAppData {
-            self.sendDeviceUsage(eventType: .started)
+        if let credentials = loadCredentialsFromKeychain() {
+            self.credentials = credentials
+            
+            setUpDeviceUsageTracking()
+            
+            setupAppUsageTracking()
         }
     }
     
@@ -83,11 +82,11 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
         return alert.runModal() == .alertFirstButtonReturn
     }
     
+    // Used only for testing
     @IBAction func deleteCredentialsClicked(_ sender: NSMenuItem) {
         do {
             try deleteCredentialsFromKeychain()
         } catch {
-            print("Could not delete credentials..")
         }
     }
     
@@ -123,6 +122,10 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
     }
     
     func setUpDeviceUsageTracking() {
+        
+        if !self.useAppData {
+            self.sendDeviceUsage(eventType: .started)
+        }
         
         let notificationCenter = NSWorkspace.shared.notificationCenter
         
@@ -186,7 +189,7 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
         NSUserNotificationCenter.default.deliver(notification)
     }
     
-    func setupReachability() {
+    func setupAppUsageTracking() {
         // Reachability
         reachability.whenReachable = { reachability in
             DispatchQueue.global(qos: .background).async {
@@ -197,12 +200,18 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
                         break
                     }
                     
-                    //self.maybeSendOldestSavedAppUsage()
-                    //self.maybeSendOldDeviceUsages()
+                    // TODO: Only check DB if flag has been set to do so
+                    self.maybeSendOldestSavedAppUsage()
+                    self.maybeSendOldDeviceUsages()
                     
                     if self.useAppData {
                         if let lastAppUsage = self.maybeGetLastAppUsage() {
-                            sendUsage(usage: lastAppUsage, usageType: .app, credentials: self.credentials, onSuccess: nil, onError: nil) // TODO: Log error
+                            sendUsage(usage: lastAppUsage, usageType: .app, credentials: self.credentials
+                                , onSuccess: { print("SENT: \(lastAppUsage.package)")}
+                                , onError: { _ in
+                                    print("SAVED: \(lastAppUsage.package)")
+                                    Persistence.save(lastAppUsage) }
+                            )
                         }
                     }
                     sleep(1)
@@ -219,6 +228,7 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
                     
                     if self.useAppData {
                         if let lastAppUsage = self.maybeGetLastAppUsage() {
+                            print("SAVED: \(lastAppUsage.package)")
                             Persistence.save(lastAppUsage)
                         }
                     }
@@ -236,20 +246,20 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
     
     func maybeSendOldestSavedAppUsage(){
         if let oldestAppUsage = Persistence.maybeRetrieveOldestAppUsage() {
-            print("Sending old app usages")
             sendUsage(usage: oldestAppUsage, usageType: .app, credentials: self.credentials,
-                      onSuccess: { Persistence.deleteAppUsage(oldestAppUsage.getIdentifier())},
-                      onError: { (error) in print(error.debugDescription) } // TODO: Perhaps do nothing?
+                      onSuccess: {
+                        print("SENT SAVED: \(oldestAppUsage.package)")
+                        Persistence.deleteAppUsage(oldestAppUsage.getIdentifier())},
+                      onError: nil // TODO: Perhaps do nothing?
             )
         }
     }
     
     func maybeSendOldDeviceUsages(){
         if let oldestDeviceUsage = Persistence.maybeRetrieveOldestDeviceUsage() {
-            print("Sending old device usages")
             sendUsage(usage: oldestDeviceUsage, usageType: .device, credentials: self.credentials,
                       onSuccess: { Persistence.deleteDeviceUsage(oldestDeviceUsage.getIdentifier())},
-                      onError: { (error) in print(error.debugDescription)} // TODO: Perhaps do nothing?
+                      onError: nil // TODO: Perhaps do nothing?
             )
         }
     }
