@@ -40,8 +40,16 @@ func sendDeviceUsage(eventType: EventType){
     if let credentials = loadCredentialsFromKeychain() {
         let shouldShowNotifications = UserDefaultsHelper.getShowNotificationsSetting()
         let deviceUsage = makeDeviceUsage(eventType: eventType)
-
-        let usageDescription = "\(deviceUsage.eventType) \(deviceUsage.timeStamp)"
+        
+        var eventTypeString = ""
+        switch eventType {
+        case .started:
+            eventTypeString = "Påbegyndt:"
+        case .ended:
+            eventTypeString = "Afsluttet:"
+        }
+        
+        let usageDescription = "\(eventTypeString) \(deviceUsage.timeStamp)"
         sendUsage(usage: deviceUsage, usageType: .device, credentials: credentials, onSuccess:
             {
                 maybeShowSentSavedNotification(shouldShow: shouldShowNotifications, usageType: .device, notificationType: .sent, usageDescription: usageDescription)
@@ -55,6 +63,6 @@ func sendDeviceUsage(eventType: EventType){
 func makeDeviceUsage(eventType: EventType) -> DeviceUsage {
     let userCount = UserDefaultsHelper.getUserCount()
     let deviceModelName = UserDefaultsHelper.getDeviceModelName()
-    let currentUser = UserDefaultsHelper.getCurrentUser()
-    return DeviceUsage(participantIdentifier: currentUser, eventType: eventType, timeStamp: Date(), userCount: userCount, deviceModelName: deviceModelName)
+    let participantIdentifier = UserDefaultsHelper.getParticipantIdentifier()
+    return DeviceUsage(participantIdentifier: participantIdentifier, eventType: eventType, timeStamp: Date(), userCount: userCount, deviceModelName: deviceModelName)
 }

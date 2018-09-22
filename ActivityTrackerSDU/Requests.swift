@@ -43,6 +43,7 @@ func sendUsage<T:Encodable>(usage: T, usageType: UsageType, credentials: Credent
         let jsonData = try encoder.encode(usage)
         request.httpBody = jsonData
     } catch {
+        Logging.logError("JSON Decoding error: \(error)")
         onError?(error)
     }
     
@@ -53,12 +54,13 @@ func sendUsage<T:Encodable>(usage: T, usageType: UsageType, credentials: Credent
     let task = session.dataTask(with: request) { (responseData, response, responseError) in
         guard responseError == nil else {
             onError?(responseError!)
+            Logging.logError("ResponseError from UsageSending: \(responseError!)")
             return
         }
         if let data = responseData, let _ = String(data: data, encoding: .utf8) {
             onSuccess?()
         } else {
-            // TODO: Log warning
+            Logging.logWarning("SendUsage error: Could not read retrieved data.")
         }
     }
     task.resume()

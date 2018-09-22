@@ -42,12 +42,6 @@
                         <action selector="notificationSettingClicked:" target="Cx0-KW-VH8" id="49e-o2-iBC"/>
                     </connections>
                 </menuItem>
-                <menuItem title="Slet Logindetaljer" id="RdD-U9-R6f">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="deleteCredentialsClicked:" target="Cx0-KW-VH8" id="YoJ-dB-L1t"/>
-                    </connections>
-                </menuItem>
                 <menuItem isSeparatorItem="YES" id="riD-Zd-I6I"/>
                 <menuItem title="Afslut" id="ykD-QO-mhc">
                     <modifierMask key="keyEquivalentModifierMask"/>

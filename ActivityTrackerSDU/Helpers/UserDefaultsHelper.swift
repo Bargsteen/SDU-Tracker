@@ -45,7 +45,9 @@ public class UserDefaultsHelper {
         if let credentials = credentials {
             return "\(credentials.username):\(currentUser)"
         }
-        return currentUser // This should never happen.
+        // This should never happen.
+        // And the data can't be send to db, because no credentials exist.
+        return currentUser
     }
     
     

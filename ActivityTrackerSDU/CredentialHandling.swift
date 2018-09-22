@@ -27,7 +27,10 @@ func saveCredentialsToKeychain(credentials: Credentials) throws {
                                 kSecValueData as String: password]
     
     let status = SecItemAdd(query as CFDictionary, nil)
-    guard status == errSecSuccess else { throw KeychainError.unhandledError(status: status)}
+    guard status == errSecSuccess else {
+        Logging.logError("Credential creation error: \(status)")
+        throw KeychainError.unhandledError(status: status)
+    }
     
     
 }
@@ -60,7 +63,11 @@ func deleteCredentialsFromKeychain() throws {
     
     
     let status = SecItemDelete(query as CFDictionary)
-    guard status == errSecSuccess else { throw KeychainError.unhandledError(status: status)}
+    guard status == errSecSuccess else {
+        Logging.logError("Credential deletion error: \(status)")
+        throw KeychainError.unhandledError(status: status)
+        
+    }
 }
 
 
