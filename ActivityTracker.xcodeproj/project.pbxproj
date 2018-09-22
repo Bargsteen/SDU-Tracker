@@ -42,6 +42,10 @@
 		A7EAAA22215624B9007E942A /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EAAA21215624B9007E942A /* Notifications.swift */; };
 		A7EAAA242156256F007E942A /* SendOrSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EAAA232156256F007E942A /* SendOrSave.swift */; };
 		A7EAAA2621562909007E942A /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EAAA2521562909007E942A /* UserDefaultsHelper.swift */; };
+		A7EAAA3021566026007E942A /* SwiftLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7EAAA2D21565FA3007E942A /* SwiftLog.framework */; };
+		A7EAAA3121566032007E942A /* SwiftLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7EAAA2D21565FA3007E942A /* SwiftLog.framework */; };
+		A7EAAA3221566032007E942A /* SwiftLog.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A7EAAA2D21565FA3007E942A /* SwiftLog.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A7EAAA362156626F007E942A /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EAAA352156626F007E942A /* Logging.swift */; };
 		OBJ_35 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* main.swift */; };
 		OBJ_37 /* SwiftShell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "SwiftShell::SwiftShell::Product" /* SwiftShell.framework */; };
 		OBJ_45 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
@@ -69,6 +73,27 @@
 			remoteGlobalIDString = A73AA81C21273FD900D0B7FF;
 			remoteInfo = ActivityTrackerSDU;
 		};
+		A7EAAA2C21565FA3007E942A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A7EAAA2721565FA3007E942A /* SwiftLog.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5CA8C9851A5AF63F0089A692;
+			remoteInfo = SwiftLog;
+		};
+		A7EAAA2E21565FA3007E942A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A7EAAA2721565FA3007E942A /* SwiftLog.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5CA8C9901A5AF63F0089A692;
+			remoteInfo = SwiftLogTests;
+		};
+		A7EAAA3321566032007E942A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A7EAAA2721565FA3007E942A /* SwiftLog.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 5CA8C9841A5AF63F0089A692;
+			remoteInfo = SwiftLog;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -90,6 +115,7 @@
 			files = (
 				A75F95F5214E4A08003727F5 /* Realm.framework in Embed Frameworks */,
 				A75F95F3214E4A08003727F5 /* RealmSwift.framework in Embed Frameworks */,
+				A7EAAA3221566032007E942A /* SwiftLog.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -140,6 +166,8 @@
 		A7EAAA21215624B9007E942A /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		A7EAAA232156256F007E942A /* SendOrSave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendOrSave.swift; sourceTree = "<group>"; };
 		A7EAAA2521562909007E942A /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
+		A7EAAA2721565FA3007E942A /* SwiftLog.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftLog.xcodeproj; path = SwiftLog/SwiftLog.xcodeproj; sourceTree = "<group>"; };
+		A7EAAA352156626F007E942A /* Logging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logging.swift; sourceTree = "<group>"; };
 		"ActivityTracker::ActivityTracker::Product" /* ActivityTracker */ = {isa = PBXFileReference; lastKnownFileType = text; path = ActivityTracker; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		OBJ_9 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -165,6 +193,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7EAAA3021566026007E942A /* SwiftLog.framework in Frameworks */,
+				A7EAAA3121566032007E942A /* SwiftLog.framework in Frameworks */,
 				A75F95F4214E4A08003727F5 /* Realm.framework in Frameworks */,
 				A75F95F2214E4A08003727F5 /* RealmSwift.framework in Frameworks */,
 			);
@@ -269,6 +299,7 @@
 				A759B6A121517CD40062B2C3 /* GenericHelpers.swift */,
 				A7EAAA21215624B9007E942A /* Notifications.swift */,
 				A7EAAA2521562909007E942A /* UserDefaultsHelper.swift */,
+				A7EAAA352156626F007E942A /* Logging.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -276,6 +307,7 @@
 		A7866E792136B90800626DF8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A7EAAA2721565FA3007E942A /* SwiftLog.xcodeproj */,
 				A7866E7A2136B90800626DF8 /* Sources */,
 			);
 			name = Frameworks;
@@ -289,6 +321,15 @@
 				A7230DC3214CDAC700C04551 /* CwlSysctl.swift */,
 			);
 			path = Libraries;
+			sourceTree = "<group>";
+		};
+		A7EAAA2821565FA3007E942A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A7EAAA2D21565FA3007E942A /* SwiftLog.framework */,
+				A7EAAA2F21565FA3007E942A /* SwiftLogTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		OBJ_10 /* Tests */ = {
@@ -397,6 +438,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				A7EAAA3421566032007E942A /* PBXTargetDependency */,
 			);
 			name = ActivityTrackerSDU;
 			productName = ActivityTrackerSDU;
@@ -534,6 +576,12 @@
 			mainGroup = OBJ_5;
 			productRefGroup = OBJ_27 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = A7EAAA2821565FA3007E942A /* Products */;
+					ProjectRef = A7EAAA2721565FA3007E942A /* SwiftLog.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				"ActivityTracker::ActivityTracker" /* ActivityTracker */,
@@ -547,6 +595,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		A7EAAA2D21565FA3007E942A /* SwiftLog.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftLog.framework;
+			remoteRef = A7EAAA2C21565FA3007E942A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A7EAAA2F21565FA3007E942A /* SwiftLogTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SwiftLogTests.xctest;
+			remoteRef = A7EAAA2E21565FA3007E942A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		A70A39AF212C60F30065B7CC /* Resources */ = {
@@ -624,6 +689,7 @@
 				A7EAAA2621562909007E942A /* UserDefaultsHelper.swift in Sources */,
 				A759B6A221517CD40062B2C3 /* GenericHelpers.swift in Sources */,
 				A7EAAA22215624B9007E942A /* Notifications.swift in Sources */,
+				A7EAAA362156626F007E942A /* Logging.swift in Sources */,
 				A75F95F9214E4A52003727F5 /* RealmPersistence.swift in Sources */,
 				A75F95FE214E4E8E003727F5 /* Models.swift in Sources */,
 				A75F9601214E6708003727F5 /* Converters.swift in Sources */,
@@ -696,6 +762,11 @@
 			isa = PBXTargetDependency;
 			target = A73AA81C21273FD900D0B7FF /* ActivityTrackerSDU */;
 			targetProxy = A73AA82D21273FDA00D0B7FF /* PBXContainerItemProxy */;
+		};
+		A7EAAA3421566032007E942A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftLog;
+			targetProxy = A7EAAA3321566032007E942A /* PBXContainerItemProxy */;
 		};
 		OBJ_38 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

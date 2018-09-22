@@ -40,6 +40,7 @@ class CredentialsWindow: NSWindowController, NSWindowDelegate {
                 
                 self.window?.close()
             } catch {
+                Logging.logError("Could not save credentials. \(error)")
                 showAlertWithSingleButton(messageText: "Der skete en fejl ved gemning", informativeText: "Fejlmeddelelse: \(error)", buttonText: "Okay", alertStyle: .critical)
             }
         }

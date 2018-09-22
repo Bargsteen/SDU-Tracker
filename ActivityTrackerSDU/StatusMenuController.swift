@@ -9,6 +9,7 @@ import Cocoa
 import RealmSwift
 import Realm
 import Foundation
+import SwiftLog
 
 
 class StatusMenuController: NSObject, ChooseUserWindowDelegate{
@@ -65,10 +66,10 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate{
     func maybeGetLastAppUsage() -> AppUsage? {
         let activeWindow = self.timeKeeper.maybeGetLastActiveWindow()
         if let activeWindow = activeWindow {
-            let currentUser = UserDefaultsHelper.getCurrentUser()
+            let participantIdentifier = UserDefaultsHelper.getParticipantIdentifier()
             let deviceModelName = UserDefaultsHelper.getDeviceModelName()
             let duration = activeWindow.endTime?.timeIntervalSince(activeWindow.startTime) ?? 0
-            return AppUsage(participantIdentifier: currentUser, timeStamp: Date(), userCount: UserDefaultsHelper.getUserCount(), deviceModelName: deviceModelName, package: activeWindow.bundleIdentifier, duration: duration.toMilliseconds())
+            return AppUsage(participantIdentifier: participantIdentifier, timeStamp: Date(), userCount: UserDefaultsHelper.getUserCount(), deviceModelName: deviceModelName, package: activeWindow.bundleIdentifier, duration: duration.toMilliseconds())
         }
         return nil
     }
@@ -230,6 +231,8 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate{
                             Persistence.save(lastAppUsage)
                         }
                     }
+                    // Wait one second before trying to get the app usage.
+                    // Could perhaps be handled by an event listener.
                     sleep(1)
                 }
             }
@@ -238,8 +241,11 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate{
         do {
             try reachability.startNotifier()
         } catch {
+            Logging.logError("Unable to start reachability notifier: \(error)")
             print("Unable to start reachability notifier")
         }
     }
+    
+
 }
 
