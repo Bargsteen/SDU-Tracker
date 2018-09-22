@@ -48,25 +48,22 @@ class ChooseUserWindow: NSWindowController, NSWindowDelegate {
     }
     
     @IBAction func newUserButtonClicked(_ sender: NSButton) {
-        let defaults = UserDefaults.standard
-        
         let newUserName = newUserTextField.stringValue;
         if(!newUserName.isEmpty){
-            let userList = defaults.stringArray(forKey: "users") ?? []
+            let userList = UserDefaultsHelper.getUsers()
             let updatedUserList = userList + [newUserName]
-            defaults.setValue(updatedUserList, forKey: "users")
+            UserDefaultsHelper.setUsers(updatedUserList)
             newUserTextField.stringValue = ""
             updateUserListMenu()
         }
     }
     
     func windowWillClose(_ notification: Notification) {
-        let defaults = UserDefaults.standard
-        let currentUser = defaults.string(forKey: "currentUser") ?? ""
+        let currentUser = UserDefaultsHelper.getCurrentUser()
         let newCurrentUser : String = userListMenu.selectedItem?.title ?? .unnamedUser
         
         if(currentUser != newCurrentUser) {
-            defaults.setValue(newCurrentUser, forKey: "currentUser")
+            UserDefaultsHelper.setCurrentUser(newCurrentUser)
             delegate?.userHasChanged(newCurrentUser)
         }
     }

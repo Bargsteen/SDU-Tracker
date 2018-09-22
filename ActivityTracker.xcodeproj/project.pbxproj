@@ -17,7 +17,6 @@
 		A73AA82521273FDA00D0B7FF /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A73AA82321273FDA00D0B7FF /* MainMenu.xib */; };
 		A73AA83121273FDA00D0B7FF /* ActivityTrackerSDUTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73AA83021273FDA00D0B7FF /* ActivityTrackerSDUTests.swift */; };
 		A73AA83F212740C100D0B7FF /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73AA83E212740C100D0B7FF /* StatusMenuController.swift */; };
-		A73EE2702145112A00A831B4 /* DataPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73EE26F2145112A00A831B4 /* DataPersistence.swift */; };
 		A73EE2722145177A00A831B4 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73EE2712145177A00A831B4 /* Storage.swift */; };
 		A745FE51214FD0C000F242DD /* RealmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A745FE50214FD0C000F242DD /* RealmTests.swift */; };
 		A756633E213936C1008F5640 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756633D213936C1008F5640 /* Constants.swift */; };
@@ -35,11 +34,14 @@
 		A75F9601214E6708003727F5 /* Converters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75F9600214E6708003727F5 /* Converters.swift */; };
 		A7866E7D2136C24400626DF8 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7866E7C2136C24400626DF8 /* Reachability.swift */; };
 		A7866E7F2137F79700626DF8 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7866E7E2137F79700626DF8 /* Requests.swift */; };
-		A7866E812138240800626DF8 /* Security.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7866E802138240800626DF8 /* Security.swift */; };
+		A7866E812138240800626DF8 /* CredentialHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7866E802138240800626DF8 /* CredentialHandling.swift */; };
 		A78F236821416CE900DC2489 /* TimeKeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78F236721416CE900DC2489 /* TimeKeeper.swift */; };
 		A7A6B89F21353DE8000B4E38 /* ChooseUserWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A6B89D21353DE8000B4E38 /* ChooseUserWindow.swift */; };
 		A7A6B8A021353DE8000B4E38 /* ChooseUserWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7A6B89E21353DE8000B4E38 /* ChooseUserWindow.xib */; };
 		A7E62733213DA55400F0395D /* WindowTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E62732213DA55400F0395D /* WindowTracking.swift */; };
+		A7EAAA22215624B9007E942A /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EAAA21215624B9007E942A /* Notifications.swift */; };
+		A7EAAA242156256F007E942A /* SendOrSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EAAA232156256F007E942A /* SendOrSave.swift */; };
+		A7EAAA2621562909007E942A /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EAAA2521562909007E942A /* UserDefaultsHelper.swift */; };
 		OBJ_35 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* main.swift */; };
 		OBJ_37 /* SwiftShell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "SwiftShell::SwiftShell::Product" /* SwiftShell.framework */; };
 		OBJ_45 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
@@ -114,7 +116,6 @@
 		A73AA83021273FDA00D0B7FF /* ActivityTrackerSDUTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTrackerSDUTests.swift; sourceTree = "<group>"; };
 		A73AA83221273FDA00D0B7FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A73AA83E212740C100D0B7FF /* StatusMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
-		A73EE26F2145112A00A831B4 /* DataPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistence.swift; sourceTree = "<group>"; };
 		A73EE2712145177A00A831B4 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		A745FE50214FD0C000F242DD /* RealmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmTests.swift; sourceTree = "<group>"; };
 		A756633D213936C1008F5640 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -131,11 +132,14 @@
 		A7866E7A2136B90800626DF8 /* Sources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sources; sourceTree = "<group>"; };
 		A7866E7C2136C24400626DF8 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		A7866E7E2137F79700626DF8 /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
-		A7866E802138240800626DF8 /* Security.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Security.swift; sourceTree = "<group>"; };
+		A7866E802138240800626DF8 /* CredentialHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialHandling.swift; sourceTree = "<group>"; };
 		A78F236721416CE900DC2489 /* TimeKeeper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeKeeper.swift; sourceTree = "<group>"; };
 		A7A6B89D21353DE8000B4E38 /* ChooseUserWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseUserWindow.swift; sourceTree = "<group>"; };
 		A7A6B89E21353DE8000B4E38 /* ChooseUserWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseUserWindow.xib; sourceTree = "<group>"; };
 		A7E62732213DA55400F0395D /* WindowTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowTracking.swift; sourceTree = "<group>"; };
+		A7EAAA21215624B9007E942A /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		A7EAAA232156256F007E942A /* SendOrSave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendOrSave.swift; sourceTree = "<group>"; };
+		A7EAAA2521562909007E942A /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 		"ActivityTracker::ActivityTracker::Product" /* ActivityTracker */ = {isa = PBXFileReference; lastKnownFileType = text; path = ActivityTracker; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		OBJ_9 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -219,13 +223,14 @@
 				A7A6B89D21353DE8000B4E38 /* ChooseUserWindow.swift */,
 				A7A6B89E21353DE8000B4E38 /* ChooseUserWindow.xib */,
 				A7866E7E2137F79700626DF8 /* Requests.swift */,
-				A7866E802138240800626DF8 /* Security.swift */,
+				A7866E802138240800626DF8 /* CredentialHandling.swift */,
 				A756633D213936C1008F5640 /* Constants.swift */,
 				A756633F21394367008F5640 /* CredentialsWindow.swift */,
 				A756634021394367008F5640 /* CredentialsWindow.xib */,
 				A7E62732213DA55400F0395D /* WindowTracking.swift */,
 				A757F23821411F72009CCDC0 /* Extensions.swift */,
 				A78F236721416CE900DC2489 /* TimeKeeper.swift */,
+				A7EAAA232156256F007E942A /* SendOrSave.swift */,
 			);
 			path = ActivityTrackerSDU;
 			sourceTree = "<group>";
@@ -243,7 +248,6 @@
 		A75F95F7214E4A12003727F5 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
-				A73EE26F2145112A00A831B4 /* DataPersistence.swift */,
 				A75F95F8214E4A52003727F5 /* RealmPersistence.swift */,
 			);
 			path = Persistence;
@@ -263,6 +267,8 @@
 			children = (
 				A75F9600214E6708003727F5 /* Converters.swift */,
 				A759B6A121517CD40062B2C3 /* GenericHelpers.swift */,
+				A7EAAA21215624B9007E942A /* Notifications.swift */,
+				A7EAAA2521562909007E942A /* UserDefaultsHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -615,17 +621,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7EAAA2621562909007E942A /* UserDefaultsHelper.swift in Sources */,
 				A759B6A221517CD40062B2C3 /* GenericHelpers.swift in Sources */,
+				A7EAAA22215624B9007E942A /* Notifications.swift in Sources */,
 				A75F95F9214E4A52003727F5 /* RealmPersistence.swift in Sources */,
 				A75F95FE214E4E8E003727F5 /* Models.swift in Sources */,
 				A75F9601214E6708003727F5 /* Converters.swift in Sources */,
+				A7EAAA242156256F007E942A /* SendOrSave.swift in Sources */,
 				A756634121394367008F5640 /* CredentialsWindow.swift in Sources */,
 				A73EE2722145177A00A831B4 /* Storage.swift in Sources */,
 				A73AA83F212740C100D0B7FF /* StatusMenuController.swift in Sources */,
 				A73AA82021273FD900D0B7FF /* AppDelegate.swift in Sources */,
 				A7866E7F2137F79700626DF8 /* Requests.swift in Sources */,
 				A7866E7D2136C24400626DF8 /* Reachability.swift in Sources */,
-				A73EE2702145112A00A831B4 /* DataPersistence.swift in Sources */,
 				A757F23921411F72009CCDC0 /* Extensions.swift in Sources */,
 				A7E62733213DA55400F0395D /* WindowTracking.swift in Sources */,
 				A78F236821416CE900DC2489 /* TimeKeeper.swift in Sources */,
@@ -633,7 +641,7 @@
 				A7A6B89F21353DE8000B4E38 /* ChooseUserWindow.swift in Sources */,
 				A75F95FB214E4CEB003727F5 /* RealmModels.swift in Sources */,
 				A7230DC4214CDAC700C04551 /* CwlSysctl.swift in Sources */,
-				A7866E812138240800626DF8 /* Security.swift in Sources */,
+				A7866E812138240800626DF8 /* CredentialHandling.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1022,7 +1030,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = ActivityTrackerSDU/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = dk.sdu.health.ActivityTrackerSDU;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1088,7 +1096,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = ActivityTrackerSDU/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = dk.sdu.health.ActivityTrackerSDU;
 				PRODUCT_NAME = "$(TARGET_NAME)";

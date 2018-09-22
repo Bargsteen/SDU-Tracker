@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14113" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
+        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14113"/>
     </dependencies>
     <objects>
@@ -16,21 +17,29 @@
         <customObject id="Cx0-KW-VH8" customClass="StatusMenuController" customModule="ActivityTrackerSDU" customModuleProvider="target">
             <connections>
                 <outlet property="action" destination="Hhz-Bg-kEp" id="xGF-ga-9VX"/>
+                <outlet property="notificationSetting" destination="WaN-Xy-SIT" id="xKv-Ax-gdc"/>
                 <outlet property="statusMenu" destination="e12-ic-Z5e" id="cgH-mw-wId"/>
             </connections>
         </customObject>
         <menu id="e12-ic-Z5e">
             <items>
+                <menuItem title="Vælg Bruger" id="PPh-zM-IXL">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="chooseUserClicked:" target="Cx0-KW-VH8" id="hgU-f3-5hZ"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="PI9-em-ibR"/>
                 <menuItem title="Tracker kun tid" id="Hhz-Bg-kEp">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="toggleAppDeviceTrackingClicked:" target="Cx0-KW-VH8" id="1am-oF-M40"/>
                     </connections>
                 </menuItem>
-                <menuItem title="Vælg Bruger" id="PPh-zM-IXL">
+                <menuItem title="Notifikationer: Fra" id="WaN-Xy-SIT">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="chooseUserClicked:" target="Cx0-KW-VH8" id="hgU-f3-5hZ"/>
+                        <action selector="notificationSettingClicked:" target="Cx0-KW-VH8" id="49e-o2-iBC"/>
                     </connections>
                 </menuItem>
                 <menuItem title="Slet Logindetaljer" id="RdD-U9-R6f">
@@ -39,6 +48,7 @@
                         <action selector="deleteCredentialsClicked:" target="Cx0-KW-VH8" id="YoJ-dB-L1t"/>
                     </connections>
                 </menuItem>
+                <menuItem isSeparatorItem="YES" id="riD-Zd-I6I"/>
                 <menuItem title="Afslut" id="ykD-QO-mhc">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
@@ -49,7 +59,7 @@
             <connections>
                 <outlet property="delegate" destination="Cx0-KW-VH8" id="Nhj-0i-9Sv"/>
             </connections>
-            <point key="canvasLocation" x="135.5" y="-43.5"/>
+            <point key="canvasLocation" x="289" y="-28"/>
         </menu>
         <userDefaultsController representsSharedInstance="YES" id="oId-jM-GQ6"/>
     </objects>

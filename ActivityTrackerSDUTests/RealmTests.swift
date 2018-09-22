@@ -24,8 +24,8 @@ class RealmTests: XCTestCase {
     }
     
     func testNoDeviceOrAppUsagesInTestDb() {
-        let retrievedAppUsage = Persistence.maybeRetrieveOldestAppUsage()
-        let retrievedDeviceUsage = Persistence.maybeRetrieveOldestDeviceUsage()
+        let retrievedAppUsage = Persistence.maybeFetchOldestAppUsage()
+        let retrievedDeviceUsage = Persistence.maybeFetchOldestDeviceUsage()
         
         XCTAssertNil(retrievedAppUsage)
         XCTAssertNil(retrievedDeviceUsage)
@@ -37,7 +37,7 @@ class RealmTests: XCTestCase {
         let deviceUsage = makeTestDeviceUsage(id: id, timeStamp: nil)
         // Act
         Persistence.save(deviceUsage)
-        let retrievedData = Persistence.maybeRetrieveOldestDeviceUsage()
+        let retrievedData = Persistence.maybeFetchOldestDeviceUsage()
         // Assert
         XCTAssertEqual(id,retrievedData?.participantIdentifier)
     }
@@ -48,7 +48,7 @@ class RealmTests: XCTestCase {
         let appUsage = makeTestAppUsage(id: id, timeStamp: nil)
         // Act
         Persistence.save(appUsage)
-        let retrievedData = Persistence.maybeRetrieveOldestAppUsage()
+        let retrievedData = Persistence.maybeFetchOldestAppUsage()
         // Assert
         XCTAssertEqual(id,retrievedData?.participantIdentifier)
     }
@@ -61,7 +61,7 @@ class RealmTests: XCTestCase {
         Persistence.save(deviceUsage)
         
         Persistence.deleteDeviceUsage(deviceUsage.getIdentifier())
-        let retrievedData = Persistence.maybeRetrieveOldestDeviceUsage()
+        let retrievedData = Persistence.maybeFetchOldestDeviceUsage()
         
         // Assert
         XCTAssertNil(retrievedData)
@@ -74,7 +74,7 @@ class RealmTests: XCTestCase {
         // Act
         Persistence.save(appUsage)
         Persistence.deleteAppUsage(appUsage.getIdentifier())
-        let retrievedData = Persistence.maybeRetrieveOldestAppUsage()
+        let retrievedData = Persistence.maybeFetchOldestAppUsage()
         // Assert
         XCTAssertNil(retrievedData)
     }
@@ -90,7 +90,7 @@ class RealmTests: XCTestCase {
         Persistence.save(appUsageNewer)
         Persistence.save(appUsageOld)
         
-        let retrievedData = Persistence.maybeRetrieveOldestAppUsage()
+        let retrievedData = Persistence.maybeFetchOldestAppUsage()
         // Assert
         XCTAssertEqual(id1, retrievedData?.participantIdentifier)
     }
@@ -106,7 +106,7 @@ class RealmTests: XCTestCase {
         Persistence.save(deviceUsageNewer)
         Persistence.save(deviceUsageOld)
         
-        let retrievedData = Persistence.maybeRetrieveOldestDeviceUsage()
+        let retrievedData = Persistence.maybeFetchOldestDeviceUsage()
         // Assert
         XCTAssertEqual(id1, retrievedData?.participantIdentifier)
     }

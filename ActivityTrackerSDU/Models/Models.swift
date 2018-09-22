@@ -74,7 +74,7 @@ enum Result<Value> {
     case failure(Error)
 }
 
-enum UsageType {
-    case app
-    case device
+enum UsageType: String {
+    case app = "App "
+    case device = "Tid "
 }

@@ -25,7 +25,7 @@ class Persistence {
         
     }
     
-    static func maybeRetrieveOldestDeviceUsage() -> DeviceUsage? {
+    static func maybeFetchOldestDeviceUsage() -> DeviceUsage? {
         do {
             let realm = try Realm()
             if let retrievedObject = realm.objects(DeviceUsageObject.self).sorted(byKeyPath: "timeStamp").first {
@@ -39,7 +39,7 @@ class Persistence {
        return nil
     }
     
-    static func maybeRetrieveOldestAppUsage() -> AppUsage? {
+    static func maybeFetchOldestAppUsage() -> AppUsage? {
         
         do {
             let realm = try Realm()
@@ -52,6 +52,17 @@ class Persistence {
             print("Error on retrieving old app usages: \(error)")
         }
         return nil
+    }
+    
+    static func fetchAllAppUsages() -> [AppUsage] {
+        do {
+            let realm = try Realm()
+            return realm.objects(AppUsageObject.self).map { obj in AppUsage(managedObject: obj) }
+        } catch {
+            // TODO: Log error
+            print("Error on retrieving old app usages: \(error)")
+        }
+        return []
     }
     
     static func deleteDeviceUsage(_ identifier: String) {
@@ -70,14 +81,40 @@ class Persistence {
         }
     }
     
+    /*static func fetchAppUsageById(_ identifier: String) -> AppUsage? {
+        do {
+            let realm = try Realm()
+            let objectFromDb = realm.object(ofType: AppUsageObject.self, forPrimaryKey: identifier)
+            if let objectFromDb = objectFromDb {
+                let appUsageFound = AppUsage(managedObject: objectFromDb)
+                if(appUsageFound.getIdentifier() != identifier) {
+                    fatalError("Retrieved some other object or none..")
+                }
+                return appUsageFound
+            } else {
+                fatalError("object retrieved from DB was nil")
+            }
+            
+            
+        } catch {
+            print("Could not retrieve appUsage with id: \(identifier)")
+        }
+        return nil
+    }*/
+    
     static func deleteAppUsage(_ identifier: String) {
         do {
             let realm = try Realm()
             let objectToDelete = realm.object(ofType: AppUsageObject.self, forPrimaryKey: identifier)
+            
             if let objectToDelete = objectToDelete {
+                print(objectToDelete)
+                
                 try realm.write {
                     realm.delete(objectToDelete)
                 }
+            } else {
+                print("Could not find object with identifier: \(identifier)")
             }
             
         } catch {

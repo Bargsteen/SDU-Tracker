@@ -63,16 +63,4 @@ func deleteCredentialsFromKeychain() throws {
     guard status == errSecSuccess else { throw KeychainError.unhandledError(status: status)}
 }
 
-private func saveCredentialsToCredentialsStoragePermanently(_ credentials: Credentials) {
-    let userCredential = URLCredential(user: credentials.username,
-                                       password: credentials.password,
-                                       persistence: .permanent)
-    let protectionSpace = URLProtectionSpace.init(host: .server,
-                                                  port: 80,
-                                                  protocol: "https",
-                                                  realm: nil,
-                                                  authenticationMethod: nil)
-    URLCredentialStorage.shared.setDefaultCredential(userCredential, for: protectionSpace)
-}
-
 
