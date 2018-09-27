@@ -20,7 +20,7 @@ extension String {
     static let unknownDevice = "ukendt-apparat"
     
     // Menu strings
-    static let trackingAppData = "Tracker: App forbrug"
+    static let trackingAppData = "Tracker: App + Tid"
     static let trackingDeviceData = "Tracker: Tid"
     
     static let notificationsEnabled = "Notifikationer: Til"

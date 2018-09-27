@@ -12,20 +12,13 @@ import CocoaLumberjackSwift
 public class Logging {
     
     static func setupLogger(){
-        DDLog.add(DDTTYLogger.sharedInstance) // TTY = Xcode console
+        //DDLog.add(DDTTYLogger.sharedInstance) // TTY = Xcode console. The xcode console also print ASL messages.
         DDLog.add(DDASLLogger.sharedInstance) // ASL = Apple System Logs
         
         let fileLogger: DDFileLogger = DDFileLogger() // File Logger
         fileLogger.rollingFrequency = TimeInterval(60*60*24*7)  // 7 days
         fileLogger.logFileManager.maximumNumberOfLogFiles = 7
         DDLog.add(fileLogger)
-    }
-    
-    static func testLogger() {
-        logError("Error Test")
-        logWarning("Warning Test")
-        logInfo("Info Test")
-        logDebug("Debug Test")
     }
     
     // Simple redirect functions. Makes it easy to switch to another logger.

@@ -26,7 +26,10 @@ func sendUsage<T:Encodable>(usage: T, usageType: UsageType, credentials: Credent
     let loginData: NSData = loginString.data(using: String.Encoding.utf8.rawValue)! as NSData
     let base64LoginString = loginData.base64EncodedString(options: [])
     
-    guard let url = urlComponents.url else { fatalError("Could not create URL from components")}
+    guard let url = urlComponents.url else {
+        Logging.logError("FATAL - Could not create URL from components")
+        fatalError("Could not create URL from components")
+    }
     
     // Set up request
     var request = URLRequest(url: url)

@@ -35,6 +35,17 @@ class TimeKeeper {
         }
         return nil
     }
+    
+    // This function is used for terminating and sending last AppUsage when the Mac goes to sleep
+    func maybeTerminateAndGetCurrentActiveWindow() -> ActiveWindowTime? {
+        if let currentActiveWindow = currentActiveWindow {
+            let now = Date()
+            return ActiveWindowTime(bundleIdentifier: currentActiveWindow.bundleIdentifier, startTime: currentActiveWindow.startTime, endTime: now)
+        }
+        
+        Logging.logError("Tried to terminate and get current ActiveWindowTime, but currentActiveWindow was nil.")
+        return nil
+    }
 }
 
 struct ActiveWindowTime: Codable {

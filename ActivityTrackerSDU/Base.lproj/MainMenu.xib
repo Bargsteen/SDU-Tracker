@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14113" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14113"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14313.18"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -16,9 +15,9 @@
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <customObject id="Cx0-KW-VH8" customClass="StatusMenuController" customModule="ActivityTrackerSDU" customModuleProvider="target">
             <connections>
-                <outlet property="action" destination="Hhz-Bg-kEp" id="xGF-ga-9VX"/>
                 <outlet property="notificationSetting" destination="WaN-Xy-SIT" id="xKv-Ax-gdc"/>
                 <outlet property="statusMenu" destination="e12-ic-Z5e" id="cgH-mw-wId"/>
+                <outlet property="trackingType" destination="Hhz-Bg-kEp" id="xGF-ga-9VX"/>
             </connections>
         </customObject>
         <menu id="e12-ic-Z5e">

@@ -40,7 +40,7 @@ public class UserDefaultsHelper {
     }
     
     static func getParticipantIdentifier() -> String {
-        let credentials = loadCredentialsFromKeychain()
+        let credentials = CredentialHandler.loadCredentialsFromKeychain()
         let currentUser = getCurrentUser()
         if let credentials = credentials {
             return "\(credentials.username):\(currentUser)"
