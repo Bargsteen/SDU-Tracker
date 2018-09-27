@@ -1,0 +1,5 @@
+github "sindresorhus/LaunchAtLogin"
+github "ashleymills/Reachability.swift"
+github "realm/realm-cocoa"
+git "https://github.com/mattgallagher/CwlUtils.git" "master"
+github "CocoaLumberjack/CocoaLumberjack"
