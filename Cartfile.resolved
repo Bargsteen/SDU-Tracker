@@ -1,0 +1,6 @@
+github "CocoaLumberjack/CocoaLumberjack" "3.4.2"
+github "IBM-Swift/HeliumLogger" "1.7.2"
+github "ashleymills/Reachability.swift" "v4.2.1"
+github "mattgallagher/CwlUtils" "ac71d651b3809a8acf8c783a5d7a8735965d38ed"
+github "realm/realm-cocoa" "v3.10.0"
+github "sindresorhus/LaunchAtLogin" "v2.2.1"

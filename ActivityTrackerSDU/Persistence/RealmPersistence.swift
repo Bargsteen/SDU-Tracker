@@ -9,6 +9,7 @@ import Foundation
 import Realm
 import RealmSwift
 
+
 class Persistence {
     static let sharedInstance = Persistence()
     
