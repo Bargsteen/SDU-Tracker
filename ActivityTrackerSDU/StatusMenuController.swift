@@ -142,10 +142,9 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate{
     }
     
     func setUpDeviceUsageTracking() {
-        let useAppTracking = UserDefaultsHelper.getUseAppTracking()
-        if !useAppTracking {
-            sendDeviceUsage(eventType: .started)
-        }
+        
+        // Send initial start event
+        sendDeviceUsage(eventType: .started)
         
         let notificationCenter = NSWorkspace.shared.notificationCenter
         
@@ -154,16 +153,12 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate{
             
             self.setAndMaybeAskForCorrectUser()
             
-            if(!UserDefaultsHelper.getUseAppTracking()) {
-                sendDeviceUsage(eventType: EventType.started)
-            }
+            sendDeviceUsage(eventType: EventType.started)
         })
         
         // Handle sleeping aka Session end
         notificationCenter.addObserver(forName: NSWorkspace.screensDidSleepNotification, object: nil, queue: nil, using: {(n:Notification) in
-            if (!UserDefaultsHelper.getUseAppTracking()) {
-                sendDeviceUsage(eventType: EventType.ended)
-            }
+            sendDeviceUsage(eventType: EventType.ended)
         })
     }
     
