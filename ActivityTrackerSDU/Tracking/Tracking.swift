@@ -21,7 +21,16 @@ class Tracking {
         self.userHandler = userHandler
     }
     
-    public func setupAppUsageTracking(credentials: Credentials) {
+    public func setupTracking() {
+        if let credentials = CredentialHandler.loadCredentialsFromKeychain() {
+            
+            setUpDeviceUsageTracking(credentials: credentials)
+            
+            setupAppUsageTracking(credentials: credentials)
+        }
+    }
+    
+    private func setupAppUsageTracking(credentials: Credentials) {
         
         // When we have Internet
         reachability.whenReachable = { reachability in
@@ -77,7 +86,7 @@ class Tracking {
         }
     }
     
-    func setUpDeviceUsageTracking(credentials: Credentials) {
+    private func setUpDeviceUsageTracking(credentials: Credentials) {
         
         // Send initial start event
         sendDeviceUsage(eventType: .started)
@@ -108,7 +117,7 @@ class Tracking {
         })
     }
     
-    func maybeGetLastAppUsage() -> AppUsage? {
+    private func maybeGetLastAppUsage() -> AppUsage? {
         let activeWindow = self.timeKeeper.maybeGetLastActiveWindow()
         if let activeWindow = activeWindow {
             return makeAppUsage(activeWindow: activeWindow)

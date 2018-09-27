@@ -22,16 +22,11 @@ class StatusMenuController: NSObject{
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     
     override func awakeFromNib() {
-        let icon = #imageLiteral(resourceName: "statusIcon")
-        icon.isTemplate = true // best for dark mode
-        statusItem.image = icon
-        statusItem.menu = statusMenu
+        setupMenuValuesAndIcon()
         
-        trackingType.title = UserDefaultsHelper.getUseAppTracking() ? .trackingAppData : .trackingDeviceData
-        notificationSetting.title = UserDefaultsHelper.getShowNotificationsSetting() ? .notificationsEnabled : .notificationsDisabled
-
         userHandler = UserHandler()
         tracking = Tracking(userHandler: userHandler)
+        tracking.setupTracking()
     
         userHandler.maybeAskAndSetCorrectUser()
         
@@ -39,15 +34,9 @@ class StatusMenuController: NSObject{
         
         // Set Defaults. TODO: Move to somewhere more relevant
         UserDefaultsHelper.setDeviceModelName(Sysctl.model)
-        
-        if let credentials = CredentialHandler.loadCredentialsFromKeychain() {
-            
-            tracking.setUpDeviceUsageTracking(credentials: credentials)
-            
-            tracking.setupAppUsageTracking(credentials: credentials)
-        }
+
     }
-    
+
     
     // -- CLICK HANDLER FUNCTIONS
     @IBAction func chooseUserClicked(_ sender: NSMenuItem) {
@@ -58,7 +47,18 @@ class StatusMenuController: NSObject{
         NSApplication.shared.terminate(self)
     }
     
+    // Local helpers
+    func setupMenuValuesAndIcon() {
+        let icon = #imageLiteral(resourceName: "statusIcon")
+        icon.isTemplate = true // best for dark mode
+        statusItem.image = icon
+        statusItem.menu = statusMenu
+        
+        trackingType.title = UserDefaultsHelper.getUseAppTracking() ? .trackingAppData : .trackingDeviceData
+        notificationSetting.title = UserDefaultsHelper.getShowNotificationsSetting() ? .notificationsEnabled : .notificationsDisabled
+    }
     
+
     // -- ONLY USED FOR DEBUGGING
     @IBAction func deleteCredentialsClicked(_ sender: NSMenuItem) {
         do {
