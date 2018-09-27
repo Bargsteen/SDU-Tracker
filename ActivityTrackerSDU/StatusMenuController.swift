@@ -6,10 +6,9 @@
 //
 
 import Cocoa
-import RealmSwift
-import Realm
 import Foundation
-import SwiftLog
+import Reachability
+import CwlUtils
 
 
 class StatusMenuController: NSObject, ChooseUserWindowDelegate{

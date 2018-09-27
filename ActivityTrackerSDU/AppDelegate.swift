@@ -7,7 +7,6 @@
 
 import Cocoa
 import ServiceManagement
-import SwiftLog
 
 extension Notification.Name {
     static let killLauncher = Notification.Name("killLauncher")
@@ -17,7 +16,7 @@ extension Notification.Name {
 @NSApplicationMain
 class AppDelegate: NSObject {
     
-    //open a new Pipe to consume the messages on STDOUT and STDERR
+    /*//open a new Pipe to consume the messages on STDOUT and STDERR
     let inputPipe = Pipe()
     //open another Pipe to output messages back to STDOUT
     let outputPipe = Pipe()
@@ -67,7 +66,7 @@ class AppDelegate: NSObject {
             //Or if you wanted to send your print statements to the server, then
             //you could do this in your notification handler in the app delegate.
         }
-    }
+    }*/
 }
 
 
@@ -75,7 +74,7 @@ extension AppDelegate: NSApplicationDelegate {
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         
-        let launcherAppId = "dk.sdu.health.ActivityTrackerLauncher"
+        /*let launcherAppId = "dk.sdu.health.ActivityTrackerLauncher"
         let runningApps = NSWorkspace.shared.runningApplications
         let isRunning = !runningApps.filter { $0.bundleIdentifier == launcherAppId }.isEmpty
         
@@ -93,7 +92,7 @@ extension AppDelegate: NSApplicationDelegate {
         /*// if not simulator, open console pipe
         #if !(targetEnvironment(simulator))
             openConsolePipe()
-        #endif*/
+        #endif*/*/
     }
     
     func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {

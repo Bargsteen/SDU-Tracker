@@ -6,14 +6,13 @@
 //
 
 import Foundation
-import SwiftLog
 
 public class Logging {
     static func logWarning(_ warningMessage: String){
-        logw("Warning: \(warningMessage)")
+        //logw("Warning: \(warningMessage)")
     }
     static func logError(_ errorMessage: String){
-        logw("!! ERROR !!: \(errorMessage)")
+        //logw("!! ERROR !!: \(errorMessage)")
     }
     
 }
