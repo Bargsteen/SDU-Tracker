@@ -67,15 +67,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		A70A39CD212C629C0065B7CC /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = Contents/Library/LoginItems;
-			dstSubfolderSpec = 1;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A78299A4215CC78B003903AE /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -374,8 +365,8 @@
 				A73AA81921273FD900D0B7FF /* Sources */,
 				A73AA81A21273FD900D0B7FF /* Frameworks */,
 				A73AA81B21273FD900D0B7FF /* Resources */,
-				A70A39CD212C629C0065B7CC /* CopyFiles */,
 				A78299A4215CC78B003903AE /* Embed Frameworks */,
+				A799D5CE215CDF970082FBB6 /* ShellScript */,
 				A78299A5215CC7B2003903AE /* CopyFiles */,
 			);
 			buildRules = (
@@ -517,6 +508,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "swift build --package-path \"$SRCROOT\"\n";
+		};
+		A799D5CE215CDF970082FBB6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Carthage/Build/Mac/LaunchAtLogin.framework/Resources/copy-helper.sh\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

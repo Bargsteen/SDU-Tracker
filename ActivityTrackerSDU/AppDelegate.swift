@@ -7,11 +7,7 @@
 
 import Cocoa
 import ServiceManagement
-
-extension Notification.Name {
-    static let killLauncher = Notification.Name("killLauncher")
-}
-
+import LaunchAtLogin
 
 @NSApplicationMain
 class AppDelegate: NSObject {
@@ -73,6 +69,7 @@ class AppDelegate: NSObject {
 extension AppDelegate: NSApplicationDelegate {
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        LaunchAtLogin.isEnabled = true
         
         /*let launcherAppId = "dk.sdu.health.ActivityTrackerLauncher"
         let runningApps = NSWorkspace.shared.runningApplications
