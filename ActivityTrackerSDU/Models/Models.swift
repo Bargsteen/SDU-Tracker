@@ -66,7 +66,7 @@ struct DeviceUsage: Codable {
 }
 
 enum EventType: Int {
-    case started = 0, ended = 1
+    case started = 1, ended = 0
 }
 
 enum Result<Value> {
