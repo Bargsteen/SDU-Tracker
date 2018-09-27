@@ -47,6 +47,7 @@ public class UserDefaultsHelper {
         }
         // This should never happen.
         // And the data can't be send to db, because no credentials exist.
+        Logging.logError("Credentials not found.")
         return currentUser
     }
     

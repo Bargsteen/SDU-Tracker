@@ -19,7 +19,7 @@ func maybeShowSentSavedNotification(shouldShow: Bool, usageType: UsageType, noti
     if(shouldShow){
         let title = usageType.rawValue + notificationType.rawValue
         showNotification(title: title, informativeText: usageDescription)
-        print("\(title) \(usageDescription)")
+        Logging.logInfo("\(title) \(usageDescription)")
     }
 }
 
