@@ -93,10 +93,8 @@ extension AppDelegate: NSApplicationDelegate {
     }
     
     func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
-        if(!UserDefaultsHelper.getUseAppTracking()) {
-            sendDeviceUsage(eventType: .ended)
-            sleep(1) // Wait a second to ensure the device usage is sent. TODO: Make a cleaner handling.
-        }
+        sendDeviceUsage(eventType: .ended)
+        sleep(1) // Wait a second to ensure the device usage is sent. TODO: Make a cleaner handling.
         
         return .terminateNow
         
