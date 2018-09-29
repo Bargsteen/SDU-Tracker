@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class CredentialHandler {
+public class CredentialsHandler {
     enum KeychainError: Error {
         case noPassword
         case unexpectedPasswordData

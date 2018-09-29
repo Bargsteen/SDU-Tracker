@@ -30,7 +30,7 @@ class CredentialsWindow: NSWindowController, NSWindowDelegate {
         if(userNameTextField.stringValue != "" && passwordTextField.stringValue != "") {
             do {
                 let credentials = Credentials(username: userNameTextField.stringValue, password: passwordTextField.stringValue)
-                try CredentialHandler.saveCredentialsToKeychain(credentials: credentials)
+                try CredentialsHandler.saveCredentialsToKeychain(credentials: credentials)
                 showAlertWithSingleButton(messageText: "Succesful gemning", informativeText: "Brugeren \(credentials.username) blev succesfuldt gemt.", buttonText: "Okay", alertStyle: .informational)
                 credentialsAreSaved = true
                 

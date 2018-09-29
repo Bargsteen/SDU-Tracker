@@ -8,12 +8,13 @@
 import Cocoa
 import Foundation
 import CwlUtils
+import Realm
+import RealmSwift
 
 class StatusMenuController: NSObject{
     
     @IBOutlet weak var statusMenu: NSMenu!
 
-    var tracking: Tracking!
     var userHandler: UserHandler!
     
     @IBOutlet weak var trackingType: NSMenuItem!
@@ -25,16 +26,21 @@ class StatusMenuController: NSObject{
         setupMenuValuesAndIcon()
         
         userHandler = UserHandler()
-        tracking = Tracking(userHandler: userHandler)
-        tracking.setupTracking()
-    
-        userHandler.maybeAskAndSetCorrectUser()
-        
-        CredentialHandler.ensureCredentialsAreSet()
+        CredentialsHandler.ensureCredentialsAreSet()
         
         // Set Defaults. TODO: Move to somewhere more relevant
         UserDefaultsHelper.setDeviceModelName(Sysctl.model)
-
+        
+        let credentials = CredentialsHandler.loadCredentialsFromKeychain()
+        
+        if let credentials = credentials {
+            let sendOrSaveHandler = SendOrSaveHandler(credentials: credentials)
+            let tracking = Tracking(userHandler: userHandler, sendOrSaveHandler: sendOrSaveHandler)
+            
+            userHandler.maybeAskAndSetCorrectUser()
+            
+            tracking.setupTracking()
+        }
     }
 
     
@@ -62,7 +68,7 @@ class StatusMenuController: NSObject{
     // -- ONLY USED FOR DEBUGGING
     @IBAction func deleteCredentialsClicked(_ sender: NSMenuItem) {
         do {
-            try CredentialHandler.deleteCredentialsFromKeychain()
+            try CredentialsHandler.deleteCredentialsFromKeychain()
         } catch {
         }
     }
