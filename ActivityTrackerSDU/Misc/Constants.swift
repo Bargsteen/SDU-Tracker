@@ -37,4 +37,5 @@ extension String {
 extension Int {
     static let minWindowArea = 1000
     static let sendSavedUsagesInterval = 60 // seconds
+    static let sendSavedUsagesAmount = 10 // Tries to send X last AppUsages and X last DeviceUsages
 }

@@ -48,7 +48,7 @@ class Tracking {
                     
                     if(timer >= .sendSavedUsagesInterval){
                         timer = 0
-                        self.sendOrSaveHandler.sendSavedUsages()
+                        self.sendOrSaveHandler.sendSomeSavedUsages()
                     }
                    
                     

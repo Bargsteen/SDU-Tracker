@@ -73,10 +73,6 @@ class StatusMenuController: NSObject{
         }
     }
     
-    @IBAction func showDBContentClicked(_ sender: NSMenuItem) {
-        printSavedAppUsages()
-    }
-    
     @IBAction func notificationSettingClicked(_ sender: NSMenuItem) {
         let showNotifications = UserDefaultsHelper.getShowNotificationsSetting()
         if(showNotifications){
@@ -86,11 +82,6 @@ class StatusMenuController: NSObject{
             notificationSetting.title = .notificationsEnabled
         }
         UserDefaultsHelper.setShowNotificationsSetting(!showNotifications)
-    }
-    
-    func printSavedAppUsages() {
-        let appUsages = Persistence.fetchAllAppUsages().sorted {(first, second) in first.timeStamp <= second.timeStamp }
-        appUsages.forEach {usage in print("\(usage.timeStamp) -- \(usage.package)") }
     }
     
     @IBAction func toggleAppDeviceTrackingClicked(_ sender: NSMenuItem) {

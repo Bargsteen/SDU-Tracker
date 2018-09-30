@@ -36,20 +36,26 @@ class Persistence {
         }
     }
     
-    static func fetchAllDeviceUsages() -> [DeviceUsage] {
+    static func fetchDeviceUsages(upTo: Int) -> [DeviceUsage] {
         do {
             let realm = try Realm()
-            return realm.objects(DeviceUsageObject.self).map { obj in DeviceUsage(managedObject: obj) }
+            return realm.objects(DeviceUsageObject.self)
+                .sorted(byKeyPath: "timeStamp", ascending: true)
+                .prefix(upTo) // return first upTo elements. Bound safe.
+                .map { obj in DeviceUsage(managedObject: obj) }
         } catch {
             Logging.logError("Persistence fetchAllDeviceUsages: \(error)")
         }
         return []
     }
     
-    static func fetchAllAppUsages() -> [AppUsage] {
+    static func fetchAppUsages(upTo: Int) -> [AppUsage] {
         do {
             let realm = try Realm()
-            return realm.objects(AppUsageObject.self).map { obj in AppUsage(managedObject: obj) }
+            return realm.objects(AppUsageObject.self)
+                .sorted(byKeyPath: "timeStamp", ascending: true)
+                .prefix(upTo) // return first upTo elements. Bound safe.
+                .map { obj in AppUsage(managedObject: obj) }
         } catch {
             Logging.logError("Persistence fetchAllAppUsages: \(error)")
         }
