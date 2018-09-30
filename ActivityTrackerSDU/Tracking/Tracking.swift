@@ -33,7 +33,7 @@ class Tracking {
     }
     
     private func setupAppUsageTracking(credentials: Credentials) {
-        var timer = 0
+        var timer : UInt32 = 0
         
         // When we have Internet
         reachability.whenReachable = { reachability in
@@ -44,7 +44,7 @@ class Tracking {
                         break
                     }
                     
-                    timer = timer + 1
+                    timer = timer + .appTrackingInterval
                     
                     if(timer >= .sendSavedUsagesInterval){
                         timer = 0
@@ -57,7 +57,7 @@ class Tracking {
                             self.sendOrSaveHandler.sendOrSaveUsage(usage: lastAppUsage, fromPersistence: false)
                         }
                     }
-                    sleep(1) // 1 second
+                    sleep(.appTrackingInterval)
                 }
             }
         }
@@ -80,7 +80,7 @@ class Tracking {
                     
                     // Wait one second before trying to get the app usage.
                     // Could perhaps be handled by an event listener.
-                    sleep(1)
+                    sleep(.appTrackingInterval)
                 }
             }
         }
@@ -110,16 +110,6 @@ class Tracking {
         // Handle sleeping aka Session end
         notificationCenter.addObserver(forName: NSWorkspace.screensDidSleepNotification, object: nil, queue: nil, using: {(n:Notification) in
             self.sendOrSaveHandler.makeAndSendOrSaveDeviceUsage(eventType: .ended)
-            
-//            // Send an appUsage for currentWindow when the computer goes to sleep.
-//            // Otherwise it will count the sleeping time into the duration of the appUsage
-//            if(UserDefaultsHelper.getUseAppTracking()){
-//                if let activeWindow = self.timeKeeper.maybeTerminateAndGetCurrentActiveWindow() {
-//                    let appUsage = makeAppUsage(activeWindow: activeWindow)
-//                    self.sendOrSaveHandler.sendOrSaveUsage(usage: appUsage, fromPersistence: false)
-//                }
-//            }
-            
         })
     }
     
