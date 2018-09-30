@@ -23,9 +23,6 @@ extension String {
     static let trackingAppData = "Tracker: App + Tid"
     static let trackingDeviceData = "Tracker: Tid"
     
-    static let notificationsEnabled = "Notifikationer: Til"
-    static let notificationsDisabled = "Notifikationer: Fra"
-    
     // UserDefaults keys
     static let currentUserKey = "currentUser"
     static let showNotificationsKey = "showNotifications"

@@ -8,21 +8,46 @@
 import Cocoa
 import ServiceManagement
 import LaunchAtLogin
+import CwlUtils
 
 @NSApplicationMain
-class AppDelegate: NSObject {}
+class AppDelegate: NSObject {
+    var sendOrSaveHandler : SendOrSaveHandler?
+    
+    override init() {
+        LaunchAtLogin.isEnabled = true
+        Logging.setupLogger()
+        
+        CredentialsHandler.ensureCredentialsAreSet()
+        
+        UserDefaultsHelper.setDeviceModelName(Sysctl.model)
+        
+        let credentials = CredentialsHandler.loadCredentialsFromKeychain()
+        
+        if let credentials = credentials {
+            
+            self.sendOrSaveHandler = SendOrSaveHandler(credentials: credentials)
+            
+        } else {
+            Logging.logError("AppDelegate applicationDidFinishLaunching: No credentials.")
+            exit(1)
+        }
+    }
+}
 
 
 extension AppDelegate: NSApplicationDelegate {
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        LaunchAtLogin.isEnabled = true
-        Logging.setupLogger()
+        UserHandler.sharedInstance.maybeAskAndSetCorrectUser()
+        
+        let tracking = Tracking(userHandler: UserHandler.sharedInstance, sendOrSaveHandler: sendOrSaveHandler!)
+        tracking.setupTracking()
     }
     
     func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
-        //sendDeviceUsage(eventType: .ended) TODO: Fix
-        sleep(1) // Wait a second to ensure the device usage is sent. TODO: Make a cleaner handling.
+        self.sendOrSaveHandler?.makeAndSendOrSaveDeviceUsage(eventType: .ended)
+        sleep(1)
         return .terminateNow
     }
 }

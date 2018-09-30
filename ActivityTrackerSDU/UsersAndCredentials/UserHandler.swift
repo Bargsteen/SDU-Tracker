@@ -10,6 +10,8 @@ import Cocoa
 
 public class UserHandler {
     
+    static let sharedInstance = UserHandler()
+    
     var chooseUserWindow: ChooseUserWindow!
     
     init() {

@@ -51,7 +51,6 @@
 		A7BE8E85215D099200C0A864 /* Tracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BE8E84215D099200C0A864 /* Tracking.swift */; };
 		A7BE8E88215D0B8000C0A864 /* UserHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BE8E87215D0B8000C0A864 /* UserHandler.swift */; };
 		A7E62733213DA55400F0395D /* WindowTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E62732213DA55400F0395D /* WindowTracking.swift */; };
-		A7EAAA22215624B9007E942A /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EAAA21215624B9007E942A /* Notifications.swift */; };
 		A7EAAA242156256F007E942A /* SendOrSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EAAA232156256F007E942A /* SendOrSave.swift */; };
 		A7EAAA2621562909007E942A /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EAAA2521562909007E942A /* UserDefaultsHelper.swift */; };
 		A7EAAA362156626F007E942A /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EAAA352156626F007E942A /* Logging.swift */; };
@@ -150,7 +149,6 @@
 		A7BE8E84215D099200C0A864 /* Tracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tracking.swift; sourceTree = "<group>"; };
 		A7BE8E87215D0B8000C0A864 /* UserHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHandler.swift; sourceTree = "<group>"; };
 		A7E62732213DA55400F0395D /* WindowTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowTracking.swift; sourceTree = "<group>"; };
-		A7EAAA21215624B9007E942A /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		A7EAAA232156256F007E942A /* SendOrSave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendOrSave.swift; sourceTree = "<group>"; };
 		A7EAAA2521562909007E942A /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 		A7EAAA352156626F007E942A /* Logging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logging.swift; sourceTree = "<group>"; };
@@ -242,7 +240,6 @@
 			isa = PBXGroup;
 			children = (
 				A75F9600214E6708003727F5 /* Converters.swift */,
-				A7EAAA21215624B9007E942A /* Notifications.swift */,
 				A7EAAA2521562909007E942A /* UserDefaultsHelper.swift */,
 				A7EAAA352156626F007E942A /* Logging.swift */,
 				A78521BC215FAE7A00F9D9CC /* UsageFactory.swift */,
@@ -548,7 +545,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7EAAA2621562909007E942A /* UserDefaultsHelper.swift in Sources */,
-				A7EAAA22215624B9007E942A /* Notifications.swift in Sources */,
 				A7EAAA362156626F007E942A /* Logging.swift in Sources */,
 				A75F95F9214E4A52003727F5 /* Persistence.swift in Sources */,
 				A75F95FE214E4E8E003727F5 /* Models.swift in Sources */,

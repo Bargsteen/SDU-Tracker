@@ -7,46 +7,23 @@
 
 import Cocoa
 import Foundation
-import CwlUtils
-import Realm
-import RealmSwift
 
 class StatusMenuController: NSObject{
     
     @IBOutlet weak var statusMenu: NSMenu!
-
-    var userHandler: UserHandler!
     
     @IBOutlet weak var trackingType: NSMenuItem!
-    @IBOutlet weak var notificationSetting: NSMenuItem!
     
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     
     override func awakeFromNib() {
         setupMenuValuesAndIcon()
-        
-        userHandler = UserHandler()
-        CredentialsHandler.ensureCredentialsAreSet()
-        
-        // Set Defaults. TODO: Move to somewhere more relevant
-        UserDefaultsHelper.setDeviceModelName(Sysctl.model)
-        
-        let credentials = CredentialsHandler.loadCredentialsFromKeychain()
-        
-        if let credentials = credentials {
-            let sendOrSaveHandler = SendOrSaveHandler(credentials: credentials)
-            let tracking = Tracking(userHandler: userHandler, sendOrSaveHandler: sendOrSaveHandler)
-            
-            userHandler.maybeAskAndSetCorrectUser()
-            
-            tracking.setupTracking()
-        }
     }
 
     
     // -- CLICK HANDLER FUNCTIONS
     @IBAction func chooseUserClicked(_ sender: NSMenuItem) {
-        userHandler.showChooseUserWindow()
+        UserHandler.sharedInstance.showChooseUserWindow()
     }
     
     @IBAction func quitClicked(_ sender: NSMenuItem) {
@@ -61,28 +38,10 @@ class StatusMenuController: NSObject{
         statusItem.menu = statusMenu
         
         trackingType.title = UserDefaultsHelper.getUseAppTracking() ? .trackingAppData : .trackingDeviceData
-        notificationSetting.title = UserDefaultsHelper.getShowNotificationsSetting() ? .notificationsEnabled : .notificationsDisabled
     }
     
 
     // -- ONLY USED FOR DEBUGGING
-    @IBAction func deleteCredentialsClicked(_ sender: NSMenuItem) {
-        do {
-            try CredentialsHandler.deleteCredentialsFromKeychain()
-        } catch {
-        }
-    }
-    
-    @IBAction func notificationSettingClicked(_ sender: NSMenuItem) {
-        let showNotifications = UserDefaultsHelper.getShowNotificationsSetting()
-        if(showNotifications){
-            notificationSetting.title = .notificationsDisabled
-            
-        } else {
-            notificationSetting.title = .notificationsEnabled
-        }
-        UserDefaultsHelper.setShowNotificationsSetting(!showNotifications)
-    }
     
     @IBAction func toggleAppDeviceTrackingClicked(_ sender: NSMenuItem) {
         let useAppTracking = UserDefaultsHelper.getUseAppTracking()
