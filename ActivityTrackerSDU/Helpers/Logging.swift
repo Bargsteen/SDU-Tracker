@@ -34,4 +34,22 @@ public class Logging {
     static func logDebug(_ msg: String){
         DDLogDebug("[DEBUG] \(msg)")
     }
+    
+    static func logUsage<T:Usage>(usage: T, usageLogType: UsageLogType) {
+        var logMsg = "\(usageLogType.rawValue)"
+        
+        if let deviceUsage = usage as? DeviceUsage {
+            logMsg += "[DEVICE] \(eventTypeToString(deviceUsage.eventType))"
+        } else if let appUsage = usage as? AppUsage {
+            logMsg += "[APP] \(appUsage.package) - \(appUsage.duration) ms"
+        }
+        
+        logInfo(logMsg)
+    }
+}
+
+enum UsageLogType: String {
+    case sentDirectly = "Sent directly: "
+    case sentFromPersistence = "Sent from storage: "
+    case saved = "Saved: "
 }

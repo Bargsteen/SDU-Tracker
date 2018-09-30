@@ -36,5 +36,10 @@ extension String {
 
 extension Int {
     static let minWindowArea = 1000
-    
+    static let sendSavedUsagesAmount = 10 // Tries to send X last AppUsages and X last DeviceUsages
+}
+
+extension UInt32 {
+    static let appTrackingInterval = UInt32.init(1) // seconds
+    static let sendSavedUsagesInterval = UInt32.init(60) // seconds
 }

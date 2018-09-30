@@ -17,7 +17,7 @@
 		A756634121394367008F5640 /* CredentialsWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756633F21394367008F5640 /* CredentialsWindow.swift */; };
 		A756634221394367008F5640 /* CredentialsWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A756634021394367008F5640 /* CredentialsWindow.xib */; };
 		A757F23921411F72009CCDC0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A757F23821411F72009CCDC0 /* Extensions.swift */; };
-		A75F95F9214E4A52003727F5 /* RealmPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75F95F8214E4A52003727F5 /* RealmPersistence.swift */; };
+		A75F95F9214E4A52003727F5 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75F95F8214E4A52003727F5 /* Persistence.swift */; };
 		A75F95FB214E4CEB003727F5 /* RealmModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75F95FA214E4CEB003727F5 /* RealmModels.swift */; };
 		A75F95FE214E4E8E003727F5 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75F95FD214E4E8E003727F5 /* Models.swift */; };
 		A75F9601214E6708003727F5 /* Converters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75F9600214E6708003727F5 /* Converters.swift */; };
@@ -42,8 +42,9 @@
 		A78299B1215CC7CD003903AE /* CocoaLumberjack.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = A78299AA215CC7CD003903AE /* CocoaLumberjack.framework.dSYM */; };
 		A78299B2215CC7CD003903AE /* CwlUtils.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = A78299AB215CC7CD003903AE /* CwlUtils.framework.dSYM */; };
 		A78299B3215CC7CD003903AE /* Reachability.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = A78299AC215CC7CD003903AE /* Reachability.framework.dSYM */; };
+		A78521BD215FAE7A00F9D9CC /* UsageFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78521BC215FAE7A00F9D9CC /* UsageFactory.swift */; };
 		A7866E7F2137F79700626DF8 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7866E7E2137F79700626DF8 /* Requests.swift */; };
-		A7866E812138240800626DF8 /* CredentialHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7866E802138240800626DF8 /* CredentialHandler.swift */; };
+		A7866E812138240800626DF8 /* CredentialsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7866E802138240800626DF8 /* CredentialsHandler.swift */; };
 		A78F236821416CE900DC2489 /* TimeKeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78F236721416CE900DC2489 /* TimeKeeper.swift */; };
 		A7A6B89F21353DE8000B4E38 /* ChooseUserWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A6B89D21353DE8000B4E38 /* ChooseUserWindow.swift */; };
 		A7A6B8A021353DE8000B4E38 /* ChooseUserWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7A6B89E21353DE8000B4E38 /* ChooseUserWindow.xib */; };
@@ -120,7 +121,7 @@
 		A756633F21394367008F5640 /* CredentialsWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsWindow.swift; sourceTree = "<group>"; };
 		A756634021394367008F5640 /* CredentialsWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CredentialsWindow.xib; sourceTree = "<group>"; };
 		A757F23821411F72009CCDC0 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		A75F95F8214E4A52003727F5 /* RealmPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmPersistence.swift; sourceTree = "<group>"; };
+		A75F95F8214E4A52003727F5 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		A75F95FA214E4CEB003727F5 /* RealmModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModels.swift; sourceTree = "<group>"; };
 		A75F95FD214E4E8E003727F5 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		A75F9600214E6708003727F5 /* Converters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Converters.swift; sourceTree = "<group>"; };
@@ -139,9 +140,10 @@
 		A78299AA215CC7CD003903AE /* CocoaLumberjack.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = CocoaLumberjack.framework.dSYM; path = Carthage/Build/Mac/CocoaLumberjack.framework.dSYM; sourceTree = "<group>"; };
 		A78299AB215CC7CD003903AE /* CwlUtils.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = CwlUtils.framework.dSYM; path = Carthage/Build/Mac/CwlUtils.framework.dSYM; sourceTree = "<group>"; };
 		A78299AC215CC7CD003903AE /* Reachability.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Reachability.framework.dSYM; path = Carthage/Build/Mac/Reachability.framework.dSYM; sourceTree = "<group>"; };
+		A78521BC215FAE7A00F9D9CC /* UsageFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageFactory.swift; sourceTree = "<group>"; };
 		A7866E7A2136B90800626DF8 /* Sources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sources; sourceTree = "<group>"; };
 		A7866E7E2137F79700626DF8 /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
-		A7866E802138240800626DF8 /* CredentialHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialHandler.swift; sourceTree = "<group>"; };
+		A7866E802138240800626DF8 /* CredentialsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsHandler.swift; sourceTree = "<group>"; };
 		A78F236721416CE900DC2489 /* TimeKeeper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeKeeper.swift; sourceTree = "<group>"; };
 		A7A6B89D21353DE8000B4E38 /* ChooseUserWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseUserWindow.swift; sourceTree = "<group>"; };
 		A7A6B89E21353DE8000B4E38 /* ChooseUserWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseUserWindow.xib; sourceTree = "<group>"; };
@@ -222,7 +224,7 @@
 		A75F95F7214E4A12003727F5 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
-				A75F95F8214E4A52003727F5 /* RealmPersistence.swift */,
+				A75F95F8214E4A52003727F5 /* Persistence.swift */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -243,6 +245,7 @@
 				A7EAAA21215624B9007E942A /* Notifications.swift */,
 				A7EAAA2521562909007E942A /* UserDefaultsHelper.swift */,
 				A7EAAA352156626F007E942A /* Logging.swift */,
+				A78521BC215FAE7A00F9D9CC /* UsageFactory.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -311,7 +314,7 @@
 		A7BE8E86215D0B6800C0A864 /* UsersAndCredentials */ = {
 			isa = PBXGroup;
 			children = (
-				A7866E802138240800626DF8 /* CredentialHandler.swift */,
+				A7866E802138240800626DF8 /* CredentialsHandler.swift */,
 				A7BE8E87215D0B8000C0A864 /* UserHandler.swift */,
 			);
 			path = UsersAndCredentials;
@@ -547,7 +550,7 @@
 				A7EAAA2621562909007E942A /* UserDefaultsHelper.swift in Sources */,
 				A7EAAA22215624B9007E942A /* Notifications.swift in Sources */,
 				A7EAAA362156626F007E942A /* Logging.swift in Sources */,
-				A75F95F9214E4A52003727F5 /* RealmPersistence.swift in Sources */,
+				A75F95F9214E4A52003727F5 /* Persistence.swift in Sources */,
 				A75F95FE214E4E8E003727F5 /* Models.swift in Sources */,
 				A75F9601214E6708003727F5 /* Converters.swift in Sources */,
 				A7EAAA242156256F007E942A /* SendOrSave.swift in Sources */,
@@ -561,9 +564,10 @@
 				A756633E213936C1008F5640 /* Constants.swift in Sources */,
 				A7A6B89F21353DE8000B4E38 /* ChooseUserWindow.swift in Sources */,
 				A75F95FB214E4CEB003727F5 /* RealmModels.swift in Sources */,
+				A78521BD215FAE7A00F9D9CC /* UsageFactory.swift in Sources */,
 				A7BE8E88215D0B8000C0A864 /* UserHandler.swift in Sources */,
 				A7BE8E85215D099200C0A864 /* Tracking.swift in Sources */,
-				A7866E812138240800626DF8 /* CredentialHandler.swift in Sources */,
+				A7866E812138240800626DF8 /* CredentialsHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -675,7 +679,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = dk.sdu.health.ActivityTrackerSDU;
+				PRODUCT_BUNDLE_IDENTIFIER = dk.sdu.health.Tracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/.build/debug/";
@@ -741,7 +745,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = dk.sdu.health.ActivityTrackerSDU;
+				PRODUCT_BUNDLE_IDENTIFIER = dk.sdu.health.Tracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INCLUDE_PATHS = "";
 				SWIFT_VERSION = 4.0;

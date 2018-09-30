@@ -20,16 +20,3 @@ extension TimeInterval {
         return UInt(self * 1000)
     }
 }
-
-extension DeviceUsage {
-    func getIdentifier() -> String {
-        return "\(self.participantIdentifier)_\(self.timeStamp)_\(self.eventType)"
-    }
-}
-
-extension AppUsage {
-    func getIdentifier() -> String {
-        return "\(self.participantIdentifier)_\(self.timeStamp)_\(self.package)"
-    }
-}
-

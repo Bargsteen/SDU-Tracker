@@ -12,3 +12,8 @@ func maybeStringToDate(dateString: String) -> Date? {
     dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ssZ"
     return dateFormatter.date(from: dateString)
 }
+
+// Remember to change the values here, if EventType is changed.
+func eventTypeToString(_ eventType: Int) -> String {
+    return eventType == 1 ? "Started" : "Ended"
+}

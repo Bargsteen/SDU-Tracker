@@ -11,18 +11,20 @@ import Cocoa
 
 class Tracking {
     
-    var timeKeeper : TimeKeeper!
+    var timeKeeper : TimeKeeper
     var reachability : Reachability!
     var userHandler : UserHandler
+    var sendOrSaveHandler : SendOrSaveHandler
     
-    init(userHandler: UserHandler) {
+    init(userHandler: UserHandler, sendOrSaveHandler: SendOrSaveHandler) {
         timeKeeper = TimeKeeper()
         reachability = Reachability()
+        self.sendOrSaveHandler = sendOrSaveHandler
         self.userHandler = userHandler
     }
     
     public func setupTracking() {
-        if let credentials = CredentialHandler.loadCredentialsFromKeychain() {
+        if let credentials = CredentialsHandler.loadCredentialsFromKeychain() {
             
             setUpDeviceUsageTracking(credentials: credentials)
             
@@ -31,28 +33,31 @@ class Tracking {
     }
     
     private func setupAppUsageTracking(credentials: Credentials) {
+        var timer : UInt32 = 0
         
         // When we have Internet
         reachability.whenReachable = { reachability in
             DispatchQueue.global(qos: .background).async {
-                
-                
                 while(true) {
                     if(self.reachability.connection == Reachability.Connection.none) {
+                        Logging.logInfo("Lost internet connection.")
                         break
                     }
                     
-                    // TODO: Only check DB if flag has been set to do so
-                    //self.maybeSendOldestSavedAppUsage()
-                    //self.maybeSendOldDeviceUsages()
+                    timer = timer + .appTrackingInterval
                     
+                    if(timer >= .sendSavedUsagesInterval){
+                        timer = 0
+                        self.sendOrSaveHandler.sendSomeSavedUsages()
+                    }
+                   
                     
                     if UserDefaultsHelper.getUseAppTracking() {
                         if let lastAppUsage = self.maybeGetLastAppUsage() {
-                            tryToSendAppUsage(appUsage: lastAppUsage, credentials: credentials)
+                            self.sendOrSaveHandler.sendOrSaveUsage(usage: lastAppUsage, fromPersistence: false)
                         }
                     }
-                    sleep(1)
+                    sleep(.appTrackingInterval)
                 }
             }
         }
@@ -62,19 +67,20 @@ class Tracking {
             DispatchQueue.global(qos: .background).async {
                 while(true) {
                     if(self.reachability.connection != Reachability.Connection.none) {
+                        Logging.logInfo("Regained internet connection.")
                         break
                     }
                     
                     if UserDefaultsHelper.getUseAppTracking() {
                         if let lastAppUsage = self.maybeGetLastAppUsage() {
-                            let usageDescription = "\(lastAppUsage.package) i \(lastAppUsage.duration) ms"
-                            maybeShowSentSavedNotification(shouldShow: UserDefaultsHelper.getShowNotificationsSetting(), usageType: .app, notificationType: .saved, usageDescription: usageDescription)
                             Persistence.save(lastAppUsage)
+                            Logging.logUsage(usage: lastAppUsage, usageLogType: .saved)
                         }
                     }
+                    
                     // Wait one second before trying to get the app usage.
                     // Could perhaps be handled by an event listener.
-                    sleep(1)
+                    sleep(.appTrackingInterval)
                 }
             }
         }
@@ -89,7 +95,7 @@ class Tracking {
     private func setUpDeviceUsageTracking(credentials: Credentials) {
         
         // Send initial start event
-        sendDeviceUsage(eventType: .started)
+        self.sendOrSaveHandler.makeAndSendOrSaveDeviceUsage(eventType: .started)
         
         let notificationCenter = NSWorkspace.shared.notificationCenter
         
@@ -98,22 +104,12 @@ class Tracking {
             
             self.userHandler.maybeAskAndSetCorrectUser()
             
-            sendDeviceUsage(eventType: EventType.started)
+            self.sendOrSaveHandler.makeAndSendOrSaveDeviceUsage(eventType: .started)
         })
         
         // Handle sleeping aka Session end
         notificationCenter.addObserver(forName: NSWorkspace.screensDidSleepNotification, object: nil, queue: nil, using: {(n:Notification) in
-            sendDeviceUsage(eventType: EventType.ended)
-            
-            // Send an appUsage for currentWindow when the computer goes to sleep.
-            // Otherwise it will count the sleeping time into the duration of the appUsage
-            if(UserDefaultsHelper.getUseAppTracking()){
-                if let activeWindow = self.timeKeeper.maybeTerminateAndGetCurrentActiveWindow() {
-                    let appUsage = makeAppUsage(activeWindow: activeWindow)
-                    tryToSendAppUsage(appUsage: appUsage, credentials: credentials)
-                }
-            }
-            
+            self.sendOrSaveHandler.makeAndSendOrSaveDeviceUsage(eventType: .ended)
         })
     }
     

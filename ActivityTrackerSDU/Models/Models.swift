@@ -8,7 +8,13 @@
 import Foundation
 
 
-struct AppUsage: Codable {
+public protocol Identifiable {
+    func getIdentifier() -> String
+}
+
+public typealias Usage = Codable & Identifiable & Persistable
+
+struct AppUsage: Codable, Identifiable {
     let participantIdentifier : String
     let timeStamp: String
     let userCount: Int
@@ -27,6 +33,9 @@ struct AppUsage: Codable {
         self.duration = duration
     }
     
+    func getIdentifier() -> String {
+        return "[APP] \(self.participantIdentifier)_\(self.timeStamp)_\(self.package)"
+    }
     
     // Map from "Swifty" property names to actual JSON property names
     enum CodingKeys: String, CodingKey {
@@ -39,7 +48,7 @@ struct AppUsage: Codable {
     }
 }
 
-struct DeviceUsage: Codable {
+struct DeviceUsage: Codable, Identifiable {
     let participantIdentifier : String
     let eventType: Int
     let timeStamp: String
@@ -54,6 +63,9 @@ struct DeviceUsage: Codable {
         self.deviceModelName = deviceModelName
     }
     
+    func getIdentifier() -> String {
+        return "[DEVICE] \(self.participantIdentifier)_\(self.timeStamp)_\(self.eventType)"
+    }
     
     // Map from "Swifty" property names to actual JSON property names
     enum CodingKeys: String, CodingKey {
@@ -78,3 +90,9 @@ enum UsageType: String {
     case app = "App "
     case device = "Tid "
 }
+
+protocol ToString {
+    func toString() -> String
+}
+
+

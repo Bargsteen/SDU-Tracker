@@ -36,7 +36,7 @@ class RealmTests: XCTestCase {
         let id = "TestId"
         let deviceUsage = makeTestDeviceUsage(id: id, timeStamp: nil)
         // Act
-        Persistence.save(deviceUsage)
+        Persistence.saveUsage(deviceUsage)
         let retrievedData = Persistence.maybeFetchOldestDeviceUsage()
         // Assert
         XCTAssertEqual(id,retrievedData?.participantIdentifier)
@@ -47,7 +47,7 @@ class RealmTests: XCTestCase {
         let id = "TestId"
         let appUsage = makeTestAppUsage(id: id, timeStamp: nil)
         // Act
-        Persistence.save(appUsage)
+        Persistence.saveUsage(appUsage)
         let retrievedData = Persistence.maybeFetchOldestAppUsage()
         // Assert
         XCTAssertEqual(id,retrievedData?.participantIdentifier)
@@ -58,9 +58,9 @@ class RealmTests: XCTestCase {
         let id = "TestId"
         let deviceUsage = makeTestDeviceUsage(id: id, timeStamp: nil)
         // Act
-        Persistence.save(deviceUsage)
+        Persistence.saveUsage(deviceUsage)
         
-        Persistence.deleteDeviceUsage(deviceUsage.getIdentifier())
+        Persistence.deleteDeviceUsageById(deviceUsage.getIdentifier())
         let retrievedData = Persistence.maybeFetchOldestDeviceUsage()
         
         // Assert
@@ -72,8 +72,8 @@ class RealmTests: XCTestCase {
         let id = "TestId"
         let appUsage = makeTestAppUsage(id: id, timeStamp: nil)
         // Act
-        Persistence.save(appUsage)
-        Persistence.deleteAppUsage(appUsage.getIdentifier())
+        Persistence.saveUsage(appUsage)
+        Persistence.deleteAppUsageById(appUsage.getIdentifier())
         let retrievedData = Persistence.maybeFetchOldestAppUsage()
         // Assert
         XCTAssertNil(retrievedData)
@@ -87,8 +87,8 @@ class RealmTests: XCTestCase {
         let appUsageNewer = makeTestAppUsage(id: id2, timeStamp: Date().addingTimeInterval(TimeInterval(exactly: 10000)!))
         
         // Act
-        Persistence.save(appUsageNewer)
-        Persistence.save(appUsageOld)
+        Persistence.saveUsage(appUsageNewer)
+        Persistence.saveUsage(appUsageOld)
         
         let retrievedData = Persistence.maybeFetchOldestAppUsage()
         // Assert
@@ -103,8 +103,8 @@ class RealmTests: XCTestCase {
         let deviceUsageNewer = makeTestDeviceUsage(id: id2, timeStamp: Date().addingTimeInterval(TimeInterval(exactly: 10000)!))
         
         // Act
-        Persistence.save(deviceUsageNewer)
-        Persistence.save(deviceUsageOld)
+        Persistence.saveUsage(deviceUsageNewer)
+        Persistence.saveUsage(deviceUsageOld)
         
         let retrievedData = Persistence.maybeFetchOldestDeviceUsage()
         // Assert

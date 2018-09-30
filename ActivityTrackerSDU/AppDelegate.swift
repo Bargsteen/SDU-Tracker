@@ -21,7 +21,7 @@ extension AppDelegate: NSApplicationDelegate {
     }
     
     func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
-        sendDeviceUsage(eventType: .ended)
+        //sendDeviceUsage(eventType: .ended) TODO: Fix
         sleep(1) // Wait a second to ensure the device usage is sent. TODO: Make a cleaner handling.
         return .terminateNow
     }

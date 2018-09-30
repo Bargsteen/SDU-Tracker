@@ -7,14 +7,14 @@
 
 import Foundation
 
-func sendUsages<T:Encodable>(usages: [T], usageType: UsageType, credentials: Credentials, onSuccess:(() -> Void)?, onError: ((Error?) -> Void)?) {
+func sendUsages<T:Usage>(usages: [T], usageType: UsageType, credentials: Credentials, onSuccess:(() -> Void)?, onError: ((Error?) -> Void)?) {
     usages.forEach { usage in
         sendUsage(usage: usage, usageType: usageType, credentials: credentials, onSuccess: onSuccess, onError: onError)
     }
 }
 
 // We need a completion block which returns an error, if anything fails
-func sendUsage<T:Encodable>(usage: T, usageType: UsageType, credentials: Credentials, onSuccess:(() -> Void)?, onError: ((Error?) -> Void)?) {
+func sendUsage<T:Usage>(usage: T, usageType: UsageType, credentials: Credentials, onSuccess:(() -> Void)?, onError: ((Error?) -> Void)?) {
     
     // Set up URL
     var urlComponents = URLComponents()
@@ -56,14 +56,17 @@ func sendUsage<T:Encodable>(usage: T, usageType: UsageType, credentials: Credent
     let session = URLSession(configuration: config)
     let task = session.dataTask(with: request) { (responseData, response, responseError) in
         guard responseError == nil else {
+            
+            // No logging needed here, because that is handled in onError. Maybe logDebug?
+            // Logging.logInfo("Requests sendUsage failed for \(usage.getIdentifier())")
+            
             onError?(responseError!)
-            Logging.logError("ResponseError from UsageSending: \(responseError!)")
             return
         }
         if let data = responseData, let _ = String(data: data, encoding: .utf8) {
             onSuccess?()
         } else {
-            Logging.logWarning("SendUsage error: Could not read retrieved data.")
+            Logging.logError("Requests, sendUsage: Could not read retrieved data: \(String(describing: responseData))")
         }
     }
     task.resume()
