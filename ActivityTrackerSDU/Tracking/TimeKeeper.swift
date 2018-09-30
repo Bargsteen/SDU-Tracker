@@ -25,6 +25,12 @@ class TimeKeeper {
                         // Set new currentApp with starttime
                         self.currentActiveWindow = ActiveWindowTime(bundleIdentifier: app.bundleIdentifier ?? .unknownApp, startTime: now, endTime: nil)
                         
+                        
+                        // When the mac sleeps, the last active app becomes com.apple.loginwindow. We do not want to track that.
+                        if(lastActiveWindow.bundleIdentifier == "com.apple.loginwindow"){
+                            return nil
+                        }
+                        
                         return lastActiveWindow
                     }
                 } else {
