@@ -12,7 +12,6 @@ import CocoaLumberjackSwift
 public class Logging {
     
     static func setupLogger(){
-        //DDLog.add(DDTTYLogger.sharedInstance) // TTY = Xcode console. The xcode console also print ASL messages.
         DDLog.add(DDASLLogger.sharedInstance) // ASL = Apple System Logs
         
         let fileLogger: DDFileLogger = DDFileLogger() // File Logger

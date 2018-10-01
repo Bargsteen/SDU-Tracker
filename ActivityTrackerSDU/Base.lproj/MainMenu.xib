@@ -16,8 +16,9 @@
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <customObject id="Cx0-KW-VH8" customClass="StatusMenuController" customModule="ActivityTrackerSDU" customModuleProvider="target">
             <connections>
+                <outlet property="currentUserMenuItem" destination="PPh-zM-IXL" id="6S5-l8-fkb"/>
                 <outlet property="statusMenu" destination="e12-ic-Z5e" id="cgH-mw-wId"/>
-                <outlet property="trackingType" destination="Hhz-Bg-kEp" id="xGF-ga-9VX"/>
+                <outlet property="trackingTypeMenuItem" destination="Hhz-Bg-kEp" id="xGF-ga-9VX"/>
             </connections>
         </customObject>
         <menu id="e12-ic-Z5e">
@@ -46,7 +47,7 @@
             <connections>
                 <outlet property="delegate" destination="Cx0-KW-VH8" id="Nhj-0i-9Sv"/>
             </connections>
-            <point key="canvasLocation" x="289" y="-28"/>
+            <point key="canvasLocation" x="111" y="-30"/>
         </menu>
         <userDefaultsController representsSharedInstance="YES" id="oId-jM-GQ6"/>
     </objects>

@@ -11,8 +11,9 @@ import Foundation
 class StatusMenuController: NSObject{
     
     @IBOutlet weak var statusMenu: NSMenu!
-    
-    @IBOutlet weak var trackingType: NSMenuItem!
+
+    @IBOutlet weak var trackingTypeMenuItem: NSMenuItem!
+    @IBOutlet weak var currentUserMenuItem: NSMenuItem!
     
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     
@@ -37,7 +38,9 @@ class StatusMenuController: NSObject{
         statusItem.image = icon
         statusItem.menu = statusMenu
         
-        trackingType.title = UserDefaultsHelper.getUseAppTracking() ? .trackingAppData : .trackingDeviceData
+        trackingTypeMenuItem.title = UserDefaultsHelper.getUseAppTracking() ? .trackingAppData : .trackingDeviceData
+        
+        currentUserMenuItem.title = "Bruger: " + UserDefaultsHelper.getCurrentUser()
     }
     
 
@@ -46,9 +49,9 @@ class StatusMenuController: NSObject{
     @IBAction func toggleAppDeviceTrackingClicked(_ sender: NSMenuItem) {
         let useAppTracking = UserDefaultsHelper.getUseAppTracking()
         if(useAppTracking){
-            trackingType.title = .trackingDeviceData
+            trackingTypeMenuItem.title = .trackingDeviceData
         } else {
-            trackingType.title = .trackingAppData
+            trackingTypeMenuItem.title = .trackingAppData
         }
         UserDefaultsHelper.setUseAppTracking(!useAppTracking)
     }
