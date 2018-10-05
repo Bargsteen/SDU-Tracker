@@ -18,9 +18,20 @@ class AppDelegate: NSObject{
         LaunchAtLogin.isEnabled = true
         Logging.setupLogger()
         
-        CredentialsHandler.ensureCredentialsAreSet()
-        
         UserDefaultsHelper.setDeviceModelName(Sysctl.model)
+        
+        let credentialsFromKeychain = CredentialsHandler.loadCredentialsFromKeychain()
+        
+        if credentialsFromKeychain == nil {
+            do {
+                let creds = Credentials(username: "***REMOVED***", password: "***REMOVED***")
+                try CredentialsHandler.saveCredentialsToKeychain(credentials: creds)
+            } catch {
+                Logging.logError("Credential save error: \(error)")
+                CredentialsHandler.ensureCredentialsAreSet()
+            }
+        }
+        
         
         let credentials = CredentialsHandler.loadCredentialsFromKeychain()
         
@@ -29,6 +40,7 @@ class AppDelegate: NSObject{
             self.sendOrSaveHandler = SendOrSaveHandler(credentials: credentials)
             
         } else {
+            
             Logging.logError("AppDelegate applicationDidFinishLaunching: No credentials.")
             exit(1)
         }
