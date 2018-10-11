@@ -11,7 +11,7 @@ protocol ChooseUserWindowDelegate {
     func userHasChanged(_ nameOfUser: String)
 }
 
-class ChooseUserWindow: NSWindowController, NSWindowDelegate {
+class ChooseUserWindow: NSWindowController, NSWindowDelegate{
     
     @IBOutlet weak var userListMenu: NSPopUpButton!
     @IBOutlet weak var newUserTextField: NSTextField!
@@ -20,9 +20,11 @@ class ChooseUserWindow: NSWindowController, NSWindowDelegate {
     
     override func windowDidLoad() {
         super.windowDidLoad()
-
+       
+        
         self.window?.center()
         self.window?.makeKeyAndOrderFront(nil)
+        
         NSApp.activate(ignoringOtherApps: true)
         
         updateUserListMenu()
