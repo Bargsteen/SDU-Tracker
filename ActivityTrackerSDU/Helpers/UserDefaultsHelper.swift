@@ -39,6 +39,21 @@ public class UserDefaultsHelper {
         return getDefaults().bool(forKey: .useAppTrackingKey)
     }
     
+    static func getStopTrackingDate() -> Date {
+        let dateFound = getDefaults().value(forKey: .stopTrackingDateKey) as? Date
+        if let dateFound = dateFound {
+            return dateFound
+        } else {
+            // Should never happen, but return right now as stopTrackingDate
+            return Date()
+        }
+    }
+    
+    static func getAppHasBeenSetup() -> Bool {
+        // Returns false if it has never been set.
+        return getDefaults().bool(forKey: .appHasBeenSetupKey)
+    }
+    
     static func getParticipantIdentifier() -> String {
         let credentials = CredentialsHandler.loadCredentialsFromKeychain()
         let currentUser = getCurrentUser()
@@ -63,7 +78,12 @@ public class UserDefaultsHelper {
     }
     
     static func setCurrentUser(_ newUser: String) {
-        getDefaults().setValue(newUser, forKey: .currentUserKey)
+        var userToSet = newUser;
+        if(!getUsers().contains(newUser)){
+            // User not in userlis => Invalid.
+            userToSet = .unnamedUser
+        }
+        getDefaults().setValue(userToSet, forKey: .currentUserKey)
     }
     
     static func setUsers(_ newUsers: [String]) {
@@ -72,6 +92,14 @@ public class UserDefaultsHelper {
     
     static func setUseAppTracking(_ newValue: Bool) {
         getDefaults().setValue(newValue, forKey: .useAppTrackingKey)
+    }
+    
+    static func setStopTrackingDate(_ newValue: Date) {
+        getDefaults().setValue(newValue, forKey: .stopTrackingDateKey)
+    }
+    
+    static func setAppHasBeenSetup(_ newValue: Bool) {
+        getDefaults().setValue(newValue, forKey: .appHasBeenSetupKey)
     }
 
 }

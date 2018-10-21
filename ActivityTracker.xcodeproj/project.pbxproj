@@ -48,6 +48,7 @@
 		A78F236821416CE900DC2489 /* TimeKeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78F236721416CE900DC2489 /* TimeKeeper.swift */; };
 		A7A6B89F21353DE8000B4E38 /* ChooseUserWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A6B89D21353DE8000B4E38 /* ChooseUserWindow.swift */; };
 		A7A6B8A021353DE8000B4E38 /* ChooseUserWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7A6B89E21353DE8000B4E38 /* ChooseUserWindow.xib */; };
+		A7B158FB217C6F57006087D4 /* SetupHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B158FA217C6F57006087D4 /* SetupHandler.swift */; };
 		A7BE8E85215D099200C0A864 /* Tracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BE8E84215D099200C0A864 /* Tracking.swift */; };
 		A7BE8E88215D0B8000C0A864 /* UserHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BE8E87215D0B8000C0A864 /* UserHandler.swift */; };
 		A7E62733213DA55400F0395D /* WindowTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E62732213DA55400F0395D /* WindowTracking.swift */; };
@@ -146,6 +147,7 @@
 		A78F236721416CE900DC2489 /* TimeKeeper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeKeeper.swift; sourceTree = "<group>"; };
 		A7A6B89D21353DE8000B4E38 /* ChooseUserWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseUserWindow.swift; sourceTree = "<group>"; };
 		A7A6B89E21353DE8000B4E38 /* ChooseUserWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseUserWindow.xib; sourceTree = "<group>"; };
+		A7B158FA217C6F57006087D4 /* SetupHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupHandler.swift; sourceTree = "<group>"; };
 		A7BE8E84215D099200C0A864 /* Tracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tracking.swift; sourceTree = "<group>"; };
 		A7BE8E87215D0B8000C0A864 /* UserHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHandler.swift; sourceTree = "<group>"; };
 		A7E62732213DA55400F0395D /* WindowTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowTracking.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 		A73AA81E21273FD900D0B7FF /* ActivityTrackerSDU */ = {
 			isa = PBXGroup;
 			children = (
+				A7B158F7217C6F2A006087D4 /* Setup */,
 				A7BE8E86215D0B6800C0A864 /* UsersAndCredentials */,
 				A78299B9215CC91C003903AE /* Misc */,
 				A78299B8215CC8FE003903AE /* Sending */,
@@ -306,6 +309,14 @@
 				A7866E7A2136B90800626DF8 /* Sources */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A7B158F7217C6F2A006087D4 /* Setup */ = {
+			isa = PBXGroup;
+			children = (
+				A7B158FA217C6F57006087D4 /* SetupHandler.swift */,
+			);
+			path = Setup;
 			sourceTree = "<group>";
 		};
 		A7BE8E86215D0B6800C0A864 /* UsersAndCredentials */ = {
@@ -560,6 +571,7 @@
 				A756633E213936C1008F5640 /* Constants.swift in Sources */,
 				A7A6B89F21353DE8000B4E38 /* ChooseUserWindow.swift in Sources */,
 				A75F95FB214E4CEB003727F5 /* RealmModels.swift in Sources */,
+				A7B158FB217C6F57006087D4 /* SetupHandler.swift in Sources */,
 				A78521BD215FAE7A00F9D9CC /* UsageFactory.swift in Sources */,
 				A7BE8E88215D0B8000C0A864 /* UserHandler.swift in Sources */,
 				A7BE8E85215D099200C0A864 /* Tracking.swift in Sources */,

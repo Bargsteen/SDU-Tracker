@@ -29,6 +29,8 @@ extension String {
     static let usersKey = "users"
     static let useAppTrackingKey = "useAppTracking"
     static let deviceModelNameKey = "deviceModelName"
+    static let stopTrackingDateKey = "stopTrackingDate"
+    static let appHasBeenSetupKey = "appHasBeenSetup"
 }
 
 extension Int {
