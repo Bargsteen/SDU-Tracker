@@ -52,6 +52,10 @@ public class UserHandler {
         }
     }
     
+    func subscribeToUserChangedNotifications(delegate: ChooseUserWindowDelegate) {
+        chooseUserWindow.delegate = delegate
+    }
+    
     func showChooseUserWindow() {
         chooseUserWindow.showWindow(nil)
     }

@@ -51,7 +51,9 @@ class SetupHandler {
         
         
         // Handle TrackingType
+        Logging.logInfo("TrackingTypeString: \(trackingTypeString)")
         let trackingTypeBool = trackingTypeString == "1" ? true : false
+        Logging.logInfo("TrackingTypeBool: \(trackingTypeBool)")
         UserDefaultsHelper.setUseAppTracking(trackingTypeBool)
         
         

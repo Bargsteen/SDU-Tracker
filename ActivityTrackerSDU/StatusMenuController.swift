@@ -8,7 +8,7 @@
 import Cocoa
 import Foundation
 
-class StatusMenuController: NSObject{
+class StatusMenuController: NSObject, ChooseUserWindowDelegate {
     
     @IBOutlet weak var statusMenu: NSMenu!
 
@@ -19,12 +19,17 @@ class StatusMenuController: NSObject{
     
     override func awakeFromNib() {
         setupMenuValuesAndIcon()
+        UserHandler.sharedInstance.subscribeToUserChangedNotifications(delegate: self)
     }
 
     
     // -- CLICK HANDLER FUNCTIONS
     @IBAction func chooseUserClicked(_ sender: NSMenuItem) {
         UserHandler.sharedInstance.showChooseUserWindow()
+    }
+    
+    func userHasChanged(_ nameOfUser: String) {
+        currentUserMenuItem.title = "Bruger: " + nameOfUser
     }
     
     @IBAction func quitClicked(_ sender: NSMenuItem) {
