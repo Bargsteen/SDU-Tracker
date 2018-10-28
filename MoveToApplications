@@ -1,0 +1,5 @@
+#!/bin/bash
+
+DMG=$(dirname "$0")
+cp -r "$DMG/Manual install"/ActivityTrackerSDU.app /Applications/
+xattr -r -d com.apple.quarantine /Applications/ActivityTrackerSDU.app/
