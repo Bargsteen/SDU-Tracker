@@ -12,10 +12,12 @@ import LaunchAtLogin
 
 class SetupHandler {
     public static func parseUrlAndSetupApp(_ url : URL) -> Bool{
+        Logging.logInfo("URL: \(url)")
         
         // Parse queryItems from url to dict: ?key1=value1&key2=value2
-        let dict = parseUrlToDict(url)
+        let maybeDict = parseUrlToDict(url)
         
+        guard let dict = maybeDict else {logInvalidStartupUrl("Invalid data"); return false;}
         
         // Ensure dict has the necessary key-value pairs. /?username=uname&password=secret&users=[user1, user2]&tracking_type=0&measurement_days=365
         guard let username = dict["username"] else { logInvalidStartupUrl("Missing: username"); return false;}
@@ -51,9 +53,7 @@ class SetupHandler {
         
         
         // Handle TrackingType
-        Logging.logInfo("TrackingTypeString: \(trackingTypeString)")
         let trackingTypeBool = trackingTypeString == "1" ? true : false
-        Logging.logInfo("TrackingTypeBool: \(trackingTypeBool)")
         UserDefaultsHelper.setUseAppTracking(trackingTypeBool)
         
         
@@ -66,7 +66,6 @@ class SetupHandler {
             logInvalidStartupUrl("Invalid value: mesaurement_days")
             return false
         }
-        
         
         doAdditionalInitialSetup()
         
@@ -98,7 +97,7 @@ class SetupHandler {
         Logging.logError("Invalid startup url. \(reason)")
     }
     
-    private static func parseUrlToDict(_ url: URL) -> [String:String] {
+    private static func parseUrlToDict(_ url: URL) -> [String:String]? {
         var dict = [String:String]()
         let components = URLComponents(url: url, resolvingAgainstBaseURL: false)!
         if let queryItems = components.queryItems {
@@ -106,8 +105,22 @@ class SetupHandler {
                 dict[item.name] = item.value!
             }
         }
-        return dict
+        
+        guard let base64data = dict["data"] else {logInvalidStartupUrl("Missing: Data"); return nil;}
+        guard let data = base64data.fromBase64() else {logInvalidStartupUrl("Invalid Base64 Data"); return nil;}
+        
+        return convertJSONToDictionary(text: data)
     }
     
+    private static func convertJSONToDictionary(text: String) -> [String: String]? {
+        if let data = text.data(using: .utf8) {
+            do {
+                return try JSONSerialization.jsonObject(with: data, options: []) as? [String: String]
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+        return nil
+    }
 
 }

@@ -29,20 +29,6 @@
                         <action selector="chooseUserClicked:" target="Cx0-KW-VH8" id="hgU-f3-5hZ"/>
                     </connections>
                 </menuItem>
-                <menuItem isSeparatorItem="YES" id="PI9-em-ibR"/>
-                <menuItem title="Tracker kun tid" id="Hhz-Bg-kEp">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="toggleAppDeviceTrackingClicked:" target="Cx0-KW-VH8" id="1am-oF-M40"/>
-                    </connections>
-                </menuItem>
-                <menuItem isSeparatorItem="YES" id="riD-Zd-I6I"/>
-                <menuItem title="Afslut" id="ykD-QO-mhc">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="quitClicked:" target="Cx0-KW-VH8" id="GMe-my-aPM"/>
-                    </connections>
-                </menuItem>
             </items>
             <connections>
                 <outlet property="delegate" destination="Cx0-KW-VH8" id="Nhj-0i-9Sv"/>
@@ -50,5 +36,19 @@
             <point key="canvasLocation" x="111" y="-30"/>
         </menu>
         <userDefaultsController representsSharedInstance="YES" id="oId-jM-GQ6"/>
+        <menuItem title="AfslutOO" id="ykD-QO-mhc">
+            <modifierMask key="keyEquivalentModifierMask"/>
+            <connections>
+                <action selector="quitClicked:" target="Cx0-KW-VH8" id="GMe-my-aPM"/>
+            </connections>
+        </menuItem>
+        <menuItem isSeparatorItem="YES" id="riD-Zd-I6I"/>
+        <menuItem title="Tracker kun tid" id="Hhz-Bg-kEp">
+            <modifierMask key="keyEquivalentModifierMask"/>
+            <connections>
+                <action selector="toggleAppDeviceTrackingClicked:" target="Cx0-KW-VH8" id="1am-oF-M40"/>
+            </connections>
+        </menuItem>
+        <menuItem isSeparatorItem="YES" id="PI9-em-ibR"/>
     </objects>
 </document>

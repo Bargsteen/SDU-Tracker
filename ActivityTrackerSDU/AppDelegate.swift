@@ -17,8 +17,6 @@ class AppDelegate: NSObject, NSApplicationDelegate{
     func applicationWillFinishLaunching(_ notification: Notification) {
         Logging.setupLogger()
         
-        UserDefaultsHelper.setAppHasBeenSetup(false)
-        
         // Subscribe to open by url event
         NSAppleEventManager.shared().setEventHandler(self, andSelector: #selector(AppDelegate.handleGetURLEvent(_:withReplyEvent:)), forEventClass: AEEventClass(kInternetEventClass), andEventID: AEEventID(kAEGetURL))
         
