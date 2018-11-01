@@ -122,5 +122,21 @@ class SetupHandler {
         }
         return nil
     }
+    
+    public static func showSetupResultAlert(succeeded: Bool) {
+        let alert = NSAlert()
+        
+        if(succeeded) {
+            alert.messageText = "Opsætning færdiggjort"
+            alert.informativeText = "Der er intet mere at gøre."
+            alert.alertStyle = .informational
+        } else {
+            alert.messageText = "Opsætning mislykkedes"
+            alert.informativeText = "Prøv at åbne linket igen. Hvis det ikke virker, så kontakt SDU."
+            alert.alertStyle = .critical
+        }
+        alert.addButton(withTitle: "Ok")
+        alert.runModal()
+    }
 
 }

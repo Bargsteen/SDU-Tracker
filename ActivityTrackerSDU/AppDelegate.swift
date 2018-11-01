@@ -31,10 +31,12 @@ class AppDelegate: NSObject, NSApplicationDelegate{
         let url = URL(string: event.paramDescriptor(forKeyword: AEKeyword(keyDirectObject))!.stringValue!)!
         
         
-        let readyForFirstBegin = SetupHandler.parseUrlAndSetupApp(url)
-        if(readyForFirstBegin){
+        let setupSucceeded = SetupHandler.parseUrlAndSetupApp(url)
+        if(setupSucceeded){
+            SetupHandler.showSetupResultAlert(succeeded: setupSucceeded)
             begin()
         } else {
+            SetupHandler.showSetupResultAlert(succeeded: setupSucceeded)
             exit(1)
         }
     }
