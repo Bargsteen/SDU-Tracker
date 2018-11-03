@@ -41,6 +41,7 @@ extension Int {
 extension UInt32 {
     static let appTrackingInterval = UInt32.init(1) // seconds
     static let sendSavedUsagesInterval = UInt32.init(60) // seconds
+    static let changeUserAlertInterval = UInt32.init(30000) // milliseconds = 60 seconds
 }
 
 extension Double {
