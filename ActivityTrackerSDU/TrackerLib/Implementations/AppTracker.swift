@@ -49,6 +49,7 @@ class AppTracker: AppTrackerProtocol {
             DispatchQueue.global(qos: .background).async {
                 while(true) {
                     if(self.reachability.connection == Reachability.Connection.none) {
+                        self.logger.logInfo("Lost internet connection.")
                         break
                     }
                     
