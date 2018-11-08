@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: ActivityTrackerSDU/TrackerLib/AppAssembling/AssemblerProtocol.swift at 2018-11-08 11:36:37 +0000
+// MARK: - Mocks generated from file: ActivityTrackerSDU/TrackerLib/AppAssembling/AssemblerProtocol.swift at 2018-11-08 12:03:40 +0000
 
 //
 //  AssemblerProtocol.swift
@@ -6,7 +6,7 @@
 //
 //  Created by Kasper Dissing Bargsteen on 06/11/2018.
 //
-/*
+
 import Cuckoo
 @testable import ActivityTrackerSDU
 
@@ -475,7 +475,7 @@ class MockAssemblerProtocol: AssemblerProtocol, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: ActivityTrackerSDU/TrackerLib/Protocols/SettingsProtocol.swift at 2018-11-08 11:36:38 +0000
+// MARK: - Mocks generated from file: ActivityTrackerSDU/TrackerLib/Protocols/SettingsProtocol.swift at 2018-11-08 12:03:40 +0000
 
 //
 //  SettingsProtocol.swift
@@ -943,4 +943,3 @@ class MockSettingsProtocol: SettingsProtocol, Cuckoo.ProtocolMock {
     
 }
 
-*/

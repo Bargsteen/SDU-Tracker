@@ -177,6 +177,8 @@
 		A75EB17921942FA900EA9721 /* ActivityTrackerSDUTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTrackerSDUTests.swift; sourceTree = "<group>"; };
 		A75EB17B21942FA900EA9721 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A75F95F8214E4A52003727F5 /* PersistenceHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceHandler.swift; sourceTree = "<group>"; };
+		A78185EF21945D250037F84C /* Cuckoo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cuckoo.framework; path = Carthage/Build/Mac/Cuckoo.framework; sourceTree = "<group>"; };
+		A78185F121945D790037F84C /* Cuckoo.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Cuckoo.framework.dSYM; path = Carthage/Build/Mac/Cuckoo.framework.dSYM; sourceTree = "<group>"; };
 		A7829986215CBC6C003903AE /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		A782998F215CC78A003903AE /* CwlUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CwlUtils.framework; path = Carthage/Build/Mac/CwlUtils.framework; sourceTree = "<group>"; };
 		A7829990215CC78A003903AE /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/Mac/Realm.framework; sourceTree = "<group>"; };
@@ -354,6 +356,8 @@
 		A7866E792136B90800626DF8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A78185F121945D790037F84C /* Cuckoo.framework.dSYM */,
+				A78185EF21945D250037F84C /* Cuckoo.framework */,
 				A7829992215CC78A003903AE /* CocoaLumberjack.framework */,
 				A78299AA215CC7CD003903AE /* CocoaLumberjack.framework.dSYM */,
 				A7829995215CC78A003903AE /* CocoaLumberjackSwift.framework */,
@@ -526,7 +530,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Define output file. Change \"$PROJECT_DIR/${PROJECT_NAME}Tests\" to your test's root source folder, if it's not the default name.\n#OUTPUT_FILE=\"$PROJECT_DIR/ActivityTrackerSDUTests/GeneratedMocks.swift\"\n#echo \"Generated Mocks File = $OUTPUT_FILE\"\n\n# Define input directory. Change \"${PROJECT_DIR}/${PROJECT_NAME}\" to your project's root source folder, if it's not the default name.\n#INPUT_DIR=\"${PROJECT_DIR}/ActivityTrackerSDU\"\n#echo \"Mocks Input Directory = $INPUT_DIR\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n#\"Carthage/Checkouts/Cuckoo/run\" generate --testable \"ActivityTrackerSDU\" \\\n#--output \"${OUTPUT_FILE}\" \\\n#\"$INPUT_DIR/TrackerLib/Protocols/SettingsProtocol.swift\" \\\n#\"$INPUT_DIR/TrackerLib/AppAssembling/AssemblerProtocol.swift\" \\\n\n# ... and so forth, the last line should never end with a backslash\n\n# After running once, locate `GeneratedMocks.swift` and drag it into your Xcode test target group.\n";
+			shellScript = "# Define output file. Change \"$PROJECT_DIR/${PROJECT_NAME}Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"$PROJECT_DIR/ActivityTrackerSDUTests/GeneratedMocks.swift\"\necho \"Generated Mocks File = $OUTPUT_FILE\"\n\n# Define input directory. Change \"${PROJECT_DIR}/${PROJECT_NAME}\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"${PROJECT_DIR}/ActivityTrackerSDU\"\necho \"Mocks Input Directory = $INPUT_DIR\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n\"Carthage/Checkouts/Cuckoo/run\" generate --testable \"ActivityTrackerSDU\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"$INPUT_DIR/TrackerLib/Protocols/SettingsProtocol.swift\" \\\n\"$INPUT_DIR/TrackerLib/AppAssembling/AssemblerProtocol.swift\" \\\n\n# ... and so forth, the last line should never end with a backslash\n\n# After running once, locate `GeneratedMocks.swift` and drag it into your Xcode test target group.\n";
 		};
 		A7866E782136B7A200626DF8 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;

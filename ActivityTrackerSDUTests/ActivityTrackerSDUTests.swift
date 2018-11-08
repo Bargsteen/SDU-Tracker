@@ -20,6 +20,7 @@ class ActivityTrackerSDUTests: XCTestCase {
 
     func testExample() {
         let usageType = UsageType.device
+        let mockSettings = MockSettingsProtocol()
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         
