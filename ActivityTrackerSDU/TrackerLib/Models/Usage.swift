@@ -28,4 +28,18 @@ import RealmSwift
     override static func primaryKey() -> String? {
         return "identifier"
     }
+    
+    // Encoding to JSON
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(participantIdentifier, forKey: .participantIdentifier)
+        try container.encode(deviceModelName, forKey: .deviceModelName)
+        try container.encode(userCount, forKey: .userCount)
+    }
+    
+    private enum CodingKeys: String, CodingKey {
+        case participantIdentifier = "participant_identifier"
+        case userCount = "user_count"
+        case deviceModelName = "device_model_name"
+    }
 }

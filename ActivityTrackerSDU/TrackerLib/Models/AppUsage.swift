@@ -21,12 +21,18 @@ import Foundation
         identifier = "[APP] \(self.participantIdentifier)_\(self.timeStamp)_\(self.package)"
     }
     
+    // Encoding to JSON
+    override func encode(to encoder: Encoder) throws {
+        try super.encode(to: encoder)
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(timeStamp, forKey: .timeStamp)
+        try container.encode(package, forKey: .package)
+        try container.encode(duration, forKey: .duration)
+    }
+    
     // Map from "Swifty" property names to actual JSON property names
-    enum CodingKeys: String, CodingKey {
-        case participantIdentifier = "participant_identifier"
+    private enum CodingKeys: String, CodingKey {
         case timeStamp = "date"
-        case userCount = "user_count"
-        case deviceModelName = "device_model_name"
         case package
         case duration
     }

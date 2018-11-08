@@ -7,7 +7,14 @@
 
 import Foundation
 
-class RequestHandler: RequestHandlerProtocol {    
+class RequestHandler: RequestHandlerProtocol {
+    
+    private let logger: LoggerProtocol
+    
+    init(assembler: AssemblerProtocol){
+        logger = assembler.resolve()
+    }
+    
     // We need a completion block which returns an error, if anything fails
     func sendUsage<T:Usage>(usage: T, usageType: UsageType, credentials: Credentials, onSuccess:(() -> Void)?, onError: ((Error?) -> Void)?) {
         
@@ -36,6 +43,9 @@ class RequestHandler: RequestHandlerProtocol {
         
         // Try to encode the Usage
         let encoder = JSONEncoder()
+        
+        // Set the encoder to use the correct time format
+        encoder.dateEncodingStrategy = .iso8601
         do {
             let jsonData = try encoder.encode(usage)
             request.httpBody = jsonData
@@ -52,10 +62,18 @@ class RequestHandler: RequestHandlerProtocol {
                 
                 // No logging needed here, because that is handled in onError. Maybe logDebug?
                 // Logging.logInfo("Requests sendUsage failed for \(usage.getIdentifier())")
-                
                 onError?(responseError!)
                 return
             }
+            
+            if let urlResponse = response as? HTTPURLResponse {
+                if(urlResponse.statusCode != 200){
+                    self.logger.logError("Received Error Response: \(urlResponse.debugDescription)")
+                    onError?(nil)
+                    return
+                }
+            }
+            
             if let data = responseData, let _ = String(data: data, encoding: .utf8) {
                 onSuccess?()
             } else {
@@ -64,8 +82,6 @@ class RequestHandler: RequestHandlerProtocol {
         }
         task.resume()
     }
-    
-    
 }
 
 

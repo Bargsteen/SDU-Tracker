@@ -39,7 +39,7 @@ class Assembler: AssemblerProtocol {
     }
     
     func resolve() -> RequestHandlerProtocol {
-        return RequestHandler()
+        return RequestHandler(assembler: self)
     }
     
     func resolve() -> SendOrSaveHandlerProtocol {
