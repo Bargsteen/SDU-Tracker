@@ -34,13 +34,14 @@ class AppTracker: AppTrackerProtocol {
     
     func startTracking() {
         appTrackingIsEnabled = true
+        setupAppUsageTracking()
     }
     
     func stopTracking() {
         appTrackingIsEnabled = false
     }
     
-    private func setupAppUsageTracking(credentials: Credentials) {
+    private func setupAppUsageTracking() {
         var timer : UInt32 = 0
         
         // When we have Internet

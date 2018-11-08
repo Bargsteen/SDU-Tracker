@@ -39,16 +39,16 @@
 		A73AA82021273FD900D0B7FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73AA81F21273FD900D0B7FF /* AppDelegate.swift */; };
 		A73AA82221273FDA00D0B7FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A73AA82121273FDA00D0B7FF /* Assets.xcassets */; };
 		A73AA82521273FDA00D0B7FF /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A73AA82321273FDA00D0B7FF /* MainMenu.xib */; };
-		A73AA83121273FDA00D0B7FF /* ActivityTrackerSDUTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73AA83021273FDA00D0B7FF /* ActivityTrackerSDUTests.swift */; };
 		A73AA83F212740C100D0B7FF /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73AA83E212740C100D0B7FF /* StatusMenuController.swift */; };
 		A73AC0DD2192171B001D28A4 /* UsageBuilderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73AC0DC2192171B001D28A4 /* UsageBuilderProtocol.swift */; };
 		A73AC0DF21921761001D28A4 /* UsageBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73AC0DE21921761001D28A4 /* UsageBuilder.swift */; };
 		A73AC0E2219217EA001D28A4 /* AssemblerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73AC0E1219217EA001D28A4 /* AssemblerProtocol.swift */; };
 		A73AC0E4219218B0001D28A4 /* Assembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73AC0E3219218B0001D28A4 /* Assembler.swift */; };
 		A73AC0E621921B7E001D28A4 /* DateTimeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73AC0E521921B7E001D28A4 /* DateTimeHandler.swift */; };
-		A745FE51214FD0C000F242DD /* RealmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A745FE50214FD0C000F242DD /* RealmTests.swift */; };
+		A749A8C92194507B006BA080 /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A749A8C82194507B006BA080 /* GeneratedMocks.swift */; };
 		A756633E213936C1008F5640 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756633D213936C1008F5640 /* Constants.swift */; };
 		A757F23921411F72009CCDC0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A757F23821411F72009CCDC0 /* Extensions.swift */; };
+		A75EB17A21942FA900EA9721 /* ActivityTrackerSDUTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75EB17921942FA900EA9721 /* ActivityTrackerSDUTests.swift */; };
 		A75F95F9214E4A52003727F5 /* PersistenceHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75F95F8214E4A52003727F5 /* PersistenceHandler.swift */; };
 		A7829996215CC78B003903AE /* CwlUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A782998F215CC78A003903AE /* CwlUtils.framework */; };
 		A7829997215CC78B003903AE /* CwlUtils.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A782998F215CC78A003903AE /* CwlUtils.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -79,11 +79,10 @@
 		A7BE8E88215D0B8000C0A864 /* UserHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BE8E87215D0B8000C0A864 /* UserHandler.swift */; };
 		A7EAAA242156256F007E942A /* SendOrSaveHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EAAA232156256F007E942A /* SendOrSaveHandler.swift */; };
 		A7EAAA362156626F007E942A /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EAAA352156626F007E942A /* Logger.swift */; };
-		OBJ_35 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A73AA82D21273FDA00D0B7FF /* PBXContainerItemProxy */ = {
+		A75EB17C21942FA900EA9721 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
@@ -165,18 +164,18 @@
 		A73AA82421273FDA00D0B7FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		A73AA82621273FDA00D0B7FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A73AA82721273FDA00D0B7FF /* ActivityTrackerSDU.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ActivityTrackerSDU.entitlements; sourceTree = "<group>"; };
-		A73AA82C21273FDA00D0B7FF /* ActivityTrackerSDUTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ActivityTrackerSDUTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A73AA83021273FDA00D0B7FF /* ActivityTrackerSDUTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTrackerSDUTests.swift; sourceTree = "<group>"; };
-		A73AA83221273FDA00D0B7FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A73AA83E212740C100D0B7FF /* StatusMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
 		A73AC0DC2192171B001D28A4 /* UsageBuilderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageBuilderProtocol.swift; sourceTree = "<group>"; };
 		A73AC0DE21921761001D28A4 /* UsageBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageBuilder.swift; sourceTree = "<group>"; };
 		A73AC0E1219217EA001D28A4 /* AssemblerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblerProtocol.swift; sourceTree = "<group>"; };
 		A73AC0E3219218B0001D28A4 /* Assembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembler.swift; sourceTree = "<group>"; };
 		A73AC0E521921B7E001D28A4 /* DateTimeHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeHandler.swift; sourceTree = "<group>"; };
-		A745FE50214FD0C000F242DD /* RealmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmTests.swift; sourceTree = "<group>"; };
+		A749A8C82194507B006BA080 /* GeneratedMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
 		A756633D213936C1008F5640 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A757F23821411F72009CCDC0 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		A75EB17721942FA900EA9721 /* ActivityTrackerSDUTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ActivityTrackerSDUTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A75EB17921942FA900EA9721 /* ActivityTrackerSDUTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTrackerSDUTests.swift; sourceTree = "<group>"; };
+		A75EB17B21942FA900EA9721 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A75F95F8214E4A52003727F5 /* PersistenceHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceHandler.swift; sourceTree = "<group>"; };
 		A7829986215CBC6C003903AE /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		A782998F215CC78A003903AE /* CwlUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CwlUtils.framework; path = Carthage/Build/Mac/CwlUtils.framework; sourceTree = "<group>"; };
@@ -193,7 +192,6 @@
 		A78299AA215CC7CD003903AE /* CocoaLumberjack.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = CocoaLumberjack.framework.dSYM; path = Carthage/Build/Mac/CocoaLumberjack.framework.dSYM; sourceTree = "<group>"; };
 		A78299AB215CC7CD003903AE /* CwlUtils.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = CwlUtils.framework.dSYM; path = Carthage/Build/Mac/CwlUtils.framework.dSYM; sourceTree = "<group>"; };
 		A78299AC215CC7CD003903AE /* Reachability.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Reachability.framework.dSYM; path = Carthage/Build/Mac/Reachability.framework.dSYM; sourceTree = "<group>"; };
-		A7866E7A2136B90800626DF8 /* Sources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sources; sourceTree = "<group>"; };
 		A7866E7E2137F79700626DF8 /* RequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestHandler.swift; sourceTree = "<group>"; };
 		A78F236721416CE900DC2489 /* ActiveWindowHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveWindowHandler.swift; sourceTree = "<group>"; };
 		A7A6B89D21353DE8000B4E38 /* ChooseUserWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseUserWindow.swift; sourceTree = "<group>"; };
@@ -202,8 +200,6 @@
 		A7BE8E87215D0B8000C0A864 /* UserHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHandler.swift; sourceTree = "<group>"; };
 		A7EAAA232156256F007E942A /* SendOrSaveHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendOrSaveHandler.swift; sourceTree = "<group>"; };
 		A7EAAA352156626F007E942A /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
-		"ActivityTracker::ActivityTracker::Product" /* ActivityTracker */ = {isa = PBXFileReference; lastKnownFileType = text; path = ActivityTracker; sourceTree = BUILT_PRODUCTS_DIR; };
-		OBJ_9 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,16 +217,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A73AA82921273FDA00D0B7FF /* Frameworks */ = {
+		A75EB17421942FA900EA9721 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		OBJ_36 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 0;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,6 +311,7 @@
 		A73AA81E21273FD900D0B7FF /* ActivityTrackerSDU */ = {
 			isa = PBXGroup;
 			children = (
+				A73699D0218EDEC9008AF504 /* TrackerLib */,
 				A73AA82721273FDA00D0B7FF /* ActivityTrackerSDU.entitlements */,
 				A73AA81F21273FD900D0B7FF /* AppDelegate.swift */,
 				A73AA82121273FDA00D0B7FF /* Assets.xcassets */,
@@ -333,16 +323,6 @@
 			path = ActivityTrackerSDU;
 			sourceTree = "<group>";
 		};
-		A73AA82F21273FDA00D0B7FF /* ActivityTrackerSDUTests */ = {
-			isa = PBXGroup;
-			children = (
-				A745FE50214FD0C000F242DD /* RealmTests.swift */,
-				A73AA83021273FDA00D0B7FF /* ActivityTrackerSDUTests.swift */,
-				A73AA83221273FDA00D0B7FF /* Info.plist */,
-			);
-			path = ActivityTrackerSDUTests;
-			sourceTree = "<group>";
-		};
 		A73AC0E0219217CB001D28A4 /* AppAssembling */ = {
 			isa = PBXGroup;
 			children = (
@@ -350,6 +330,16 @@
 				A73AC0E3219218B0001D28A4 /* Assembler.swift */,
 			);
 			path = AppAssembling;
+			sourceTree = "<group>";
+		};
+		A75EB17821942FA900EA9721 /* ActivityTrackerSDUTests */ = {
+			isa = PBXGroup;
+			children = (
+				A749A8C82194507B006BA080 /* GeneratedMocks.swift */,
+				A75EB17921942FA900EA9721 /* ActivityTrackerSDUTests.swift */,
+				A75EB17B21942FA900EA9721 /* Info.plist */,
+			);
+			path = ActivityTrackerSDUTests;
 			sourceTree = "<group>";
 		};
 		A78299B9215CC91C003903AE /* Misc */ = {
@@ -364,39 +354,29 @@
 		A7866E792136B90800626DF8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A78299AA215CC7CD003903AE /* CocoaLumberjack.framework.dSYM */,
-				A78299A7215CC7CD003903AE /* CocoaLumberjackSwift.framework.dSYM */,
-				A78299AB215CC7CD003903AE /* CwlUtils.framework.dSYM */,
-				A78299A9215CC7CD003903AE /* LaunchAtLogin.framework.dSYM */,
-				A78299AC215CC7CD003903AE /* Reachability.framework.dSYM */,
-				A78299A6215CC7CC003903AE /* Realm.framework.dSYM */,
-				A78299A8215CC7CD003903AE /* RealmSwift.framework.dSYM */,
 				A7829992215CC78A003903AE /* CocoaLumberjack.framework */,
+				A78299AA215CC7CD003903AE /* CocoaLumberjack.framework.dSYM */,
 				A7829995215CC78A003903AE /* CocoaLumberjackSwift.framework */,
+				A78299A7215CC7CD003903AE /* CocoaLumberjackSwift.framework.dSYM */,
 				A782998F215CC78A003903AE /* CwlUtils.framework */,
+				A78299AB215CC7CD003903AE /* CwlUtils.framework.dSYM */,
 				A7829994215CC78A003903AE /* LaunchAtLogin.framework */,
+				A78299A9215CC7CD003903AE /* LaunchAtLogin.framework.dSYM */,
 				A7829993215CC78A003903AE /* Reachability.framework */,
+				A78299AC215CC7CD003903AE /* Reachability.framework.dSYM */,
 				A7829990215CC78A003903AE /* Realm.framework */,
+				A78299A6215CC7CC003903AE /* Realm.framework.dSYM */,
 				A7829991215CC78A003903AE /* RealmSwift.framework */,
-				A7866E7A2136B90800626DF8 /* Sources */,
+				A78299A8215CC7CD003903AE /* RealmSwift.framework.dSYM */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		OBJ_10 /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				A73AA82F21273FDA00D0B7FF /* ActivityTrackerSDUTests */,
-			);
-			name = Tests;
-			sourceTree = SOURCE_ROOT;
-		};
 		OBJ_27 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				"ActivityTracker::ActivityTracker::Product" /* ActivityTracker */,
 				A73AA81D21273FD900D0B7FF /* ActivityTrackerSDU.app */,
-				A73AA82C21273FDA00D0B7FF /* ActivityTrackerSDUTests.xctest */,
+				A75EB17721942FA900EA9721 /* ActivityTrackerSDUTests.xctest */,
 			);
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
@@ -406,30 +386,19 @@
 			children = (
 				A70A39CE212C63610065B7CC /* ActivityTrackerSDU */,
 				A7829986215CBC6C003903AE /* Cartfile */,
+				A75EB17821942FA900EA9721 /* ActivityTrackerSDUTests */,
 				A7866E792136B90800626DF8 /* Frameworks */,
 				OBJ_27 /* Products */,
 				OBJ_7 /* Sources */,
-				OBJ_10 /* Tests */,
 			);
 			sourceTree = "<group>";
 		};
 		OBJ_7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				A73699D0218EDEC9008AF504 /* TrackerLib */,
 				A73AA81E21273FD900D0B7FF /* ActivityTrackerSDU */,
-				OBJ_8 /* ActivityTracker */,
 			);
 			name = Sources;
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_8 /* ActivityTracker */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_9 /* main.swift */,
-			);
-			name = ActivityTracker;
-			path = Sources/ActivityTracker;
 			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
@@ -456,53 +425,24 @@
 			productReference = A73AA81D21273FD900D0B7FF /* ActivityTrackerSDU.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A73AA82B21273FDA00D0B7FF /* ActivityTrackerSDUTests */ = {
+		A75EB17621942FA900EA9721 /* ActivityTrackerSDUTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A73AA83621273FDA00D0B7FF /* Build configuration list for PBXNativeTarget "ActivityTrackerSDUTests" */;
+			buildConfigurationList = A75EB17E21942FA900EA9721 /* Build configuration list for PBXNativeTarget "ActivityTrackerSDUTests" */;
 			buildPhases = (
-				A73AA82821273FDA00D0B7FF /* Sources */,
-				A73AA82921273FDA00D0B7FF /* Frameworks */,
-				A73AA82A21273FDA00D0B7FF /* Resources */,
+				A75EB17321942FA900EA9721 /* Sources */,
+				A75EB17421942FA900EA9721 /* Frameworks */,
+				A75EB17521942FA900EA9721 /* Resources */,
+				A749A8C521944A8B006BA080 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				A73AA82E21273FDA00D0B7FF /* PBXTargetDependency */,
+				A75EB17D21942FA900EA9721 /* PBXTargetDependency */,
 			);
 			name = ActivityTrackerSDUTests;
 			productName = ActivityTrackerSDUTests;
-			productReference = A73AA82C21273FDA00D0B7FF /* ActivityTrackerSDUTests.xctest */;
+			productReference = A75EB17721942FA900EA9721 /* ActivityTrackerSDUTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		"ActivityTracker::ActivityTracker" /* ActivityTracker */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_31 /* Build configuration list for PBXNativeTarget "ActivityTracker" */;
-			buildPhases = (
-				OBJ_34 /* Sources */,
-				OBJ_36 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = ActivityTracker;
-			productName = ActivityTracker;
-			productReference = "ActivityTracker::ActivityTracker::Product" /* ActivityTracker */;
-			productType = "com.apple.product-type.tool";
-		};
-		"ActivityTracker::SwiftPMPackageDescription" /* ActivityTrackerPackageDescription */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_41 /* Build configuration list for PBXNativeTarget "ActivityTrackerPackageDescription" */;
-			buildPhases = (
-				OBJ_44 /* Sources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = ActivityTrackerPackageDescription;
-			productName = ActivityTrackerPackageDescription;
-			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -510,7 +450,7 @@
 		OBJ_1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0940;
+				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1000;
 				TargetAttributes = {
 					A73AA81C21273FD900D0B7FF = {
@@ -523,8 +463,8 @@
 							};
 						};
 					};
-					A73AA82B21273FDA00D0B7FF = {
-						CreatedOnToolsVersion = 9.4.1;
+					A75EB17621942FA900EA9721 = {
+						CreatedOnToolsVersion = 10.1;
 						DevelopmentTeam = 9632T7RA94;
 						ProvisioningStyle = Automatic;
 						TestTargetID = A73AA81C21273FD900D0B7FF;
@@ -544,10 +484,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				"ActivityTracker::ActivityTracker" /* ActivityTracker */,
-				"ActivityTracker::SwiftPMPackageDescription" /* ActivityTrackerPackageDescription */,
 				A73AA81C21273FD900D0B7FF /* ActivityTrackerSDU */,
-				A73AA82B21273FDA00D0B7FF /* ActivityTrackerSDUTests */,
+				A75EB17621942FA900EA9721 /* ActivityTrackerSDUTests */,
 			);
 		};
 /* End PBXProject section */
@@ -563,7 +501,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A73AA82A21273FDA00D0B7FF /* Resources */ = {
+		A75EB17521942FA900EA9721 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -573,6 +511,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		A749A8C521944A8B006BA080 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Define output file. Change \"$PROJECT_DIR/${PROJECT_NAME}Tests\" to your test's root source folder, if it's not the default name.\n#OUTPUT_FILE=\"$PROJECT_DIR/ActivityTrackerSDUTests/GeneratedMocks.swift\"\n#echo \"Generated Mocks File = $OUTPUT_FILE\"\n\n# Define input directory. Change \"${PROJECT_DIR}/${PROJECT_NAME}\" to your project's root source folder, if it's not the default name.\n#INPUT_DIR=\"${PROJECT_DIR}/ActivityTrackerSDU\"\n#echo \"Mocks Input Directory = $INPUT_DIR\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n#\"Carthage/Checkouts/Cuckoo/run\" generate --testable \"ActivityTrackerSDU\" \\\n#--output \"${OUTPUT_FILE}\" \\\n#\"$INPUT_DIR/TrackerLib/Protocols/SettingsProtocol.swift\" \\\n#\"$INPUT_DIR/TrackerLib/AppAssembling/AssemblerProtocol.swift\" \\\n\n# ... and so forth, the last line should never end with a backslash\n\n# After running once, locate `GeneratedMocks.swift` and drag it into your Xcode test target group.\n";
+		};
 		A7866E782136B7A200626DF8 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -659,37 +614,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A73AA82821273FDA00D0B7FF /* Sources */ = {
+		A75EB17321942FA900EA9721 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A745FE51214FD0C000F242DD /* RealmTests.swift in Sources */,
-				A73AA83121273FDA00D0B7FF /* ActivityTrackerSDUTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		OBJ_34 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 0;
-			files = (
-				OBJ_35 /* main.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		OBJ_44 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 0;
-			files = (
+				A75EB17A21942FA900EA9721 /* ActivityTrackerSDUTests.swift in Sources */,
+				A749A8C92194507B006BA080 /* GeneratedMocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		A73AA82E21273FDA00D0B7FF /* PBXTargetDependency */ = {
+		A75EB17D21942FA900EA9721 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A73AA81C21273FD900D0B7FF /* ActivityTrackerSDU */;
-			targetProxy = A73AA82D21273FDA00D0B7FF /* PBXContainerItemProxy */;
+			targetProxy = A75EB17C21942FA900EA9721 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -840,10 +780,9 @@
 			};
 			name = Release;
 		};
-		A73AA83721273FDA00D0B7FF /* Debug */ = {
+		A75EB17F21942FA900EA9721 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -852,63 +791,43 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 9632T7RA94;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = /Users/kasper/Projects/swift/ActivityTracker;
+				FRAMEWORK_SEARCH_PATHS = (
+					"(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = ActivityTrackerSDUTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MTL_ENABLE_DEBUG_INFO = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks @loader_path/../Frameworks @loader_path/Carthage/Build/Mac";
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = dk.sdu.health.ActivityTrackerSDUTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ActivityTrackerSDU.app/Contents/MacOS/ActivityTrackerSDU";
 			};
 			name = Debug;
 		};
-		A73AA83821273FDA00D0B7FF /* Release */ = {
+		A75EB18021942FA900EA9721 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -917,50 +836,32 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = 9632T7RA94;
 				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = /Users/kasper/Projects/swift/ActivityTracker;
+				FRAMEWORK_SEARCH_PATHS = (
+					"(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = ActivityTrackerSDUTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks @loader_path/../Frameworks @loader_path/Carthage/Build/Mac";
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = dk.sdu.health.ActivityTrackerSDUTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ActivityTrackerSDU.app/Contents/MacOS/ActivityTrackerSDU";
 			};
 			name = Release;
@@ -1013,46 +914,6 @@
 			};
 			name = Debug;
 		};
-		OBJ_32 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
-				);
-				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = ActivityTracker.xcodeproj/ActivityTracker_Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx @executable_path";
-				OTHER_CFLAGS = "$(inherited)";
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				SWIFT_FORCE_DYNAMIC_LINK_STDLIB = YES;
-				SWIFT_FORCE_STATIC_LINK_STDLIB = NO;
-				SWIFT_VERSION = 4.0;
-				TARGET_NAME = ActivityTracker;
-			};
-			name = Debug;
-		};
-		OBJ_33 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
-				);
-				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = ActivityTracker.xcodeproj/ActivityTracker_Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx @executable_path";
-				OTHER_CFLAGS = "$(inherited)";
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				SWIFT_FORCE_DYNAMIC_LINK_STDLIB = YES;
-				SWIFT_FORCE_STATIC_LINK_STDLIB = NO;
-				SWIFT_VERSION = 4.0;
-				TARGET_NAME = ActivityTracker;
-			};
-			name = Release;
-		};
 		OBJ_4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1098,24 +959,6 @@
 			};
 			name = Release;
 		};
-		OBJ_42 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				LD = /usr/bin/true;
-				OTHER_SWIFT_FLAGS = "-swift-version 4 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
-				SWIFT_VERSION = 4.0;
-			};
-			name = Debug;
-		};
-		OBJ_43 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				LD = /usr/bin/true;
-				OTHER_SWIFT_FLAGS = "-swift-version 4 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
-				SWIFT_VERSION = 4.0;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1128,11 +971,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A73AA83621273FDA00D0B7FF /* Build configuration list for PBXNativeTarget "ActivityTrackerSDUTests" */ = {
+		A75EB17E21942FA900EA9721 /* Build configuration list for PBXNativeTarget "ActivityTrackerSDUTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A73AA83721273FDA00D0B7FF /* Debug */,
-				A73AA83821273FDA00D0B7FF /* Release */,
+				A75EB17F21942FA900EA9721 /* Debug */,
+				A75EB18021942FA900EA9721 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1142,24 +985,6 @@
 			buildConfigurations = (
 				OBJ_3 /* Debug */,
 				OBJ_4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		OBJ_31 /* Build configuration list for PBXNativeTarget "ActivityTracker" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				OBJ_32 /* Debug */,
-				OBJ_33 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		OBJ_41 /* Build configuration list for PBXNativeTarget "ActivityTrackerPackageDescription" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				OBJ_42 /* Debug */,
-				OBJ_43 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

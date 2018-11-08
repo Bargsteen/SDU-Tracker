@@ -8,9 +8,14 @@
 import Foundation
 
 class Assembler: AssemblerProtocol {
+    private let logger: LoggerProtocol
+    
+    init() {
+        self.logger = Logger()
+    }
     
     func resolve() -> LoggerProtocol {
-        return Logger()
+        return self.logger
     }
     
     func resolve() -> ActiveWindowHandlerProtocol {
