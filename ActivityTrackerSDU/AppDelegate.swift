@@ -12,62 +12,82 @@ import CwlUtils
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate{
-    var sendOrSaveHandler : SendOrSaveHandler?
+    
+    private let appTracker: AppTrackerProtocol
+    private let deviceTracker: DeviceTrackerProtocol
+    
+    private let dateTimeHandler: DateTimeHandlerProtocol
+    private let logger: LoggerProtocol
+    private let userHandler: UserHandlerProtocol
+    private let usageBuilder: UsageBuilderProtocol
+    private let sendOrSaveHandler: SendOrSaveHandlerProtocol
+    private let settings: SettingsProtocol
+    private let setupHandler: SetupHandlerProtocol
+    
+    
+    override init(){
+        let assembler: AssemblerProtocol = Assembler()
+        
+        self.appTracker = assembler.resolve()
+        self.deviceTracker = assembler.resolve()
+        self.dateTimeHandler = assembler.resolve()
+        self.logger = assembler.resolve()
+        self.userHandler = assembler.resolve()
+        self.usageBuilder = assembler.resolve()
+        self.sendOrSaveHandler = assembler.resolve()
+        self.settings = assembler.resolve()
+        self.setupHandler = assembler.resolve()
+        
+        super.init()
+    }
     
     func applicationWillFinishLaunching(_ notification: Notification) {
-        Logging.setupLogger()
-        
         // Subscribe to open by url event
-        NSAppleEventManager.shared().setEventHandler(self, andSelector: #selector(AppDelegate.handleGetURLEvent(_:withReplyEvent:)), forEventClass: AEEventClass(kInternetEventClass), andEventID: AEEventID(kAEGetURL))
+        NSAppleEventManager.shared().setEventHandler(self, andSelector: #selector(AppDelegate.handleGetURLEvent(_:withReplyEvent:)),
+                                                     forEventClass: AEEventClass(kInternetEventClass), andEventID: AEEventID(kAEGetURL))
         
-        if(UserDefaultsHelper.getAppHasBeenSetup()){
+        if(settings.appHasBeenSetup){
             begin()
         }else {
-            Logging.logInfo("App has not been setup.")
+            logger.logInfo("App has not been setup.")
         }
     }
     
     @objc func handleGetURLEvent(_ event: NSAppleEventDescriptor!, withReplyEvent:NSAppleEventDescriptor!) {
+        
         let url = URL(string: event.paramDescriptor(forKeyword: AEKeyword(keyDirectObject))!.stringValue!)!
         
-        
-        let setupSucceeded = SetupHandler.parseUrlAndSetupApp(url)
+        let setupSucceeded = setupHandler.parseUrlAndSetupApp(url)
         if(setupSucceeded){
-            SetupHandler.showSetupResultAlert(succeeded: setupSucceeded)
+            setupHandler.showSetupResultAlert(succeeded: setupSucceeded)
             begin()
         } else {
-            SetupHandler.showSetupResultAlert(succeeded: setupSucceeded)
+            setupHandler.showSetupResultAlert(succeeded: setupSucceeded)
             exit(1)
         }
     }
     
     
     func begin() {
-        let today = Date()
+        let today = dateTimeHandler.now
         
-        if(UserDefaultsHelper.getStopTrackingDate() >= today) {
-            
-            // Credentials
-            if let credentials = CredentialsHandler.loadCredentialsFromKeychain() {
-                self.sendOrSaveHandler = SendOrSaveHandler(credentials: credentials)
-            } else {
-                // Should never happen. But keychain could be deleted from outside.
-                
-                // TODO: Request user to resetup app with the link
-                Logging.logError("AppDelegate applicationDidFinishLaunching: No credentials.")
-                exit(1)
-            }
+        if(settings.stopTrackingDate >= today) {
             
             // Correct User
-            UserHandler.sharedInstance.maybeAskAndSetCorrectUser()
+            userHandler.checkIfUserHasChanged()
             
             // Tracking
-            let tracking = Tracking(userHandler: UserHandler.sharedInstance, sendOrSaveHandler: sendOrSaveHandler!)
-            tracking.setupTracking()
+            if(settings.trackingType == .AppAndDevice) {
+                appTracker.startTracking()
+                deviceTracker.startTracking()
+            } else {
+                deviceTracker.startTracking()
+            }
+
         } else {
             // TODO: Check if there are saved entries in db.
-            
-            Logging.logInfo("Tracking date has been reached. Disabling Launch at Login and terminating app.")
+            // TODO: Display alert saying "Thank you. We will stop tracking now."
+            logger.logInfo("Tracking date has been reached. Disabling Launch at Login and terminating app.")
             LaunchAtLogin.isEnabled = false
             exit(0)
         }
@@ -75,8 +95,10 @@ class AppDelegate: NSObject, NSApplicationDelegate{
 
     
     func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
-        if(UserDefaultsHelper.getAppHasBeenSetup()){
-            self.sendOrSaveHandler?.makeAndSendOrSaveDeviceUsage(eventType: .ended)
+        
+        if(settings.appHasBeenSetup){
+            let deviceUsage = usageBuilder.makeDeviceUsage(eventType: .ended)
+            sendOrSaveHandler.sendOrSaveUsage(usage: deviceUsage, fromPersistence: false)
         }
         
         sleep(1)

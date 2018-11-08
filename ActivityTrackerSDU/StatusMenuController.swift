@@ -8,33 +8,42 @@
 import Cocoa
 import Foundation
 
-class StatusMenuController: NSObject, ChooseUserWindowDelegate {
+class StatusMenuController: NSObject, UserChangedDelegate {
     
-    @IBOutlet weak var statusMenu: NSMenu!
+    @IBOutlet private weak var statusMenu: NSMenu!
 
-    @IBOutlet weak var trackingTypeMenuItem: NSMenuItem!
-    @IBOutlet weak var currentUserMenuItem: NSMenuItem!
+    @IBOutlet private weak var currentUserMenuItem: NSMenuItem!
     
-    let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+    private let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+    
+    private let userHandler: UserHandlerProtocol
+    private let settings: SettingsProtocol
+    
+    override init() {
+        let assembler: AssemblerProtocol = Assembler()
+        
+        self.userHandler = assembler.resolve()
+        self.settings = assembler.resolve()
+        
+        super.init()
+        
+    }
     
     override func awakeFromNib() {
         setupMenuValuesAndIcon()
-        UserHandler.sharedInstance.subscribeToUserChangedNotifications(delegate: self)
+        userHandler.subscribeToUserChanges(self)
     }
 
     
     // -- CLICK HANDLER FUNCTIONS
     @IBAction func chooseUserClicked(_ sender: NSMenuItem) {
-        UserHandler.sharedInstance.showChooseUserWindow()
+        userHandler.showChooseUserWindow()
     }
     
-    func userHasChanged(_ nameOfUser: String) {
-        currentUserMenuItem.title = "Bruger: " + nameOfUser
+    func userChanged(newCurrentUser: String) {
+        currentUserMenuItem.title = "Bruger: " + newCurrentUser
     }
     
-    @IBAction func quitClicked(_ sender: NSMenuItem) {
-        NSApplication.shared.terminate(self)
-    }
     
     // Local helpers
     func setupMenuValuesAndIcon() {
@@ -43,22 +52,7 @@ class StatusMenuController: NSObject, ChooseUserWindowDelegate {
         statusItem.image = icon
         statusItem.menu = statusMenu
         
-        trackingTypeMenuItem.title = UserDefaultsHelper.getUseAppTracking() ? .trackingAppData : .trackingDeviceData
-        
-        currentUserMenuItem.title = "Bruger: " + UserDefaultsHelper.getCurrentUser()
-    }
-    
-
-    // -- ONLY USED FOR DEBUGGING
-    
-    @IBAction func toggleAppDeviceTrackingClicked(_ sender: NSMenuItem) {
-        let useAppTracking = UserDefaultsHelper.getUseAppTracking()
-        if(useAppTracking){
-            trackingTypeMenuItem.title = .trackingDeviceData
-        } else {
-            trackingTypeMenuItem.title = .trackingAppData
-        }
-        UserDefaultsHelper.setUseAppTracking(!useAppTracking)
+        currentUserMenuItem.title = "Bruger: " + settings.currentUser
     }
 }
 

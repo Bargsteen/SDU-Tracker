@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14313.18"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -18,7 +18,6 @@
             <connections>
                 <outlet property="currentUserMenuItem" destination="PPh-zM-IXL" id="6S5-l8-fkb"/>
                 <outlet property="statusMenu" destination="e12-ic-Z5e" id="cgH-mw-wId"/>
-                <outlet property="trackingTypeMenuItem" destination="Hhz-Bg-kEp" id="xGF-ga-9VX"/>
             </connections>
         </customObject>
         <menu id="e12-ic-Z5e">
@@ -36,19 +35,5 @@
             <point key="canvasLocation" x="111" y="-30"/>
         </menu>
         <userDefaultsController representsSharedInstance="YES" id="oId-jM-GQ6"/>
-        <menuItem title="AfslutOO" id="ykD-QO-mhc">
-            <modifierMask key="keyEquivalentModifierMask"/>
-            <connections>
-                <action selector="quitClicked:" target="Cx0-KW-VH8" id="GMe-my-aPM"/>
-            </connections>
-        </menuItem>
-        <menuItem isSeparatorItem="YES" id="riD-Zd-I6I"/>
-        <menuItem title="Tracker kun tid" id="Hhz-Bg-kEp">
-            <modifierMask key="keyEquivalentModifierMask"/>
-            <connections>
-                <action selector="toggleAppDeviceTrackingClicked:" target="Cx0-KW-VH8" id="1am-oF-M40"/>
-            </connections>
-        </menuItem>
-        <menuItem isSeparatorItem="YES" id="PI9-em-ibR"/>
     </objects>
 </document>
