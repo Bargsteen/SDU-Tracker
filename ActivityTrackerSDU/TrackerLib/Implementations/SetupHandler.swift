@@ -14,12 +14,14 @@ class SetupHandler: SetupHandlerProtocol {
     
     private let alertHandler: AlertHandlerProtocol
     private let dateTimeHandler: DateTimeHandlerProtocol
+    private var launchAtStartupHandler: LaunchAtLoginHandlerProtocol
     private let logger: LoggerProtocol
     private var settings: SettingsProtocol
     
     init(assembler: AssemblerProtocol) {
         self.alertHandler = assembler.resolve()
         self.dateTimeHandler = assembler.resolve()
+        self.launchAtStartupHandler = assembler.resolve()
         self.logger = assembler.resolve()
         self.settings = assembler.resolve()
     }
@@ -66,8 +68,12 @@ class SetupHandler: SetupHandlerProtocol {
             return false
         }
         
+        // Set app to launch automatically
+        launchAtStartupHandler.launchAtStartupIsEnabled = true
+        
         // If we got this far, everything should be fine.
         settings.appHasBeenSetup = true
+        
         logger.logInfo("App is setup!")
         return true
     }

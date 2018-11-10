@@ -9,4 +9,5 @@ import Foundation
 
 protocol AlertHandlerProtocol {
     func promptForUserChange(currentUser: String) -> Bool
+    func showTrackingPeriodHasEndedAlert()
 }

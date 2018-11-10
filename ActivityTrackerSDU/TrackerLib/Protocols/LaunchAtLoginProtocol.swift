@@ -8,5 +8,5 @@
 import Foundation
 
 protocol LaunchAtLoginHandlerProtocol {
-    var isEnabled: Bool { get set }
+    var launchAtStartupIsEnabled: Bool { get set }
 }

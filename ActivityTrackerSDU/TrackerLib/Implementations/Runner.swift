@@ -12,6 +12,7 @@ class Runner: RunnerProtocol {
     private let appTracker: AppTrackerProtocol
     private let deviceTracker: DeviceTrackerProtocol
     
+    private let alertHandler: AlertHandlerProtocol
     private let dateTimeHandler: DateTimeHandlerProtocol
     private var launchAtLoginHandler: LaunchAtLoginHandlerProtocol
     private let logger: LoggerProtocol
@@ -23,6 +24,7 @@ class Runner: RunnerProtocol {
     init(assembler: AssemblerProtocol) {
         self.appTracker = assembler.resolve()
         self.deviceTracker = assembler.resolve()
+        self.alertHandler = assembler.resolve()
         self.dateTimeHandler = assembler.resolve()
         self.launchAtLoginHandler = assembler.resolve()
         self.logger = assembler.resolve()
@@ -30,7 +32,6 @@ class Runner: RunnerProtocol {
         self.usageBuilder = assembler.resolve()
         self.sendOrSaveHandler = assembler.resolve()
         self.settings = assembler.resolve()
-
     }
     
     func run(){
@@ -52,9 +53,12 @@ class Runner: RunnerProtocol {
                 
             } else {
                 // TODO: Check if there are saved entries in db.
-                // TODO: Display alert saying "Thank you. We will stop tracking now."
+                
+                alertHandler.showTrackingPeriodHasEndedAlert()
+                
                 logger.logInfo("Tracking date has been reached. Disabling Launch at Login and terminating app.")
-                launchAtLoginHandler.isEnabled = false
+                
+                launchAtLoginHandler.launchAtStartupIsEnabled = false
                 exit(0)
             }
         } else {

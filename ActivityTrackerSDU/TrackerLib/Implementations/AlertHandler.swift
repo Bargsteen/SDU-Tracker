@@ -38,9 +38,7 @@ class AlertHandler: AlertHandlerProtocol {
         var shouldShowChooseUserWindow = false
                 
         // Stops the modal after changeUserAlertTimeDisplayed seconds and returns false, i.e. do not change the user.
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double.changeUserAlertTimeDisplayed) {
-            NSApplication.shared.stopModal()
-        }
+        hideAlertAfter(seconds: .alertShownTime)
                 
         // Show the modal and wait up to x seconds for a click.
         shouldShowChooseUserWindow = alert.runModal() == .alertSecondButtonReturn
@@ -48,5 +46,23 @@ class AlertHandler: AlertHandlerProtocol {
         lastAlertTimeStamp = dateTimeHandler.now
                 
         return shouldShowChooseUserWindow
+    }
+    
+    func showTrackingPeriodHasEndedAlert(){
+        let alert = NSAlert()
+        alert.messageText = "Tracking perioden er afsluttet"
+        alert.informativeText = "Tak for din deltagelse."
+        alert.alertStyle = .informational
+        alert.addButton(withTitle: "Ok")
+        
+        hideAlertAfter(seconds: .alertShownTime)
+        
+        alert.runModal()
+    }
+    
+    private func hideAlertAfter(seconds: Double) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + seconds) {
+            NSApplication.shared.stopModal()
+        }
     }
 }

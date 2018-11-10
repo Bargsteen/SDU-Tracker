@@ -9,7 +9,7 @@ import Foundation
 import LaunchAtLogin
 
 class LaunchAtLoginHandler: LaunchAtLoginHandlerProtocol {
-    var isEnabled: Bool {
+    var launchAtStartupIsEnabled: Bool {
         get {
             return LaunchAtLogin.isEnabled
         }
