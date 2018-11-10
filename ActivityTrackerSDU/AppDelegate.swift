@@ -9,6 +9,9 @@ import Cocoa
 import ServiceManagement
 import LaunchAtLogin
 import CwlUtils
+import Swinject
+
+let container = getContainer()
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate{
@@ -17,11 +20,9 @@ class AppDelegate: NSObject, NSApplicationDelegate{
     private let setupHandler: SetupHandlerProtocol
     
     override init(){
-        let assembler: AssemblerProtocol = Assembler()
-        
-        self.runner = assembler.resolve()
-        self.setupHandler = assembler.resolve()
-        
+        self.runner = container.resolve(RunnerProtocol.self)!
+        self.setupHandler = container.resolve(SetupHandlerProtocol.self)!
+
         super.init()
     }
     
@@ -61,5 +62,3 @@ class AppDelegate: NSObject, NSApplicationDelegate{
         return .terminateNow
     }
 }
-
-

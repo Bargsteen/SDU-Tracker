@@ -14,16 +14,17 @@ class SetupHandler: SetupHandlerProtocol {
     
     private let alertHandler: AlertHandlerProtocol
     private let dateTimeHandler: DateTimeHandlerProtocol
-    private var launchAtStartupHandler: LaunchAtLoginHandlerProtocol
+    private var launchAtLoginHandler: LaunchAtLoginHandlerProtocol
     private let logger: LoggerProtocol
     private var settings: SettingsProtocol
     
-    init(assembler: AssemblerProtocol) {
-        self.alertHandler = assembler.resolve()
-        self.dateTimeHandler = assembler.resolve()
-        self.launchAtStartupHandler = assembler.resolve()
-        self.logger = assembler.resolve()
-        self.settings = assembler.resolve()
+    init(alertHandler: AlertHandlerProtocol, dateTimeHandler: DateTimeHandlerProtocol, launchAtLoginHandler: LaunchAtLoginHandlerProtocol,
+         logger: LoggerProtocol, settings: SettingsProtocol) {
+        self.alertHandler = alertHandler
+        self.dateTimeHandler = dateTimeHandler
+        self.launchAtLoginHandler = launchAtLoginHandler
+        self.logger = logger
+        self.settings = settings
     }
     
     func parseUrlAndSetupApp(_ url : URL) -> Bool{
@@ -69,7 +70,7 @@ class SetupHandler: SetupHandlerProtocol {
         }
         
         // Set app to launch automatically
-        launchAtStartupHandler.launchAtStartupIsEnabled = true
+        launchAtLoginHandler.launchAtStartupIsEnabled = true
         
         // If we got this far, everything should be fine.
         settings.appHasBeenSetup = true

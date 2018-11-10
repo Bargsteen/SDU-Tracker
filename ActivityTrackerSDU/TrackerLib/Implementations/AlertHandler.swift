@@ -13,8 +13,8 @@ class AlertHandler: AlertHandlerProtocol {
     
     private var lastAlertTimeStamp: Date?
     
-    init(assembler: AssemblerProtocol) {
-        self.dateTimeHandler = assembler.resolve()
+    init(dateTimeHandler: DateTimeHandlerProtocol) {
+        self.dateTimeHandler = dateTimeHandler
     }
     
     func promptForUserChange(currentUser: String) -> Bool {

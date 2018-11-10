@@ -13,8 +13,8 @@ import RealmSwift
 class PersistenceHandler: PersistenceHandlerProtocol {
     private let logger: LoggerProtocol
     
-    init(assembler: AssemblerProtocol) {
-        self.logger = assembler.resolve()
+    init(logger: LoggerProtocol) {
+        self.logger = logger
     }
     
     func save<T:Usage>(_ usage: T){

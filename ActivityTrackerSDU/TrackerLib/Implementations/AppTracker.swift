@@ -19,12 +19,12 @@ class AppTracker: AppTrackerProtocol {
     
     private var appTrackingIsEnabled: Bool
     
-    init(assembler: AssemblerProtocol){
-        self.activeWindowHandler = assembler.resolve()
-        self.logger = assembler.resolve()
-        self.sendOrSaveHandler = assembler.resolve()
-        self.persistenceHandler = assembler.resolve()
-        self.usageBuilder = assembler.resolve()
+    init(activeWindowHandler: ActiveWindowHandlerProtocol, logger: LoggerProtocol, sendOrSaveHandler: SendOrSaveHandlerProtocol, persistenceHandler: PersistenceHandlerProtocol, usageBuilder: UsageBuilderProtocol){
+        self.activeWindowHandler = activeWindowHandler
+        self.logger = logger
+        self.sendOrSaveHandler = sendOrSaveHandler
+        self.persistenceHandler = persistenceHandler
+        self.usageBuilder = usageBuilder
         
         // TODO: Make a protocol for this one
         self.reachability = Reachability()!

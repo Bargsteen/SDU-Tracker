@@ -16,17 +16,14 @@ class StatusMenuController: NSObject, UserChangedDelegate {
     
     private let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     
-    private let userHandler: UserHandlerProtocol
-    private let settings: SettingsProtocol
+    private var userHandler: UserHandlerProtocol
+    private var settings: SettingsProtocol
     
     override init() {
-        let assembler: AssemblerProtocol = Assembler()
-        
-        self.userHandler = assembler.resolve()
-        self.settings = assembler.resolve()
+        self.userHandler = container.resolve(UserHandlerProtocol.self)!
+        self.settings = container.resolve(SettingsProtocol.self)!
         
         super.init()
-        
     }
     
     override func awakeFromNib() {
@@ -40,8 +37,8 @@ class StatusMenuController: NSObject, UserChangedDelegate {
         userHandler.showChooseUserWindow()
     }
     
-    func userChanged(newCurrentUser: String) {
-        currentUserMenuItem.title = "Bruger: " + newCurrentUser
+    func userChanged(previousUser: String, newUser: String) {
+        currentUserMenuItem.title = "Bruger: " + newUser
     }
     
     

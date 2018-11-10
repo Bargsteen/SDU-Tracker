@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A71106BD219737C300F44B07 /* Swinject.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = A71106BC219737C300F44B07 /* Swinject.framework.dSYM */; };
+		A71106C021973B5900F44B07 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71106BF21973B5900F44B07 /* Container.swift */; };
+		A71106C32197483700F44B07 /* Swinject.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A71106C22197483700F44B07 /* Swinject.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A71106C42197484400F44B07 /* Swinject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A71106C22197483700F44B07 /* Swinject.framework */; };
 		A716862D2192BCF900D6657C /* SetupHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A716862C2192BCF900D6657C /* SetupHandlerProtocol.swift */; };
 		A73699D4218EE194008AF504 /* ActiveWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73699D3218EE194008AF504 /* ActiveWindow.swift */; };
 		A73699D6218EE21B008AF504 /* LoggerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73699D5218EE21B008AF504 /* LoggerProtocol.swift */; };
@@ -42,8 +46,6 @@
 		A73AA83F212740C100D0B7FF /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73AA83E212740C100D0B7FF /* StatusMenuController.swift */; };
 		A73AC0DD2192171B001D28A4 /* UsageBuilderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73AC0DC2192171B001D28A4 /* UsageBuilderProtocol.swift */; };
 		A73AC0DF21921761001D28A4 /* UsageBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73AC0DE21921761001D28A4 /* UsageBuilder.swift */; };
-		A73AC0E2219217EA001D28A4 /* AssemblerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73AC0E1219217EA001D28A4 /* AssemblerProtocol.swift */; };
-		A73AC0E4219218B0001D28A4 /* Assembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73AC0E3219218B0001D28A4 /* Assembler.swift */; };
 		A73AC0E621921B7E001D28A4 /* DateTimeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73AC0E521921B7E001D28A4 /* DateTimeHandler.swift */; };
 		A756633E213936C1008F5640 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756633D213936C1008F5640 /* Constants.swift */; };
 		A757F23921411F72009CCDC0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A757F23821411F72009CCDC0 /* Extensions.swift */; };
@@ -71,7 +73,6 @@
 		A78299B3215CC7CD003903AE /* Reachability.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = A78299AC215CC7CD003903AE /* Reachability.framework.dSYM */; };
 		A7866E7F2137F79700626DF8 /* RequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7866E7E2137F79700626DF8 /* RequestHandler.swift */; };
 		A7896C2E2196B56600089A97 /* Cuckoo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7896C2D2196B56600089A97 /* Cuckoo.framework */; };
-		A7896C2F2196B5C700089A97 /* Cuckoo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A7896C2D2196B56600089A97 /* Cuckoo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A7896C342196B6F400089A97 /* Cuckoo.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = A7896C332196B6F300089A97 /* Cuckoo.framework.dSYM */; };
 		A7896C362196BD5900089A97 /* ActivityTrackerSDUTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7896C352196BD5900089A97 /* ActivityTrackerSDUTests.swift */; };
 		A7896C382196BDA100089A97 /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7896C372196BDA100089A97 /* GeneratedMocks.swift */; };
@@ -105,7 +106,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				A7896C2F2196B5C700089A97 /* Cuckoo.framework in Embed Frameworks */,
+				A71106C32197483700F44B07 /* Swinject.framework in Embed Frameworks */,
 				A7829999215CC78B003903AE /* Realm.framework in Embed Frameworks */,
 				A7829997215CC78B003903AE /* CwlUtils.framework in Embed Frameworks */,
 				A78299A1215CC78B003903AE /* LaunchAtLogin.framework in Embed Frameworks */,
@@ -123,6 +124,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				A71106BD219737C300F44B07 /* Swinject.framework.dSYM in CopyFiles */,
 				A78299AD215CC7CD003903AE /* Realm.framework.dSYM in CopyFiles */,
 				A78299AE215CC7CD003903AE /* CocoaLumberjackSwift.framework.dSYM in CopyFiles */,
 				A78299AF215CC7CD003903AE /* RealmSwift.framework.dSYM in CopyFiles */,
@@ -137,6 +139,10 @@
 
 /* Begin PBXFileReference section */
 		A70A39CE212C63610065B7CC /* ActivityTrackerSDU */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ActivityTrackerSDU; sourceTree = "<group>"; };
+		A71106B82197376800F44B07 /* Swinject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swinject.framework; path = Carthage/Build/Mac/Swinject.framework; sourceTree = "<group>"; };
+		A71106BC219737C300F44B07 /* Swinject.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Swinject.framework.dSYM; path = Carthage/Build/Mac/Swinject.framework.dSYM; sourceTree = "<group>"; };
+		A71106BF21973B5900F44B07 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
+		A71106C22197483700F44B07 /* Swinject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swinject.framework; path = Carthage/Build/Mac/Swinject.framework; sourceTree = "<group>"; };
 		A716862C2192BCF900D6657C /* SetupHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupHandlerProtocol.swift; sourceTree = "<group>"; };
 		A73699D3218EE194008AF504 /* ActiveWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveWindow.swift; sourceTree = "<group>"; };
 		A73699D5218EE21B008AF504 /* LoggerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerProtocol.swift; sourceTree = "<group>"; };
@@ -175,8 +181,6 @@
 		A73AA83E212740C100D0B7FF /* StatusMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
 		A73AC0DC2192171B001D28A4 /* UsageBuilderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageBuilderProtocol.swift; sourceTree = "<group>"; };
 		A73AC0DE21921761001D28A4 /* UsageBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageBuilder.swift; sourceTree = "<group>"; };
-		A73AC0E1219217EA001D28A4 /* AssemblerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblerProtocol.swift; sourceTree = "<group>"; };
-		A73AC0E3219218B0001D28A4 /* Assembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembler.swift; sourceTree = "<group>"; };
 		A73AC0E521921B7E001D28A4 /* DateTimeHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeHandler.swift; sourceTree = "<group>"; };
 		A756633D213936C1008F5640 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A757F23821411F72009CCDC0 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -221,6 +225,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A71106C42197484400F44B07 /* Swinject.framework in Frameworks */,
 				A7829998215CC78B003903AE /* Realm.framework in Frameworks */,
 				A7829996215CC78B003903AE /* CwlUtils.framework in Frameworks */,
 				A78299A0215CC78B003903AE /* LaunchAtLogin.framework in Frameworks */,
@@ -242,6 +247,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A71106BE21973B4800F44B07 /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				A71106BF21973B5900F44B07 /* Container.swift */,
+			);
+			path = Container;
+			sourceTree = "<group>";
+		};
 		A73699CD218EDC83008AF504 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -271,7 +284,7 @@
 		A73699D0218EDEC9008AF504 /* TrackerLib */ = {
 			isa = PBXGroup;
 			children = (
-				A73AC0E0219217CB001D28A4 /* AppAssembling */,
+				A71106BE21973B4800F44B07 /* Container */,
 				A73699D1218EE0FE008AF504 /* Enums */,
 				A73699F7218EFE35008AF504 /* Implementations */,
 				A78299B9215CC91C003903AE /* Misc */,
@@ -342,15 +355,6 @@
 			path = ActivityTrackerSDU;
 			sourceTree = "<group>";
 		};
-		A73AC0E0219217CB001D28A4 /* AppAssembling */ = {
-			isa = PBXGroup;
-			children = (
-				A73AC0E1219217EA001D28A4 /* AssemblerProtocol.swift */,
-				A73AC0E3219218B0001D28A4 /* Assembler.swift */,
-			);
-			path = AppAssembling;
-			sourceTree = "<group>";
-		};
 		A75EB17821942FA900EA9721 /* ActivityTrackerSDUTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -389,6 +393,7 @@
 				A78299A6215CC7CC003903AE /* Realm.framework.dSYM */,
 				A7829991215CC78A003903AE /* RealmSwift.framework */,
 				A78299A8215CC7CD003903AE /* RealmSwift.framework.dSYM */,
+				A71106B82197376800F44B07 /* Swinject.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -405,6 +410,8 @@
 		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
+				A71106C22197483700F44B07 /* Swinject.framework */,
+				A71106BC219737C300F44B07 /* Swinject.framework.dSYM */,
 				A70A39CE212C63610065B7CC /* ActivityTrackerSDU */,
 				A75EB17821942FA900EA9721 /* ActivityTrackerSDUTests */,
 				A7829986215CBC6C003903AE /* Cartfile */,
@@ -603,6 +610,7 @@
 				A73699D6218EE21B008AF504 /* LoggerProtocol.swift in Sources */,
 				A73699D4218EE194008AF504 /* ActiveWindow.swift in Sources */,
 				A7369A03218F4B5F008AF504 /* AlertHandler.swift in Sources */,
+				A71106C021973B5900F44B07 /* Container.swift in Sources */,
 				A716862D2192BCF900D6657C /* SetupHandlerProtocol.swift in Sources */,
 				A7369A05218F4E52008AF504 /* ChooseUserWindowProtocol.swift in Sources */,
 				A73699EA218EE514008AF504 /* UsageLogType.swift in Sources */,
@@ -615,7 +623,6 @@
 				A73699E4218EE2C7008AF504 /* RequestHandlerProtocol.swift in Sources */,
 				A73699F4218EE604008AF504 /* UsageType.swift in Sources */,
 				A7369A01218F4917008AF504 /* AlertHandlerProtocol.swift in Sources */,
-				A73AC0E2219217EA001D28A4 /* AssemblerProtocol.swift in Sources */,
 				A73AA83F212740C100D0B7FF /* StatusMenuController.swift in Sources */,
 				A73699F6218EE6E1008AF504 /* Usage.swift in Sources */,
 				A73AA82021273FD900D0B7FF /* AppDelegate.swift in Sources */,
@@ -631,7 +638,6 @@
 				A756633E213936C1008F5640 /* Constants.swift in Sources */,
 				A73699D8218EE24F008AF504 /* ActiveWindowHandlerProtocol.swift in Sources */,
 				A73AC0DD2192171B001D28A4 /* UsageBuilderProtocol.swift in Sources */,
-				A73AC0E4219218B0001D28A4 /* Assembler.swift in Sources */,
 				A73699FB218F08BC008AF504 /* TrackingType.swift in Sources */,
 				A7A6B89F21353DE8000B4E38 /* ChooseUserWindow.swift in Sources */,
 				A7B158FB217C6F57006087D4 /* SetupHandler.swift in Sources */,

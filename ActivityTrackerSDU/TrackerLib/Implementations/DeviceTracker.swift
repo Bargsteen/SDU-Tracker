@@ -8,7 +8,8 @@
 import Foundation
 import Cocoa
 
-class DeviceTracker: DeviceTrackerProtocol {
+class DeviceTracker: DeviceTrackerProtocol, UserChangedDelegate {
+    
     private let dateTimeHandler: DateTimeHandlerProtocol
     private let sendOrSaveHandler: SendOrSaveHandlerProtocol
     private let settings: SettingsProtocol
@@ -16,13 +17,16 @@ class DeviceTracker: DeviceTrackerProtocol {
     
     private var deviceTrackingIsEnabled: Bool
     
-    init(assembler: AssemblerProtocol) {
-        self.dateTimeHandler = assembler.resolve()
-        self.sendOrSaveHandler = assembler.resolve()
-        self.settings = assembler.resolve()
-        self.userHandler = assembler.resolve()
+    init(dateTimeHandler: DateTimeHandlerProtocol, sendOrSaveHandler: SendOrSaveHandlerProtocol, settings: SettingsProtocol,
+         userHandler: UserHandlerProtocol) {
+        
+        self.dateTimeHandler = dateTimeHandler
+        self.sendOrSaveHandler = sendOrSaveHandler
+        self.settings = settings
+        self.userHandler = userHandler
         
         deviceTrackingIsEnabled = false
+        userHandler.subscribeToUserChanges(self)
     }
     
     func startTracking() {
@@ -33,6 +37,20 @@ class DeviceTracker: DeviceTrackerProtocol {
     func stopTracking() {
         deviceTrackingIsEnabled = false
         self.sendOrSaveHandler.sendOrSaveUsage(usage: makeDeviceUsage(eventType: .ended), fromPersistence: false)
+    }
+    
+    // This function handles manual user changes from the menu.
+    func userChanged(previousUser: String, newUser: String) {
+        
+        // Previous user stopped using the device
+        let identifierForPrevious = settings.makeParticipantIdentifierForSpecificUser(user: previousUser)
+        let endedUsage = makeDeviceUsage(eventType: .ended, participantIdentifier: identifierForPrevious)
+        sendOrSaveHandler.sendOrSaveUsage(usage: endedUsage, fromPersistence: false)
+        
+        // New user started using the device
+        let identifierForNew = settings.makeParticipantIdentifierForSpecificUser(user: newUser)
+        let startedUsage = makeDeviceUsage(eventType: .started, participantIdentifier: identifierForNew)
+        sendOrSaveHandler.sendOrSaveUsage(usage: startedUsage, fromPersistence: false)
     }
     
     private func setupScreenNotificationObservers() {
@@ -56,8 +74,12 @@ class DeviceTracker: DeviceTrackerProtocol {
     }
     
     private func makeDeviceUsage(eventType: EventType) -> DeviceUsage {
+        return makeDeviceUsage(eventType: eventType, participantIdentifier: settings.participantIdentifier);
+    }
+    
+    private func makeDeviceUsage(eventType: EventType, participantIdentifier: String) -> DeviceUsage {
         let now = dateTimeHandler.now
-        return DeviceUsage(participantIdentifier: settings.participantIdentifier, deviceModelName: settings.deviceModelName,
+        return DeviceUsage(participantIdentifier: participantIdentifier, deviceModelName: settings.deviceModelName,
                            timeStamp: now, userCount: settings.userCount, eventType: eventType)
     }
 }

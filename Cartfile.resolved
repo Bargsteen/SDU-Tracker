@@ -1,5 +1,6 @@
 github "CocoaLumberjack/CocoaLumberjack" "3.4.2"
 github "SwiftKit/Cuckoo" "0.12.0"
+github "Swinject/Swinject" "2.5.0"
 github "ashleymills/Reachability.swift" "v4.3.0"
 github "mattgallagher/CwlUtils" "44278c79c3f4a6d11376dcba111d7e875c86501c"
 github "realm/realm-cocoa" "v3.11.1"

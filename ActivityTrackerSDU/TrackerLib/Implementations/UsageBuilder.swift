@@ -12,9 +12,9 @@ class UsageBuilder: UsageBuilderProtocol {
     private let dateTimeHandler: DateTimeHandlerProtocol
     private let settings: SettingsProtocol
     
-    init(assembler: AssemblerProtocol) {
-        dateTimeHandler = assembler.resolve()
-        settings = assembler.resolve()
+    init(dateTimeHandler: DateTimeHandlerProtocol, settings: SettingsProtocol) {
+        self.dateTimeHandler = dateTimeHandler
+        self.settings = settings
     }
     func makeDeviceUsage(eventType: EventType) -> DeviceUsage {
         

@@ -25,5 +25,7 @@ protocol SettingsProtocol {
     var userId: String { get set }
     var participantIdentifier: String { get}
     
+    func makeParticipantIdentifierForSpecificUser(user: String) -> String
+    
     var credentials: Credentials { get }
 }

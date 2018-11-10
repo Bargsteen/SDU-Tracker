@@ -21,17 +21,19 @@ class Runner: RunnerProtocol {
     private let sendOrSaveHandler: SendOrSaveHandlerProtocol
     private let settings: SettingsProtocol
     
-    init(assembler: AssemblerProtocol) {
-        self.appTracker = assembler.resolve()
-        self.deviceTracker = assembler.resolve()
-        self.alertHandler = assembler.resolve()
-        self.dateTimeHandler = assembler.resolve()
-        self.launchAtLoginHandler = assembler.resolve()
-        self.logger = assembler.resolve()
-        self.userHandler = assembler.resolve()
-        self.usageBuilder = assembler.resolve()
-        self.sendOrSaveHandler = assembler.resolve()
-        self.settings = assembler.resolve()
+    init(appTracker: AppTrackerProtocol, deviceTracker: DeviceTrackerProtocol, alertHandler: AlertHandlerProtocol, dateTimeHandler: DateTimeHandlerProtocol,
+         launchAtLoginHandler: LaunchAtLoginHandlerProtocol, logger: LoggerProtocol, userHandler: UserHandlerProtocol, usageBuilder: UsageBuilderProtocol,
+         sendOrSaveHandler: SendOrSaveHandlerProtocol, settings: SettingsProtocol) {
+        self.appTracker = appTracker
+        self.deviceTracker = deviceTracker
+        self.alertHandler = alertHandler
+        self.dateTimeHandler = dateTimeHandler
+        self.launchAtLoginHandler = launchAtLoginHandler
+        self.logger = logger
+        self.userHandler = userHandler
+        self.usageBuilder = usageBuilder
+        self.sendOrSaveHandler = sendOrSaveHandler
+        self.settings = settings
     }
     
     func run(){

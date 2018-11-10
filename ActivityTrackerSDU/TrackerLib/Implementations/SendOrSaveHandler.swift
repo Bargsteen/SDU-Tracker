@@ -16,11 +16,12 @@ class SendOrSaveHandler: SendOrSaveHandlerProtocol {
     private let credentials : Credentials
     
     
-    init(assembler: AssemblerProtocol) {
-        self.logger = assembler.resolve()
-        self.persistenceHandler = assembler.resolve()
-        self.requestHandler = assembler.resolve()
-        self.settings = assembler.resolve()
+    init(logger: LoggerProtocol, persistenceHandler: PersistenceHandlerProtocol, requestHandler: RequestHandlerProtocol,
+         settings: SettingsProtocol) {
+        self.logger = logger
+        self.persistenceHandler = persistenceHandler
+        self.requestHandler = requestHandler
+        self.settings = settings
         
         self.credentials = settings.credentials
     }

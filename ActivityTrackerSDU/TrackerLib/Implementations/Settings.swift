@@ -12,8 +12,8 @@ class Settings: SettingsProtocol {
     
     private let dateTimeHandler: DateTimeHandlerProtocol
     
-    init(assembler: AssemblerProtocol) {
-        self.dateTimeHandler = assembler.resolve()
+    init(dateTimeHandler: DateTimeHandlerProtocol) {
+        self.dateTimeHandler = dateTimeHandler
     }
     
     var appHasBeenSetup: Bool {
@@ -112,8 +112,12 @@ class Settings: SettingsProtocol {
     
     var participantIdentifier: String {
         get {
-            return "\(userId):\(currentUser)"
+            return makeParticipantIdentifierForSpecificUser(user: currentUser)
         }
+    }
+    
+    func makeParticipantIdentifierForSpecificUser(user: String) -> String {
+        return "\(userId):\(user)"
     }
     
     var credentials: Credentials {

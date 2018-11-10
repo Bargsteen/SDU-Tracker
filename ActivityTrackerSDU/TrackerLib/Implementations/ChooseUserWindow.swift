@@ -11,13 +11,13 @@ class ChooseUserWindow: NSWindowController, NSWindowDelegate, ChooseUserWindowPr
     
     private var settings: SettingsProtocol
     
-    private var onUserChangeCallBack : ((String) -> ())?
+    private var onUserChangeCallBack : ((String, String) -> ())?
     
     @IBOutlet weak var userListMenu: NSPopUpButton!
     @IBOutlet weak var newUserTextField: NSTextField!
     
-    init(assembler: AssemblerProtocol) {
-        self.settings = assembler.resolve()
+    init(settings: SettingsProtocol) {
+        self.settings = settings
         super.init(window: nil)
     }
     
@@ -25,7 +25,7 @@ class ChooseUserWindow: NSWindowController, NSWindowDelegate, ChooseUserWindowPr
         fatalError("init(coder:) has not been implemented. Use init()")
     }
     
-    func showWithCallback(onUserChange: @escaping (String) -> ()){
+    func showWithCallback(onUserChange: @escaping (String, String) -> ()){
         self.showWindow(nil)
         onUserChangeCallBack = onUserChange
     }
@@ -77,7 +77,7 @@ class ChooseUserWindow: NSWindowController, NSWindowDelegate, ChooseUserWindowPr
         if let newCurrentUser = newCurrentUser {
             if(newCurrentUser != currentUser) {
                 settings.currentUser = newCurrentUser
-                onUserChangeCallBack?(newCurrentUser)
+                onUserChangeCallBack?(currentUser, newCurrentUser)
             }
         }
     }

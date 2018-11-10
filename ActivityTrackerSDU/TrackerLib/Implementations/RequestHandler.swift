@@ -11,8 +11,8 @@ class RequestHandler: RequestHandlerProtocol {
     
     private let logger: LoggerProtocol
     
-    init(assembler: AssemblerProtocol){
-        logger = assembler.resolve()
+    init(logger: LoggerProtocol){
+        self.logger = logger
     }
     
     // We need a completion block which returns an error, if anything fails

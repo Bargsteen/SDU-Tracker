@@ -12,8 +12,8 @@ class ActiveWindowHandler: ActiveWindowHandlerProtocol {
     private var currentActiveWindow: ActiveWindow?
     private let dateTimeHandler: DateTimeHandlerProtocol
     
-    init(assembler: AssemblerProtocol) {
-        self.dateTimeHandler = assembler.resolve()
+    init(dateTimeHandler: DateTimeHandlerProtocol) {
+        self.dateTimeHandler = dateTimeHandler
     }
     
     

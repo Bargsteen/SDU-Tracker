@@ -17,11 +17,12 @@ class UserHandler: UserHandlerProtocol {
     
     var userChangedListeners: [UserChangedDelegate]
     
-    init(assembler: AssemblerProtocol) {
-        self.alertHandler = assembler.resolve()
-        self.chooseUserWindow = assembler.resolve()
-        self.dateTimeHandler = assembler.resolve()
-        self.settings = assembler.resolve()
+    init(alertHandler: AlertHandlerProtocol, chooseUserWindow: ChooseUserWindowProtocol,
+         dateTimeHandler: DateTimeHandlerProtocol, settings: SettingsProtocol) {
+        self.alertHandler = alertHandler
+        self.chooseUserWindow = chooseUserWindow
+        self.dateTimeHandler = dateTimeHandler
+        self.settings = settings
         
         userChangedListeners = []
     }
@@ -38,8 +39,8 @@ class UserHandler: UserHandlerProtocol {
         }
     }
     
-    func notifyUserChangedListeners(newCurrentUser: String) {
-        userChangedListeners.forEach { listener in listener.userChanged(newCurrentUser: newCurrentUser) }
+    func notifyUserChangedListeners(previousUser: String, newUser: String) {
+        userChangedListeners.forEach { listener in listener.userChanged(previousUser:previousUser, newUser: newUser) }
     }
 
     

@@ -8,5 +8,5 @@
 import Foundation
 
 protocol UserChangedDelegate {
-    func userChanged(newCurrentUser: String)
+    func userChanged(previousUser: String, newUser: String)
 }
