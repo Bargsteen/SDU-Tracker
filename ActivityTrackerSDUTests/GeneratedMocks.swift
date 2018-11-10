@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: ActivityTrackerSDU/TrackerLib/AppAssembling/AssemblerProtocol.swift at 2018-11-08 12:03:40 +0000
+// MARK: - Mocks generated from file: ActivityTrackerSDU/TrackerLib/AppAssembling/AssemblerProtocol.swift at 2018-11-10 07:18:18 +0000
 
 //
 //  AssemblerProtocol.swift
@@ -475,7 +475,136 @@ class MockAssemblerProtocol: AssemblerProtocol, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: ActivityTrackerSDU/TrackerLib/Protocols/SettingsProtocol.swift at 2018-11-08 12:03:40 +0000
+// MARK: - Mocks generated from file: ActivityTrackerSDU/TrackerLib/Protocols/DeviceTrackerProtocol.swift at 2018-11-10 07:18:18 +0000
+
+//
+//  DeviceTrackerProtocol.swift
+//  ActivityTrackerSDU
+//
+//  Created by Kasper Dissing Bargsteen on 04/11/2018.
+//
+
+import Cuckoo
+@testable import ActivityTrackerSDU
+
+import Foundation
+
+class MockDeviceTrackerProtocol: DeviceTrackerProtocol, Cuckoo.ProtocolMock {
+    typealias MocksType = DeviceTrackerProtocol
+    typealias Stubbing = __StubbingProxy_DeviceTrackerProtocol
+    typealias Verification = __VerificationProxy_DeviceTrackerProtocol
+
+    private var __defaultImplStub: DeviceTrackerProtocol?
+
+    let cuckoo_manager = Cuckoo.MockManager.preconfiguredManager ?? Cuckoo.MockManager(hasParent: false)
+
+    func enableDefaultImplementation(_ stub: DeviceTrackerProtocol) {
+        __defaultImplStub = stub
+        cuckoo_manager.enableDefaultStubImplementation()
+    }
+
+    
+
+    
+
+    
+    // ["name": "startTracking", "returnSignature": "", "fullyQualifiedName": "startTracking()", "parameterSignature": "", "parameterSignatureWithoutNames": "", "inputTypes": "", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "", "call": "", "parameters": [], "returnType": "Void", "isOptional": false, "escapingParameterNames": "", "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
+     func startTracking()  {
+        
+            return cuckoo_manager.call("startTracking()",
+                parameters: (),
+                escapingParameters: (),
+                superclassCall:
+                    
+                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                    ,
+                defaultCall: __defaultImplStub!.startTracking())
+        
+    }
+    
+    // ["name": "stopTracking", "returnSignature": "", "fullyQualifiedName": "stopTracking()", "parameterSignature": "", "parameterSignatureWithoutNames": "", "inputTypes": "", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "", "call": "", "parameters": [], "returnType": "Void", "isOptional": false, "escapingParameterNames": "", "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
+     func stopTracking()  {
+        
+            return cuckoo_manager.call("stopTracking()",
+                parameters: (),
+                escapingParameters: (),
+                superclassCall:
+                    
+                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                    ,
+                defaultCall: __defaultImplStub!.stopTracking())
+        
+    }
+    
+
+	struct __StubbingProxy_DeviceTrackerProtocol: Cuckoo.StubbingProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	
+	    init(manager: Cuckoo.MockManager) {
+	        self.cuckoo_manager = manager
+	    }
+	    
+	    
+	    func startTracking() -> Cuckoo.ProtocolStubNoReturnFunction<()> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return .init(stub: cuckoo_manager.createStub(for: MockDeviceTrackerProtocol.self, method: "startTracking()", parameterMatchers: matchers))
+	    }
+	    
+	    func stopTracking() -> Cuckoo.ProtocolStubNoReturnFunction<()> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return .init(stub: cuckoo_manager.createStub(for: MockDeviceTrackerProtocol.self, method: "stopTracking()", parameterMatchers: matchers))
+	    }
+	    
+	}
+
+	struct __VerificationProxy_DeviceTrackerProtocol: Cuckoo.VerificationProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	    private let callMatcher: Cuckoo.CallMatcher
+	    private let sourceLocation: Cuckoo.SourceLocation
+	
+	    init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
+	        self.cuckoo_manager = manager
+	        self.callMatcher = callMatcher
+	        self.sourceLocation = sourceLocation
+	    }
+	
+	    
+	
+	    
+	    @discardableResult
+	    func startTracking() -> Cuckoo.__DoNotUse<Void> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return cuckoo_manager.verify("startTracking()", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func stopTracking() -> Cuckoo.__DoNotUse<Void> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return cuckoo_manager.verify("stopTracking()", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	}
+
+}
+
+ class DeviceTrackerProtocolStub: DeviceTrackerProtocol {
+    
+
+    
+
+    
+     func startTracking()  {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+    
+     func stopTracking()  {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+    
+}
+
+
+// MARK: - Mocks generated from file: ActivityTrackerSDU/TrackerLib/Protocols/SettingsProtocol.swift at 2018-11-10 07:18:18 +0000
 
 //
 //  SettingsProtocol.swift
@@ -938,6 +1067,135 @@ class MockSettingsProtocol: SettingsProtocol, Cuckoo.ProtocolMock {
     }
     
      func removeUser(nameOfUser: String)  {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+    
+}
+
+
+// MARK: - Mocks generated from file: ActivityTrackerSDU/TrackerLib/Protocols/TrackerProtocol.swift at 2018-11-10 07:18:18 +0000
+
+//
+//  TrackerProtocol.swift
+//  ActivityTrackerSDU
+//
+//  Created by Kasper Dissing Bargsteen on 04/11/2018.
+//
+
+import Cuckoo
+@testable import ActivityTrackerSDU
+
+import Foundation
+
+class MockTrackerProtocol: TrackerProtocol, Cuckoo.ProtocolMock {
+    typealias MocksType = TrackerProtocol
+    typealias Stubbing = __StubbingProxy_TrackerProtocol
+    typealias Verification = __VerificationProxy_TrackerProtocol
+
+    private var __defaultImplStub: TrackerProtocol?
+
+    let cuckoo_manager = Cuckoo.MockManager.preconfiguredManager ?? Cuckoo.MockManager(hasParent: false)
+
+    func enableDefaultImplementation(_ stub: TrackerProtocol) {
+        __defaultImplStub = stub
+        cuckoo_manager.enableDefaultStubImplementation()
+    }
+
+    
+
+    
+
+    
+    // ["name": "startTracking", "returnSignature": "", "fullyQualifiedName": "startTracking()", "parameterSignature": "", "parameterSignatureWithoutNames": "", "inputTypes": "", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "", "call": "", "parameters": [], "returnType": "Void", "isOptional": false, "escapingParameterNames": "", "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
+     func startTracking()  {
+        
+            return cuckoo_manager.call("startTracking()",
+                parameters: (),
+                escapingParameters: (),
+                superclassCall:
+                    
+                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                    ,
+                defaultCall: __defaultImplStub!.startTracking())
+        
+    }
+    
+    // ["name": "stopTracking", "returnSignature": "", "fullyQualifiedName": "stopTracking()", "parameterSignature": "", "parameterSignatureWithoutNames": "", "inputTypes": "", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "", "call": "", "parameters": [], "returnType": "Void", "isOptional": false, "escapingParameterNames": "", "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
+     func stopTracking()  {
+        
+            return cuckoo_manager.call("stopTracking()",
+                parameters: (),
+                escapingParameters: (),
+                superclassCall:
+                    
+                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                    ,
+                defaultCall: __defaultImplStub!.stopTracking())
+        
+    }
+    
+
+	struct __StubbingProxy_TrackerProtocol: Cuckoo.StubbingProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	
+	    init(manager: Cuckoo.MockManager) {
+	        self.cuckoo_manager = manager
+	    }
+	    
+	    
+	    func startTracking() -> Cuckoo.ProtocolStubNoReturnFunction<()> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return .init(stub: cuckoo_manager.createStub(for: MockTrackerProtocol.self, method: "startTracking()", parameterMatchers: matchers))
+	    }
+	    
+	    func stopTracking() -> Cuckoo.ProtocolStubNoReturnFunction<()> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return .init(stub: cuckoo_manager.createStub(for: MockTrackerProtocol.self, method: "stopTracking()", parameterMatchers: matchers))
+	    }
+	    
+	}
+
+	struct __VerificationProxy_TrackerProtocol: Cuckoo.VerificationProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	    private let callMatcher: Cuckoo.CallMatcher
+	    private let sourceLocation: Cuckoo.SourceLocation
+	
+	    init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
+	        self.cuckoo_manager = manager
+	        self.callMatcher = callMatcher
+	        self.sourceLocation = sourceLocation
+	    }
+	
+	    
+	
+	    
+	    @discardableResult
+	    func startTracking() -> Cuckoo.__DoNotUse<Void> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return cuckoo_manager.verify("startTracking()", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func stopTracking() -> Cuckoo.__DoNotUse<Void> {
+	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
+	        return cuckoo_manager.verify("stopTracking()", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	}
+
+}
+
+ class TrackerProtocolStub: TrackerProtocol {
+    
+
+    
+
+    
+     func startTracking()  {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+    
+     func stopTracking()  {
         return DefaultValueRegistry.defaultValue(for: Void.self)
     }
     

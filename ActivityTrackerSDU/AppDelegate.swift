@@ -46,6 +46,11 @@ class AppDelegate: NSObject, NSApplicationDelegate{
         NSAppleEventManager.shared().setEventHandler(self, andSelector: #selector(AppDelegate.handleGetURLEvent(_:withReplyEvent:)),
                                                      forEventClass: AEEventClass(kInternetEventClass), andEventID: AEEventID(kAEGetURL))
         
+        // Return if this is a unit test
+        if let _ = NSClassFromString("XCTest") {
+            return
+        }
+        
         if(settings.appHasBeenSetup){
             begin()
         }else {

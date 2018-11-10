@@ -6,6 +6,8 @@
 //
 
 import XCTest
+import Cuckoo
+
 @testable import ActivityTrackerSDU
 
 class ActivityTrackerSDUTests: XCTestCase {
@@ -18,12 +20,20 @@ class ActivityTrackerSDUTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        let usageType = UsageType.device
+    func testMockingWorks() {
+        let testUser = "test-user"
+        let changedTestUser = "changed-test-user"
         let mockSettings = MockSettingsProtocol()
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
         
-        XCTAssert(usageType == UsageType.device)
+        stub(mockSettings) { stub in
+            when(stub.currentUser.get).thenReturn(testUser)
+            when(stub.currentUser.set(anyString())).then {
+                when(stub.currentUser.get).thenReturn($0)
+            }
+        }
+        
+        mockSettings.currentUser = changedTestUser
+        
+        XCTAssertEqual(changedTestUser, mockSettings.currentUser)
     }
 }

@@ -45,10 +45,8 @@
 		A73AC0E2219217EA001D28A4 /* AssemblerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73AC0E1219217EA001D28A4 /* AssemblerProtocol.swift */; };
 		A73AC0E4219218B0001D28A4 /* Assembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73AC0E3219218B0001D28A4 /* Assembler.swift */; };
 		A73AC0E621921B7E001D28A4 /* DateTimeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73AC0E521921B7E001D28A4 /* DateTimeHandler.swift */; };
-		A749A8C92194507B006BA080 /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A749A8C82194507B006BA080 /* GeneratedMocks.swift */; };
 		A756633E213936C1008F5640 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756633D213936C1008F5640 /* Constants.swift */; };
 		A757F23921411F72009CCDC0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A757F23821411F72009CCDC0 /* Extensions.swift */; };
-		A75EB17A21942FA900EA9721 /* ActivityTrackerSDUTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75EB17921942FA900EA9721 /* ActivityTrackerSDUTests.swift */; };
 		A75F95F9214E4A52003727F5 /* PersistenceHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75F95F8214E4A52003727F5 /* PersistenceHandler.swift */; };
 		A7829996215CC78B003903AE /* CwlUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A782998F215CC78A003903AE /* CwlUtils.framework */; };
 		A7829997215CC78B003903AE /* CwlUtils.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A782998F215CC78A003903AE /* CwlUtils.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -72,6 +70,11 @@
 		A78299B2215CC7CD003903AE /* CwlUtils.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = A78299AB215CC7CD003903AE /* CwlUtils.framework.dSYM */; };
 		A78299B3215CC7CD003903AE /* Reachability.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = A78299AC215CC7CD003903AE /* Reachability.framework.dSYM */; };
 		A7866E7F2137F79700626DF8 /* RequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7866E7E2137F79700626DF8 /* RequestHandler.swift */; };
+		A7896C2E2196B56600089A97 /* Cuckoo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7896C2D2196B56600089A97 /* Cuckoo.framework */; };
+		A7896C2F2196B5C700089A97 /* Cuckoo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A7896C2D2196B56600089A97 /* Cuckoo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A7896C342196B6F400089A97 /* Cuckoo.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = A7896C332196B6F300089A97 /* Cuckoo.framework.dSYM */; };
+		A7896C362196BD5900089A97 /* ActivityTrackerSDUTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7896C352196BD5900089A97 /* ActivityTrackerSDUTests.swift */; };
+		A7896C382196BDA100089A97 /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7896C372196BDA100089A97 /* GeneratedMocks.swift */; };
 		A78F236821416CE900DC2489 /* ActiveWindowHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78F236721416CE900DC2489 /* ActiveWindowHandler.swift */; };
 		A7A6B89F21353DE8000B4E38 /* ChooseUserWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A6B89D21353DE8000B4E38 /* ChooseUserWindow.swift */; };
 		A7A6B8A021353DE8000B4E38 /* ChooseUserWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7A6B89E21353DE8000B4E38 /* ChooseUserWindow.xib */; };
@@ -98,6 +101,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				A7896C2F2196B5C700089A97 /* Cuckoo.framework in Embed Frameworks */,
 				A7829999215CC78B003903AE /* Realm.framework in Embed Frameworks */,
 				A7829997215CC78B003903AE /* CwlUtils.framework in Embed Frameworks */,
 				A78299A1215CC78B003903AE /* LaunchAtLogin.framework in Embed Frameworks */,
@@ -170,15 +174,11 @@
 		A73AC0E1219217EA001D28A4 /* AssemblerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblerProtocol.swift; sourceTree = "<group>"; };
 		A73AC0E3219218B0001D28A4 /* Assembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembler.swift; sourceTree = "<group>"; };
 		A73AC0E521921B7E001D28A4 /* DateTimeHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeHandler.swift; sourceTree = "<group>"; };
-		A749A8C82194507B006BA080 /* GeneratedMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
 		A756633D213936C1008F5640 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A757F23821411F72009CCDC0 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A75EB17721942FA900EA9721 /* ActivityTrackerSDUTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ActivityTrackerSDUTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A75EB17921942FA900EA9721 /* ActivityTrackerSDUTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTrackerSDUTests.swift; sourceTree = "<group>"; };
 		A75EB17B21942FA900EA9721 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A75F95F8214E4A52003727F5 /* PersistenceHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceHandler.swift; sourceTree = "<group>"; };
-		A78185EF21945D250037F84C /* Cuckoo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cuckoo.framework; path = Carthage/Build/Mac/Cuckoo.framework; sourceTree = "<group>"; };
-		A78185F121945D790037F84C /* Cuckoo.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Cuckoo.framework.dSYM; path = Carthage/Build/Mac/Cuckoo.framework.dSYM; sourceTree = "<group>"; };
 		A7829986215CBC6C003903AE /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		A782998F215CC78A003903AE /* CwlUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CwlUtils.framework; path = Carthage/Build/Mac/CwlUtils.framework; sourceTree = "<group>"; };
 		A7829990215CC78A003903AE /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/Mac/Realm.framework; sourceTree = "<group>"; };
@@ -195,6 +195,10 @@
 		A78299AB215CC7CD003903AE /* CwlUtils.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = CwlUtils.framework.dSYM; path = Carthage/Build/Mac/CwlUtils.framework.dSYM; sourceTree = "<group>"; };
 		A78299AC215CC7CD003903AE /* Reachability.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Reachability.framework.dSYM; path = Carthage/Build/Mac/Reachability.framework.dSYM; sourceTree = "<group>"; };
 		A7866E7E2137F79700626DF8 /* RequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestHandler.swift; sourceTree = "<group>"; };
+		A7896C2D2196B56600089A97 /* Cuckoo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cuckoo.framework; path = Carthage/Build/Mac/Cuckoo.framework; sourceTree = "<group>"; };
+		A7896C332196B6F300089A97 /* Cuckoo.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Cuckoo.framework.dSYM; path = Carthage/Build/Mac/Cuckoo.framework.dSYM; sourceTree = "<group>"; };
+		A7896C352196BD5900089A97 /* ActivityTrackerSDUTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTrackerSDUTests.swift; sourceTree = "<group>"; };
+		A7896C372196BDA100089A97 /* GeneratedMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
 		A78F236721416CE900DC2489 /* ActiveWindowHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveWindowHandler.swift; sourceTree = "<group>"; };
 		A7A6B89D21353DE8000B4E38 /* ChooseUserWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseUserWindow.swift; sourceTree = "<group>"; };
 		A7A6B89E21353DE8000B4E38 /* ChooseUserWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseUserWindow.xib; sourceTree = "<group>"; };
@@ -223,6 +227,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7896C2E2196B56600089A97 /* Cuckoo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,8 +342,8 @@
 		A75EB17821942FA900EA9721 /* ActivityTrackerSDUTests */ = {
 			isa = PBXGroup;
 			children = (
-				A749A8C82194507B006BA080 /* GeneratedMocks.swift */,
-				A75EB17921942FA900EA9721 /* ActivityTrackerSDUTests.swift */,
+				A7896C372196BDA100089A97 /* GeneratedMocks.swift */,
+				A7896C352196BD5900089A97 /* ActivityTrackerSDUTests.swift */,
 				A75EB17B21942FA900EA9721 /* Info.plist */,
 			);
 			path = ActivityTrackerSDUTests;
@@ -356,12 +361,12 @@
 		A7866E792136B90800626DF8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A78185F121945D790037F84C /* Cuckoo.framework.dSYM */,
-				A78185EF21945D250037F84C /* Cuckoo.framework */,
 				A7829992215CC78A003903AE /* CocoaLumberjack.framework */,
 				A78299AA215CC7CD003903AE /* CocoaLumberjack.framework.dSYM */,
 				A7829995215CC78A003903AE /* CocoaLumberjackSwift.framework */,
 				A78299A7215CC7CD003903AE /* CocoaLumberjackSwift.framework.dSYM */,
+				A7896C2D2196B56600089A97 /* Cuckoo.framework */,
+				A7896C332196B6F300089A97 /* Cuckoo.framework.dSYM */,
 				A782998F215CC78A003903AE /* CwlUtils.framework */,
 				A78299AB215CC7CD003903AE /* CwlUtils.framework.dSYM */,
 				A7829994215CC78A003903AE /* LaunchAtLogin.framework */,
@@ -389,8 +394,8 @@
 			isa = PBXGroup;
 			children = (
 				A70A39CE212C63610065B7CC /* ActivityTrackerSDU */,
-				A7829986215CBC6C003903AE /* Cartfile */,
 				A75EB17821942FA900EA9721 /* ActivityTrackerSDUTests */,
+				A7829986215CBC6C003903AE /* Cartfile */,
 				A7866E792136B90800626DF8 /* Frameworks */,
 				OBJ_27 /* Products */,
 				OBJ_7 /* Sources */,
@@ -499,6 +504,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7896C342196B6F400089A97 /* Cuckoo.framework.dSYM in Resources */,
 				A73AA82221273FDA00D0B7FF /* Assets.xcassets in Resources */,
 				A73AA82521273FDA00D0B7FF /* MainMenu.xib in Resources */,
 				A7A6B8A021353DE8000B4E38 /* ChooseUserWindow.xib in Resources */,
@@ -530,7 +536,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Define output file. Change \"$PROJECT_DIR/${PROJECT_NAME}Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"$PROJECT_DIR/ActivityTrackerSDUTests/GeneratedMocks.swift\"\necho \"Generated Mocks File = $OUTPUT_FILE\"\n\n# Define input directory. Change \"${PROJECT_DIR}/${PROJECT_NAME}\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"${PROJECT_DIR}/ActivityTrackerSDU\"\necho \"Mocks Input Directory = $INPUT_DIR\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n\"Carthage/Checkouts/Cuckoo/run\" generate --testable \"ActivityTrackerSDU\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"$INPUT_DIR/TrackerLib/Protocols/SettingsProtocol.swift\" \\\n\"$INPUT_DIR/TrackerLib/AppAssembling/AssemblerProtocol.swift\" \\\n\n# ... and so forth, the last line should never end with a backslash\n\n# After running once, locate `GeneratedMocks.swift` and drag it into your Xcode test target group.\n";
+			shellScript = "# Define output file. Change \"$PROJECT_DIR/${PROJECT_NAME}Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"$PROJECT_DIR/ActivityTrackerSDUTests/GeneratedMocks.swift\"\necho \"Generated Mocks File = $OUTPUT_FILE\"\n\n# Define input directory. Change \"${PROJECT_DIR}/${PROJECT_NAME}\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"${PROJECT_DIR}/ActivityTrackerSDU\"\necho \"Mocks Input Directory = $INPUT_DIR\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n\"Carthage/Checkouts/Cuckoo/run\" generate --testable \"ActivityTrackerSDU\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"$INPUT_DIR/TrackerLib/Protocols/SettingsProtocol.swift\" \\\n\"$INPUT_DIR/TrackerLib/Protocols/TrackerProtocol.swift\" \\\n\"$INPUT_DIR/TrackerLib/Protocols/DeviceTrackerProtocol.swift\" \\\n\"$INPUT_DIR/TrackerLib/AppAssembling/AssemblerProtocol.swift\"\n\n\n# ... and so forth, the last line should never end with a backslash\n\n# After running once, locate `GeneratedMocks.swift` and drag it into your Xcode test target group.\n";
 		};
 		A7866E782136B7A200626DF8 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -622,8 +628,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A75EB17A21942FA900EA9721 /* ActivityTrackerSDUTests.swift in Sources */,
-				A749A8C92194507B006BA080 /* GeneratedMocks.swift in Sources */,
+				A7896C362196BD5900089A97 /* ActivityTrackerSDUTests.swift in Sources */,
+				A7896C382196BDA100089A97 /* GeneratedMocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
