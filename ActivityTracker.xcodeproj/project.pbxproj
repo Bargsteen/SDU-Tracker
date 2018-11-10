@@ -75,6 +75,10 @@
 		A7896C342196B6F400089A97 /* Cuckoo.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = A7896C332196B6F300089A97 /* Cuckoo.framework.dSYM */; };
 		A7896C362196BD5900089A97 /* ActivityTrackerSDUTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7896C352196BD5900089A97 /* ActivityTrackerSDUTests.swift */; };
 		A7896C382196BDA100089A97 /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7896C372196BDA100089A97 /* GeneratedMocks.swift */; };
+		A7896C3A2196C07900089A97 /* RunnerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7896C392196C07900089A97 /* RunnerProtocol.swift */; };
+		A7896C3C2196C0A100089A97 /* Runner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7896C3B2196C0A100089A97 /* Runner.swift */; };
+		A7896C3E2196C0E800089A97 /* LaunchAtLoginProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7896C3D2196C0E800089A97 /* LaunchAtLoginProtocol.swift */; };
+		A7896C402196C12800089A97 /* LaunchAtLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7896C3F2196C12800089A97 /* LaunchAtLogin.swift */; };
 		A78F236821416CE900DC2489 /* ActiveWindowHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78F236721416CE900DC2489 /* ActiveWindowHandler.swift */; };
 		A7A6B89F21353DE8000B4E38 /* ChooseUserWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A6B89D21353DE8000B4E38 /* ChooseUserWindow.swift */; };
 		A7A6B8A021353DE8000B4E38 /* ChooseUserWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7A6B89E21353DE8000B4E38 /* ChooseUserWindow.xib */; };
@@ -199,6 +203,10 @@
 		A7896C332196B6F300089A97 /* Cuckoo.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Cuckoo.framework.dSYM; path = Carthage/Build/Mac/Cuckoo.framework.dSYM; sourceTree = "<group>"; };
 		A7896C352196BD5900089A97 /* ActivityTrackerSDUTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTrackerSDUTests.swift; sourceTree = "<group>"; };
 		A7896C372196BDA100089A97 /* GeneratedMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
+		A7896C392196C07900089A97 /* RunnerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunnerProtocol.swift; sourceTree = "<group>"; };
+		A7896C3B2196C0A100089A97 /* Runner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Runner.swift; sourceTree = "<group>"; };
+		A7896C3D2196C0E800089A97 /* LaunchAtLoginProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAtLoginProtocol.swift; sourceTree = "<group>"; };
+		A7896C3F2196C12800089A97 /* LaunchAtLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAtLogin.swift; sourceTree = "<group>"; };
 		A78F236721416CE900DC2489 /* ActiveWindowHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveWindowHandler.swift; sourceTree = "<group>"; };
 		A7A6B89D21353DE8000B4E38 /* ChooseUserWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseUserWindow.swift; sourceTree = "<group>"; };
 		A7A6B89E21353DE8000B4E38 /* ChooseUserWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseUserWindow.xib; sourceTree = "<group>"; };
@@ -254,6 +262,8 @@
 				A73AC0DC2192171B001D28A4 /* UsageBuilderProtocol.swift */,
 				A7369A06218F5091008AF504 /* UserChangedDelegate.swift */,
 				A73699FE218F4658008AF504 /* UserHandlerProtocol.swift */,
+				A7896C392196C07900089A97 /* RunnerProtocol.swift */,
+				A7896C3D2196C0E800089A97 /* LaunchAtLoginProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -311,6 +321,8 @@
 				A7B158FA217C6F57006087D4 /* SetupHandler.swift */,
 				A73AC0DE21921761001D28A4 /* UsageBuilder.swift */,
 				A7BE8E87215D0B8000C0A864 /* UserHandler.swift */,
+				A7896C3B2196C0A100089A97 /* Runner.swift */,
+				A7896C3F2196C12800089A97 /* LaunchAtLogin.swift */,
 			);
 			path = Implementations;
 			sourceTree = "<group>";
@@ -576,6 +588,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A73699EE218EE5B4008AF504 /* AppUsage.swift in Sources */,
+				A7896C3E2196C0E800089A97 /* LaunchAtLoginProtocol.swift in Sources */,
 				A73699FD218F14D0008AF504 /* DeviceTracker.swift in Sources */,
 				A73699E0218EE294008AF504 /* DeviceTrackerProtocol.swift in Sources */,
 				A73AC0E621921B7E001D28A4 /* DateTimeHandler.swift in Sources */,
@@ -585,6 +598,8 @@
 				A73699F9218F0650008AF504 /* Settings.swift in Sources */,
 				A7369A0B218F699F008AF504 /* ReachabilityProtocol.swift in Sources */,
 				A75F95F9214E4A52003727F5 /* PersistenceHandler.swift in Sources */,
+				A7896C402196C12800089A97 /* LaunchAtLogin.swift in Sources */,
+				A7896C3A2196C07900089A97 /* RunnerProtocol.swift in Sources */,
 				A73699D6218EE21B008AF504 /* LoggerProtocol.swift in Sources */,
 				A73699D4218EE194008AF504 /* ActiveWindow.swift in Sources */,
 				A7369A03218F4B5F008AF504 /* AlertHandler.swift in Sources */,
@@ -607,6 +622,7 @@
 				A73699E6218EE2D7008AF504 /* SendOrSaveHandlerProtocol.swift in Sources */,
 				A7866E7F2137F79700626DF8 /* RequestHandler.swift in Sources */,
 				A73699F2218EE5FA008AF504 /* EventType.swift in Sources */,
+				A7896C3C2196C0A100089A97 /* Runner.swift in Sources */,
 				A757F23921411F72009CCDC0 /* Extensions.swift in Sources */,
 				A78F236821416CE900DC2489 /* ActiveWindowHandler.swift in Sources */,
 				A73AC0DF21921761001D28A4 /* UsageBuilder.swift in Sources */,

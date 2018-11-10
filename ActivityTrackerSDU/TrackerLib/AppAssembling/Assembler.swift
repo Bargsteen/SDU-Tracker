@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import LaunchAtLogin
 
 class Assembler: AssemblerProtocol {
     private let logger: LoggerProtocol
@@ -68,5 +69,13 @@ class Assembler: AssemblerProtocol {
     
     func resolve() -> SetupHandlerProtocol {
         return SetupHandler(assembler: self)
+    }
+    
+    func resolve() -> LaunchAtLoginHandlerProtocol {
+        return LaunchAtLoginHandler()
+    }
+    
+    func resolve() -> RunnerProtocol {
+        return Runner(assembler: self)
     }
 }

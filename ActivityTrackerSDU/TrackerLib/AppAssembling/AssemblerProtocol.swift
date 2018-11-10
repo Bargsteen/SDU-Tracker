@@ -22,4 +22,6 @@ protocol AssemblerProtocol {
     func resolve() -> ChooseUserWindowProtocol
     func resolve() -> UsageBuilderProtocol
     func resolve() -> SetupHandlerProtocol
+    func resolve() -> LaunchAtLoginHandlerProtocol
+    func resolve() -> RunnerProtocol
 }
