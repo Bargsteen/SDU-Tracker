@@ -139,6 +139,7 @@ class ChooseUserWindow: NSWindowController, NSWindowDelegate, ChooseUserWindowPr
         localCurrentUser = settings.currentUser
         localUserList = settings.userList
         updateUserListMenuContents()
+        displayErrorIfStateIsInvalid()
     }
     
     private func showAreYouSurePrompt() -> Bool {
