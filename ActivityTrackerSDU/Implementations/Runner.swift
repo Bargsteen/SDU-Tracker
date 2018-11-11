@@ -65,6 +65,7 @@ class Runner: RunnerProtocol {
             }
         } else {
             logger.logInfo("App has not been setup.")
+            alertHandler.showApplicationReadyForSetupLinkAlert()
         }
     }
     

@@ -4,3 +4,5 @@ DMG=$(dirname "$0")
 cp -r "$DMG/Manuel installering"/ActivityTrackerSDU.app /Applications/
 xattr -r -d com.apple.quarantine /Applications/ActivityTrackerSDU.app/
 open /Applications/ActivityTrackerSDU.app
+
+osascript -e 'tell app "Terminal"' -e 'close (every window whose name contains "Installer")' -e 'if number of windows = 0 then quit' -e 'end tell' & exit;

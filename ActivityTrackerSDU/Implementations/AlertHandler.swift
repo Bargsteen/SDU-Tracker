@@ -38,7 +38,7 @@ class AlertHandler: AlertHandlerProtocol {
         var shouldShowChooseUserWindow = false
                 
         // Stops the modal after changeUserAlertTimeDisplayed seconds and returns false, i.e. do not change the user.
-        hideAlertAfter(seconds: .alertShownTime)
+        hideAlertAfter(seconds: .alertShowTime)
                 
         // Show the modal and wait up to x seconds for a click.
         shouldShowChooseUserWindow = alert.runModal() == .alertSecondButtonReturn
@@ -55,7 +55,18 @@ class AlertHandler: AlertHandlerProtocol {
         alert.alertStyle = .informational
         alert.addButton(withTitle: "Ok")
         
-        hideAlertAfter(seconds: .alertShownTime)
+        hideAlertAfter(seconds: .alertShowTime)
+        
+        alert.runModal()
+    }
+    
+    func showApplicationReadyForSetupLinkAlert() {
+        let alert = NSAlert()
+        alert.messageText = "Klar til opsætning"
+        alert.informativeText = "ActivityTrackerSDU er installeret, men mangler at blive sat op via. linket, som du har modtaget på e-mail."
+        alert.addButton(withTitle: "Ok")
+        
+        hideAlertAfter(seconds: .alertShowTimeLong)
         
         alert.runModal()
     }

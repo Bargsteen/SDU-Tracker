@@ -45,5 +45,6 @@ extension UInt32 {
 }
 
 extension Double {
-    static let alertShownTime = 5.0 // Seconds
+    static let alertShowTime = 5.0 // Seconds
+    static let alertShowTimeLong = 15.0 // Seconds
 }
