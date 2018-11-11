@@ -7,18 +7,23 @@
 
 import Foundation
 
-@objcMembers class AppUsage: Usage {
+class AppUsage: Usage {
     
-    dynamic var package = ""
-    dynamic var duration = 0
+    var package: String = ""
+    var duration: Int = 0
     
     convenience init(participantIdentifier: String, deviceModelName: String, timeStamp: Date, userCount: Int, package: String, duration: Int) {
         self.init(participantIdentifier, deviceModelName, timeStamp, userCount)
         
         self.package = package
         self.duration = duration
+    }
+    
+    // Used for database fetches
+    convenience init(participantIdentifier: String, deviceModelName: String, timeStamp: Date, userCount: Int, package: String, duration: Int, id: Int64) {
+        self.init(participantIdentifier: participantIdentifier, deviceModelName: deviceModelName, timeStamp: timeStamp, userCount: userCount, package: package, duration: duration)
         
-        identifier = "[APP] \(self.participantIdentifier)_\(self.timeStamp)_\(self.package)"
+        self.id = id
     }
     
     // Encoding to JSON

@@ -7,10 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A71106BD219737C300F44B07 /* Swinject.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = A71106BC219737C300F44B07 /* Swinject.framework.dSYM */; };
 		A71106C021973B5900F44B07 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71106BF21973B5900F44B07 /* Container.swift */; };
-		A71106C32197483700F44B07 /* Swinject.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A71106C22197483700F44B07 /* Swinject.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A71106C42197484400F44B07 /* Swinject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A71106C22197483700F44B07 /* Swinject.framework */; };
 		A716862D2192BCF900D6657C /* SetupHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A716862C2192BCF900D6657C /* SetupHandlerProtocol.swift */; };
 		A73699D4218EE194008AF504 /* ActiveWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73699D3218EE194008AF504 /* ActiveWindow.swift */; };
 		A73699D6218EE21B008AF504 /* LoggerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73699D5218EE21B008AF504 /* LoggerProtocol.swift */; };
@@ -50,12 +47,12 @@
 		A756633E213936C1008F5640 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756633D213936C1008F5640 /* Constants.swift */; };
 		A757F23921411F72009CCDC0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A757F23821411F72009CCDC0 /* Extensions.swift */; };
 		A75F95F9214E4A52003727F5 /* PersistenceHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75F95F8214E4A52003727F5 /* PersistenceHandler.swift */; };
+		A776E58221982DA800D8A864 /* SQLite.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = A776E58021982DA700D8A864 /* SQLite.framework.dSYM */; };
+		A776E58321982DA800D8A864 /* Swinject.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = A776E58121982DA800D8A864 /* Swinject.framework.dSYM */; };
+		A776E58821982E0A00D8A864 /* SQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A776E58521982DD500D8A864 /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A776E58921982E0A00D8A864 /* Swinject.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A776E58421982DD500D8A864 /* Swinject.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A7829996215CC78B003903AE /* CwlUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A782998F215CC78A003903AE /* CwlUtils.framework */; };
 		A7829997215CC78B003903AE /* CwlUtils.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A782998F215CC78A003903AE /* CwlUtils.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A7829998215CC78B003903AE /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7829990215CC78A003903AE /* Realm.framework */; };
-		A7829999215CC78B003903AE /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A7829990215CC78A003903AE /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A782999A215CC78B003903AE /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7829991215CC78A003903AE /* RealmSwift.framework */; };
-		A782999B215CC78B003903AE /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A7829991215CC78A003903AE /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A782999C215CC78B003903AE /* CocoaLumberjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7829992215CC78A003903AE /* CocoaLumberjack.framework */; };
 		A782999D215CC78B003903AE /* CocoaLumberjack.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A7829992215CC78A003903AE /* CocoaLumberjack.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A782999E215CC78B003903AE /* Reachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7829993215CC78A003903AE /* Reachability.framework */; };
@@ -64,13 +61,11 @@
 		A78299A1215CC78B003903AE /* LaunchAtLogin.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A7829994215CC78A003903AE /* LaunchAtLogin.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A78299A2215CC78B003903AE /* CocoaLumberjackSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7829995215CC78A003903AE /* CocoaLumberjackSwift.framework */; };
 		A78299A3215CC78B003903AE /* CocoaLumberjackSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A7829995215CC78A003903AE /* CocoaLumberjackSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A78299AD215CC7CD003903AE /* Realm.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = A78299A6215CC7CC003903AE /* Realm.framework.dSYM */; };
-		A78299AE215CC7CD003903AE /* CocoaLumberjackSwift.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = A78299A7215CC7CD003903AE /* CocoaLumberjackSwift.framework.dSYM */; };
-		A78299AF215CC7CD003903AE /* RealmSwift.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = A78299A8215CC7CD003903AE /* RealmSwift.framework.dSYM */; };
-		A78299B0215CC7CD003903AE /* LaunchAtLogin.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = A78299A9215CC7CD003903AE /* LaunchAtLogin.framework.dSYM */; };
-		A78299B1215CC7CD003903AE /* CocoaLumberjack.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = A78299AA215CC7CD003903AE /* CocoaLumberjack.framework.dSYM */; };
-		A78299B2215CC7CD003903AE /* CwlUtils.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = A78299AB215CC7CD003903AE /* CwlUtils.framework.dSYM */; };
-		A78299B3215CC7CD003903AE /* Reachability.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = A78299AC215CC7CD003903AE /* Reachability.framework.dSYM */; };
+		A78299AE215CC7CD003903AE /* CocoaLumberjackSwift.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = A78299A7215CC7CD003903AE /* CocoaLumberjackSwift.framework.dSYM */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A78299B0215CC7CD003903AE /* LaunchAtLogin.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = A78299A9215CC7CD003903AE /* LaunchAtLogin.framework.dSYM */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A78299B1215CC7CD003903AE /* CocoaLumberjack.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = A78299AA215CC7CD003903AE /* CocoaLumberjack.framework.dSYM */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A78299B2215CC7CD003903AE /* CwlUtils.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = A78299AB215CC7CD003903AE /* CwlUtils.framework.dSYM */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A78299B3215CC7CD003903AE /* Reachability.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = A78299AC215CC7CD003903AE /* Reachability.framework.dSYM */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		A7866E7F2137F79700626DF8 /* RequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7866E7E2137F79700626DF8 /* RequestHandler.swift */; };
 		A7896C2E2196B56600089A97 /* Cuckoo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7896C2D2196B56600089A97 /* Cuckoo.framework */; };
 		A7896C342196B6F400089A97 /* Cuckoo.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = A7896C332196B6F300089A97 /* Cuckoo.framework.dSYM */; };
@@ -106,14 +101,13 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				A71106C32197483700F44B07 /* Swinject.framework in Embed Frameworks */,
-				A7829999215CC78B003903AE /* Realm.framework in Embed Frameworks */,
+				A776E58821982E0A00D8A864 /* SQLite.framework in Embed Frameworks */,
+				A776E58921982E0A00D8A864 /* Swinject.framework in Embed Frameworks */,
 				A7829997215CC78B003903AE /* CwlUtils.framework in Embed Frameworks */,
 				A78299A1215CC78B003903AE /* LaunchAtLogin.framework in Embed Frameworks */,
 				A782999F215CC78B003903AE /* Reachability.framework in Embed Frameworks */,
 				A78299A3215CC78B003903AE /* CocoaLumberjackSwift.framework in Embed Frameworks */,
 				A782999D215CC78B003903AE /* CocoaLumberjack.framework in Embed Frameworks */,
-				A782999B215CC78B003903AE /* RealmSwift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -124,10 +118,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
-				A71106BD219737C300F44B07 /* Swinject.framework.dSYM in CopyFiles */,
-				A78299AD215CC7CD003903AE /* Realm.framework.dSYM in CopyFiles */,
 				A78299AE215CC7CD003903AE /* CocoaLumberjackSwift.framework.dSYM in CopyFiles */,
-				A78299AF215CC7CD003903AE /* RealmSwift.framework.dSYM in CopyFiles */,
 				A78299B0215CC7CD003903AE /* LaunchAtLogin.framework.dSYM in CopyFiles */,
 				A78299B1215CC7CD003903AE /* CocoaLumberjack.framework.dSYM in CopyFiles */,
 				A78299B2215CC7CD003903AE /* CwlUtils.framework.dSYM in CopyFiles */,
@@ -139,10 +130,7 @@
 
 /* Begin PBXFileReference section */
 		A70A39CE212C63610065B7CC /* ActivityTrackerSDU */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ActivityTrackerSDU; sourceTree = "<group>"; };
-		A71106B82197376800F44B07 /* Swinject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swinject.framework; path = Carthage/Build/Mac/Swinject.framework; sourceTree = "<group>"; };
-		A71106BC219737C300F44B07 /* Swinject.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Swinject.framework.dSYM; path = Carthage/Build/Mac/Swinject.framework.dSYM; sourceTree = "<group>"; };
 		A71106BF21973B5900F44B07 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
-		A71106C22197483700F44B07 /* Swinject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swinject.framework; path = Carthage/Build/Mac/Swinject.framework; sourceTree = "<group>"; };
 		A716862C2192BCF900D6657C /* SetupHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupHandlerProtocol.swift; sourceTree = "<group>"; };
 		A73699D3218EE194008AF504 /* ActiveWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveWindow.swift; sourceTree = "<group>"; };
 		A73699D5218EE21B008AF504 /* LoggerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerProtocol.swift; sourceTree = "<group>"; };
@@ -187,17 +175,17 @@
 		A75EB17721942FA900EA9721 /* ActivityTrackerSDUTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ActivityTrackerSDUTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A75EB17B21942FA900EA9721 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A75F95F8214E4A52003727F5 /* PersistenceHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceHandler.swift; sourceTree = "<group>"; };
+		A776E58021982DA700D8A864 /* SQLite.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SQLite.framework.dSYM; path = Carthage/Build/Mac/SQLite.framework.dSYM; sourceTree = "<group>"; };
+		A776E58121982DA800D8A864 /* Swinject.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Swinject.framework.dSYM; path = Carthage/Build/Mac/Swinject.framework.dSYM; sourceTree = "<group>"; };
+		A776E58421982DD500D8A864 /* Swinject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swinject.framework; path = Carthage/Build/Mac/Swinject.framework; sourceTree = "<group>"; };
+		A776E58521982DD500D8A864 /* SQLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SQLite.framework; path = Carthage/Build/Mac/SQLite.framework; sourceTree = "<group>"; };
 		A7829986215CBC6C003903AE /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		A782998F215CC78A003903AE /* CwlUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CwlUtils.framework; path = Carthage/Build/Mac/CwlUtils.framework; sourceTree = "<group>"; };
-		A7829990215CC78A003903AE /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/Mac/Realm.framework; sourceTree = "<group>"; };
-		A7829991215CC78A003903AE /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/Mac/RealmSwift.framework; sourceTree = "<group>"; };
 		A7829992215CC78A003903AE /* CocoaLumberjack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjack.framework; path = Carthage/Build/Mac/CocoaLumberjack.framework; sourceTree = "<group>"; };
 		A7829993215CC78A003903AE /* Reachability.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reachability.framework; path = Carthage/Build/Mac/Reachability.framework; sourceTree = "<group>"; };
 		A7829994215CC78A003903AE /* LaunchAtLogin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LaunchAtLogin.framework; path = Carthage/Build/Mac/LaunchAtLogin.framework; sourceTree = "<group>"; };
 		A7829995215CC78A003903AE /* CocoaLumberjackSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjackSwift.framework; path = Carthage/Build/Mac/CocoaLumberjackSwift.framework; sourceTree = "<group>"; };
-		A78299A6215CC7CC003903AE /* Realm.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Realm.framework.dSYM; path = Carthage/Build/Mac/Realm.framework.dSYM; sourceTree = "<group>"; };
 		A78299A7215CC7CD003903AE /* CocoaLumberjackSwift.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = CocoaLumberjackSwift.framework.dSYM; path = Carthage/Build/Mac/CocoaLumberjackSwift.framework.dSYM; sourceTree = "<group>"; };
-		A78299A8215CC7CD003903AE /* RealmSwift.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = RealmSwift.framework.dSYM; path = Carthage/Build/Mac/RealmSwift.framework.dSYM; sourceTree = "<group>"; };
 		A78299A9215CC7CD003903AE /* LaunchAtLogin.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = LaunchAtLogin.framework.dSYM; path = Carthage/Build/Mac/LaunchAtLogin.framework.dSYM; sourceTree = "<group>"; };
 		A78299AA215CC7CD003903AE /* CocoaLumberjack.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = CocoaLumberjack.framework.dSYM; path = Carthage/Build/Mac/CocoaLumberjack.framework.dSYM; sourceTree = "<group>"; };
 		A78299AB215CC7CD003903AE /* CwlUtils.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = CwlUtils.framework.dSYM; path = Carthage/Build/Mac/CwlUtils.framework.dSYM; sourceTree = "<group>"; };
@@ -225,14 +213,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A71106C42197484400F44B07 /* Swinject.framework in Frameworks */,
-				A7829998215CC78B003903AE /* Realm.framework in Frameworks */,
 				A7829996215CC78B003903AE /* CwlUtils.framework in Frameworks */,
 				A78299A0215CC78B003903AE /* LaunchAtLogin.framework in Frameworks */,
 				A782999E215CC78B003903AE /* Reachability.framework in Frameworks */,
 				A78299A2215CC78B003903AE /* CocoaLumberjackSwift.framework in Frameworks */,
 				A782999C215CC78B003903AE /* CocoaLumberjack.framework in Frameworks */,
-				A782999A215CC78B003903AE /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,11 +374,10 @@
 				A78299A9215CC7CD003903AE /* LaunchAtLogin.framework.dSYM */,
 				A7829993215CC78A003903AE /* Reachability.framework */,
 				A78299AC215CC7CD003903AE /* Reachability.framework.dSYM */,
-				A7829990215CC78A003903AE /* Realm.framework */,
-				A78299A6215CC7CC003903AE /* Realm.framework.dSYM */,
-				A7829991215CC78A003903AE /* RealmSwift.framework */,
-				A78299A8215CC7CD003903AE /* RealmSwift.framework.dSYM */,
-				A71106B82197376800F44B07 /* Swinject.framework */,
+				A776E58521982DD500D8A864 /* SQLite.framework */,
+				A776E58021982DA700D8A864 /* SQLite.framework.dSYM */,
+				A776E58421982DD500D8A864 /* Swinject.framework */,
+				A776E58121982DA800D8A864 /* Swinject.framework.dSYM */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -410,8 +394,6 @@
 		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
-				A71106C22197483700F44B07 /* Swinject.framework */,
-				A71106BC219737C300F44B07 /* Swinject.framework.dSYM */,
 				A70A39CE212C63610065B7CC /* ActivityTrackerSDU */,
 				A75EB17821942FA900EA9721 /* ActivityTrackerSDUTests */,
 				A7829986215CBC6C003903AE /* Cartfile */,
@@ -526,7 +508,9 @@
 				A7896C342196B6F400089A97 /* Cuckoo.framework.dSYM in Resources */,
 				A73AA82221273FDA00D0B7FF /* Assets.xcassets in Resources */,
 				A73AA82521273FDA00D0B7FF /* MainMenu.xib in Resources */,
+				A776E58321982DA800D8A864 /* Swinject.framework.dSYM in Resources */,
 				A7A6B8A021353DE8000B4E38 /* ChooseUserWindow.xib in Resources */,
+				A776E58221982DA800D8A864 /* SQLite.framework.dSYM in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

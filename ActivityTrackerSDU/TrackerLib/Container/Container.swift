@@ -25,7 +25,7 @@ func getContainer() -> Container {
         
         container.register(LoggerProtocol.self) { _ in Logger() }
         
-        container.register(PersistenceHandlerProtocol.self) { r in PersistenceHandler(logger: r.resolve(LoggerProtocol.self)!)}.inObjectScope(.container)
+        container.register(PersistenceHandlerProtocol.self) { r in PersistenceHandler(logger: r.resolve(LoggerProtocol.self)!, settings: r.resolve(SettingsProtocol.self)!)}.inObjectScope(.container)
         
         container.register(RequestHandlerProtocol.self) { r in RequestHandler(logger: r.resolve(LoggerProtocol.self)!)}.inObjectScope(.container)
         

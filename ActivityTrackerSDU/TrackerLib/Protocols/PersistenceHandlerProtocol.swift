@@ -6,11 +6,10 @@
 //
 
 import Foundation
-import RealmSwift
 
 protocol PersistenceHandlerProtocol {
     func save<T:Usage>(_ usage: T)
     func delete<T: Usage>(_ usage: T)
-    func fetchDeviceUsages() -> Results<DeviceUsage>?
-    func fetchAppUsages() -> Results<AppUsage>?
+    func fetchDeviceUsages(upTo: Int) -> [DeviceUsage]
+    func fetchAppUsages(upTo: Int) -> [AppUsage]
 }

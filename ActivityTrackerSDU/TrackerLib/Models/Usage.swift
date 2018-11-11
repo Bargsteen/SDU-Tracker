@@ -6,27 +6,19 @@
 //
 
 import Foundation
-import RealmSwift
 
-@objcMembers class Usage: Object, Codable {
-    dynamic var participantIdentifier = ""
-    dynamic var deviceModelName = ""
-    dynamic var userCount = 0
-    dynamic var identifier = ""
-    dynamic var timeStamp = Date.distantPast
+class Usage: Codable {
+    var participantIdentifier: String = ""
+    var deviceModelName: String = ""
+    var userCount: Int = 0
+    var id: Int64?
+    var timeStamp: Date = Date.distantPast
     
-    convenience init(_ participantIdentifier: String, _ deviceModelName: String, _ timeStamp: Date, _ userCount: Int) {
-        // Init Realm specifics from superclass
-        self.init()
-        
+    init(_ participantIdentifier: String, _ deviceModelName: String, _ timeStamp: Date, _ userCount: Int) {
         self.participantIdentifier = participantIdentifier
         self.deviceModelName = deviceModelName
         self.userCount = userCount
         self.timeStamp = timeStamp
-    }
-    
-    override static func primaryKey() -> String? {
-        return "identifier"
     }
     
     // Encoding to JSON

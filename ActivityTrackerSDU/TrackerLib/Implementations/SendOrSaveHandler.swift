@@ -30,18 +30,12 @@ class SendOrSaveHandler: SendOrSaveHandlerProtocol {
         var onSuccess : (() -> Void)
         var onError   : ((Error?) -> Void)?
         if fromPersistence {
-            
-            // Delete from Persistence, hoping that it will successfully be sent.
-            // Ensures that the same usage aren't send multiple times while waiting for callback from request.
-            persistenceHandler.delete(usage)
-            
             onSuccess = {
                 self.logger.logUsage(usage: usage, usageLogType: .sentFromPersistence)
+                self.persistenceHandler.delete(usage)
             }
-            onError = { _ in
-                // Request did not succeed, so we save the usage again
-                self.persistenceHandler.save(usage)
-            }
+            onError = nil // Nothing left to do
+            
         } else {
             onSuccess = { self.logger.logUsage(usage: usage, usageLogType: .sentDirectly) }
             onError = { _ in
@@ -59,12 +53,11 @@ class SendOrSaveHandler: SendOrSaveHandlerProtocol {
         // Fetch up to limitOfEach of app and devices usages and try to send them.
         // If any of the requests fail, they are put back into persistence.
         
-        let appUsages = persistenceHandler.fetchAppUsages()
-        let deviceUsages = persistenceHandler.fetchDeviceUsages()
+        let appUsages = persistenceHandler.fetchAppUsages(upTo: limitOfEach)
+        let deviceUsages = persistenceHandler.fetchDeviceUsages(upTo: limitOfEach)
         
-        // .prefix is bounds safe
-        appUsages?.prefix(limitOfEach).forEach    { appUsage in sendOrSaveUsage(usage: appUsage, fromPersistence: true) }
-        deviceUsages?.prefix(limitOfEach).forEach { deviceUsage in sendOrSaveUsage(usage: deviceUsage, fromPersistence: true) }
+        appUsages.forEach    { appUsage in sendOrSaveUsage(usage: appUsage, fromPersistence: true) }
+        deviceUsages.forEach { deviceUsage in sendOrSaveUsage(usage: deviceUsage, fromPersistence: true) }
     }
     
     

@@ -7,16 +7,20 @@
 
 import Foundation
 
-@objcMembers class DeviceUsage: Usage {
+class DeviceUsage: Usage {
 
-    dynamic var eventType = 0
+    var eventType: Int = 0
     
     convenience init(participantIdentifier: String, deviceModelName: String, timeStamp: Date, userCount: Int, eventType: EventType) {
         self.init(participantIdentifier, deviceModelName, timeStamp, userCount)
         
         self.eventType = eventType.rawValue
-        
-        identifier = "[DEVICE] \(self.participantIdentifier)_\(self.timeStamp)_\(self.eventType)"
+    }
+    
+    // Used for database fetches
+    convenience init(participantIdentifier: String, deviceModelName: String, timeStamp: Date, userCount: Int, eventType: EventType, id: Int64) {
+        self.init(participantIdentifier: participantIdentifier, deviceModelName: deviceModelName, timeStamp: timeStamp, userCount: userCount, eventType: eventType)
+        self.id = id
     }
     
     // Encoding to JSON
