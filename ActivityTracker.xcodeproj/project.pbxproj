@@ -51,6 +51,12 @@
 		A776E58321982DA800D8A864 /* Swinject.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = A776E58121982DA800D8A864 /* Swinject.framework.dSYM */; };
 		A776E58821982E0A00D8A864 /* SQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A776E58521982DD500D8A864 /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A776E58921982E0A00D8A864 /* Swinject.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A776E58421982DD500D8A864 /* Swinject.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A776E58B219834AD00D8A864 /* PersistenceHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A776E58A219834AD00D8A864 /* PersistenceHandlerTests.swift */; };
+		A776E58D2198355300D8A864 /* LoggerStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = A776E58C2198355300D8A864 /* LoggerStub.swift */; };
+		A776E58F2198398600D8A864 /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A776E58E2198398600D8A864 /* GeneratedMocks.swift */; };
+		A776E59021983A6B00D8A864 /* Cuckoo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7896C2D2196B56600089A97 /* Cuckoo.framework */; };
+		A776E59121983B0600D8A864 /* Cuckoo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A7896C2D2196B56600089A97 /* Cuckoo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A776E59221983B0D00D8A864 /* Cuckoo.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = A7896C332196B6F300089A97 /* Cuckoo.framework.dSYM */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		A7829996215CC78B003903AE /* CwlUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A782998F215CC78A003903AE /* CwlUtils.framework */; };
 		A7829997215CC78B003903AE /* CwlUtils.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A782998F215CC78A003903AE /* CwlUtils.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A782999C215CC78B003903AE /* CocoaLumberjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7829992215CC78A003903AE /* CocoaLumberjack.framework */; };
@@ -67,10 +73,8 @@
 		A78299B2215CC7CD003903AE /* CwlUtils.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = A78299AB215CC7CD003903AE /* CwlUtils.framework.dSYM */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		A78299B3215CC7CD003903AE /* Reachability.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = A78299AC215CC7CD003903AE /* Reachability.framework.dSYM */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		A7866E7F2137F79700626DF8 /* RequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7866E7E2137F79700626DF8 /* RequestHandler.swift */; };
-		A7896C2E2196B56600089A97 /* Cuckoo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7896C2D2196B56600089A97 /* Cuckoo.framework */; };
 		A7896C342196B6F400089A97 /* Cuckoo.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = A7896C332196B6F300089A97 /* Cuckoo.framework.dSYM */; };
 		A7896C362196BD5900089A97 /* ActivityTrackerSDUTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7896C352196BD5900089A97 /* ActivityTrackerSDUTests.swift */; };
-		A7896C382196BDA100089A97 /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7896C372196BDA100089A97 /* GeneratedMocks.swift */; };
 		A7896C3A2196C07900089A97 /* RunnerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7896C392196C07900089A97 /* RunnerProtocol.swift */; };
 		A7896C3C2196C0A100089A97 /* Runner.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7896C3B2196C0A100089A97 /* Runner.swift */; };
 		A7896C3E2196C0E800089A97 /* LaunchAtLoginProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7896C3D2196C0E800089A97 /* LaunchAtLoginProtocol.swift */; };
@@ -101,6 +105,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				A776E59121983B0600D8A864 /* Cuckoo.framework in Embed Frameworks */,
 				A776E58821982E0A00D8A864 /* SQLite.framework in Embed Frameworks */,
 				A776E58921982E0A00D8A864 /* Swinject.framework in Embed Frameworks */,
 				A7829997215CC78B003903AE /* CwlUtils.framework in Embed Frameworks */,
@@ -118,6 +123,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				A776E59221983B0D00D8A864 /* Cuckoo.framework.dSYM in CopyFiles */,
 				A78299AE215CC7CD003903AE /* CocoaLumberjackSwift.framework.dSYM in CopyFiles */,
 				A78299B0215CC7CD003903AE /* LaunchAtLogin.framework.dSYM in CopyFiles */,
 				A78299B1215CC7CD003903AE /* CocoaLumberjack.framework.dSYM in CopyFiles */,
@@ -179,6 +185,9 @@
 		A776E58121982DA800D8A864 /* Swinject.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Swinject.framework.dSYM; path = Carthage/Build/Mac/Swinject.framework.dSYM; sourceTree = "<group>"; };
 		A776E58421982DD500D8A864 /* Swinject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swinject.framework; path = Carthage/Build/Mac/Swinject.framework; sourceTree = "<group>"; };
 		A776E58521982DD500D8A864 /* SQLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SQLite.framework; path = Carthage/Build/Mac/SQLite.framework; sourceTree = "<group>"; };
+		A776E58A219834AD00D8A864 /* PersistenceHandlerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceHandlerTests.swift; sourceTree = "<group>"; };
+		A776E58C2198355300D8A864 /* LoggerStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerStub.swift; sourceTree = "<group>"; };
+		A776E58E2198398600D8A864 /* GeneratedMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
 		A7829986215CBC6C003903AE /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		A782998F215CC78A003903AE /* CwlUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CwlUtils.framework; path = Carthage/Build/Mac/CwlUtils.framework; sourceTree = "<group>"; };
 		A7829992215CC78A003903AE /* CocoaLumberjack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjack.framework; path = Carthage/Build/Mac/CocoaLumberjack.framework; sourceTree = "<group>"; };
@@ -194,7 +203,6 @@
 		A7896C2D2196B56600089A97 /* Cuckoo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cuckoo.framework; path = Carthage/Build/Mac/Cuckoo.framework; sourceTree = "<group>"; };
 		A7896C332196B6F300089A97 /* Cuckoo.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Cuckoo.framework.dSYM; path = Carthage/Build/Mac/Cuckoo.framework.dSYM; sourceTree = "<group>"; };
 		A7896C352196BD5900089A97 /* ActivityTrackerSDUTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTrackerSDUTests.swift; sourceTree = "<group>"; };
-		A7896C372196BDA100089A97 /* GeneratedMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
 		A7896C392196C07900089A97 /* RunnerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunnerProtocol.swift; sourceTree = "<group>"; };
 		A7896C3B2196C0A100089A97 /* Runner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Runner.swift; sourceTree = "<group>"; };
 		A7896C3D2196C0E800089A97 /* LaunchAtLoginProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAtLoginProtocol.swift; sourceTree = "<group>"; };
@@ -225,7 +233,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7896C2E2196B56600089A97 /* Cuckoo.framework in Frameworks */,
+				A776E59021983A6B00D8A864 /* Cuckoo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,9 +351,11 @@
 		A75EB17821942FA900EA9721 /* ActivityTrackerSDUTests */ = {
 			isa = PBXGroup;
 			children = (
-				A7896C372196BDA100089A97 /* GeneratedMocks.swift */,
+				A776E58E2198398600D8A864 /* GeneratedMocks.swift */,
+				A776E58A219834AD00D8A864 /* PersistenceHandlerTests.swift */,
 				A7896C352196BD5900089A97 /* ActivityTrackerSDUTests.swift */,
 				A75EB17B21942FA900EA9721 /* Info.plist */,
+				A776E58C2198355300D8A864 /* LoggerStub.swift */,
 			);
 			path = ActivityTrackerSDUTests;
 			sourceTree = "<group>";
@@ -439,10 +449,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A75EB17E21942FA900EA9721 /* Build configuration list for PBXNativeTarget "ActivityTrackerSDUTests" */;
 			buildPhases = (
+				A749A8C521944A8B006BA080 /* ShellScript */,
 				A75EB17321942FA900EA9721 /* Sources */,
 				A75EB17421942FA900EA9721 /* Frameworks */,
 				A75EB17521942FA900EA9721 /* Resources */,
-				A749A8C521944A8B006BA080 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -539,7 +549,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Define output file. Change \"$PROJECT_DIR/${PROJECT_NAME}Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"$PROJECT_DIR/ActivityTrackerSDUTests/GeneratedMocks.swift\"\necho \"Generated Mocks File = $OUTPUT_FILE\"\n\n# Define input directory. Change \"${PROJECT_DIR}/${PROJECT_NAME}\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"${PROJECT_DIR}/ActivityTrackerSDU\"\necho \"Mocks Input Directory = $INPUT_DIR\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n\"Carthage/Checkouts/Cuckoo/run\" generate --testable \"ActivityTrackerSDU\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"$INPUT_DIR/TrackerLib/Protocols/SettingsProtocol.swift\" \\\n\"$INPUT_DIR/TrackerLib/Protocols/TrackerProtocol.swift\" \\\n\"$INPUT_DIR/TrackerLib/Protocols/DeviceTrackerProtocol.swift\" \\\n\"$INPUT_DIR/TrackerLib/AppAssembling/AssemblerProtocol.swift\"\n\n\n# ... and so forth, the last line should never end with a backslash\n\n# After running once, locate `GeneratedMocks.swift` and drag it into your Xcode test target group.\n";
+			shellScript = "# Define output file. Change \"$PROJECT_DIR/${PROJECT_NAME}Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"$PROJECT_DIR/ActivityTrackerSDUTests/GeneratedMocks.swift\"\necho \"Generated Mocks File = $OUTPUT_FILE\"\n\n# Define input directory. Change \"${PROJECT_DIR}/${PROJECT_NAME}\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"${PROJECT_DIR}/ActivityTrackerSDU\"\necho \"Mocks Input Directory = $INPUT_DIR\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n\"Carthage/Checkouts/Cuckoo/run\" generate --testable \"ActivityTrackerSDU\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"$INPUT_DIR/TrackerLib/Protocols/SettingsProtocol.swift\" \\\n\"$INPUT_DIR/TrackerLib/Protocols/TrackerProtocol.swift\" \\\n\"$INPUT_DIR/TrackerLib/Protocols/DeviceTrackerProtocol.swift\"\n\n\n# ... and so forth, the last line should never end with a backslash\n\n# After running once, locate `GeneratedMocks.swift` and drag it into your Xcode test target group.\n";
 		};
 		A7866E782136B7A200626DF8 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -635,7 +645,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7896C362196BD5900089A97 /* ActivityTrackerSDUTests.swift in Sources */,
-				A7896C382196BDA100089A97 /* GeneratedMocks.swift in Sources */,
+				A776E58D2198355300D8A864 /* LoggerStub.swift in Sources */,
+				A776E58B219834AD00D8A864 /* PersistenceHandlerTests.swift in Sources */,
+				A776E58F2198398600D8A864 /* GeneratedMocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

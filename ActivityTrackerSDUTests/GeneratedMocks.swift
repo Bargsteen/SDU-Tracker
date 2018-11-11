@@ -1,481 +1,4 @@
-// MARK: - Mocks generated from file: ActivityTrackerSDU/TrackerLib/AppAssembling/AssemblerProtocol.swift at 2018-11-10 07:18:18 +0000
-
-//
-//  AssemblerProtocol.swift
-//  ActivityTrackerSDU
-//
-//  Created by Kasper Dissing Bargsteen on 06/11/2018.
-//
-
-import Cuckoo
-@testable import ActivityTrackerSDU
-
-import Foundation
-
-class MockAssemblerProtocol: AssemblerProtocol, Cuckoo.ProtocolMock {
-    typealias MocksType = AssemblerProtocol
-    typealias Stubbing = __StubbingProxy_AssemblerProtocol
-    typealias Verification = __VerificationProxy_AssemblerProtocol
-
-    private var __defaultImplStub: AssemblerProtocol?
-
-    let cuckoo_manager = Cuckoo.MockManager.preconfiguredManager ?? Cuckoo.MockManager(hasParent: false)
-
-    func enableDefaultImplementation(_ stub: AssemblerProtocol) {
-        __defaultImplStub = stub
-        cuckoo_manager.enableDefaultStubImplementation()
-    }
-
-    
-
-    
-
-    
-    // ["name": "resolve", "returnSignature": " -> LoggerProtocol", "fullyQualifiedName": "resolve() -> LoggerProtocol", "parameterSignature": "", "parameterSignatureWithoutNames": "", "inputTypes": "", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "", "call": "", "parameters": [], "returnType": "LoggerProtocol", "isOptional": false, "escapingParameterNames": "", "stubFunction": "Cuckoo.ProtocolStubFunction"]
-     func resolve()  -> LoggerProtocol {
-        
-            return cuckoo_manager.call("resolve() -> LoggerProtocol",
-                parameters: (),
-                escapingParameters: (),
-                superclassCall:
-                    
-                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
-                    ,
-                defaultCall: __defaultImplStub!.resolve())
-        
-    }
-    
-    // ["name": "resolve", "returnSignature": " -> ActiveWindowHandlerProtocol", "fullyQualifiedName": "resolve() -> ActiveWindowHandlerProtocol", "parameterSignature": "", "parameterSignatureWithoutNames": "", "inputTypes": "", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "", "call": "", "parameters": [], "returnType": "ActiveWindowHandlerProtocol", "isOptional": false, "escapingParameterNames": "", "stubFunction": "Cuckoo.ProtocolStubFunction"]
-     func resolve()  -> ActiveWindowHandlerProtocol {
-        
-            return cuckoo_manager.call("resolve() -> ActiveWindowHandlerProtocol",
-                parameters: (),
-                escapingParameters: (),
-                superclassCall:
-                    
-                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
-                    ,
-                defaultCall: __defaultImplStub!.resolve())
-        
-    }
-    
-    // ["name": "resolve", "returnSignature": " -> SettingsProtocol", "fullyQualifiedName": "resolve() -> SettingsProtocol", "parameterSignature": "", "parameterSignatureWithoutNames": "", "inputTypes": "", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "", "call": "", "parameters": [], "returnType": "SettingsProtocol", "isOptional": false, "escapingParameterNames": "", "stubFunction": "Cuckoo.ProtocolStubFunction"]
-     func resolve()  -> SettingsProtocol {
-        
-            return cuckoo_manager.call("resolve() -> SettingsProtocol",
-                parameters: (),
-                escapingParameters: (),
-                superclassCall:
-                    
-                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
-                    ,
-                defaultCall: __defaultImplStub!.resolve())
-        
-    }
-    
-    // ["name": "resolve", "returnSignature": " -> AppTrackerProtocol", "fullyQualifiedName": "resolve() -> AppTrackerProtocol", "parameterSignature": "", "parameterSignatureWithoutNames": "", "inputTypes": "", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "", "call": "", "parameters": [], "returnType": "AppTrackerProtocol", "isOptional": false, "escapingParameterNames": "", "stubFunction": "Cuckoo.ProtocolStubFunction"]
-     func resolve()  -> AppTrackerProtocol {
-        
-            return cuckoo_manager.call("resolve() -> AppTrackerProtocol",
-                parameters: (),
-                escapingParameters: (),
-                superclassCall:
-                    
-                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
-                    ,
-                defaultCall: __defaultImplStub!.resolve())
-        
-    }
-    
-    // ["name": "resolve", "returnSignature": " -> DeviceTrackerProtocol", "fullyQualifiedName": "resolve() -> DeviceTrackerProtocol", "parameterSignature": "", "parameterSignatureWithoutNames": "", "inputTypes": "", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "", "call": "", "parameters": [], "returnType": "DeviceTrackerProtocol", "isOptional": false, "escapingParameterNames": "", "stubFunction": "Cuckoo.ProtocolStubFunction"]
-     func resolve()  -> DeviceTrackerProtocol {
-        
-            return cuckoo_manager.call("resolve() -> DeviceTrackerProtocol",
-                parameters: (),
-                escapingParameters: (),
-                superclassCall:
-                    
-                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
-                    ,
-                defaultCall: __defaultImplStub!.resolve())
-        
-    }
-    
-    // ["name": "resolve", "returnSignature": " -> PersistenceHandlerProtocol", "fullyQualifiedName": "resolve() -> PersistenceHandlerProtocol", "parameterSignature": "", "parameterSignatureWithoutNames": "", "inputTypes": "", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "", "call": "", "parameters": [], "returnType": "PersistenceHandlerProtocol", "isOptional": false, "escapingParameterNames": "", "stubFunction": "Cuckoo.ProtocolStubFunction"]
-     func resolve()  -> PersistenceHandlerProtocol {
-        
-            return cuckoo_manager.call("resolve() -> PersistenceHandlerProtocol",
-                parameters: (),
-                escapingParameters: (),
-                superclassCall:
-                    
-                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
-                    ,
-                defaultCall: __defaultImplStub!.resolve())
-        
-    }
-    
-    // ["name": "resolve", "returnSignature": " -> RequestHandlerProtocol", "fullyQualifiedName": "resolve() -> RequestHandlerProtocol", "parameterSignature": "", "parameterSignatureWithoutNames": "", "inputTypes": "", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "", "call": "", "parameters": [], "returnType": "RequestHandlerProtocol", "isOptional": false, "escapingParameterNames": "", "stubFunction": "Cuckoo.ProtocolStubFunction"]
-     func resolve()  -> RequestHandlerProtocol {
-        
-            return cuckoo_manager.call("resolve() -> RequestHandlerProtocol",
-                parameters: (),
-                escapingParameters: (),
-                superclassCall:
-                    
-                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
-                    ,
-                defaultCall: __defaultImplStub!.resolve())
-        
-    }
-    
-    // ["name": "resolve", "returnSignature": " -> SendOrSaveHandlerProtocol", "fullyQualifiedName": "resolve() -> SendOrSaveHandlerProtocol", "parameterSignature": "", "parameterSignatureWithoutNames": "", "inputTypes": "", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "", "call": "", "parameters": [], "returnType": "SendOrSaveHandlerProtocol", "isOptional": false, "escapingParameterNames": "", "stubFunction": "Cuckoo.ProtocolStubFunction"]
-     func resolve()  -> SendOrSaveHandlerProtocol {
-        
-            return cuckoo_manager.call("resolve() -> SendOrSaveHandlerProtocol",
-                parameters: (),
-                escapingParameters: (),
-                superclassCall:
-                    
-                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
-                    ,
-                defaultCall: __defaultImplStub!.resolve())
-        
-    }
-    
-    // ["name": "resolve", "returnSignature": " -> DateTimeHandlerProtocol", "fullyQualifiedName": "resolve() -> DateTimeHandlerProtocol", "parameterSignature": "", "parameterSignatureWithoutNames": "", "inputTypes": "", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "", "call": "", "parameters": [], "returnType": "DateTimeHandlerProtocol", "isOptional": false, "escapingParameterNames": "", "stubFunction": "Cuckoo.ProtocolStubFunction"]
-     func resolve()  -> DateTimeHandlerProtocol {
-        
-            return cuckoo_manager.call("resolve() -> DateTimeHandlerProtocol",
-                parameters: (),
-                escapingParameters: (),
-                superclassCall:
-                    
-                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
-                    ,
-                defaultCall: __defaultImplStub!.resolve())
-        
-    }
-    
-    // ["name": "resolve", "returnSignature": " -> UserHandlerProtocol", "fullyQualifiedName": "resolve() -> UserHandlerProtocol", "parameterSignature": "", "parameterSignatureWithoutNames": "", "inputTypes": "", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "", "call": "", "parameters": [], "returnType": "UserHandlerProtocol", "isOptional": false, "escapingParameterNames": "", "stubFunction": "Cuckoo.ProtocolStubFunction"]
-     func resolve()  -> UserHandlerProtocol {
-        
-            return cuckoo_manager.call("resolve() -> UserHandlerProtocol",
-                parameters: (),
-                escapingParameters: (),
-                superclassCall:
-                    
-                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
-                    ,
-                defaultCall: __defaultImplStub!.resolve())
-        
-    }
-    
-    // ["name": "resolve", "returnSignature": " -> AlertHandlerProtocol", "fullyQualifiedName": "resolve() -> AlertHandlerProtocol", "parameterSignature": "", "parameterSignatureWithoutNames": "", "inputTypes": "", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "", "call": "", "parameters": [], "returnType": "AlertHandlerProtocol", "isOptional": false, "escapingParameterNames": "", "stubFunction": "Cuckoo.ProtocolStubFunction"]
-     func resolve()  -> AlertHandlerProtocol {
-        
-            return cuckoo_manager.call("resolve() -> AlertHandlerProtocol",
-                parameters: (),
-                escapingParameters: (),
-                superclassCall:
-                    
-                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
-                    ,
-                defaultCall: __defaultImplStub!.resolve())
-        
-    }
-    
-    // ["name": "resolve", "returnSignature": " -> ChooseUserWindowProtocol", "fullyQualifiedName": "resolve() -> ChooseUserWindowProtocol", "parameterSignature": "", "parameterSignatureWithoutNames": "", "inputTypes": "", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "", "call": "", "parameters": [], "returnType": "ChooseUserWindowProtocol", "isOptional": false, "escapingParameterNames": "", "stubFunction": "Cuckoo.ProtocolStubFunction"]
-     func resolve()  -> ChooseUserWindowProtocol {
-        
-            return cuckoo_manager.call("resolve() -> ChooseUserWindowProtocol",
-                parameters: (),
-                escapingParameters: (),
-                superclassCall:
-                    
-                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
-                    ,
-                defaultCall: __defaultImplStub!.resolve())
-        
-    }
-    
-    // ["name": "resolve", "returnSignature": " -> UsageBuilderProtocol", "fullyQualifiedName": "resolve() -> UsageBuilderProtocol", "parameterSignature": "", "parameterSignatureWithoutNames": "", "inputTypes": "", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "", "call": "", "parameters": [], "returnType": "UsageBuilderProtocol", "isOptional": false, "escapingParameterNames": "", "stubFunction": "Cuckoo.ProtocolStubFunction"]
-     func resolve()  -> UsageBuilderProtocol {
-        
-            return cuckoo_manager.call("resolve() -> UsageBuilderProtocol",
-                parameters: (),
-                escapingParameters: (),
-                superclassCall:
-                    
-                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
-                    ,
-                defaultCall: __defaultImplStub!.resolve())
-        
-    }
-    
-    // ["name": "resolve", "returnSignature": " -> SetupHandlerProtocol", "fullyQualifiedName": "resolve() -> SetupHandlerProtocol", "parameterSignature": "", "parameterSignatureWithoutNames": "", "inputTypes": "", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "", "call": "", "parameters": [], "returnType": "SetupHandlerProtocol", "isOptional": false, "escapingParameterNames": "", "stubFunction": "Cuckoo.ProtocolStubFunction"]
-     func resolve()  -> SetupHandlerProtocol {
-        
-            return cuckoo_manager.call("resolve() -> SetupHandlerProtocol",
-                parameters: (),
-                escapingParameters: (),
-                superclassCall:
-                    
-                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
-                    ,
-                defaultCall: __defaultImplStub!.resolve())
-        
-    }
-    
-
-	struct __StubbingProxy_AssemblerProtocol: Cuckoo.StubbingProxy {
-	    private let cuckoo_manager: Cuckoo.MockManager
-	
-	    init(manager: Cuckoo.MockManager) {
-	        self.cuckoo_manager = manager
-	    }
-	    
-	    
-	    func resolve() -> Cuckoo.ProtocolStubFunction<(), LoggerProtocol> {
-	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
-	        return .init(stub: cuckoo_manager.createStub(for: MockAssemblerProtocol.self, method: "resolve() -> LoggerProtocol", parameterMatchers: matchers))
-	    }
-	    
-	    func resolve() -> Cuckoo.ProtocolStubFunction<(), ActiveWindowHandlerProtocol> {
-	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
-	        return .init(stub: cuckoo_manager.createStub(for: MockAssemblerProtocol.self, method: "resolve() -> ActiveWindowHandlerProtocol", parameterMatchers: matchers))
-	    }
-	    
-	    func resolve() -> Cuckoo.ProtocolStubFunction<(), SettingsProtocol> {
-	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
-	        return .init(stub: cuckoo_manager.createStub(for: MockAssemblerProtocol.self, method: "resolve() -> SettingsProtocol", parameterMatchers: matchers))
-	    }
-	    
-	    func resolve() -> Cuckoo.ProtocolStubFunction<(), AppTrackerProtocol> {
-	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
-	        return .init(stub: cuckoo_manager.createStub(for: MockAssemblerProtocol.self, method: "resolve() -> AppTrackerProtocol", parameterMatchers: matchers))
-	    }
-	    
-	    func resolve() -> Cuckoo.ProtocolStubFunction<(), DeviceTrackerProtocol> {
-	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
-	        return .init(stub: cuckoo_manager.createStub(for: MockAssemblerProtocol.self, method: "resolve() -> DeviceTrackerProtocol", parameterMatchers: matchers))
-	    }
-	    
-	    func resolve() -> Cuckoo.ProtocolStubFunction<(), PersistenceHandlerProtocol> {
-	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
-	        return .init(stub: cuckoo_manager.createStub(for: MockAssemblerProtocol.self, method: "resolve() -> PersistenceHandlerProtocol", parameterMatchers: matchers))
-	    }
-	    
-	    func resolve() -> Cuckoo.ProtocolStubFunction<(), RequestHandlerProtocol> {
-	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
-	        return .init(stub: cuckoo_manager.createStub(for: MockAssemblerProtocol.self, method: "resolve() -> RequestHandlerProtocol", parameterMatchers: matchers))
-	    }
-	    
-	    func resolve() -> Cuckoo.ProtocolStubFunction<(), SendOrSaveHandlerProtocol> {
-	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
-	        return .init(stub: cuckoo_manager.createStub(for: MockAssemblerProtocol.self, method: "resolve() -> SendOrSaveHandlerProtocol", parameterMatchers: matchers))
-	    }
-	    
-	    func resolve() -> Cuckoo.ProtocolStubFunction<(), DateTimeHandlerProtocol> {
-	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
-	        return .init(stub: cuckoo_manager.createStub(for: MockAssemblerProtocol.self, method: "resolve() -> DateTimeHandlerProtocol", parameterMatchers: matchers))
-	    }
-	    
-	    func resolve() -> Cuckoo.ProtocolStubFunction<(), UserHandlerProtocol> {
-	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
-	        return .init(stub: cuckoo_manager.createStub(for: MockAssemblerProtocol.self, method: "resolve() -> UserHandlerProtocol", parameterMatchers: matchers))
-	    }
-	    
-	    func resolve() -> Cuckoo.ProtocolStubFunction<(), AlertHandlerProtocol> {
-	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
-	        return .init(stub: cuckoo_manager.createStub(for: MockAssemblerProtocol.self, method: "resolve() -> AlertHandlerProtocol", parameterMatchers: matchers))
-	    }
-	    
-	    func resolve() -> Cuckoo.ProtocolStubFunction<(), ChooseUserWindowProtocol> {
-	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
-	        return .init(stub: cuckoo_manager.createStub(for: MockAssemblerProtocol.self, method: "resolve() -> ChooseUserWindowProtocol", parameterMatchers: matchers))
-	    }
-	    
-	    func resolve() -> Cuckoo.ProtocolStubFunction<(), UsageBuilderProtocol> {
-	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
-	        return .init(stub: cuckoo_manager.createStub(for: MockAssemblerProtocol.self, method: "resolve() -> UsageBuilderProtocol", parameterMatchers: matchers))
-	    }
-	    
-	    func resolve() -> Cuckoo.ProtocolStubFunction<(), SetupHandlerProtocol> {
-	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
-	        return .init(stub: cuckoo_manager.createStub(for: MockAssemblerProtocol.self, method: "resolve() -> SetupHandlerProtocol", parameterMatchers: matchers))
-	    }
-	    
-	}
-
-	struct __VerificationProxy_AssemblerProtocol: Cuckoo.VerificationProxy {
-	    private let cuckoo_manager: Cuckoo.MockManager
-	    private let callMatcher: Cuckoo.CallMatcher
-	    private let sourceLocation: Cuckoo.SourceLocation
-	
-	    init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
-	        self.cuckoo_manager = manager
-	        self.callMatcher = callMatcher
-	        self.sourceLocation = sourceLocation
-	    }
-	
-	    
-	
-	    
-	    @discardableResult
-	    func resolve() -> Cuckoo.__DoNotUse<LoggerProtocol> {
-	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
-	        return cuckoo_manager.verify("resolve() -> LoggerProtocol", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
-	    }
-	    
-	    @discardableResult
-	    func resolve() -> Cuckoo.__DoNotUse<ActiveWindowHandlerProtocol> {
-	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
-	        return cuckoo_manager.verify("resolve() -> ActiveWindowHandlerProtocol", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
-	    }
-	    
-	    @discardableResult
-	    func resolve() -> Cuckoo.__DoNotUse<SettingsProtocol> {
-	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
-	        return cuckoo_manager.verify("resolve() -> SettingsProtocol", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
-	    }
-	    
-	    @discardableResult
-	    func resolve() -> Cuckoo.__DoNotUse<AppTrackerProtocol> {
-	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
-	        return cuckoo_manager.verify("resolve() -> AppTrackerProtocol", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
-	    }
-	    
-	    @discardableResult
-	    func resolve() -> Cuckoo.__DoNotUse<DeviceTrackerProtocol> {
-	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
-	        return cuckoo_manager.verify("resolve() -> DeviceTrackerProtocol", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
-	    }
-	    
-	    @discardableResult
-	    func resolve() -> Cuckoo.__DoNotUse<PersistenceHandlerProtocol> {
-	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
-	        return cuckoo_manager.verify("resolve() -> PersistenceHandlerProtocol", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
-	    }
-	    
-	    @discardableResult
-	    func resolve() -> Cuckoo.__DoNotUse<RequestHandlerProtocol> {
-	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
-	        return cuckoo_manager.verify("resolve() -> RequestHandlerProtocol", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
-	    }
-	    
-	    @discardableResult
-	    func resolve() -> Cuckoo.__DoNotUse<SendOrSaveHandlerProtocol> {
-	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
-	        return cuckoo_manager.verify("resolve() -> SendOrSaveHandlerProtocol", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
-	    }
-	    
-	    @discardableResult
-	    func resolve() -> Cuckoo.__DoNotUse<DateTimeHandlerProtocol> {
-	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
-	        return cuckoo_manager.verify("resolve() -> DateTimeHandlerProtocol", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
-	    }
-	    
-	    @discardableResult
-	    func resolve() -> Cuckoo.__DoNotUse<UserHandlerProtocol> {
-	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
-	        return cuckoo_manager.verify("resolve() -> UserHandlerProtocol", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
-	    }
-	    
-	    @discardableResult
-	    func resolve() -> Cuckoo.__DoNotUse<AlertHandlerProtocol> {
-	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
-	        return cuckoo_manager.verify("resolve() -> AlertHandlerProtocol", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
-	    }
-	    
-	    @discardableResult
-	    func resolve() -> Cuckoo.__DoNotUse<ChooseUserWindowProtocol> {
-	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
-	        return cuckoo_manager.verify("resolve() -> ChooseUserWindowProtocol", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
-	    }
-	    
-	    @discardableResult
-	    func resolve() -> Cuckoo.__DoNotUse<UsageBuilderProtocol> {
-	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
-	        return cuckoo_manager.verify("resolve() -> UsageBuilderProtocol", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
-	    }
-	    
-	    @discardableResult
-	    func resolve() -> Cuckoo.__DoNotUse<SetupHandlerProtocol> {
-	        let matchers: [Cuckoo.ParameterMatcher<Void>] = []
-	        return cuckoo_manager.verify("resolve() -> SetupHandlerProtocol", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
-	    }
-	    
-	}
-
-}
-
- class AssemblerProtocolStub: AssemblerProtocol {
-    
-
-    
-
-    
-     func resolve()  -> LoggerProtocol {
-        return DefaultValueRegistry.defaultValue(for: LoggerProtocol.self)
-    }
-    
-     func resolve()  -> ActiveWindowHandlerProtocol {
-        return DefaultValueRegistry.defaultValue(for: ActiveWindowHandlerProtocol.self)
-    }
-    
-     func resolve()  -> SettingsProtocol {
-        return DefaultValueRegistry.defaultValue(for: SettingsProtocol.self)
-    }
-    
-     func resolve()  -> AppTrackerProtocol {
-        return DefaultValueRegistry.defaultValue(for: AppTrackerProtocol.self)
-    }
-    
-     func resolve()  -> DeviceTrackerProtocol {
-        return DefaultValueRegistry.defaultValue(for: DeviceTrackerProtocol.self)
-    }
-    
-     func resolve()  -> PersistenceHandlerProtocol {
-        return DefaultValueRegistry.defaultValue(for: PersistenceHandlerProtocol.self)
-    }
-    
-     func resolve()  -> RequestHandlerProtocol {
-        return DefaultValueRegistry.defaultValue(for: RequestHandlerProtocol.self)
-    }
-    
-     func resolve()  -> SendOrSaveHandlerProtocol {
-        return DefaultValueRegistry.defaultValue(for: SendOrSaveHandlerProtocol.self)
-    }
-    
-     func resolve()  -> DateTimeHandlerProtocol {
-        return DefaultValueRegistry.defaultValue(for: DateTimeHandlerProtocol.self)
-    }
-    
-     func resolve()  -> UserHandlerProtocol {
-        return DefaultValueRegistry.defaultValue(for: UserHandlerProtocol.self)
-    }
-    
-     func resolve()  -> AlertHandlerProtocol {
-        return DefaultValueRegistry.defaultValue(for: AlertHandlerProtocol.self)
-    }
-    
-     func resolve()  -> ChooseUserWindowProtocol {
-        return DefaultValueRegistry.defaultValue(for: ChooseUserWindowProtocol.self)
-    }
-    
-     func resolve()  -> UsageBuilderProtocol {
-        return DefaultValueRegistry.defaultValue(for: UsageBuilderProtocol.self)
-    }
-    
-     func resolve()  -> SetupHandlerProtocol {
-        return DefaultValueRegistry.defaultValue(for: SetupHandlerProtocol.self)
-    }
-    
-}
-
-
-// MARK: - Mocks generated from file: ActivityTrackerSDU/TrackerLib/Protocols/DeviceTrackerProtocol.swift at 2018-11-10 07:18:18 +0000
+// MARK: - Mocks generated from file: ActivityTrackerSDU/TrackerLib/Protocols/DeviceTrackerProtocol.swift at 2018-11-11 10:39:08 +0000
 
 //
 //  DeviceTrackerProtocol.swift
@@ -604,7 +127,7 @@ class MockDeviceTrackerProtocol: DeviceTrackerProtocol, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: ActivityTrackerSDU/TrackerLib/Protocols/SettingsProtocol.swift at 2018-11-10 07:18:18 +0000
+// MARK: - Mocks generated from file: ActivityTrackerSDU/TrackerLib/Protocols/SettingsProtocol.swift at 2018-11-11 10:39:08 +0000
 
 //
 //  SettingsProtocol.swift
@@ -845,6 +368,20 @@ class MockSettingsProtocol: SettingsProtocol, Cuckoo.ProtocolMock {
         
     }
     
+    // ["name": "makeParticipantIdentifierForSpecificUser", "returnSignature": " -> String", "fullyQualifiedName": "makeParticipantIdentifierForSpecificUser(user: String) -> String", "parameterSignature": "user: String", "parameterSignatureWithoutNames": "user: String", "inputTypes": "String", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "user", "call": "user: user", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("user"), name: "user", type: "String", range: CountableRange(677..<689), nameRange: CountableRange(677..<681))], "returnType": "String", "isOptional": false, "escapingParameterNames": "user", "stubFunction": "Cuckoo.ProtocolStubFunction"]
+     func makeParticipantIdentifierForSpecificUser(user: String)  -> String {
+        
+            return cuckoo_manager.call("makeParticipantIdentifierForSpecificUser(user: String) -> String",
+                parameters: (user),
+                escapingParameters: (user),
+                superclassCall:
+                    
+                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                    ,
+                defaultCall: __defaultImplStub!.makeParticipantIdentifierForSpecificUser(user: user))
+        
+    }
+    
 
 	struct __StubbingProxy_SettingsProtocol: Cuckoo.StubbingProxy {
 	    private let cuckoo_manager: Cuckoo.MockManager
@@ -902,6 +439,11 @@ class MockSettingsProtocol: SettingsProtocol, Cuckoo.ProtocolMock {
 	    func removeUser<M1: Cuckoo.Matchable>(nameOfUser: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(String)> where M1.MatchedType == String {
 	        let matchers: [Cuckoo.ParameterMatcher<(String)>] = [wrap(matchable: nameOfUser) { $0 }]
 	        return .init(stub: cuckoo_manager.createStub(for: MockSettingsProtocol.self, method: "removeUser(nameOfUser: String)", parameterMatchers: matchers))
+	    }
+	    
+	    func makeParticipantIdentifierForSpecificUser<M1: Cuckoo.Matchable>(user: M1) -> Cuckoo.ProtocolStubFunction<(String), String> where M1.MatchedType == String {
+	        let matchers: [Cuckoo.ParameterMatcher<(String)>] = [wrap(matchable: user) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockSettingsProtocol.self, method: "makeParticipantIdentifierForSpecificUser(user: String) -> String", parameterMatchers: matchers))
 	    }
 	    
 	}
@@ -970,6 +512,12 @@ class MockSettingsProtocol: SettingsProtocol, Cuckoo.ProtocolMock {
 	    func removeUser<M1: Cuckoo.Matchable>(nameOfUser: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == String {
 	        let matchers: [Cuckoo.ParameterMatcher<(String)>] = [wrap(matchable: nameOfUser) { $0 }]
 	        return cuckoo_manager.verify("removeUser(nameOfUser: String)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	    @discardableResult
+	    func makeParticipantIdentifierForSpecificUser<M1: Cuckoo.Matchable>(user: M1) -> Cuckoo.__DoNotUse<String> where M1.MatchedType == String {
+	        let matchers: [Cuckoo.ParameterMatcher<(String)>] = [wrap(matchable: user) { $0 }]
+	        return cuckoo_manager.verify("makeParticipantIdentifierForSpecificUser(user: String) -> String", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
 	    }
 	    
 	}
@@ -1070,10 +618,14 @@ class MockSettingsProtocol: SettingsProtocol, Cuckoo.ProtocolMock {
         return DefaultValueRegistry.defaultValue(for: Void.self)
     }
     
+     func makeParticipantIdentifierForSpecificUser(user: String)  -> String {
+        return DefaultValueRegistry.defaultValue(for: String.self)
+    }
+    
 }
 
 
-// MARK: - Mocks generated from file: ActivityTrackerSDU/TrackerLib/Protocols/TrackerProtocol.swift at 2018-11-10 07:18:18 +0000
+// MARK: - Mocks generated from file: ActivityTrackerSDU/TrackerLib/Protocols/TrackerProtocol.swift at 2018-11-11 10:39:08 +0000
 
 //
 //  TrackerProtocol.swift

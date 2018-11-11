@@ -15,7 +15,6 @@ class PersistenceHandler: PersistenceHandlerProtocol {
     private let logger: LoggerProtocol
     private let settings: SettingsProtocol
     
-    
     private let db: Connection
     
     // Tables
