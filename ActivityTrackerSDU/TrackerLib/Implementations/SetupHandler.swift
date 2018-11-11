@@ -46,7 +46,7 @@ class SetupHandler: SetupHandlerProtocol {
         // Handle Users
         let userArray = parseUsers(usersString);
         if let userArray = userArray {
-            userArray.forEach { user in settings.addUser(nameOfUser: user)}
+            settings.userList = userArray
             settings.currentUser = userArray.first ?? .unnamedUser
         } else {
             logInvalidStartupUrl("Invalid value: users")

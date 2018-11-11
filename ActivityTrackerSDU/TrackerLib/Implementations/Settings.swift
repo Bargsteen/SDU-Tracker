@@ -34,23 +34,8 @@ class Settings: SettingsProtocol {
                 userDefaults.set([], forKey: userListKey)
                 return []
             }
-        }
-    }
-    
-    func addUser(nameOfUser: String) {
-        var userList = self.userList
-        
-        if !userList.contains(nameOfUser){
-            userList.append(nameOfUser)
-            userDefaults.setValue(userList, forKey: userListKey)
-        }
-    }
-    
-    func removeUser(nameOfUser: String) {
-        var userList = self.userList
-        if let index = userList.index(of: nameOfUser) {
-            userList.remove(at: index)
-            userDefaults.setValue(userList, forKey: userListKey)
+        } set {
+            userDefaults.set(newValue, forKey: userListKey)
         }
     }
     
@@ -65,6 +50,9 @@ class Settings: SettingsProtocol {
             return userDefaults.string(forKey: currentUserKey) ?? "ukendt-bruger"
         }
         set {
+            if(!userList.contains(newValue)) {
+                fatalError("Invalid currentUser. Not in userList.")
+            }
             userDefaults.setValue(newValue, forKey: currentUserKey)
         }
     }

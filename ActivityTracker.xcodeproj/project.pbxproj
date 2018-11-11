@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		A71106C021973B5900F44B07 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71106BF21973B5900F44B07 /* Container.swift */; };
+		A714677121987B29005A7509 /* CreateUserWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A714676F21987B29005A7509 /* CreateUserWindow.swift */; };
+		A714677221987B29005A7509 /* CreateUserWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A714677021987B29005A7509 /* CreateUserWindow.xib */; };
+		A714677421987C76005A7509 /* UserCreatedDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A714677321987C76005A7509 /* UserCreatedDelegate.swift */; };
 		A716862D2192BCF900D6657C /* SetupHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A716862C2192BCF900D6657C /* SetupHandlerProtocol.swift */; };
 		A73699D4218EE194008AF504 /* ActiveWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73699D3218EE194008AF504 /* ActiveWindow.swift */; };
 		A73699D6218EE21B008AF504 /* LoggerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73699D5218EE21B008AF504 /* LoggerProtocol.swift */; };
@@ -137,6 +140,9 @@
 /* Begin PBXFileReference section */
 		A70A39CE212C63610065B7CC /* ActivityTrackerSDU */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ActivityTrackerSDU; sourceTree = "<group>"; };
 		A71106BF21973B5900F44B07 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
+		A714676F21987B29005A7509 /* CreateUserWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserWindow.swift; sourceTree = "<group>"; };
+		A714677021987B29005A7509 /* CreateUserWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateUserWindow.xib; sourceTree = "<group>"; };
+		A714677321987C76005A7509 /* UserCreatedDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCreatedDelegate.swift; sourceTree = "<group>"; };
 		A716862C2192BCF900D6657C /* SetupHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupHandlerProtocol.swift; sourceTree = "<group>"; };
 		A73699D3218EE194008AF504 /* ActiveWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveWindow.swift; sourceTree = "<group>"; };
 		A73699D5218EE21B008AF504 /* LoggerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerProtocol.swift; sourceTree = "<group>"; };
@@ -270,6 +276,7 @@
 				A73699FE218F4658008AF504 /* UserHandlerProtocol.swift */,
 				A7896C392196C07900089A97 /* RunnerProtocol.swift */,
 				A7896C3D2196C0E800089A97 /* LaunchAtLoginProtocol.swift */,
+				A714677321987C76005A7509 /* UserCreatedDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -319,6 +326,7 @@
 				A7A6B89D21353DE8000B4E38 /* ChooseUserWindow.swift */,
 				A73AC0E521921B7E001D28A4 /* DateTimeHandler.swift */,
 				A73699FC218F14D0008AF504 /* DeviceTracker.swift */,
+				A714676F21987B29005A7509 /* CreateUserWindow.swift */,
 				A7EAAA352156626F007E942A /* Logger.swift */,
 				A75F95F8214E4A52003727F5 /* PersistenceHandler.swift */,
 				A7866E7E2137F79700626DF8 /* RequestHandler.swift */,
@@ -344,6 +352,7 @@
 				A73AA82621273FDA00D0B7FF /* Info.plist */,
 				A73AA82321273FDA00D0B7FF /* MainMenu.xib */,
 				A73AA83E212740C100D0B7FF /* StatusMenuController.swift */,
+				A714677021987B29005A7509 /* CreateUserWindow.xib */,
 			);
 			path = ActivityTrackerSDU;
 			sourceTree = "<group>";
@@ -521,6 +530,7 @@
 				A776E58321982DA800D8A864 /* Swinject.framework.dSYM in Resources */,
 				A7A6B8A021353DE8000B4E38 /* ChooseUserWindow.xib in Resources */,
 				A776E58221982DA800D8A864 /* SQLite.framework.dSYM in Resources */,
+				A714677221987B29005A7509 /* CreateUserWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -593,6 +603,7 @@
 				A73699FD218F14D0008AF504 /* DeviceTracker.swift in Sources */,
 				A73699E0218EE294008AF504 /* DeviceTrackerProtocol.swift in Sources */,
 				A73AC0E621921B7E001D28A4 /* DateTimeHandler.swift in Sources */,
+				A714677421987C76005A7509 /* UserCreatedDelegate.swift in Sources */,
 				A73699F0218EE5C3008AF504 /* DeviceUsage.swift in Sources */,
 				A7EAAA362156626F007E942A /* Logger.swift in Sources */,
 				A73699EC218EE53F008AF504 /* Credentials.swift in Sources */,
@@ -633,6 +644,7 @@
 				A73699D8218EE24F008AF504 /* ActiveWindowHandlerProtocol.swift in Sources */,
 				A73AC0DD2192171B001D28A4 /* UsageBuilderProtocol.swift in Sources */,
 				A73699FB218F08BC008AF504 /* TrackingType.swift in Sources */,
+				A714677121987B29005A7509 /* CreateUserWindow.swift in Sources */,
 				A7A6B89F21353DE8000B4E38 /* ChooseUserWindow.swift in Sources */,
 				A7B158FB217C6F57006087D4 /* SetupHandler.swift in Sources */,
 				A7BE8E88215D0B8000C0A864 /* UserHandler.swift in Sources */,

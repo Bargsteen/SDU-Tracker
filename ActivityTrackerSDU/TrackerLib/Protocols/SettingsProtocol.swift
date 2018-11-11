@@ -10,9 +10,8 @@ import Foundation
 protocol SettingsProtocol {
     var appHasBeenSetup: Bool { get set }
     
-    var userList: [String] { get }
-    func addUser(nameOfUser: String)
-    func removeUser(nameOfUser: String)
+    var userList: [String] { get set }
+    
     var userCount: Int { get }
     var currentUser: String { get set }
     
