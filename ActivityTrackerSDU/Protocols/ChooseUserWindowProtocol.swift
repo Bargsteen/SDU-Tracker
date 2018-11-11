@@ -9,5 +9,5 @@ import Foundation
 import Cocoa
 
 protocol ChooseUserWindowProtocol {
-    func showWithCallback(onUserChange: @escaping (String, String) -> ())
+    func show()
 }

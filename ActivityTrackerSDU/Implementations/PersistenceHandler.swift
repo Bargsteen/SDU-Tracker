@@ -92,13 +92,10 @@ class PersistenceHandler: PersistenceHandlerProtocol {
     
     func fetchDeviceUsages(upTo: Int) -> [DeviceUsage] {
         do {
-            var deviceUsagesFromDb: [DeviceUsage] = []
-            for usageFromDb in try db.prepare(deviceUsageTable.order(timeStamp).limit(upTo)) {
-                deviceUsagesFromDb.append(DeviceUsage(participantIdentifier: usageFromDb[participantIdentifier], deviceModelName: settings.deviceModelName,
+            return Array(try db.prepare(deviceUsageTable.order(timeStamp).limit(upTo))).map { usageFromDb in
+                DeviceUsage(participantIdentifier: usageFromDb[participantIdentifier], deviceModelName: settings.deviceModelName,
                                                       timeStamp: usageFromDb[timeStamp], userCount: usageFromDb[userCount],
-                                                      eventType: EventType(rawValue: usageFromDb[eventType])!, id: usageFromDb[id]))
-            
-            return deviceUsagesFromDb
+                                                      eventType: EventType(rawValue: usageFromDb[eventType])!, id: usageFromDb[id])
             }
         } catch {
             logger.logError("Persistence fetchDeviceUsages: \(error)")
@@ -108,14 +105,11 @@ class PersistenceHandler: PersistenceHandlerProtocol {
     
     
     func fetchAppUsages(upTo: Int) -> [AppUsage] {
-        do {
-            var appUsagesFromDb: [AppUsage] = []
-            for usageFromDb in try db.prepare(appUsageTable.order(timeStamp).limit(upTo)) {
-                appUsagesFromDb.append(AppUsage(participantIdentifier: usageFromDb[participantIdentifier], deviceModelName: settings.deviceModelName,
-                                                timeStamp: usageFromDb[timeStamp], userCount: usageFromDb[userCount], package: usageFromDb[package],
-                                                duration: usageFromDb[duration], id: usageFromDb[id]))
-                
-                return appUsagesFromDb
+        do {            
+            return Array(try db.prepare(appUsageTable.order(timeStamp).limit(upTo))).map { usageFromDb in
+                AppUsage(participantIdentifier: usageFromDb[participantIdentifier], deviceModelName: settings.deviceModelName,
+                         timeStamp: usageFromDb[timeStamp], userCount: usageFromDb[userCount], package: usageFromDb[package],
+                         duration: usageFromDb[duration], id: usageFromDb[id])
             }
         } catch {
             logger.logError("Persistence fetchAllAppUsages: \(error)")

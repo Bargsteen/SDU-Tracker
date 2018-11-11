@@ -27,29 +27,32 @@ class StatusMenuController: NSObject, UserChangedDelegate {
     }
     
     override func awakeFromNib() {
+        self.settings.subscribeToUserChanges(self)
         setupMenuValuesAndIcon()
-        userHandler.subscribeToUserChanges(self)
     }
-
     
     // -- CLICK HANDLER FUNCTIONS
     @IBAction func chooseUserClicked(_ sender: NSMenuItem) {
-        userHandler.showChooseUserWindow()
+        if(settings.appHasBeenSetup) {
+            userHandler.showChooseUserWindow()
+        }
     }
     
     func userChanged(previousUser: String, newUser: String) {
-        currentUserMenuItem.title = "Bruger: " + newUser
+        currentUserMenuItem.title = "Valgte bruger: " + newUser
     }
     
-    
-    // Local helpers
     func setupMenuValuesAndIcon() {
         let icon = #imageLiteral(resourceName: "statusIcon")
         icon.isTemplate = true // best for dark mode
         statusItem.image = icon
         statusItem.menu = statusMenu
         
-        currentUserMenuItem.title = "Bruger: " + settings.currentUser
+        if(settings.appHasBeenSetup){
+            currentUserMenuItem.title = "Valgte bruger: " + settings.currentUser
+        } else {
+            currentUserMenuItem.title = "Mangler opsætning"
+        }
     }
 }
 

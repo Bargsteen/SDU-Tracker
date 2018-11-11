@@ -11,6 +11,7 @@
 		A714677121987B29005A7509 /* CreateUserWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A714676F21987B29005A7509 /* CreateUserWindow.swift */; };
 		A714677221987B29005A7509 /* CreateUserWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A714677021987B29005A7509 /* CreateUserWindow.xib */; };
 		A714677421987C76005A7509 /* UserCreatedDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A714677321987C76005A7509 /* UserCreatedDelegate.swift */; };
+		A714677921989F7C005A7509 /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A714677821989F7B005A7509 /* GeneratedMocks.swift */; };
 		A716862D2192BCF900D6657C /* SetupHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A716862C2192BCF900D6657C /* SetupHandlerProtocol.swift */; };
 		A73699D4218EE194008AF504 /* ActiveWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73699D3218EE194008AF504 /* ActiveWindow.swift */; };
 		A73699D6218EE21B008AF504 /* LoggerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73699D5218EE21B008AF504 /* LoggerProtocol.swift */; };
@@ -56,7 +57,6 @@
 		A776E58921982E0A00D8A864 /* Swinject.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A776E58421982DD500D8A864 /* Swinject.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A776E58B219834AD00D8A864 /* PersistenceHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A776E58A219834AD00D8A864 /* PersistenceHandlerTests.swift */; };
 		A776E58D2198355300D8A864 /* LoggerStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = A776E58C2198355300D8A864 /* LoggerStub.swift */; };
-		A776E58F2198398600D8A864 /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A776E58E2198398600D8A864 /* GeneratedMocks.swift */; };
 		A776E59021983A6B00D8A864 /* Cuckoo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7896C2D2196B56600089A97 /* Cuckoo.framework */; };
 		A776E59121983B0600D8A864 /* Cuckoo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A7896C2D2196B56600089A97 /* Cuckoo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A776E59221983B0D00D8A864 /* Cuckoo.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = A7896C332196B6F300089A97 /* Cuckoo.framework.dSYM */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
@@ -143,6 +143,7 @@
 		A714676F21987B29005A7509 /* CreateUserWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserWindow.swift; sourceTree = "<group>"; };
 		A714677021987B29005A7509 /* CreateUserWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateUserWindow.xib; sourceTree = "<group>"; };
 		A714677321987C76005A7509 /* UserCreatedDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCreatedDelegate.swift; sourceTree = "<group>"; };
+		A714677821989F7B005A7509 /* GeneratedMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
 		A716862C2192BCF900D6657C /* SetupHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupHandlerProtocol.swift; sourceTree = "<group>"; };
 		A73699D3218EE194008AF504 /* ActiveWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveWindow.swift; sourceTree = "<group>"; };
 		A73699D5218EE21B008AF504 /* LoggerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerProtocol.swift; sourceTree = "<group>"; };
@@ -193,7 +194,6 @@
 		A776E58521982DD500D8A864 /* SQLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SQLite.framework; path = Carthage/Build/Mac/SQLite.framework; sourceTree = "<group>"; };
 		A776E58A219834AD00D8A864 /* PersistenceHandlerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceHandlerTests.swift; sourceTree = "<group>"; };
 		A776E58C2198355300D8A864 /* LoggerStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerStub.swift; sourceTree = "<group>"; };
-		A776E58E2198398600D8A864 /* GeneratedMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
 		A7829986215CBC6C003903AE /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		A782998F215CC78A003903AE /* CwlUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CwlUtils.framework; path = Carthage/Build/Mac/CwlUtils.framework; sourceTree = "<group>"; };
 		A7829992215CC78A003903AE /* CocoaLumberjack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjack.framework; path = Carthage/Build/Mac/CocoaLumberjack.framework; sourceTree = "<group>"; };
@@ -254,6 +254,16 @@
 			path = Container;
 			sourceTree = "<group>";
 		};
+		A714677521988F15005A7509 /* Windows */ = {
+			isa = PBXGroup;
+			children = (
+				A7A6B89E21353DE8000B4E38 /* ChooseUserWindow.xib */,
+				A73AA82321273FDA00D0B7FF /* MainMenu.xib */,
+				A714677021987B29005A7509 /* CreateUserWindow.xib */,
+			);
+			path = Windows;
+			sourceTree = "<group>";
+		};
 		A73699CD218EDC83008AF504 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -279,19 +289,6 @@
 				A714677321987C76005A7509 /* UserCreatedDelegate.swift */,
 			);
 			path = Protocols;
-			sourceTree = "<group>";
-		};
-		A73699D0218EDEC9008AF504 /* TrackerLib */ = {
-			isa = PBXGroup;
-			children = (
-				A71106BE21973B4800F44B07 /* Container */,
-				A73699D1218EE0FE008AF504 /* Enums */,
-				A73699F7218EFE35008AF504 /* Implementations */,
-				A78299B9215CC91C003903AE /* Misc */,
-				A73699D2218EE15D008AF504 /* Models */,
-				A73699CD218EDC83008AF504 /* Protocols */,
-			);
-			path = TrackerLib;
 			sourceTree = "<group>";
 		};
 		A73699D1218EE0FE008AF504 /* Enums */ = {
@@ -320,6 +317,7 @@
 		A73699F7218EFE35008AF504 /* Implementations */ = {
 			isa = PBXGroup;
 			children = (
+				A73AA83E212740C100D0B7FF /* StatusMenuController.swift */,
 				A78F236721416CE900DC2489 /* ActiveWindowHandler.swift */,
 				A7369A02218F4B5F008AF504 /* AlertHandler.swift */,
 				A7369A08218F65A6008AF504 /* AppTracker.swift */,
@@ -344,15 +342,17 @@
 		A73AA81E21273FD900D0B7FF /* ActivityTrackerSDU */ = {
 			isa = PBXGroup;
 			children = (
-				A73699D0218EDEC9008AF504 /* TrackerLib */,
+				A714677521988F15005A7509 /* Windows */,
+				A71106BE21973B4800F44B07 /* Container */,
+				A73699D1218EE0FE008AF504 /* Enums */,
+				A73699F7218EFE35008AF504 /* Implementations */,
+				A78299B9215CC91C003903AE /* Misc */,
+				A73699D2218EE15D008AF504 /* Models */,
+				A73699CD218EDC83008AF504 /* Protocols */,
 				A73AA82721273FDA00D0B7FF /* ActivityTrackerSDU.entitlements */,
 				A73AA81F21273FD900D0B7FF /* AppDelegate.swift */,
 				A73AA82121273FDA00D0B7FF /* Assets.xcassets */,
-				A7A6B89E21353DE8000B4E38 /* ChooseUserWindow.xib */,
 				A73AA82621273FDA00D0B7FF /* Info.plist */,
-				A73AA82321273FDA00D0B7FF /* MainMenu.xib */,
-				A73AA83E212740C100D0B7FF /* StatusMenuController.swift */,
-				A714677021987B29005A7509 /* CreateUserWindow.xib */,
 			);
 			path = ActivityTrackerSDU;
 			sourceTree = "<group>";
@@ -360,7 +360,7 @@
 		A75EB17821942FA900EA9721 /* ActivityTrackerSDUTests */ = {
 			isa = PBXGroup;
 			children = (
-				A776E58E2198398600D8A864 /* GeneratedMocks.swift */,
+				A714677821989F7B005A7509 /* GeneratedMocks.swift */,
 				A776E58A219834AD00D8A864 /* PersistenceHandlerTests.swift */,
 				A7896C352196BD5900089A97 /* ActivityTrackerSDUTests.swift */,
 				A75EB17B21942FA900EA9721 /* Info.plist */,
@@ -559,7 +559,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Define output file. Change \"$PROJECT_DIR/${PROJECT_NAME}Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"$PROJECT_DIR/ActivityTrackerSDUTests/GeneratedMocks.swift\"\necho \"Generated Mocks File = $OUTPUT_FILE\"\n\n# Define input directory. Change \"${PROJECT_DIR}/${PROJECT_NAME}\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"${PROJECT_DIR}/ActivityTrackerSDU\"\necho \"Mocks Input Directory = $INPUT_DIR\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n\"Carthage/Checkouts/Cuckoo/run\" generate --testable \"ActivityTrackerSDU\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"$INPUT_DIR/TrackerLib/Protocols/SettingsProtocol.swift\" \\\n\"$INPUT_DIR/TrackerLib/Protocols/TrackerProtocol.swift\" \\\n\"$INPUT_DIR/TrackerLib/Protocols/DeviceTrackerProtocol.swift\"\n\n\n# ... and so forth, the last line should never end with a backslash\n\n# After running once, locate `GeneratedMocks.swift` and drag it into your Xcode test target group.\n";
+			shellScript = "# Define output file. Change \"$PROJECT_DIR/${PROJECT_NAME}Tests\" to your test's root source folder, if it's not the default name.\nOUTPUT_FILE=\"$PROJECT_DIR/ActivityTrackerSDUTests/GeneratedMocks.swift\"\necho \"Generated Mocks File = $OUTPUT_FILE\"\n\n# Define input directory. Change \"${PROJECT_DIR}/${PROJECT_NAME}\" to your project's root source folder, if it's not the default name.\nINPUT_DIR=\"${PROJECT_DIR}/ActivityTrackerSDU\"\necho \"Mocks Input Directory = $INPUT_DIR\"\n\n# Generate mock files, include as many input files as you'd like to create mocks for.\n\"Carthage/Checkouts/Cuckoo/run\" generate --testable \"ActivityTrackerSDU\" \\\n--output \"${OUTPUT_FILE}\" \\\n\"$INPUT_DIR/Protocols/SettingsProtocol.swift\" \\\n\"$INPUT_DIR/Protocols/TrackerProtocol.swift\" \\\n\"$INPUT_DIR/Protocols/DeviceTrackerProtocol.swift\"\n\n\n# ... and so forth, the last line should never end with a backslash\n\n# After running once, locate `GeneratedMocks.swift` and drag it into your Xcode test target group.\n";
 		};
 		A7866E782136B7A200626DF8 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -659,7 +659,7 @@
 				A7896C362196BD5900089A97 /* ActivityTrackerSDUTests.swift in Sources */,
 				A776E58D2198355300D8A864 /* LoggerStub.swift in Sources */,
 				A776E58B219834AD00D8A864 /* PersistenceHandlerTests.swift in Sources */,
-				A776E58F2198398600D8A864 /* GeneratedMocks.swift in Sources */,
+				A714677921989F7C005A7509 /* GeneratedMocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

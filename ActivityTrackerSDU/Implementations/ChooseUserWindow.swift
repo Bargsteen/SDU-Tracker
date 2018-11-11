@@ -11,24 +11,20 @@ class ChooseUserWindow: NSWindowController, NSWindowDelegate, ChooseUserWindowPr
     
     private var settings: SettingsProtocol
     
-    private var onUserChangeCallBack : ((String, String) -> ())?
     private var createUserWindow: CreateUserWindow
     
     @IBOutlet weak var userListMenu: NSPopUpButton!
     @IBOutlet weak var oneUserRequiredWarning: NSTextField!
     
     // Used to keep track of changes before save button is pressed
-    private var localUserList: [String]
-    private var localCurrentUser: String
+    private var localUserList: [String]!
+    private var localCurrentUser: String!
     
     private func stateIsValid() -> Bool {return !localUserList.isEmpty && localCurrentUser != "" }
     
     
     init(settings: SettingsProtocol) {
         self.settings = settings
-        
-        self.localUserList = settings.userList
-        self.localCurrentUser = settings.currentUser
         
         self.createUserWindow = CreateUserWindow()
         
@@ -40,9 +36,8 @@ class ChooseUserWindow: NSWindowController, NSWindowDelegate, ChooseUserWindowPr
         fatalError("init(coder:) has not been implemented. Use init()")
     }
     
-    func showWithCallback(onUserChange: @escaping (String, String) -> ()){
+    func show(){
         self.showWindow(nil)
-        onUserChangeCallBack = onUserChange
     }
     
     func userCreated(newUser: String) {
@@ -66,6 +61,9 @@ class ChooseUserWindow: NSWindowController, NSWindowDelegate, ChooseUserWindowPr
         NSApp.activate(ignoringOtherApps: true)
         
         self.createUserWindow.userCreatedDelegate = self
+        
+        self.localUserList = settings.userList
+        self.localCurrentUser = settings.currentUser
         
         displayErrorIfStateIsInvalid()
         
@@ -130,15 +128,17 @@ class ChooseUserWindow: NSWindowController, NSWindowDelegate, ChooseUserWindowPr
                 let previousCurrentUser = settings.currentUser
                 if(newCurrentUser != previousCurrentUser) {
                     settings.currentUser = newCurrentUser
-                    onUserChangeCallBack?(previousCurrentUser, newCurrentUser)
                 }
             }
             
-            print("UserList: \(settings.userList)")
-            print("CurrentUser: \(settings.currentUser)")
-            
             self.close()
         }
+    }
+    
+    func windowWillClose(_ notification: Notification) {
+        localCurrentUser = settings.currentUser
+        localUserList = settings.userList
+        updateUserListMenuContents()
     }
     
     private func showAreYouSurePrompt() -> Bool {

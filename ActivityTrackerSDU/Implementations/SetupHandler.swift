@@ -101,9 +101,9 @@ class SetupHandler: SetupHandlerProtocol {
     private func parseUsers(_ users : String) -> [String]? {
         if(users.first == "[" && users.last == "]"){
             let strippedOfBrackets = String(String(users.dropFirst()).dropLast())
-            let users = strippedOfBrackets.components(separatedBy: ", ")
-            if(!users.isEmpty && users.first != "") {
-                return users
+            let userList = strippedOfBrackets.components(separatedBy: ", ")
+            if(!userList.isEmpty && userList.first != "") {
+                return userList
             }
         }
        return nil

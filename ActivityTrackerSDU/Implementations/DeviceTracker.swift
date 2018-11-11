@@ -26,7 +26,7 @@ class DeviceTracker: DeviceTrackerProtocol, UserChangedDelegate {
         self.userHandler = userHandler
         
         deviceTrackingIsEnabled = false
-        userHandler.subscribeToUserChanges(self)
+        settings.subscribeToUserChanges(self)
     }
     
     func startTracking() {

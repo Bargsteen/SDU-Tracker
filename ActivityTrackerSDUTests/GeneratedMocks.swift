@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: ActivityTrackerSDU/TrackerLib/Protocols/DeviceTrackerProtocol.swift at 2018-11-11 10:39:08 +0000
+// MARK: - Mocks generated from file: ActivityTrackerSDU/Protocols/DeviceTrackerProtocol.swift at 2018-11-11 17:45:53 +0000
 
 //
 //  DeviceTrackerProtocol.swift
@@ -127,7 +127,7 @@ class MockDeviceTrackerProtocol: DeviceTrackerProtocol, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: ActivityTrackerSDU/TrackerLib/Protocols/SettingsProtocol.swift at 2018-11-11 10:39:08 +0000
+// MARK: - Mocks generated from file: ActivityTrackerSDU/Protocols/SettingsProtocol.swift at 2018-11-11 17:45:53 +0000
 
 //
 //  SettingsProtocol.swift
@@ -188,6 +188,16 @@ class MockSettingsProtocol: SettingsProtocol, Cuckoo.ProtocolMock {
                     Cuckoo.MockManager.crashOnProtocolSuperclassCall()
                     ,
                 defaultCall: __defaultImplStub!.userList)
+        }
+        
+        set {
+            cuckoo_manager.setter("userList",
+                value: newValue,
+                superclassCall:
+                    
+                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
+                    ,
+                defaultCall: __defaultImplStub!.userList = newValue)
         }
         
     }
@@ -340,31 +350,17 @@ class MockSettingsProtocol: SettingsProtocol, Cuckoo.ProtocolMock {
     
 
     
-    // ["name": "addUser", "returnSignature": "", "fullyQualifiedName": "addUser(nameOfUser: String)", "parameterSignature": "nameOfUser: String", "parameterSignatureWithoutNames": "nameOfUser: String", "inputTypes": "String", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "nameOfUser", "call": "nameOfUser: nameOfUser", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("nameOfUser"), name: "nameOfUser", type: "String", range: CountableRange(261..<279), nameRange: CountableRange(261..<271))], "returnType": "Void", "isOptional": false, "escapingParameterNames": "nameOfUser", "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
-     func addUser(nameOfUser: String)  {
+    // ["name": "subscribeToUserChanges", "returnSignature": "", "fullyQualifiedName": "subscribeToUserChanges(_: UserChangedDelegate)", "parameterSignature": "_ newListener: UserChangedDelegate", "parameterSignatureWithoutNames": "newListener: UserChangedDelegate", "inputTypes": "UserChangedDelegate", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "newListener", "call": "newListener", "parameters": [CuckooGeneratorFramework.MethodParameter(label: nil, name: "newListener", type: "UserChangedDelegate", range: CountableRange(356..<390), nameRange: CountableRange(0..<0))], "returnType": "Void", "isOptional": false, "escapingParameterNames": "newListener", "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
+     func subscribeToUserChanges(_ newListener: UserChangedDelegate)  {
         
-            return cuckoo_manager.call("addUser(nameOfUser: String)",
-                parameters: (nameOfUser),
-                escapingParameters: (nameOfUser),
+            return cuckoo_manager.call("subscribeToUserChanges(_: UserChangedDelegate)",
+                parameters: (newListener),
+                escapingParameters: (newListener),
                 superclassCall:
                     
                     Cuckoo.MockManager.crashOnProtocolSuperclassCall()
                     ,
-                defaultCall: __defaultImplStub!.addUser(nameOfUser: nameOfUser))
-        
-    }
-    
-    // ["name": "removeUser", "returnSignature": "", "fullyQualifiedName": "removeUser(nameOfUser: String)", "parameterSignature": "nameOfUser: String", "parameterSignatureWithoutNames": "nameOfUser: String", "inputTypes": "String", "isThrowing": false, "isInit": false, "isOverriding": false, "hasClosureParams": false, "@type": "ProtocolMethod", "accessibility": "", "parameterNames": "nameOfUser", "call": "nameOfUser: nameOfUser", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("nameOfUser"), name: "nameOfUser", type: "String", range: CountableRange(301..<319), nameRange: CountableRange(301..<311))], "returnType": "Void", "isOptional": false, "escapingParameterNames": "nameOfUser", "stubFunction": "Cuckoo.ProtocolStubNoReturnFunction"]
-     func removeUser(nameOfUser: String)  {
-        
-            return cuckoo_manager.call("removeUser(nameOfUser: String)",
-                parameters: (nameOfUser),
-                escapingParameters: (nameOfUser),
-                superclassCall:
-                    
-                    Cuckoo.MockManager.crashOnProtocolSuperclassCall()
-                    ,
-                defaultCall: __defaultImplStub!.removeUser(nameOfUser: nameOfUser))
+                defaultCall: __defaultImplStub!.subscribeToUserChanges(newListener))
         
     }
     
@@ -394,7 +390,7 @@ class MockSettingsProtocol: SettingsProtocol, Cuckoo.ProtocolMock {
 	        return .init(manager: cuckoo_manager, name: "appHasBeenSetup")
 	    }
 	    
-	    var userList: Cuckoo.ProtocolToBeStubbedReadOnlyProperty<MockSettingsProtocol, [String]> {
+	    var userList: Cuckoo.ProtocolToBeStubbedProperty<MockSettingsProtocol, [String]> {
 	        return .init(manager: cuckoo_manager, name: "userList")
 	    }
 	    
@@ -431,14 +427,9 @@ class MockSettingsProtocol: SettingsProtocol, Cuckoo.ProtocolMock {
 	    }
 	    
 	    
-	    func addUser<M1: Cuckoo.Matchable>(nameOfUser: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(String)> where M1.MatchedType == String {
-	        let matchers: [Cuckoo.ParameterMatcher<(String)>] = [wrap(matchable: nameOfUser) { $0 }]
-	        return .init(stub: cuckoo_manager.createStub(for: MockSettingsProtocol.self, method: "addUser(nameOfUser: String)", parameterMatchers: matchers))
-	    }
-	    
-	    func removeUser<M1: Cuckoo.Matchable>(nameOfUser: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(String)> where M1.MatchedType == String {
-	        let matchers: [Cuckoo.ParameterMatcher<(String)>] = [wrap(matchable: nameOfUser) { $0 }]
-	        return .init(stub: cuckoo_manager.createStub(for: MockSettingsProtocol.self, method: "removeUser(nameOfUser: String)", parameterMatchers: matchers))
+	    func subscribeToUserChanges<M1: Cuckoo.Matchable>(_ newListener: M1) -> Cuckoo.ProtocolStubNoReturnFunction<(UserChangedDelegate)> where M1.MatchedType == UserChangedDelegate {
+	        let matchers: [Cuckoo.ParameterMatcher<(UserChangedDelegate)>] = [wrap(matchable: newListener) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockSettingsProtocol.self, method: "subscribeToUserChanges(_: UserChangedDelegate)", parameterMatchers: matchers))
 	    }
 	    
 	    func makeParticipantIdentifierForSpecificUser<M1: Cuckoo.Matchable>(user: M1) -> Cuckoo.ProtocolStubFunction<(String), String> where M1.MatchedType == String {
@@ -464,7 +455,7 @@ class MockSettingsProtocol: SettingsProtocol, Cuckoo.ProtocolMock {
 	        return .init(manager: cuckoo_manager, name: "appHasBeenSetup", callMatcher: callMatcher, sourceLocation: sourceLocation)
 	    }
 	    
-	    var userList: Cuckoo.VerifyReadOnlyProperty<[String]> {
+	    var userList: Cuckoo.VerifyProperty<[String]> {
 	        return .init(manager: cuckoo_manager, name: "userList", callMatcher: callMatcher, sourceLocation: sourceLocation)
 	    }
 	    
@@ -503,15 +494,9 @@ class MockSettingsProtocol: SettingsProtocol, Cuckoo.ProtocolMock {
 	
 	    
 	    @discardableResult
-	    func addUser<M1: Cuckoo.Matchable>(nameOfUser: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == String {
-	        let matchers: [Cuckoo.ParameterMatcher<(String)>] = [wrap(matchable: nameOfUser) { $0 }]
-	        return cuckoo_manager.verify("addUser(nameOfUser: String)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
-	    }
-	    
-	    @discardableResult
-	    func removeUser<M1: Cuckoo.Matchable>(nameOfUser: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == String {
-	        let matchers: [Cuckoo.ParameterMatcher<(String)>] = [wrap(matchable: nameOfUser) { $0 }]
-	        return cuckoo_manager.verify("removeUser(nameOfUser: String)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    func subscribeToUserChanges<M1: Cuckoo.Matchable>(_ newListener: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == UserChangedDelegate {
+	        let matchers: [Cuckoo.ParameterMatcher<(UserChangedDelegate)>] = [wrap(matchable: newListener) { $0 }]
+	        return cuckoo_manager.verify("subscribeToUserChanges(_: UserChangedDelegate)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
 	    }
 	    
 	    @discardableResult
@@ -539,6 +524,8 @@ class MockSettingsProtocol: SettingsProtocol, Cuckoo.ProtocolMock {
         get {
             return DefaultValueRegistry.defaultValue(for: ([String]).self)
         }
+        
+        set { }
         
     }
     
@@ -610,11 +597,7 @@ class MockSettingsProtocol: SettingsProtocol, Cuckoo.ProtocolMock {
     
 
     
-     func addUser(nameOfUser: String)  {
-        return DefaultValueRegistry.defaultValue(for: Void.self)
-    }
-    
-     func removeUser(nameOfUser: String)  {
+     func subscribeToUserChanges(_ newListener: UserChangedDelegate)  {
         return DefaultValueRegistry.defaultValue(for: Void.self)
     }
     
@@ -625,7 +608,7 @@ class MockSettingsProtocol: SettingsProtocol, Cuckoo.ProtocolMock {
 }
 
 
-// MARK: - Mocks generated from file: ActivityTrackerSDU/TrackerLib/Protocols/TrackerProtocol.swift at 2018-11-11 10:39:08 +0000
+// MARK: - Mocks generated from file: ActivityTrackerSDU/Protocols/TrackerProtocol.swift at 2018-11-11 17:45:53 +0000
 
 //
 //  TrackerProtocol.swift

@@ -51,7 +51,7 @@ class SendOrSaveHandler: SendOrSaveHandlerProtocol {
     
     @objc func sendSomeSavedUsages(limitOfEach: Int) {
         // Fetch up to limitOfEach of app and devices usages and try to send them.
-        // If any of the requests fail, they are put back into persistence.
+        // If it succeeds, they are deleted from persistence.
         
         let appUsages = persistenceHandler.fetchAppUsages(upTo: limitOfEach)
         let deviceUsages = persistenceHandler.fetchDeviceUsages(upTo: limitOfEach)

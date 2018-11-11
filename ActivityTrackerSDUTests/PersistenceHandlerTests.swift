@@ -160,6 +160,46 @@ class PersistenceHandlerTests: XCTestCase {
         XCTAssertNotNil(fetchedDeviceUsage?.id)
     }
     
+    func testFetchSeveralAppUsagesAtOnce() {
+        // Arrange
+        let appUsage1 = makeTestAppUsage(participantIdentifier: "1", timeStamp: nil)
+        let appUsage2 = makeTestAppUsage(participantIdentifier: "2", timeStamp: nil)
+        let appUsage3 = makeTestAppUsage(participantIdentifier: "3", timeStamp: nil)
+        let appUsage4 = makeTestAppUsage(participantIdentifier: "4", timeStamp: nil)
+        
+        persistenceHandler.save(appUsage1)
+        persistenceHandler.save(appUsage2)
+        persistenceHandler.save(appUsage3)
+        persistenceHandler.save(appUsage4)
+        
+        // Act
+        let fetchedAppUsages = persistenceHandler.fetchAppUsages(upTo: 10)
+        
+        // Assert
+        XCTAssertTrue(fetchedAppUsages.count == 4)
+        
+    }
+    
+    func testFetchSeveralDeviceUsagesAtOnce() {
+        // Arrange
+        let deviceUsage1 = makeTestDeviceUsage(participantIdentifier: "1", timeStamp: nil)
+        let deviceUsage2 = makeTestDeviceUsage(participantIdentifier: "2", timeStamp: nil)
+        let deviceUsage3 = makeTestDeviceUsage(participantIdentifier: "3", timeStamp: nil)
+        let deviceUsage4 = makeTestDeviceUsage(participantIdentifier: "4", timeStamp: nil)
+        
+        persistenceHandler.save(deviceUsage1)
+        persistenceHandler.save(deviceUsage2)
+        persistenceHandler.save(deviceUsage3)
+        persistenceHandler.save(deviceUsage4)
+        
+        // Act
+        let fetchedDeviceUsages = persistenceHandler.fetchDeviceUsages(upTo: 10)
+        
+        // Assert
+        XCTAssertTrue(fetchedDeviceUsages.count == 4)
+        
+    }
+    
     private func makeTestDeviceUsage(participantIdentifier: String, timeStamp: Date?) -> DeviceUsage {
         return DeviceUsage(participantIdentifier: participantIdentifier, deviceModelName: "TestDevice", timeStamp: timeStamp ?? Date(), userCount: 1, eventType: .started)
     }
