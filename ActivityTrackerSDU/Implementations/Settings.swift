@@ -11,9 +11,11 @@ import CwlUtils
 class Settings: SettingsProtocol {
     
     private let dateTimeHandler: DateTimeHandlerProtocol
+    private var appHasBeenSetupChangedSubscribers: [AppHasBeenSetupDelegate]
     
     init(dateTimeHandler: DateTimeHandlerProtocol) {
         self.dateTimeHandler = dateTimeHandler
+        self.appHasBeenSetupChangedSubscribers = []
     }
     
     var appHasBeenSetup: Bool {
@@ -22,7 +24,16 @@ class Settings: SettingsProtocol {
         }
         set {
             userDefaults.set(newValue, forKey: appHasBeenSetupKey)
+            notifySubscribers(value: newValue)
         }
+    }
+    
+    func subscribeToAppHasBeenSetupChanges(subscriber: AppHasBeenSetupDelegate) {
+        appHasBeenSetupChangedSubscribers.append(subscriber)
+    }
+    
+    private func notifySubscribers(value: Bool){
+        appHasBeenSetupChangedSubscribers.forEach { s in s.onAppHasBeenSetupChanged(value: value) }
     }
     
     var userList: [String] {

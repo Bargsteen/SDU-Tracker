@@ -85,6 +85,7 @@
 		A7A6B89F21353DE8000B4E38 /* ChooseUserWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A6B89D21353DE8000B4E38 /* ChooseUserWindow.swift */; };
 		A7A6B8A021353DE8000B4E38 /* ChooseUserWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7A6B89E21353DE8000B4E38 /* ChooseUserWindow.xib */; };
 		A7B158FB217C6F57006087D4 /* SetupHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B158FA217C6F57006087D4 /* SetupHandler.swift */; };
+		A7B6F89D21A73E68008C9699 /* AppHasBeenSetuoDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B6F89C21A73E68008C9699 /* AppHasBeenSetuoDelegate.swift */; };
 		A7BE8E88215D0B8000C0A864 /* UserHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BE8E87215D0B8000C0A864 /* UserHandler.swift */; };
 		A7D38DDD21A6F2A2001D1891 /* UserSessionChangesDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D38DDC21A6F2A2001D1891 /* UserSessionChangesDelegate.swift */; };
 		A7D38DDF21A6F99A001D1891 /* ChooseUserWindowClosedDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D38DDE21A6F99A001D1891 /* ChooseUserWindowClosedDelegate.swift */; };
@@ -217,6 +218,7 @@
 		A7A6B89D21353DE8000B4E38 /* ChooseUserWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseUserWindow.swift; sourceTree = "<group>"; };
 		A7A6B89E21353DE8000B4E38 /* ChooseUserWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseUserWindow.xib; sourceTree = "<group>"; };
 		A7B158FA217C6F57006087D4 /* SetupHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupHandler.swift; sourceTree = "<group>"; };
+		A7B6F89C21A73E68008C9699 /* AppHasBeenSetuoDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHasBeenSetuoDelegate.swift; sourceTree = "<group>"; };
 		A7BE8E87215D0B8000C0A864 /* UserHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHandler.swift; sourceTree = "<group>"; };
 		A7D38DDC21A6F2A2001D1891 /* UserSessionChangesDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionChangesDelegate.swift; sourceTree = "<group>"; };
 		A7D38DDE21A6F99A001D1891 /* ChooseUserWindowClosedDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseUserWindowClosedDelegate.swift; sourceTree = "<group>"; };
@@ -287,9 +289,6 @@
 				A73699FE218F4658008AF504 /* UserHandlerProtocol.swift */,
 				A7896C392196C07900089A97 /* RunnerProtocol.swift */,
 				A7896C3D2196C0E800089A97 /* LaunchAtLoginProtocol.swift */,
-				A714677321987C76005A7509 /* UserCreatedDelegate.swift */,
-				A7D38DDC21A6F2A2001D1891 /* UserSessionChangesDelegate.swift */,
-				A7D38DDE21A6F99A001D1891 /* ChooseUserWindowClosedDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -345,17 +344,18 @@
 		A73AA81E21273FD900D0B7FF /* ActivityTrackerSDU */ = {
 			isa = PBXGroup;
 			children = (
-				A714677521988F15005A7509 /* Windows */,
-				A71106BE21973B4800F44B07 /* Container */,
-				A73699D1218EE0FE008AF504 /* Enums */,
-				A73699F7218EFE35008AF504 /* Implementations */,
-				A78299B9215CC91C003903AE /* Misc */,
-				A73699D2218EE15D008AF504 /* Models */,
-				A73699CD218EDC83008AF504 /* Protocols */,
 				A73AA82721273FDA00D0B7FF /* ActivityTrackerSDU.entitlements */,
 				A73AA81F21273FD900D0B7FF /* AppDelegate.swift */,
 				A73AA82121273FDA00D0B7FF /* Assets.xcassets */,
+				A71106BE21973B4800F44B07 /* Container */,
+				A7B6F89B21A73E24008C9699 /* Delegates */,
+				A73699D1218EE0FE008AF504 /* Enums */,
+				A73699F7218EFE35008AF504 /* Implementations */,
 				A73AA82621273FDA00D0B7FF /* Info.plist */,
+				A78299B9215CC91C003903AE /* Misc */,
+				A73699D2218EE15D008AF504 /* Models */,
+				A73699CD218EDC83008AF504 /* Protocols */,
+				A714677521988F15005A7509 /* Windows */,
 			);
 			path = ActivityTrackerSDU;
 			sourceTree = "<group>";
@@ -402,6 +402,17 @@
 				A776E58121982DA800D8A864 /* Swinject.framework.dSYM */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A7B6F89B21A73E24008C9699 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				A714677321987C76005A7509 /* UserCreatedDelegate.swift */,
+				A7D38DDC21A6F2A2001D1891 /* UserSessionChangesDelegate.swift */,
+				A7D38DDE21A6F99A001D1891 /* ChooseUserWindowClosedDelegate.swift */,
+				A7B6F89C21A73E68008C9699 /* AppHasBeenSetuoDelegate.swift */,
+			);
+			path = Delegates;
 			sourceTree = "<group>";
 		};
 		OBJ_27 /* Products */ = {
@@ -651,6 +662,7 @@
 				A714677121987B29005A7509 /* CreateUserWindow.swift in Sources */,
 				A7A6B89F21353DE8000B4E38 /* ChooseUserWindow.swift in Sources */,
 				A7B158FB217C6F57006087D4 /* SetupHandler.swift in Sources */,
+				A7B6F89D21A73E68008C9699 /* AppHasBeenSetuoDelegate.swift in Sources */,
 				A7BE8E88215D0B8000C0A864 /* UserHandler.swift in Sources */,
 				A73699DE218EE284008AF504 /* AppTrackerProtocol.swift in Sources */,
 			);

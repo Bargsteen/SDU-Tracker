@@ -10,6 +10,8 @@ import Foundation
 protocol SettingsProtocol {
     var appHasBeenSetup: Bool { get set }
     
+    func subscribeToAppHasBeenSetupChanges(subscriber: AppHasBeenSetupDelegate)
+    
     var userList: [String] { get set }
     
     var userCount: Int { get }

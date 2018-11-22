@@ -8,7 +8,7 @@
 import Cocoa
 import Foundation
 
-class StatusMenuController: NSObject, UserSessionChangesDelegate {
+class StatusMenuController: NSObject, UserSessionChangesDelegate, AppHasBeenSetupDelegate {
     
     @IBOutlet private weak var statusMenu: NSMenu!
 
@@ -28,6 +28,7 @@ class StatusMenuController: NSObject, UserSessionChangesDelegate {
     
     override func awakeFromNib() {
         setupMenuValuesAndIcon()
+        settings.subscribeToAppHasBeenSetupChanges(subscriber: self)
     }
     
     // -- CLICK HANDLER FUNCTIONS
@@ -45,17 +46,22 @@ class StatusMenuController: NSObject, UserSessionChangesDelegate {
         // Not needed
     }
     
+    func onAppHasBeenSetupChanged(value: Bool) {
+        if(value){
+            currentUserMenuItem.title = "Valgte bruger: " + settings.currentUser
+        } else {
+            currentUserMenuItem.title = "Mangler opsætning"
+        }
+    }
+    
     func setupMenuValuesAndIcon() {
         let icon = #imageLiteral(resourceName: "statusIcon")
         icon.isTemplate = true // best for dark mode
         statusItem.image = icon
         statusItem.menu = statusMenu
         
-        if(settings.appHasBeenSetup){
-            currentUserMenuItem.title = "Valgte bruger: " + settings.currentUser
-        } else {
-            currentUserMenuItem.title = "Mangler opsætning"
-        }
+        // Semantically incorrect, but the code is the same.
+        onAppHasBeenSetupChanged(value: settings.appHasBeenSetup)
     }
 }
 
