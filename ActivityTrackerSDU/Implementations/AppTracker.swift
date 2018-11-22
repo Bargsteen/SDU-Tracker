@@ -17,8 +17,6 @@ class AppTracker: AppTrackerProtocol {
     
     private let reachability: Reachability
     
-    private var appTrackingIsEnabled: Bool
-    
     init(activeWindowHandler: ActiveWindowHandlerProtocol, logger: LoggerProtocol, sendOrSaveHandler: SendOrSaveHandlerProtocol, persistenceHandler: PersistenceHandlerProtocol, usageBuilder: UsageBuilderProtocol){
         self.activeWindowHandler = activeWindowHandler
         self.logger = logger
@@ -28,17 +26,14 @@ class AppTracker: AppTrackerProtocol {
         
         // TODO: Make a protocol for this one
         self.reachability = Reachability()!
-        
-        self.appTrackingIsEnabled = false
     }
     
     func startTracking() {
-        appTrackingIsEnabled = true
         setupAppUsageTracking()
     }
     
     func stopTracking() {
-        appTrackingIsEnabled = false
+        reachability.stopNotifier()
     }
     
     private func setupAppUsageTracking() {
@@ -60,10 +55,8 @@ class AppTracker: AppTrackerProtocol {
                         self.sendOrSaveHandler.sendSomeSavedUsages(limitOfEach: 10)
                     }
                     
-                    if self.appTrackingIsEnabled {
-                        if let lastAppUsage = self.maybeGetLastAppUsage() {
-                            self.sendOrSaveHandler.sendOrSaveUsage(usage: lastAppUsage, fromPersistence: false)
-                        }
+                    if let lastAppUsage = self.maybeGetLastAppUsage() {
+                        self.sendOrSaveHandler.sendOrSaveUsage(usage: lastAppUsage, fromPersistence: false)
                     }
                     sleep(.appTrackingInterval)
                 }
@@ -79,11 +72,9 @@ class AppTracker: AppTrackerProtocol {
                         break
                     }
                     
-                    if self.appTrackingIsEnabled {
-                        if let lastAppUsage = self.maybeGetLastAppUsage() {
-                            self.persistenceHandler.save(lastAppUsage)
-                            self.logger.logUsage(usage: lastAppUsage, usageLogType: .saved)
-                        }
+                    if let lastAppUsage = self.maybeGetLastAppUsage() {
+                        self.persistenceHandler.save(lastAppUsage)
+                        self.logger.logUsage(usage: lastAppUsage, usageLogType: .saved)
                     }
                     
                     // Wait one second before trying to get the app usage.

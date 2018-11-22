@@ -27,6 +27,17 @@ class UsageBuilder: UsageBuilderProtocol {
                            timeStamp: now, userCount: userCount, eventType: eventType)
     }
     
+    func makeDeviceUsage(eventType: EventType, user: String) -> DeviceUsage {
+        
+        let participantIdentifier = settings.makeParticipantIdentifierForSpecificUser(user: user)
+        let now = dateTimeHandler.now
+        
+        return DeviceUsage(participantIdentifier: participantIdentifier, deviceModelName: settings.deviceModelName,
+                           timeStamp: now, userCount: settings.userCount, eventType: eventType)
+    }
+    
+    
+    
     func makeAppUsage(activeWindow: ActiveWindow) -> AppUsage {
         
         let deviceModelName = settings.deviceModelName
@@ -38,4 +49,6 @@ class UsageBuilder: UsageBuilderProtocol {
         return AppUsage(participantIdentifier: participantIdentifier, deviceModelName: deviceModelName, timeStamp: now, userCount: userCount,
                         package: activeWindow.bundleIdentifier, duration: Int(duration.toMilliseconds()))
     }
+    
+    
 }

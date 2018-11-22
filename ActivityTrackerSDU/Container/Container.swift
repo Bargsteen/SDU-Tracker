@@ -21,7 +21,7 @@ func getContainer() -> Container {
         
         container.register(DateTimeHandlerProtocol.self) { _ in DateTimeHandler()}
         
-        container.register(DeviceTrackerProtocol.self) { r in DeviceTracker(dateTimeHandler: r.resolve(DateTimeHandlerProtocol.self)!, sendOrSaveHandler: r.resolve(SendOrSaveHandlerProtocol.self)!, settings: r.resolve(SettingsProtocol.self)!, userHandler: r.resolve(UserHandlerProtocol.self)!)}.inObjectScope(.container)
+        container.register(DeviceTrackerProtocol.self) { r in DeviceTracker(dateTimeHandler: r.resolve(DateTimeHandlerProtocol.self)!, sendOrSaveHandler: r.resolve(SendOrSaveHandlerProtocol.self)!, settings: r.resolve(SettingsProtocol.self)!, usageBuilder: r.resolve(UsageBuilderProtocol.self)!, userHandler: r.resolve(UserHandlerProtocol.self)!)}.inObjectScope(.container)
         
         container.register(LoggerProtocol.self) { _ in Logger() }
         

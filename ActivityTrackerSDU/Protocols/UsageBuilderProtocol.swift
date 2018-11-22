@@ -9,5 +9,6 @@ import Foundation
 
 protocol UsageBuilderProtocol {
     func makeDeviceUsage(eventType: EventType) -> DeviceUsage
+    func makeDeviceUsage(eventType: EventType, user: String) -> DeviceUsage
     func makeAppUsage(activeWindow: ActiveWindow) -> AppUsage
 }
