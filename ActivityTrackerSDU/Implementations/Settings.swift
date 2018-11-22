@@ -11,11 +11,9 @@ import CwlUtils
 class Settings: SettingsProtocol {
     
     private let dateTimeHandler: DateTimeHandlerProtocol
-    private var userChangedListeners: [UserChangedDelegate]
     
     init(dateTimeHandler: DateTimeHandlerProtocol) {
         self.dateTimeHandler = dateTimeHandler
-        self.userChangedListeners = []
     }
     
     var appHasBeenSetup: Bool {
@@ -55,21 +53,10 @@ class Settings: SettingsProtocol {
             if(!userList.contains(newValue)) {
                 fatalError("Invalid currentUser. Not in userList.")
             }
-            let previousUser = currentUser
             userDefaults.setValue(newValue, forKey: currentUserKey)
-            notifyUserChangedListeners(previousUser: previousUser, newUser: newValue)
         }
     }
-    
-    func notifyUserChangedListeners(previousUser: String, newUser: String) {
-        userChangedListeners.forEach { listener in listener.userChanged(previousUser:previousUser, newUser: newUser) }
-    }
-    
-    
-    func subscribeToUserChanges(_ newListener: UserChangedDelegate) {
-        userChangedListeners.append(newListener)
-    }
-    
+
     var deviceModelName: String {
         get {
             return Sysctl.model

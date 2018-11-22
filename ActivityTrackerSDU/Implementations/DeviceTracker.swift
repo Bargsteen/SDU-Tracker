@@ -8,7 +8,7 @@
 import Foundation
 import Cocoa
 
-class DeviceTracker: DeviceTrackerProtocol, UserChangedDelegate {
+class DeviceTracker: DeviceTrackerProtocol, UserSessionChangesDelegate {
     
     private let dateTimeHandler: DateTimeHandlerProtocol
     private let sendOrSaveHandler: SendOrSaveHandlerProtocol
@@ -25,27 +25,30 @@ class DeviceTracker: DeviceTrackerProtocol, UserChangedDelegate {
         self.usageBuilder = usageBuilder
         self.userHandler = userHandler
         
-        settings.subscribeToUserChanges(self)
+        userHandler.subscribeToUserSessionChanges(self)
     }
     
     func startTracking() {
-        sendOrSaveHandler.sendOrSaveUsage(usage: usageBuilder.makeDeviceUsage(eventType: .started), fromPersistence: false)
+        setupScreenNotificationObservers()
+        
+        // Initial check
+        userHandler.checkIfUserHasChanged()
     }
     
     func stopTracking() {
-        sendOrSaveHandler.sendOrSaveUsage(usage: usageBuilder.makeDeviceUsage(eventType: .ended), fromPersistence: false)
+        onUserSessionStarted(user: settings.currentUser)
+        
+        // TODO: Remove notifiers again. Might be unnecessary, since the app closes after this is called.
     }
     
-    // This function handles manual user changes from the menu.
-    func userChanged(previousUser: String, newUser: String) {
-        
-        // Previous user stopped using the device
-        let endedUsage = usageBuilder.makeDeviceUsage(eventType: .ended, user: previousUser)
-        sendOrSaveHandler.sendOrSaveUsage(usage: endedUsage, fromPersistence: false)
-        
-        // New user started using the device
-        let startedUsage = usageBuilder.makeDeviceUsage(eventType: .started, user: newUser)
-        sendOrSaveHandler.sendOrSaveUsage(usage: startedUsage, fromPersistence: false)
+    func onUserSessionStarted(user: String){
+        let deviceStartedUsage = usageBuilder.makeDeviceUsage(eventType: .started, user: user)
+        sendOrSaveHandler.sendOrSaveUsage(usage: deviceStartedUsage, fromPersistence: false)
+    }
+    
+    func onUserSessionEnded(user: String){
+        let deviceEndedUsage = usageBuilder.makeDeviceUsage(eventType: .ended, user: user)
+        sendOrSaveHandler.sendOrSaveUsage(usage: deviceEndedUsage, fromPersistence: false)
     }
     
     private func setupScreenNotificationObservers() {
@@ -53,16 +56,14 @@ class DeviceTracker: DeviceTrackerProtocol, UserChangedDelegate {
         
         // Handle waking aka Session start
         notificationCenter.addObserver(forName: NSWorkspace.screensDidWakeNotification, object: nil, queue: nil, using: {(n:Notification) in
+            
+            // Userhandler invokes the correct events to send deviceStart/end
             self.userHandler.checkIfUserHasChanged()
-                
-            let deviceStartedUsage = self.usageBuilder.makeDeviceUsage(eventType: .started)
-            self.sendOrSaveHandler.sendOrSaveUsage(usage: deviceStartedUsage, fromPersistence: false)
         })
         
         // Handle sleeping aka Session end
         notificationCenter.addObserver(forName: NSWorkspace.screensDidSleepNotification, object: nil, queue: nil, using: {(n:Notification) in
-            let deviceEndedUsage = self.usageBuilder.makeDeviceUsage(eventType: .ended)
-            self.sendOrSaveHandler.sendOrSaveUsage(usage: deviceEndedUsage, fromPersistence: false)
+            self.onUserSessionEnded(user: self.settings.currentUser)
         })
     }
 }

@@ -14,7 +14,6 @@ protocol SettingsProtocol {
     
     var userCount: Int { get }
     var currentUser: String { get set }
-    func subscribeToUserChanges(_ newListener: UserChangedDelegate)
     
     var deviceModelName: String { get }
     

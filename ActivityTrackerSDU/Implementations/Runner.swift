@@ -40,11 +40,7 @@ class Runner: RunnerProtocol {
         if(settings.appHasBeenSetup){
             let today = dateTimeHandler.now
             
-            if(settings.stopTrackingDate >= today) {
-                
-                // Correct User
-                userHandler.checkIfUserHasChanged()
-                
+            if(settings.stopTrackingDate >= today) {                
                 // Tracking
                 if(settings.trackingType == .AppAndDevice) {
                     appTracker.startTracking()

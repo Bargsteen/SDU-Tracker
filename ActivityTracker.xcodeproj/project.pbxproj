@@ -38,7 +38,6 @@
 		A7369A01218F4917008AF504 /* AlertHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7369A00218F4917008AF504 /* AlertHandlerProtocol.swift */; };
 		A7369A03218F4B5F008AF504 /* AlertHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7369A02218F4B5F008AF504 /* AlertHandler.swift */; };
 		A7369A05218F4E52008AF504 /* ChooseUserWindowProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7369A04218F4E52008AF504 /* ChooseUserWindowProtocol.swift */; };
-		A7369A07218F5091008AF504 /* UserChangedDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7369A06218F5091008AF504 /* UserChangedDelegate.swift */; };
 		A7369A09218F65A6008AF504 /* AppTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7369A08218F65A6008AF504 /* AppTracker.swift */; };
 		A7369A0B218F699F008AF504 /* ReachabilityProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7369A0A218F699F008AF504 /* ReachabilityProtocol.swift */; };
 		A73AA82021273FD900D0B7FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73AA81F21273FD900D0B7FF /* AppDelegate.swift */; };
@@ -87,6 +86,7 @@
 		A7A6B8A021353DE8000B4E38 /* ChooseUserWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7A6B89E21353DE8000B4E38 /* ChooseUserWindow.xib */; };
 		A7B158FB217C6F57006087D4 /* SetupHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B158FA217C6F57006087D4 /* SetupHandler.swift */; };
 		A7BE8E88215D0B8000C0A864 /* UserHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BE8E87215D0B8000C0A864 /* UserHandler.swift */; };
+		A7D38DDD21A6F2A2001D1891 /* UserSessionChangesDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D38DDC21A6F2A2001D1891 /* UserSessionChangesDelegate.swift */; };
 		A7EAAA242156256F007E942A /* SendOrSaveHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EAAA232156256F007E942A /* SendOrSaveHandler.swift */; };
 		A7EAAA362156626F007E942A /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EAAA352156626F007E942A /* Logger.swift */; };
 /* End PBXBuildFile section */
@@ -170,7 +170,6 @@
 		A7369A00218F4917008AF504 /* AlertHandlerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHandlerProtocol.swift; sourceTree = "<group>"; };
 		A7369A02218F4B5F008AF504 /* AlertHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHandler.swift; sourceTree = "<group>"; };
 		A7369A04218F4E52008AF504 /* ChooseUserWindowProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseUserWindowProtocol.swift; sourceTree = "<group>"; };
-		A7369A06218F5091008AF504 /* UserChangedDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserChangedDelegate.swift; sourceTree = "<group>"; };
 		A7369A08218F65A6008AF504 /* AppTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTracker.swift; sourceTree = "<group>"; };
 		A7369A0A218F699F008AF504 /* ReachabilityProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityProtocol.swift; sourceTree = "<group>"; };
 		A73AA81D21273FD900D0B7FF /* ActivityTrackerSDU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ActivityTrackerSDU.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -218,6 +217,7 @@
 		A7A6B89E21353DE8000B4E38 /* ChooseUserWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseUserWindow.xib; sourceTree = "<group>"; };
 		A7B158FA217C6F57006087D4 /* SetupHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupHandler.swift; sourceTree = "<group>"; };
 		A7BE8E87215D0B8000C0A864 /* UserHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHandler.swift; sourceTree = "<group>"; };
+		A7D38DDC21A6F2A2001D1891 /* UserSessionChangesDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionChangesDelegate.swift; sourceTree = "<group>"; };
 		A7EAAA232156256F007E942A /* SendOrSaveHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendOrSaveHandler.swift; sourceTree = "<group>"; };
 		A7EAAA352156626F007E942A /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -282,11 +282,11 @@
 				A716862C2192BCF900D6657C /* SetupHandlerProtocol.swift */,
 				A73699DB218EE26B008AF504 /* TrackerProtocol.swift */,
 				A73AC0DC2192171B001D28A4 /* UsageBuilderProtocol.swift */,
-				A7369A06218F5091008AF504 /* UserChangedDelegate.swift */,
 				A73699FE218F4658008AF504 /* UserHandlerProtocol.swift */,
 				A7896C392196C07900089A97 /* RunnerProtocol.swift */,
 				A7896C3D2196C0E800089A97 /* LaunchAtLoginProtocol.swift */,
 				A714677321987C76005A7509 /* UserCreatedDelegate.swift */,
+				A7D38DDC21A6F2A2001D1891 /* UserSessionChangesDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -604,6 +604,7 @@
 				A73699E0218EE294008AF504 /* DeviceTrackerProtocol.swift in Sources */,
 				A73AC0E621921B7E001D28A4 /* DateTimeHandler.swift in Sources */,
 				A714677421987C76005A7509 /* UserCreatedDelegate.swift in Sources */,
+				A7D38DDD21A6F2A2001D1891 /* UserSessionChangesDelegate.swift in Sources */,
 				A73699F0218EE5C3008AF504 /* DeviceUsage.swift in Sources */,
 				A7EAAA362156626F007E942A /* Logger.swift in Sources */,
 				A73699EC218EE53F008AF504 /* Credentials.swift in Sources */,
@@ -639,7 +640,6 @@
 				A78F236821416CE900DC2489 /* ActiveWindowHandler.swift in Sources */,
 				A73AC0DF21921761001D28A4 /* UsageBuilder.swift in Sources */,
 				A73699E8218EE2EE008AF504 /* DateTimeHandlerProtocol.swift in Sources */,
-				A7369A07218F5091008AF504 /* UserChangedDelegate.swift in Sources */,
 				A756633E213936C1008F5640 /* Constants.swift in Sources */,
 				A73699D8218EE24F008AF504 /* ActiveWindowHandlerProtocol.swift in Sources */,
 				A73AC0DD2192171B001D28A4 /* UsageBuilderProtocol.swift in Sources */,

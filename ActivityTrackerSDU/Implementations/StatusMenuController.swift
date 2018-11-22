@@ -8,7 +8,7 @@
 import Cocoa
 import Foundation
 
-class StatusMenuController: NSObject, UserChangedDelegate {
+class StatusMenuController: NSObject, UserSessionChangesDelegate {
     
     @IBOutlet private weak var statusMenu: NSMenu!
 
@@ -27,7 +27,6 @@ class StatusMenuController: NSObject, UserChangedDelegate {
     }
     
     override func awakeFromNib() {
-        self.settings.subscribeToUserChanges(self)
         setupMenuValuesAndIcon()
     }
     
@@ -38,8 +37,12 @@ class StatusMenuController: NSObject, UserChangedDelegate {
         }
     }
     
-    func userChanged(previousUser: String, newUser: String) {
-        currentUserMenuItem.title = "Valgte bruger: " + newUser
+    func onUserSessionStarted(user: String) {
+        currentUserMenuItem.title = "Valgte bruger: " + user
+    }
+    
+    func onUserSessionEnded(user: String) {
+        // Not needed
     }
     
     func setupMenuValuesAndIcon() {
