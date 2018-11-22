@@ -33,7 +33,7 @@ class StatusMenuController: NSObject, UserSessionChangesDelegate {
     // -- CLICK HANDLER FUNCTIONS
     @IBAction func chooseUserClicked(_ sender: NSMenuItem) {
         if(settings.appHasBeenSetup) {
-            userHandler.showChooseUserWindow()
+            userHandler.showChooseUserWindow(fromStatusMenu: true)
         }
     }
     

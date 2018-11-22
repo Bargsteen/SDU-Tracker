@@ -16,12 +16,13 @@ class ChooseUserWindow: NSWindowController, NSWindowDelegate, ChooseUserWindowPr
     @IBOutlet weak var userListMenu: NSPopUpButton!
     @IBOutlet weak var oneUserRequiredWarning: NSTextField!
     
+    private var chooseUserWindowClosedDelegate: ChooseUserWindowClosedDelegate?
+    
     // Used to keep track of changes before save button is pressed
     private var localUserList: [String]!
     private var localCurrentUser: String!
     
     private func stateIsValid() -> Bool {return !localUserList.isEmpty && localCurrentUser != "" }
-    
     
     init(settings: SettingsProtocol) {
         self.settings = settings
@@ -36,7 +37,8 @@ class ChooseUserWindow: NSWindowController, NSWindowDelegate, ChooseUserWindowPr
         fatalError("init(coder:) has not been implemented. Use init()")
     }
     
-    func show(){
+    func show(chooseUserWindowClosedDelegate: ChooseUserWindowClosedDelegate){
+        self.chooseUserWindowClosedDelegate = chooseUserWindowClosedDelegate
         self.showWindow(nil)
     }
     
@@ -140,6 +142,8 @@ class ChooseUserWindow: NSWindowController, NSWindowDelegate, ChooseUserWindowPr
         localUserList = settings.userList
         updateUserListMenuContents()
         displayErrorIfStateIsInvalid()
+        
+        chooseUserWindowClosedDelegate?.onChooseUserWindowClosed()
     }
     
     private func showAreYouSurePrompt() -> Bool {

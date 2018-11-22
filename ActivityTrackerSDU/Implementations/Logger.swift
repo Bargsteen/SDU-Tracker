@@ -38,9 +38,9 @@ class Logger : LoggerProtocol {
         var logMsg = "\(usageLogType.rawValue)"
         
         if let deviceUsage = usage as? DeviceUsage {
-            logMsg += "[DEVICE] \(eventTypeToString(deviceUsage.eventType))"
+            logMsg += "[DEVICE] - \(deviceUsage.participantIdentifier) - \(eventTypeToString(deviceUsage.eventType))"
         } else if let appUsage = usage as? AppUsage {
-            logMsg += "[APP] \(appUsage.package) - \(appUsage.duration) ms"
+            logMsg += "[APP] - \(appUsage.participantIdentifier) - \(appUsage.package) - \(appUsage.duration) ms"
         }
         
         logInfo(logMsg)

@@ -9,6 +9,6 @@ import Foundation
 
 protocol UserHandlerProtocol {
     func checkIfUserHasChanged()
-    func showChooseUserWindow()
+    func showChooseUserWindow(fromStatusMenu: Bool)
     func subscribeToUserSessionChanges(_ subscriber: UserSessionChangesDelegate)
 }

@@ -37,7 +37,7 @@ func getContainer() -> Container {
         
         container.register(UsageBuilderProtocol.self) { r in UsageBuilder(dateTimeHandler: r.resolve(DateTimeHandlerProtocol.self)!, settings: r.resolve(SettingsProtocol.self)!)}
         
-        container.register(UserHandlerProtocol.self) { r in UserHandler(alertHandler: r.resolve(AlertHandlerProtocol.self)!, chooseUserWindow: r.resolve(ChooseUserWindowProtocol.self)!, dateTimeHandler: r.resolve(DateTimeHandlerProtocol.self)!, settings: r.resolve(SettingsProtocol.self)!)}
+        container.register(UserHandlerProtocol.self) { r in UserHandler(alertHandler: r.resolve(AlertHandlerProtocol.self)!, chooseUserWindow: r.resolve(ChooseUserWindowProtocol.self)!, dateTimeHandler: r.resolve(DateTimeHandlerProtocol.self)!, settings: r.resolve(SettingsProtocol.self)!)}.inObjectScope(.container)
         
         container.register(RunnerProtocol.self) { r in Runner(appTracker: r.resolve(AppTrackerProtocol.self)!, deviceTracker: r.resolve(DeviceTrackerProtocol.self)!, alertHandler: r.resolve(AlertHandlerProtocol.self)!, dateTimeHandler: r.resolve(DateTimeHandlerProtocol.self)!, launchAtLoginHandler: r.resolve(LaunchAtLoginHandlerProtocol.self)!, logger: r.resolve(LoggerProtocol.self)!, userHandler: r.resolve(UserHandlerProtocol.self)!, usageBuilder: r.resolve(UsageBuilderProtocol.self)!, sendOrSaveHandler: r.resolve(SendOrSaveHandlerProtocol.self)!, settings: r.resolve(SettingsProtocol.self)!)}
         

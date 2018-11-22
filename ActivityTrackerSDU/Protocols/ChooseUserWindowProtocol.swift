@@ -9,5 +9,5 @@ import Foundation
 import Cocoa
 
 protocol ChooseUserWindowProtocol {
-    func show()
+    func show(chooseUserWindowClosedDelegate: ChooseUserWindowClosedDelegate)
 }

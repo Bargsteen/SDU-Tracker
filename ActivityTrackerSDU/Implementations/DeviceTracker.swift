@@ -25,11 +25,12 @@ class DeviceTracker: DeviceTrackerProtocol, UserSessionChangesDelegate {
         self.usageBuilder = usageBuilder
         self.userHandler = userHandler
         
-        userHandler.subscribeToUserSessionChanges(self)
+        
     }
     
     func startTracking() {
         setupScreenNotificationObservers()
+        userHandler.subscribeToUserSessionChanges(self)
         
         // Initial check
         userHandler.checkIfUserHasChanged()

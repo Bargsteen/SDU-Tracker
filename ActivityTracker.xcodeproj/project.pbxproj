@@ -87,6 +87,7 @@
 		A7B158FB217C6F57006087D4 /* SetupHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B158FA217C6F57006087D4 /* SetupHandler.swift */; };
 		A7BE8E88215D0B8000C0A864 /* UserHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BE8E87215D0B8000C0A864 /* UserHandler.swift */; };
 		A7D38DDD21A6F2A2001D1891 /* UserSessionChangesDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D38DDC21A6F2A2001D1891 /* UserSessionChangesDelegate.swift */; };
+		A7D38DDF21A6F99A001D1891 /* ChooseUserWindowClosedDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D38DDE21A6F99A001D1891 /* ChooseUserWindowClosedDelegate.swift */; };
 		A7EAAA242156256F007E942A /* SendOrSaveHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EAAA232156256F007E942A /* SendOrSaveHandler.swift */; };
 		A7EAAA362156626F007E942A /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EAAA352156626F007E942A /* Logger.swift */; };
 /* End PBXBuildFile section */
@@ -218,6 +219,7 @@
 		A7B158FA217C6F57006087D4 /* SetupHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupHandler.swift; sourceTree = "<group>"; };
 		A7BE8E87215D0B8000C0A864 /* UserHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHandler.swift; sourceTree = "<group>"; };
 		A7D38DDC21A6F2A2001D1891 /* UserSessionChangesDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionChangesDelegate.swift; sourceTree = "<group>"; };
+		A7D38DDE21A6F99A001D1891 /* ChooseUserWindowClosedDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseUserWindowClosedDelegate.swift; sourceTree = "<group>"; };
 		A7EAAA232156256F007E942A /* SendOrSaveHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendOrSaveHandler.swift; sourceTree = "<group>"; };
 		A7EAAA352156626F007E942A /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -287,6 +289,7 @@
 				A7896C3D2196C0E800089A97 /* LaunchAtLoginProtocol.swift */,
 				A714677321987C76005A7509 /* UserCreatedDelegate.swift */,
 				A7D38DDC21A6F2A2001D1891 /* UserSessionChangesDelegate.swift */,
+				A7D38DDE21A6F99A001D1891 /* ChooseUserWindowClosedDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -614,6 +617,7 @@
 				A7896C402196C12800089A97 /* LaunchAtLogin.swift in Sources */,
 				A7896C3A2196C07900089A97 /* RunnerProtocol.swift in Sources */,
 				A73699D6218EE21B008AF504 /* LoggerProtocol.swift in Sources */,
+				A7D38DDF21A6F99A001D1891 /* ChooseUserWindowClosedDelegate.swift in Sources */,
 				A73699D4218EE194008AF504 /* ActiveWindow.swift in Sources */,
 				A7369A03218F4B5F008AF504 /* AlertHandler.swift in Sources */,
 				A71106C021973B5900F44B07 /* Container.swift in Sources */,
