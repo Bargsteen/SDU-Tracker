@@ -34,6 +34,8 @@ class AlertHandler: AlertHandlerProtocol {
         alert.alertStyle = .informational
         alert.addButton(withTitle: "Ja, det er mig")
         alert.addButton(withTitle: "Nej, skift bruger")
+        
+        NSApp.activate(ignoringOtherApps: true)
                 
         var shouldShowUserWindow = false
                 
@@ -54,6 +56,7 @@ class AlertHandler: AlertHandlerProtocol {
         alert.informativeText = "Tak for din deltagelse."
         alert.alertStyle = .informational
         alert.addButton(withTitle: "Ok")
+        NSApp.activate(ignoringOtherApps: true)
         
         hideAlertAfter(seconds: .alertShowTime)
         
@@ -65,6 +68,7 @@ class AlertHandler: AlertHandlerProtocol {
         alert.messageText = "Klar til opsætning"
         alert.informativeText = "ActivityTrackerSDU er installeret, men mangler at blive sat op via. linket, som du har modtaget på e-mail."
         alert.addButton(withTitle: "Ok")
+        NSApp.activate(ignoringOtherApps: true)
         
         hideAlertAfter(seconds: .alertShowTimeLong)
         

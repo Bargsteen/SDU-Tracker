@@ -38,6 +38,9 @@
                         <buttonCell key="cell" type="push" title="Gem ændringer" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="s6B-Ql-KCR">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
                         </buttonCell>
                         <connections>
                             <action selector="saveChangesButtonClicked:" target="-2" id="nPU-aK-7Oc"/>

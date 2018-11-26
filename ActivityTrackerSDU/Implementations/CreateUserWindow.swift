@@ -16,9 +16,6 @@ class CreateUserWindow: NSWindowController, NSWindowDelegate {
     override func windowDidLoad() {
         super.windowDidLoad()
         
-        self.window?.center()
-        self.window?.level = .statusBar
-        
         self.window?.title = "Opret en ny bruger"
     }
     
@@ -40,6 +37,11 @@ class CreateUserWindow: NSWindowController, NSWindowDelegate {
     }
     
     func show() {
+        
+        self.window?.center()
+        self.window?.level = .statusBar
+        self.window?.makeKeyAndOrderFront(nil)
+        
         self.showWindow(nil)
     }
 }

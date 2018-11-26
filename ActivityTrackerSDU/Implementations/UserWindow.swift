@@ -28,7 +28,8 @@ class UserWindow: NSWindowController, NSWindowDelegate, UserWindowProtocol, User
         self.settings = settings
         
         self.createUserWindow = CreateUserWindow()
-        
+
+
         super.init(window: nil)
     }
     
@@ -39,6 +40,19 @@ class UserWindow: NSWindowController, NSWindowDelegate, UserWindowProtocol, User
     
     func show(userWindowClosedDelegate: UserWindowClosedDelegate){
         self.userWindowClosedDelegate = userWindowClosedDelegate
+        
+        self.window?.center()
+        self.window?.level = .statusBar
+        self.window?.makeKeyAndOrderFront(nil)
+        NSApp.activate(ignoringOtherApps: true)
+        
+        self.unsavedUserList = settings.userList
+        self.unsavedCurrentUser = settings.currentUser
+        
+        displayErrorIfStateIsInvalid()
+        
+        updateUserListMenuContents()
+        
         self.showWindow(nil)
     }
     
@@ -54,20 +68,9 @@ class UserWindow: NSWindowController, NSWindowDelegate, UserWindowProtocol, User
     
     override func windowDidLoad() {
         super.windowDidLoad()
-       
-        self.window?.center()
-        self.window?.level = .statusBar
         
         self.window?.title = "Brugerhåndtering"
-        
         self.createUserWindow.userCreatedDelegate = self
-        
-        self.unsavedUserList = settings.userList
-        self.unsavedCurrentUser = settings.currentUser
-        
-        displayErrorIfStateIsInvalid()
-        
-        updateUserListMenuContents()
     }
     
     override var windowNibName: NSNib.Name? {
