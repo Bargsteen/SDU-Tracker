@@ -65,7 +65,7 @@ class UserHandler: UserHandlerProtocol, ChooseUserWindowClosedDelegate {
         }
     }
     
-    func subscribeToUserSessionChanges(_ subscriber: UserSessionChangesDelegate) {
+    func subscribeToUserSessionChanges(subscriber: UserSessionChangesDelegate) {
         userSessionChangesSubscribers.append(subscriber)
     }
     

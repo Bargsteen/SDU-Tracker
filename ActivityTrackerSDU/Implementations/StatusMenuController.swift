@@ -29,6 +29,7 @@ class StatusMenuController: NSObject, UserSessionChangesDelegate, AppHasBeenSetu
     override func awakeFromNib() {
         setupMenuValuesAndIcon()
         settings.subscribeToAppHasBeenSetupChanges(subscriber: self)
+        userHandler.subscribeToUserSessionChanges(subscriber: self)
     }
     
     // -- CLICK HANDLER FUNCTIONS

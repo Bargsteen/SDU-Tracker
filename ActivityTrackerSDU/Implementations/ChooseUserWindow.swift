@@ -19,10 +19,10 @@ class ChooseUserWindow: NSWindowController, NSWindowDelegate, ChooseUserWindowPr
     private var chooseUserWindowClosedDelegate: ChooseUserWindowClosedDelegate?
     
     // Used to keep track of changes before save button is pressed
-    private var localUserList: [String]!
-    private var localCurrentUser: String!
+    private var unsavedUserList: [String]!
+    private var unsavedCurrentUser: String!
     
-    private func stateIsValid() -> Bool {return !localUserList.isEmpty && localCurrentUser != "" }
+    private func stateIsValid() -> Bool {return !unsavedUserList.isEmpty && unsavedCurrentUser != "" }
     
     init(settings: SettingsProtocol) {
         self.settings = settings
@@ -43,10 +43,10 @@ class ChooseUserWindow: NSWindowController, NSWindowDelegate, ChooseUserWindowPr
     }
     
     func userCreated(newUser: String) {
-        self.localUserList.append(newUser)
+        self.unsavedUserList.append(newUser)
         
-        if(localCurrentUser.isEmpty) {
-            localCurrentUser = newUser
+        if(unsavedCurrentUser.isEmpty) {
+            unsavedCurrentUser = newUser
         }
         displayErrorIfStateIsInvalid()
         updateUserListMenuContents()
@@ -64,8 +64,8 @@ class ChooseUserWindow: NSWindowController, NSWindowDelegate, ChooseUserWindowPr
         
         self.createUserWindow.userCreatedDelegate = self
         
-        self.localUserList = settings.userList
-        self.localCurrentUser = settings.currentUser
+        self.unsavedUserList = settings.userList
+        self.unsavedCurrentUser = settings.currentUser
         
         displayErrorIfStateIsInvalid()
         
@@ -79,19 +79,19 @@ class ChooseUserWindow: NSWindowController, NSWindowDelegate, ChooseUserWindowPr
     func updateUserListMenuContents() {
         // Update the content of the userlist
         userListMenu.removeAllItems()
-        userListMenu.addItems(withTitles: localUserList)
+        userListMenu.addItems(withTitles: unsavedUserList)
         
         // Set selected to current user
-        userListMenu.selectItem(withTitle: localCurrentUser)
+        userListMenu.selectItem(withTitle: unsavedCurrentUser)
     }
     
     @IBAction func deleteChosenUserButtonClicked(_ sender: NSButton) {
         let chosenUser = getChosenUser()
         if let chosenUser = chosenUser {
-            if let index = localUserList.index(of: chosenUser) {
-                localUserList.remove(at: index)
+            if let index = unsavedUserList.index(of: chosenUser) {
+                unsavedUserList.remove(at: index)
                 
-                localCurrentUser = localUserList.first ?? ""
+                unsavedCurrentUser = unsavedUserList.first ?? ""
                 
                 displayErrorIfStateIsInvalid()
                 
@@ -117,20 +117,11 @@ class ChooseUserWindow: NSWindowController, NSWindowDelegate, ChooseUserWindowPr
         
         if(stateIsValid()) {
             
-            // Changes to the userlist requires a confirmation
-            if(settings.userList.count != localUserList.count || settings.userList.sorted() != localUserList.sorted()) {
-                let isSure = showAreYouSurePrompt()
-                if(isSure) {
-                    settings.userList = localUserList
-                }
-            }
+            settings.userList = unsavedUserList
             
             // Set current user and notift listeners, if it has changed
             if let newCurrentUser = newCurrentUser {
-                let previousCurrentUser = settings.currentUser
-                if(newCurrentUser != previousCurrentUser) {
-                    settings.currentUser = newCurrentUser
-                }
+                settings.currentUser = newCurrentUser
             }
             
             self.close()
@@ -138,24 +129,14 @@ class ChooseUserWindow: NSWindowController, NSWindowDelegate, ChooseUserWindowPr
     }
     
     func windowWillClose(_ notification: Notification) {
-        localCurrentUser = settings.currentUser
-        localUserList = settings.userList
+        unsavedCurrentUser = settings.currentUser
+        unsavedUserList = settings.userList
         updateUserListMenuContents()
         displayErrorIfStateIsInvalid()
         
         chooseUserWindowClosedDelegate?.onChooseUserWindowClosed()
     }
-    
-    private func showAreYouSurePrompt() -> Bool {
-        let alert = NSAlert()
-        alert.messageText = "Vil du gemme ændringerne?"
-        alert.informativeText = "Du har ændret listen af brugere."
-        alert.addButton(withTitle: "Gem og Luk")
-        alert.addButton(withTitle: "Annuller")
-        
-        return alert.runModal() == .alertFirstButtonReturn
-    }
-    
+
     private func getChosenUser() -> String? {
         return userListMenu.selectedItem?.title
     }
