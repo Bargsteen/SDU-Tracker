@@ -56,11 +56,9 @@ class UserWindow: NSWindowController, NSWindowDelegate, UserWindowProtocol, User
         super.windowDidLoad()
        
         self.window?.center()
-        self.window?.makeKeyAndOrderFront(nil)
+        self.window?.level = .statusBar
         
         self.window?.title = "Brugerhåndtering"
-        
-        NSApp.activate(ignoringOtherApps: true)
         
         self.createUserWindow.userCreatedDelegate = self
         
@@ -133,6 +131,9 @@ class UserWindow: NSWindowController, NSWindowDelegate, UserWindowProtocol, User
         unsavedUserList = settings.userList
         updateUserListMenuContents()
         displayErrorIfStateIsInvalid()
+        
+        // Close the createUserWindow just in case
+        createUserWindow.close()
         
         userWindowClosedDelegate?.onUserWindowClosed()
     }

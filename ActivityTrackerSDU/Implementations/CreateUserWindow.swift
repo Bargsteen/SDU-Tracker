@@ -17,11 +17,9 @@ class CreateUserWindow: NSWindowController, NSWindowDelegate {
         super.windowDidLoad()
         
         self.window?.center()
-        self.window?.makeKeyAndOrderFront(nil)
+        self.window?.level = .statusBar
         
         self.window?.title = "Opret en ny bruger"
-        
-        NSApp.activate(ignoringOtherApps: true)
     }
     
     override var windowNibName: NSNib.Name? {

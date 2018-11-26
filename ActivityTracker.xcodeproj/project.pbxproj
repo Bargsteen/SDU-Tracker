@@ -322,7 +322,6 @@
 				A78F236721416CE900DC2489 /* ActiveWindowHandler.swift */,
 				A7369A02218F4B5F008AF504 /* AlertHandler.swift */,
 				A7369A08218F65A6008AF504 /* AppTracker.swift */,
-				A7A6B89D21353DE8000B4E38 /* UserWindow.swift */,
 				A714676F21987B29005A7509 /* CreateUserWindow.swift */,
 				A73AC0E521921B7E001D28A4 /* DateTimeHandler.swift */,
 				A73699FC218F14D0008AF504 /* DeviceTracker.swift */,
@@ -337,6 +336,7 @@
 				A73AA83E212740C100D0B7FF /* StatusMenuController.swift */,
 				A73AC0DE21921761001D28A4 /* UsageBuilder.swift */,
 				A7BE8E87215D0B8000C0A864 /* UserHandler.swift */,
+				A7A6B89D21353DE8000B4E38 /* UserWindow.swift */,
 			);
 			path = Implementations;
 			sourceTree = "<group>";
