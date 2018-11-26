@@ -17,7 +17,7 @@ func getContainer() -> Container {
         
         container.register(AppTrackerProtocol.self) { r in AppTracker(activeWindowHandler: r.resolve(ActiveWindowHandlerProtocol.self)!, logger: r.resolve(LoggerProtocol.self)!, sendOrSaveHandler: r.resolve(SendOrSaveHandlerProtocol.self)!, persistenceHandler: r.resolve(PersistenceHandlerProtocol.self)!, usageBuilder: r.resolve(UsageBuilderProtocol.self)!)}.inObjectScope(.container)
         
-        container.register(ChooseUserWindowProtocol.self) { r in ChooseUserWindow(settings: r.resolve(SettingsProtocol.self)!)}
+        container.register(UserWindowProtocol.self) { r in UserWindow(settings: r.resolve(SettingsProtocol.self)!)}
         
         container.register(DateTimeHandlerProtocol.self) { _ in DateTimeHandler()}
         
@@ -37,7 +37,7 @@ func getContainer() -> Container {
         
         container.register(UsageBuilderProtocol.self) { r in UsageBuilder(dateTimeHandler: r.resolve(DateTimeHandlerProtocol.self)!, settings: r.resolve(SettingsProtocol.self)!)}
         
-        container.register(UserHandlerProtocol.self) { r in UserHandler(alertHandler: r.resolve(AlertHandlerProtocol.self)!, chooseUserWindow: r.resolve(ChooseUserWindowProtocol.self)!, dateTimeHandler: r.resolve(DateTimeHandlerProtocol.self)!, settings: r.resolve(SettingsProtocol.self)!)}.inObjectScope(.container)
+        container.register(UserHandlerProtocol.self) { r in UserHandler(alertHandler: r.resolve(AlertHandlerProtocol.self)!, userWindow: r.resolve(UserWindowProtocol.self)!, dateTimeHandler: r.resolve(DateTimeHandlerProtocol.self)!, settings: r.resolve(SettingsProtocol.self)!)}.inObjectScope(.container)
         
         container.register(RunnerProtocol.self) { r in Runner(appTracker: r.resolve(AppTrackerProtocol.self)!, deviceTracker: r.resolve(DeviceTrackerProtocol.self)!, alertHandler: r.resolve(AlertHandlerProtocol.self)!, dateTimeHandler: r.resolve(DateTimeHandlerProtocol.self)!, launchAtLoginHandler: r.resolve(LaunchAtLoginHandlerProtocol.self)!, logger: r.resolve(LoggerProtocol.self)!, userHandler: r.resolve(UserHandlerProtocol.self)!, usageBuilder: r.resolve(UsageBuilderProtocol.self)!, sendOrSaveHandler: r.resolve(SendOrSaveHandlerProtocol.self)!, settings: r.resolve(SettingsProtocol.self)!)}
         

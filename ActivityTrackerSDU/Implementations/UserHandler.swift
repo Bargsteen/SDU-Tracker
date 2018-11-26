@@ -8,24 +8,24 @@
 import Foundation
 import Cocoa
 
-class UserHandler: UserHandlerProtocol, ChooseUserWindowClosedDelegate {
+class UserHandler: UserHandlerProtocol, UserWindowClosedDelegate {
     private let alertHandler: AlertHandlerProtocol
-    private let chooseUserWindow: ChooseUserWindowProtocol
+    private let userWindow: UserWindowProtocol
     private var settings: SettingsProtocol
     
     private var userSessionChangesSubscribers: [UserSessionChangesDelegate]!
     
-    private var showChooseUserWindowInvokedFromStatusMenu: Bool
-    private var userBeforeChooseUserWindowWasShown: String
+    private var showUserWindowInvokedFromStatusMenu: Bool
+    private var userBeforeUserWindowWasShown: String
     
-    init(alertHandler: AlertHandlerProtocol, chooseUserWindow: ChooseUserWindowProtocol,
+    init(alertHandler: AlertHandlerProtocol, userWindow: UserWindowProtocol,
          dateTimeHandler: DateTimeHandlerProtocol, settings: SettingsProtocol) {
         self.alertHandler = alertHandler
-        self.chooseUserWindow = chooseUserWindow
+        self.userWindow = userWindow
         self.settings = settings
         
-        self.userBeforeChooseUserWindowWasShown = settings.currentUser
-        self.showChooseUserWindowInvokedFromStatusMenu = false
+        self.userBeforeUserWindowWasShown = settings.currentUser
+        self.showUserWindowInvokedFromStatusMenu = false
         
         self.userSessionChangesSubscribers = []
     }
@@ -37,7 +37,7 @@ class UserHandler: UserHandlerProtocol, ChooseUserWindowClosedDelegate {
             let changeOfUserIsNeeded = alertHandler.promptForUserChange(currentUser: currentUser)
             
             if(changeOfUserIsNeeded) {
-                showChooseUserWindow(fromStatusMenu: false)
+                showUserWindow(fromStatusMenu: false)
             } else {
                 notifySubscribersOfUserSessionStarted(user: currentUser)
             }
@@ -46,14 +46,14 @@ class UserHandler: UserHandlerProtocol, ChooseUserWindowClosedDelegate {
         }
     }
     
-    func onChooseUserWindowClosed() {
+    func onUserWindowClosed() {
         let currentUser = settings.currentUser;
         
-        if(showChooseUserWindowInvokedFromStatusMenu){
+        if(showUserWindowInvokedFromStatusMenu){
             
-            if(currentUser != userBeforeChooseUserWindowWasShown) {
+            if(currentUser != userBeforeUserWindowWasShown) {
                 
-                notifySubscribersOfUserSessionEnded(user: userBeforeChooseUserWindowWasShown)
+                notifySubscribersOfUserSessionEnded(user: userBeforeUserWindowWasShown)
                 notifySubscribersOfUserSessionStarted(user: currentUser)
                 
             } // Else do nothing. User clicked change user, then decided not to.
@@ -77,10 +77,10 @@ class UserHandler: UserHandlerProtocol, ChooseUserWindowClosedDelegate {
         userSessionChangesSubscribers.forEach { d in d.onUserSessionStarted(user: user) }
     }
     
-    func showChooseUserWindow(fromStatusMenu: Bool) {
-        showChooseUserWindowInvokedFromStatusMenu = fromStatusMenu
-        userBeforeChooseUserWindowWasShown = settings.currentUser
+    func showUserWindow(fromStatusMenu: Bool) {
+        showUserWindowInvokedFromStatusMenu = fromStatusMenu
+        userBeforeUserWindowWasShown = settings.currentUser
         
-        chooseUserWindow.show(chooseUserWindowClosedDelegate: self)
+        userWindow.show(userWindowClosedDelegate: self)
     }
 }

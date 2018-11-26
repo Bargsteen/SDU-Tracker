@@ -1,5 +1,5 @@
 //
-//  ChooseUserWindow.swift
+//  UserWindow.swift
 //  ActivityTrackerSDU
 //
 //  Created by Kasper Dissing Bargsteen on 28/08/2018.
@@ -7,7 +7,7 @@
 
 import Cocoa
 
-class ChooseUserWindow: NSWindowController, NSWindowDelegate, ChooseUserWindowProtocol, UserCreatedDelegate{
+class UserWindow: NSWindowController, NSWindowDelegate, UserWindowProtocol, UserCreatedDelegate{
     
     private var settings: SettingsProtocol
     
@@ -16,7 +16,7 @@ class ChooseUserWindow: NSWindowController, NSWindowDelegate, ChooseUserWindowPr
     @IBOutlet weak var userListMenu: NSPopUpButton!
     @IBOutlet weak var oneUserRequiredWarning: NSTextField!
     
-    private var chooseUserWindowClosedDelegate: ChooseUserWindowClosedDelegate?
+    private var userWindowClosedDelegate: UserWindowClosedDelegate?
     
     // Used to keep track of changes before save button is pressed
     private var unsavedUserList: [String]!
@@ -37,8 +37,8 @@ class ChooseUserWindow: NSWindowController, NSWindowDelegate, ChooseUserWindowPr
         fatalError("init(coder:) has not been implemented. Use init()")
     }
     
-    func show(chooseUserWindowClosedDelegate: ChooseUserWindowClosedDelegate){
-        self.chooseUserWindowClosedDelegate = chooseUserWindowClosedDelegate
+    func show(userWindowClosedDelegate: UserWindowClosedDelegate){
+        self.userWindowClosedDelegate = userWindowClosedDelegate
         self.showWindow(nil)
     }
     
@@ -73,7 +73,7 @@ class ChooseUserWindow: NSWindowController, NSWindowDelegate, ChooseUserWindowPr
     }
     
     override var windowNibName: NSNib.Name? {
-        return NSNib.Name("ChooseUserWindow")
+        return NSNib.Name("UserWindow")
     }
 
     func updateUserListMenuContents() {
@@ -134,7 +134,7 @@ class ChooseUserWindow: NSWindowController, NSWindowDelegate, ChooseUserWindowPr
         updateUserListMenuContents()
         displayErrorIfStateIsInvalid()
         
-        chooseUserWindowClosedDelegate?.onChooseUserWindowClosed()
+        userWindowClosedDelegate?.onUserWindowClosed()
     }
 
     private func getChosenUser() -> String? {

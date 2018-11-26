@@ -35,17 +35,17 @@ class AlertHandler: AlertHandlerProtocol {
         alert.addButton(withTitle: "Ja, det er mig")
         alert.addButton(withTitle: "Nej, skift bruger")
                 
-        var shouldShowChooseUserWindow = false
+        var shouldShowUserWindow = false
                 
         // Stops the modal after changeUserAlertTimeDisplayed seconds and returns false, i.e. do not change the user.
         hideAlertAfter(seconds: .alertShowTime)
                 
         // Show the modal and wait up to x seconds for a click.
-        shouldShowChooseUserWindow = alert.runModal() == .alertSecondButtonReturn
+        shouldShowUserWindow = alert.runModal() == .alertSecondButtonReturn
                 
         lastAlertTimeStamp = dateTimeHandler.now
                 
-        return shouldShowChooseUserWindow
+        return shouldShowUserWindow
     }
     
     func showTrackingPeriodHasEndedAlert(){
