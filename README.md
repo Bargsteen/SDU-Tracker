@@ -1,5 +1,10 @@
 # ActivityTracker
 
+## Tips For Developing
+Tracker keeps its settings, such as users, end-of-tracking date etc., in the UserDefaults.
+To clear them run the following in a terminal: `defaults delete dk.sdu.health.Tracker`
+The last part has to match the identifier of the app exactly, and is case-sensitive.
+
 ## Cuckoo Mocking Framework
 Mocking in Swift is a bit tricky, because the language does not have runtime reflection. Instead code generation is used.
 [Cuckoo](https://github.com/Brightify/Cuckoo) is the most popular mocking framework, but it is a bit tricky to use.
