@@ -11,7 +11,7 @@ import CocoaLumberjackSwift
 
 class Logger : LoggerProtocol {
     init() {
-        DDLog.add(DDASLLogger.sharedInstance) // ASL = Apple System Logs
+        DDLog.add(DDOSLogger.sharedInstance) // ASL = Apple System Logs
         
         let fileLogger: DDFileLogger = DDFileLogger() // File Logger
         fileLogger.rollingFrequency = TimeInterval(60*60*24*7)  // 7 days
