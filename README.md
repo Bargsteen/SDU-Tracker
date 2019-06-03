@@ -2,7 +2,7 @@
 
 ## Tips For Developing
 Tracker keeps its settings, such as users, end-of-tracking date etc., in the UserDefaults.
-To clear them run the following in a terminal: `defaults delete dk.sdu.health.Tracker`
+To clear them run the following in a terminal: `defaults delete dk.sdu.devicetracker`
 The last part has to match the identifier of the app exactly, and is case-sensitive.
 
 ## Building the Release
