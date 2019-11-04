@@ -25,7 +25,7 @@ class AppTracker: AppTrackerProtocol {
         self.usageBuilder = usageBuilder
         
         // TODO: Make a protocol for this one
-        self.reachability = Reachability()!
+        self.reachability = try! Reachability()
     }
     
     func startTracking() {
@@ -43,7 +43,7 @@ class AppTracker: AppTrackerProtocol {
         reachability.whenReachable = { reachability in
             DispatchQueue.global(qos: .background).async {
                 while(true) {
-                    if(self.reachability.connection == Reachability.Connection.none) {
+                    if(self.reachability.connection == Reachability.Connection.unavailable) {
                         self.logger.logInfo("Lost internet connection.")
                         break
                     }
@@ -67,7 +67,7 @@ class AppTracker: AppTrackerProtocol {
         reachability.whenUnreachable = { _ in
             DispatchQueue.global(qos: .background).async {
                 while(true) {
-                    if(self.reachability.connection != Reachability.Connection.none) {
+                    if(self.reachability.connection != Reachability.Connection.unavailable) {
                         self.logger.logInfo("Regained internet connection.")
                         break
                     }

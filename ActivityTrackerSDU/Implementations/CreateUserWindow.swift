@@ -20,7 +20,7 @@ class CreateUserWindow: NSWindowController, NSWindowDelegate {
     }
     
     override var windowNibName: NSNib.Name? {
-        return NSNib.Name("CreateUserWindow")
+        return "CreateUserWindow"
     }
     
     @IBAction func createButtonClicked(_ sender: NSButton) {

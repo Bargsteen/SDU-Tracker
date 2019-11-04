@@ -6,7 +6,7 @@
 //
 //  Created by Kasper Dissing Bargsteen on 04/11/2018.
 //
-
+/*
 import Cuckoo
 @testable import ActivityTrackerSDU
 
@@ -736,3 +736,4 @@ class MockTrackerProtocol: TrackerProtocol, Cuckoo.ProtocolMock {
     
 }
 
+*/

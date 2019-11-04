@@ -4,7 +4,7 @@
 //
 //  Created by Kasper Dissing Bargsteen on 11/11/2018.
 //
-
+/*
 import XCTest
 import Cuckoo
 
@@ -209,4 +209,4 @@ class PersistenceHandlerTests: XCTestCase {
     }
 
 }
-
+*/

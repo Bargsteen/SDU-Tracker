@@ -74,7 +74,7 @@ class UserWindow: NSWindowController, NSWindowDelegate, UserWindowProtocol, User
     }
     
     override var windowNibName: NSNib.Name? {
-        return NSNib.Name("UserWindow")
+        return "UserWindow"
     }
 
     func updateUserListMenuContents() {
@@ -89,7 +89,7 @@ class UserWindow: NSWindowController, NSWindowDelegate, UserWindowProtocol, User
     @IBAction func deleteChosenUserButtonClicked(_ sender: NSButton) {
         let chosenUser = getChosenUser()
         if let chosenUser = chosenUser {
-            if let index = unsavedUserList.index(of: chosenUser) {
+            if let index = unsavedUserList.firstIndex(of: chosenUser) {
                 unsavedUserList.remove(at: index)
                 
                 unsavedCurrentUser = unsavedUserList.first ?? ""

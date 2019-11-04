@@ -2,6 +2,5 @@ github "sindresorhus/LaunchAtLogin"
 github "ashleymills/Reachability.swift"
 git "https://github.com/mattgallagher/CwlUtils.git" "master"
 github "CocoaLumberjack/CocoaLumberjack"
-github "SwiftKit/Cuckoo"
 github "Swinject/Swinject"
 github "stephencelis/SQLite.swift" ~> 0.11.5
