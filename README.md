@@ -17,6 +17,11 @@ It has the following features:
 ## Tips For Developing
  * Tracker keeps its settings, such as users, end-of-tracking date etc., in the UserDefaults. To clear them run the following in a terminal: `defaults delete dk.sdu.devicetracker` The last part has to match the identifier of the app exactly, and is case-sensitive.
  * [Carthage](https://github.com/Carthage/Carthage) is the primary package manager being used. The file `Cartfile` contains the list of packages used. To update the packages, use the following command in terminal, while being inside the project: `carthage update --new-resolver --platform MacOS` (I've found the `--new-resolver` to be faster in general, but it is optional).
+ 
+ ### Removal of Secrets
+The username and password for the database have been replaced with '\*\*\*REMOVED\*\*\*' everywhere, including previous commits, by using [BFG](https://rtyley.github.io/bfg-repo-cleaner/).
+A git-safe way of handling secrets should be implemented.
+A temporary fix to make the app functional is to reinsert the secrets.
 
 ## Building the Release
  * Build and Archive the application (preferably signed) in XCode.
